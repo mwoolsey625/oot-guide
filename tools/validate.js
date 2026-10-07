@@ -231,14 +231,14 @@ if (CATS.some((c) => c.id === 'cows')) setEq('cows', real.filter((r) => r.type =
 const ledgerSongs = real.filter((r) => r.type === 'song').map((r) => r.id);
 for (const s of ledgerSongs) if (!catIds('songs').includes(s)) err('totals', `songs: ledger song ${s} missing from the category`);
 
-// collect ids must resolve: a collectible, or a ledger check that the site shows as an "Other check"
+// collect ids must resolve: a collectible, or a ledger check that the site shows as a muted Chest / Key / Prize chip
 const minor = [];
 for (const [id, at] of Object.entries(collectAt)) {
   if (itemsById[id]) continue;
   if (ledgerById[id]) { minor.push(id); continue; }
   err('ids', `collect id "${id}" (${at.join(', ')}) is neither a collectible nor a ledger.json check`);
 }
-note(`${minor.length} collect IDs are ledger checks outside the collectible categories (chests, keys, frog songs...); the site shows them as "Other check".`);
+note(`${minor.length} collect IDs are ledger checks outside the collectible categories (chests, keys, frog songs...); the site labels them Chest, Key or Prize.`);
 
 /* ------------------------------------------------------------------ reference */
 if (!checkShape('schema', 'reference', REF, { songs: 'array', bosses: 'array', bestiary: 'array', minigames: 'array', sidequests: 'array', remake: 'object' })) finish();

@@ -110,7 +110,7 @@
   function numFromId(id) { var n = parseInt(String(id || '').slice(1, 3), 10); return isNaN(n) ? null : n; }
   function realmOf(ch) { return REALMS[String(ch.id).slice(0, 3)] || (ch.era === 'adult' ? 'adult' : 'child'); }
   function ico(id, cls) { return '<svg class="ico' + (cls ? ' ' + cls : '') + '" aria-hidden="true"><use href="#' + id + '"/></svg>'; }
-  function glyphId(catId) { return KNOWN_GLYPHS.indexOf(catId) >= 0 ? 'g-' + catId : (catId === 'check' ? 'g-check' : 'g-other'); }
+  function glyphId(catId) { return KNOWN_GLYPHS.indexOf(catId) >= 0 ? 'g-' + catId : (minorRank(catId) ? 'g-check' : 'g-other'); }
   function sel(id) { return window.CSS && CSS.escape ? CSS.escape(id) : String(id).replace(/["\\]/g, '\\$&'); }
   function eraLabel(era) { return era === 'adult' ? 'Adult' : era === 'both' ? 'Child & adult' : era === 'either' ? 'Either age' : 'Child'; }
   function eraIcon(era) { return era === 'adult' ? 'i-blade' : (era === 'both' || era === 'either') ? 'i-both' : 'i-leaf'; }
@@ -130,8 +130,12 @@
   function itemInfo(id) {
     var hit = itemById[id];
     if (hit) return { id: id, name: hit.item.name, catId: hit.cat.id, catName: hit.cat.name, time: hit.item.time, minor: false, item: hit.item, cat: hit.cat };
-    return { id: id, name: humanize(id), catId: 'check', catName: 'Other check', time: '', minor: true };
+    /* ledger checks outside the collectible categories: every chest id says "chest", every loose key "key"; the rest are minigame prizes and purchases */
+    var k = /chest/.test(id) ? MINOR[0] : /key/.test(id) ? MINOR[1] : MINOR[2];
+    return { id: id, name: humanize(id), catId: k.id, catName: k.name, groupName: k.group, time: '', minor: true };
   }
+  var MINOR = [{ id: 'check-chest', name: 'Chest', group: 'Chests' }, { id: 'check-key', name: 'Key', group: 'Keys' }, { id: 'check-prize', name: 'Prize', group: 'Prizes' }];
+  function minorRank(catId) { for (var i = 0; i < MINOR.length; i++) if (MINOR[i].id === catId) return i + 1; return 0; }
   function chapterLabel(chId, short) {
     var ch = chapterById[chId];
     if (ch) return short ? 'Ch ' + chNum(ch) : 'Ch ' + chNum(ch) + ' · ' + ch.title;
@@ -395,10 +399,10 @@
     var groups = {}, order = [];
     ids.forEach(function (id) {
       var inf = itemInfo(id);
-      if (!groups[inf.catId]) { groups[inf.catId] = { name: inf.catName, ids: [] }; order.push(inf.catId); }
+      if (!groups[inf.catId]) { groups[inf.catId] = { name: inf.groupName || inf.catName, ids: [] }; order.push(inf.catId); }
       groups[inf.catId].ids.push(id);
     });
-    order.sort(function (a, b) { return (a === 'check') - (b === 'check'); });
+    order.sort(function (a, b) { return minorRank(a) - minorRank(b); });
     return order.map(function (cid) {
       return '<div class="cat-h"><span>' + esc(groups[cid].name) + '</span></div><div class="chips">' + groups[cid].ids.map(chip).join('') + '</div>';
     }).join('');
@@ -1212,6 +1216,12 @@
   document.addEventListener('click', function (e) {
     var t = e.target;
     if (!t.closest) return;
+    if (t.closest('.haul summary')) {
+      /* the haul list is thousands of px tall; scroll anchoring would pin the steps below and fling the summary off the top, so let it open downwards */
+      var root = document.documentElement;
+      root.style.overflowAnchor = 'none';
+      requestAnimationFrame(function () { requestAnimationFrame(function () { root.style.overflowAnchor = ''; }); });
+    }
     var dl = t.closest('[data-dlg]');
     if (dl) { runDialogAction(dl.getAttribute('data-dlg')); return; }
     if (t.closest('[data-dlg-close]')) { closeDialog(); return; }

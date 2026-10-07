@@ -78,8 +78,9 @@ thumb zone:
 - **Collectible chips** sit under the step and show glyph, category and name, plus a moon
   if the item is night-only. A chip uses the same state as the tracker row. Checking a
   step also checks its chips. Every toggle shows an **Undo** toast for a mis-tap.
-  Unrecognised `collect` IDs (dungeon chests, for example) appear as muted "Other check"
-  chips with a readable name rather than vanishing.
+  Unrecognised `collect` IDs appear as muted chips with a readable name rather than
+  vanishing, labelled by kind from the ID: "Chest" (the ID contains `chest`), "Key"
+  (contains `key`) or "Prize" (minigame prizes and purchases).
 - **Notes**, each with its own treatment:
   - **Hint:** teal panel with a sparkle.
   - **Caution:** rust panel with a solid left rule and a diamond "!". This is for

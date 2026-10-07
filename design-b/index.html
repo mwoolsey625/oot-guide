@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Waypoint · Ocarina of Time Guide</title>
+<meta name="description" content="A step-by-step companion for Ocarina of Time: walkthrough, collectible trackers, songs and reference, with progress saved on this device.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#0a0f14" id="themeColor">
+<script>
+  /* Apply the saved theme before first paint. Storage may be blocked; that is fine. */
+  (function () {
+    var t = 'system';
+    try {
+      var raw = window.localStorage.getItem('oot-guide.design-b.v1');
+      if (raw) { var p = JSON.parse(raw).prefs || {}; t = p.theme || 'system';
+        if (p.scale) document.documentElement.style.setProperty('--scale', String(p.scale)); }
+    } catch (e) {}
+    if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Space+Grotesk:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="app" id="app">
+  <aside class="rail" id="rail" aria-label="Navigation"></aside>
+  <header class="topbar" id="topbar"></header>
+  <main class="main" id="main" tabindex="-1"></main>
+  <aside class="panel" id="panel" aria-label="Chapter details"></aside>
+</div>
+<div class="dock" id="dock" aria-label="Current step"></div>
+<nav class="tabbar" id="tabbar" aria-label="Sections"></nav>
+<div class="scrim" id="scrim" hidden></div>
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetTitle" hidden></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<input type="file" id="importFile" accept="application/json,.json" hidden>
+<noscript><p class="noscript">This guide needs JavaScript to show the walkthrough and save your progress.</p></noscript>
+
+<script src="data/walkthrough-child.js"></script>
+<script src="data/walkthrough-adult.js"></script>
+<script src="data/collectibles.js"></script>
+<script src="data/reference.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

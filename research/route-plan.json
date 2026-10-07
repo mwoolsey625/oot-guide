@@ -1,0 +1,3194 @@
+[
+ {
+  "id": "equip-kokiri-tunic",
+  "chapter": "c01-deku-tree",
+  "sectionHint": "s01 Kokiri Forest",
+  "era": "child",
+  "why": "Starting equipment; listed so the equipment category has an entry point."
+ },
+ {
+  "id": "equip-kokiri-boots",
+  "chapter": "c01-deku-tree",
+  "sectionHint": "s01 Kokiri Forest",
+  "era": "child",
+  "why": "Starting equipment; listed so the equipment category has an entry point."
+ },
+ {
+  "id": "kf-midos-top-left-chest",
+  "chapter": "c01-deku-tree",
+  "sectionHint": "s01 Kokiri Forest",
+  "era": "child",
+  "why": "No requirement; the Rupees count toward the 40-Rupee Deku Shield Mido demands."
+ },
+ {
+  "id": "kf-midos-top-right-chest",
+  "chapter": "c01-deku-tree",
+  "sectionHint": "s01 Kokiri Forest",
+  "era": "child",
+  "why": "No requirement; same visit as the other 3 chests in Mido's House."
+ },
+ {
+  "id": "kf-midos-bottom-left-chest",
+  "chapter": "c01-deku-tree",
+  "sectionHint": "s01 Kokiri Forest",
+  "era": "child",
+  "why": "No requirement; same visit as the other 3 chests in Mido's House."
+ },
+ {
+  "id": "kf-midos-bottom-right-chest",
+  "chapter": "c01-deku-tree",
+  "sectionHint": "s01 Kokiri Forest",
+  "era": "child",
+  "why": "No requirement; same visit as the other 3 chests in Mido's House."
+ },
+ {
+  "id": "kf-kokiri-sword-chest",
+  "chapter": "c01-deku-tree",
+  "sectionHint": "s01 Kokiri Forest",
+  "era": "child",
+  "why": "Child-only, free; both walkthroughs take it before the shield because Mido blocks the Deku Tree until Link has sword and shield."
+ },
+ {
+  "id": "kf-shop-item-1",
+  "chapter": "c01-deku-tree",
+  "sectionHint": "s01 Kokiri Forest",
+  "era": "child",
+  "why": "Deku Shield, 40 Rupees; required by Mido before the Deku Tree."
+ },
+ {
+  "id": "item-deku-stick",
+  "chapter": "c01-deku-tree",
+  "sectionHint": "s01 Kokiri Forest",
+  "era": "child",
+  "why": "First Deku Sticks from Deku Babas or the Kokiri Shop; needed for torches in the Deku Tree."
+ },
+ {
+  "id": "item-deku-nut",
+  "chapter": "c01-deku-tree",
+  "sectionHint": "s01 Kokiri Forest",
+  "era": "child",
+  "why": "First Deku Nuts from Deku Babas or the shop; stuns Gohma and Business Scrubs."
+ },
+ {
+  "id": "deku-tree-map-chest",
+  "chapter": "c01-deku-tree",
+  "sectionHint": "s02 Inside the Deku Tree",
+  "era": "child",
+  "why": "Free on the first floor climb (logic True)."
+ },
+ {
+  "id": "deku-tree-slingshot-room-side-chest",
+  "chapter": "c01-deku-tree",
+  "sectionHint": "s02 Inside the Deku Tree",
+  "era": "child",
+  "why": "Same room as the Fairy Slingshot; free."
+ },
+ {
+  "id": "deku-tree-slingshot-chest",
+  "chapter": "c01-deku-tree",
+  "sectionHint": "s02 Inside the Deku Tree",
+  "era": "child",
+  "why": "Fairy Slingshot; mandatory dungeon item."
+ },
+ {
+  "id": "deku-tree-compass-chest",
+  "chapter": "c01-deku-tree",
+  "sectionHint": "s02 Inside the Deku Tree",
+  "era": "child",
+  "why": "Free on the third-floor platforms."
+ },
+ {
+  "id": "deku-tree-compass-room-side-chest",
+  "chapter": "c01-deku-tree",
+  "sectionHint": "s02 Inside the Deku Tree",
+  "era": "child",
+  "why": "Free, same area as the compass."
+ },
+ {
+  "id": "deku-tree-gs-compass-room",
+  "chapter": "c01-deku-tree",
+  "sectionHint": "s02 Inside the Deku Tree",
+  "era": "child",
+  "why": "Any child weapon; first visit (SW, GF-LK #1)."
+ },
+ {
+  "id": "deku-tree-basement-chest",
+  "chapter": "c01-deku-tree",
+  "sectionHint": "s02 Inside the Deku Tree",
+  "era": "child",
+  "why": "Free (logic True); ZD skips it, so the compiler must source its position (basement, after dropping through the web)."
+ },
+ {
+  "id": "deku-tree-gs-basement-gate",
+  "chapter": "c01-deku-tree",
+  "sectionHint": "s02 Inside the Deku Tree",
+  "era": "child",
+  "why": "Any child weapon; first visit (SW, GF-LK #3)."
+ },
+ {
+  "id": "deku-tree-gs-basement-vines",
+  "chapter": "c01-deku-tree",
+  "sectionHint": "s02 Inside the Deku Tree",
+  "era": "child",
+  "why": "Fairy Slingshot; first visit (SW, GF-LK #2)."
+ },
+ {
+  "id": "queen-gohma",
+  "chapter": "c01-deku-tree",
+  "sectionHint": "s03 Boss: Queen Gohma",
+  "era": "child",
+  "why": "Kokiri's Emerald; ends the dungeon."
+ },
+ {
+  "id": "deku-tree-queen-gohma-heart",
+  "chapter": "c01-deku-tree",
+  "sectionHint": "s03 Boss: Queen Gohma",
+  "era": "child",
+  "why": "Drops after Gohma; take it before the blue warp."
+ },
+ {
+  "id": "lw-gift-from-saria",
+  "chapter": "c02-hyrule-castle",
+  "sectionHint": "s01 Leaving the forest",
+  "era": "child",
+  "why": "Fairy Ocarina; Saria gives it on the bridge the first time Link leaves after the Deku Tree."
+ },
+ {
+  "id": "hf-open-grotto-chest",
+  "chapter": "c02-hyrule-castle",
+  "sectionHint": "s02 Hyrule Field to the Market",
+  "era": "child",
+  "why": "Open grotto (logic True), no item needed; take it on the first field crossing. Compiler: confirm the grotto's position."
+ },
+ {
+  "id": "market-gs-guard-house",
+  "chapter": "c02-hyrule-castle",
+  "sectionHint": "s02 Hyrule Field to the Market",
+  "era": "child",
+  "why": "Roll into the guard-house crate; child-only, first Market visit (SW, GF-LK #4)."
+ },
+ {
+  "id": "market-shooting-gallery-reward",
+  "chapter": "c02-hyrule-castle",
+  "sectionHint": "s02 Hyrule Field to the Market",
+  "era": "child",
+  "why": "Daytime child minigame, Fairy Slingshot owned since c01, 20 Rupees per game (SW does it here)."
+ },
+ {
+  "id": "market-bazaar-item-1",
+  "chapter": "c02-hyrule-castle",
+  "sectionHint": "s02 Hyrule Field to the Market",
+  "era": "child",
+  "why": "Hylian Shield for 80 Rupees: optional. The route takes the free one from the Graveyard shield grave in c03 (C-07), and the shop will not sell one you already hold."
+ },
+ {
+  "id": "hc-malon-egg",
+  "chapter": "c02-hyrule-castle",
+  "sectionHint": "s03 Hyrule Castle grounds",
+  "era": "child",
+  "why": "Malon gives the Weird Egg on the first castle visit; starts the child trade chain."
+ },
+ {
+  "id": "hc-gs-tree",
+  "chapter": "c02-hyrule-castle",
+  "sectionHint": "s03 Hyrule Castle grounds",
+  "era": "child",
+  "why": "Roll into the owl's tree on the castle approach (SW, GF-LK #5)."
+ },
+ {
+  "id": "market-lost-dog",
+  "chapter": "c02-hyrule-castle",
+  "sectionHint": "s04 Market at night (while the egg hatches)",
+  "era": "child",
+  "why": "Child + night only. The egg needs a dawn to hatch, so the night spent waiting is the natural slot (GF-LK #6 also takes it in this chapter)."
+ },
+ {
+  "id": "item-chicken",
+  "chapter": "c02-hyrule-castle",
+  "sectionHint": "s05 The Princess",
+  "era": "child",
+  "why": "The Weird Egg hatches at the next dawn (decomp); needed to wake Talon."
+ },
+ {
+  "id": "event-wake-talon-castle",
+  "chapter": "c02-hyrule-castle",
+  "sectionHint": "s05 The Princess",
+  "era": "child",
+  "why": "Wake Talon with the Chicken; unlocks Epona's Song and Talon's Cucco game at the ranch."
+ },
+ {
+  "id": "hc-zeldas-letter",
+  "chapter": "c02-hyrule-castle",
+  "sectionHint": "s05 The Princess",
+  "era": "child",
+  "why": "Zelda gives the letter in the courtyard (day only; guards block it at night)."
+ },
+ {
+  "id": "song-from-impa",
+  "chapter": "c02-hyrule-castle",
+  "sectionHint": "s05 The Princess",
+  "era": "child",
+  "why": "Zelda's Lullaby from Impa straight after Zelda."
+ },
+ {
+  "id": "song-from-malon",
+  "chapter": "c02-hyrule-castle",
+  "sectionHint": "s06 Lon Lon Ranch",
+  "era": "child",
+  "why": "Epona's Song: child, day, Talon already woken."
+ },
+ {
+  "id": "llr-talons-chickens",
+  "chapter": "c02-hyrule-castle",
+  "sectionHint": "s06 Lon Lon Ranch",
+  "era": "child",
+  "why": "Bottle (Lon Lon Milk): child, day, Talon already woken; first Bottle, needed for Bugs in c03."
+ },
+ {
+  "id": "llr-freestanding-poh",
+  "chapter": "c02-hyrule-castle",
+  "sectionHint": "s06 Lon Lon Ranch",
+  "era": "child",
+  "why": "Child, no item (crawl space in the cow shed)."
+ },
+ {
+  "id": "llr-gs-tree",
+  "chapter": "c02-hyrule-castle",
+  "sectionHint": "s06 Lon Lon Ranch",
+  "era": "child",
+  "why": "Roll into the tree; no item."
+ },
+ {
+  "id": "llr-stables-left-cow",
+  "chapter": "c02-hyrule-castle",
+  "sectionHint": "s06 Lon Lon Ranch",
+  "era": "child",
+  "why": "Epona's Song + an empty Bottle (drink the milk first); both owned at this point."
+ },
+ {
+  "id": "llr-stables-right-cow",
+  "chapter": "c02-hyrule-castle",
+  "sectionHint": "s06 Lon Lon Ranch",
+  "era": "child",
+  "why": "Same visit as the other ranch cows."
+ },
+ {
+  "id": "llr-tower-left-cow",
+  "chapter": "c02-hyrule-castle",
+  "sectionHint": "s06 Lon Lon Ranch",
+  "era": "child",
+  "why": "Same visit as the other ranch cows."
+ },
+ {
+  "id": "llr-tower-right-cow",
+  "chapter": "c02-hyrule-castle",
+  "sectionHint": "s06 Lon Lon Ranch",
+  "era": "child",
+  "why": "Same visit as the other ranch cows."
+ },
+ {
+  "id": "llr-gs-rain-shed",
+  "chapter": "c02-hyrule-castle",
+  "sectionHint": "s06 Lon Lon Ranch",
+  "era": "child",
+  "why": "Child + night, no item; wait for nightfall at the ranch before leaving."
+ },
+ {
+  "id": "event-zeldas-letter-to-guard",
+  "chapter": "c03-kakariko-lost-woods",
+  "sectionHint": "s01 Kakariko Village by day",
+  "era": "child",
+  "why": "Show Zelda's Letter at the Death Mountain gate; opens the trail and unlocks the Happy Mask Shop."
+ },
+ {
+  "id": "kak-anju-as-child",
+  "chapter": "c03-kakariko-lost-woods",
+  "sectionHint": "s01 Kakariko Village by day",
+  "era": "child",
+  "why": "Second Bottle: child + day (logic at_day; C-19)."
+ },
+ {
+  "id": "kak-open-grotto-chest",
+  "chapter": "c03-kakariko-lost-woods",
+  "sectionHint": "s01 Kakariko Village by day",
+  "era": "child",
+  "why": "Open grotto, no item (ZD skips it)."
+ },
+ {
+  "id": "song-from-royal-familys-tomb",
+  "chapter": "c03-kakariko-lost-woods",
+  "sectionHint": "s02 Kakariko Graveyard",
+  "era": "child",
+  "why": "Sun's Song: Zelda's Lullaby opens the tomb; any child weapon for the Keese. Learned first so the night checks below can be timed."
+ },
+ {
+  "id": "graveyard-shield-grave-chest",
+  "chapter": "c03-kakariko-lost-woods",
+  "sectionHint": "s02 Kakariko Graveyard",
+  "era": "child",
+  "why": "Free Hylian Shield; child can pull graves only at night (C-08). Before c04, where Fire Keese burn the Deku Shield."
+ },
+ {
+  "id": "graveyard-heart-piece-grave-chest",
+  "chapter": "c03-kakariko-lost-woods",
+  "sectionHint": "s02 Kakariko Graveyard",
+  "era": "child",
+  "why": "Sun's Song inside the ReDead grave; child at night."
+ },
+ {
+  "id": "graveyard-dampe-gravedigging-tour",
+  "chapter": "c03-kakariko-lost-woods",
+  "sectionHint": "s02 Kakariko Graveyard",
+  "era": "child",
+  "why": "Child, 18:00-21:00, 10 Rupees per dig; luck-based Piece of Heart."
+ },
+ {
+  "id": "graveyard-gs-bean-patch",
+  "chapter": "c03-kakariko-lost-woods",
+  "sectionHint": "s02 Kakariko Graveyard",
+  "era": "child",
+  "why": "Bugs from a Bottle (owned since c02) on the soil; any time."
+ },
+ {
+  "id": "kak-gs-tree",
+  "chapter": "c03-kakariko-lost-woods",
+  "sectionHint": "s03 Kakariko Village at night",
+  "era": "child",
+  "why": "Child + night; roll into the tree."
+ },
+ {
+  "id": "kak-gs-near-gate-guard",
+  "chapter": "c03-kakariko-lost-woods",
+  "sectionHint": "s03 Kakariko Village at night",
+  "era": "child",
+  "why": "Child + night; no item."
+ },
+ {
+  "id": "kak-gs-watchtower",
+  "chapter": "c03-kakariko-lost-woods",
+  "sectionHint": "s03 Kakariko Village at night",
+  "era": "child",
+  "why": "Child + night; Fairy Slingshot then climb."
+ },
+ {
+  "id": "kak-gs-skulltula-house",
+  "chapter": "c03-kakariko-lost-woods",
+  "sectionHint": "s03 Kakariko Village at night",
+  "era": "child",
+  "why": "Child + night; no item."
+ },
+ {
+  "id": "kak-gs-house-under-construction",
+  "chapter": "c03-kakariko-lost-woods",
+  "sectionHint": "s03 Kakariko Village at night",
+  "era": "child",
+  "why": "Child + night; no item."
+ },
+ {
+  "id": "kak-10-gold-skulltula-reward",
+  "chapter": "c03-kakariko-lost-woods",
+  "sectionHint": "s03 Kakariko Village at night",
+  "era": "child",
+  "why": "Adult's Wallet: 13 tokens are held after this night (3+4+1+5); claim it while in town."
+ },
+ {
+  "id": "dmt-freestanding-poh",
+  "chapter": "c03-kakariko-lost-woods",
+  "sectionHint": "s04 Death Mountain Trail",
+  "era": "child",
+  "why": "Child can reach it on the first climb (SW/ZD drop or backflip; logic can_take_damage). C-11: GF-LK's adult bean method is a later alternative, not needed."
+ },
+ {
+  "id": "lw-ocarina-memory-game",
+  "chapter": "c03-kakariko-lost-woods",
+  "sectionHint": "s05 Lost Woods",
+  "era": "child",
+  "why": "Child + Fairy Ocarina only."
+ },
+ {
+  "id": "lw-target-in-woods",
+  "chapter": "c03-kakariko-lost-woods",
+  "sectionHint": "s05 Lost Woods",
+  "era": "child",
+  "why": "Child + Fairy Slingshot; Deku Seed bag upgrade."
+ },
+ {
+  "id": "lw-deku-scrub-near-bridge",
+  "chapter": "c03-kakariko-lost-woods",
+  "sectionHint": "s05 Lost Woods",
+  "era": "child",
+  "why": "Deku Stick capacity for 40 Rupees; stun the scrub first."
+ },
+ {
+  "id": "lw-gs-bean-patch-near-bridge",
+  "chapter": "c03-kakariko-lost-woods",
+  "sectionHint": "s05 Lost Woods",
+  "era": "child",
+  "why": "Bugs + child weapon."
+ },
+ {
+  "id": "lw-gs-bean-patch-near-theater",
+  "chapter": "c03-kakariko-lost-woods",
+  "sectionHint": "s05 Lost Woods",
+  "era": "child",
+  "why": "Bugs + child weapon."
+ },
+ {
+  "id": "song-from-saria",
+  "chapter": "c03-kakariko-lost-woods",
+  "sectionHint": "s06 Sacred Forest Meadow",
+  "era": "child",
+  "why": "Saria's Song; needs Zelda already met (done in c02)."
+ },
+ {
+  "id": "lw-skull-kid",
+  "chapter": "c03-kakariko-lost-woods",
+  "sectionHint": "s07 Lost Woods and Kokiri Forest return",
+  "era": "child",
+  "why": "Saria's Song for the Skull Kid; learned one section earlier."
+ },
+ {
+  "id": "kf-gs-bean-patch",
+  "chapter": "c03-kakariko-lost-woods",
+  "sectionHint": "s07 Lost Woods and Kokiri Forest return",
+  "era": "child",
+  "why": "Bugs + child weapon."
+ },
+ {
+  "id": "kf-gs-know-it-all-house",
+  "chapter": "c03-kakariko-lost-woods",
+  "sectionHint": "s07 Lost Woods and Kokiri Forest return",
+  "era": "child",
+  "why": "Child + night; Sun's Song (c03 s02) sets night without waiting."
+ },
+ {
+  "id": "gc-darunias-joy",
+  "chapter": "c03-kakariko-lost-woods",
+  "sectionHint": "s08 Goron City",
+  "era": "child",
+  "why": "Goron's Bracelet: Zelda's Lullaby on Darunia's door, then Saria's Song. Needed to lift the Bomb Flower into Dodongo's Cavern."
+ },
+ {
+  "id": "dmt-gs-bean-patch",
+  "chapter": "c04-dodongos-cavern",
+  "sectionHint": "s01 Death Mountain Trail",
+  "era": "child",
+  "why": "Bugs on the soil exposed when the cavern boulder breaks (Goron's Bracelet + Bomb Flower)."
+ },
+ {
+  "id": "dodongos-cavern-map-chest",
+  "chapter": "c04-dodongos-cavern",
+  "sectionHint": "s02 Dodongo's Cavern",
+  "era": "child",
+  "why": "Blast or Bomb Flower the wall; first visit."
+ },
+ {
+  "id": "dodongos-cavern-compass-chest",
+  "chapter": "c04-dodongos-cavern",
+  "sectionHint": "s02 Dodongo's Cavern",
+  "era": "child",
+  "why": "First visit (Armos room)."
+ },
+ {
+  "id": "dodongos-cavern-gs-side-room-near-lower-lizalfos",
+  "chapter": "c04-dodongos-cavern",
+  "sectionHint": "s02 Dodongo's Cavern",
+  "era": "child",
+  "why": "Bombable wall near the Baby Dodongos; first visit."
+ },
+ {
+  "id": "dodongos-cavern-bomb-flower-platform-chest",
+  "chapter": "c04-dodongos-cavern",
+  "sectionHint": "s02 Dodongo's Cavern",
+  "era": "child",
+  "why": "Free; first visit."
+ },
+ {
+  "id": "dodongos-cavern-gs-vines-above-stairs",
+  "chapter": "c04-dodongos-cavern",
+  "sectionHint": "s02 Dodongo's Cavern",
+  "era": "child",
+  "why": "After the staircase drops; Fairy Slingshot easiest."
+ },
+ {
+  "id": "dodongos-cavern-bomb-bag-chest",
+  "chapter": "c04-dodongos-cavern",
+  "sectionHint": "s02 Dodongo's Cavern",
+  "era": "child",
+  "why": "Bomb Bag; mandatory."
+ },
+ {
+  "id": "dodongos-cavern-end-of-bridge-chest",
+  "chapter": "c04-dodongos-cavern",
+  "sectionHint": "s02 Dodongo's Cavern",
+  "era": "child",
+  "why": "Bombable door at the end of the upper bridge; Bombs now owned."
+ },
+ {
+  "id": "dodongos-cavern-gs-back-room",
+  "chapter": "c04-dodongos-cavern",
+  "sectionHint": "s02 Dodongo's Cavern",
+  "era": "child",
+  "why": "Needs Bombs; first visit."
+ },
+ {
+  "id": "dodongos-cavern-boss-room-chest",
+  "chapter": "c04-dodongos-cavern",
+  "sectionHint": "s02 Dodongo's Cavern",
+  "era": "child",
+  "why": "Free in King Dodongo's area."
+ },
+ {
+  "id": "king-dodongo",
+  "chapter": "c04-dodongos-cavern",
+  "sectionHint": "s03 Boss: King Dodongo",
+  "era": "child",
+  "why": "Goron's Ruby."
+ },
+ {
+  "id": "dodongos-cavern-king-dodongo-heart",
+  "chapter": "c04-dodongos-cavern",
+  "sectionHint": "s03 Boss: King Dodongo",
+  "era": "child",
+  "why": "Drops after the boss; take it before the blue warp."
+ },
+ {
+  "id": "dmt-chest",
+  "chapter": "c04-dodongos-cavern",
+  "sectionHint": "s04 Bombs on Death Mountain (sweep)",
+  "era": "child",
+  "why": "Blast the trail wall; first point Bombs are owned."
+ },
+ {
+  "id": "dmt-gs-near-kak",
+  "chapter": "c04-dodongos-cavern",
+  "sectionHint": "s04 Bombs on Death Mountain (sweep)",
+  "era": "child",
+  "why": "Bombable wall on the trail (SW places it here)."
+ },
+ {
+  "id": "gc-maze-center-chest",
+  "chapter": "c04-dodongos-cavern",
+  "sectionHint": "s04 Bombs on Death Mountain (sweep)",
+  "era": "child",
+  "why": "Bombs on the Goron City maze boulders."
+ },
+ {
+  "id": "gc-maze-right-chest",
+  "chapter": "c04-dodongos-cavern",
+  "sectionHint": "s04 Bombs on Death Mountain (sweep)",
+  "era": "child",
+  "why": "Bombs on the Goron City maze boulders."
+ },
+ {
+  "id": "gc-gs-boulder-maze",
+  "chapter": "c04-dodongos-cavern",
+  "sectionHint": "s04 Bombs on Death Mountain (sweep)",
+  "era": "child",
+  "why": "Crate at the end of the bomb maze (GF-LK #27)."
+ },
+ {
+  "id": "gc-rolling-goron-as-child",
+  "chapter": "c04-dodongos-cavern",
+  "sectionHint": "s04 Bombs on Death Mountain (sweep)",
+  "era": "child",
+  "why": "Bomb the rolling Goron; Bomb Bag upgrade."
+ },
+ {
+  "id": "gc-pot-freestanding-poh",
+  "chapter": "c04-dodongos-cavern",
+  "sectionHint": "s04 Bombs on Death Mountain (sweep)",
+  "era": "child",
+  "why": "Bombs + lit Deku Stick on the spinning urn (decomp/logic: Bombs required)."
+ },
+ {
+  "id": "dmt-cow-grotto-cow",
+  "chapter": "c04-dodongos-cavern",
+  "sectionHint": "s04 Bombs on Death Mountain (sweep)",
+  "era": "child",
+  "why": "Bomb the boulder above the summit path (ZD 4.3); Epona's Song + empty Bottle."
+ },
+ {
+  "id": "dmt-great-fairy-reward",
+  "chapter": "c04-dodongos-cavern",
+  "sectionHint": "s04 Bombs on Death Mountain (sweep)",
+  "era": "child",
+  "why": "Magic Meter: Bombs on the summit wall, Zelda's Lullaby. Must come before every other Great Fairy (decomp)."
+ },
+ {
+  "id": "dmc-gs-crate",
+  "chapter": "c04-dodongos-cavern",
+  "sectionHint": "s04 Bombs on Death Mountain (sweep)",
+  "era": "child",
+  "why": "Child rolls into the first crate inside the crater from the summit (GF-LK #26)."
+ },
+ {
+  "id": "dmc-wall-freestanding-poh",
+  "chapter": "c04-dodongos-cavern",
+  "sectionHint": "s04 Bombs on Death Mountain (sweep)",
+  "era": "child",
+  "why": "Reachable from the summit side of the crater with no item (logic True)."
+ },
+ {
+  "id": "dmc-upper-grotto-chest",
+  "chapter": "c04-dodongos-cavern",
+  "sectionHint": "s04 Bombs on Death Mountain (sweep)",
+  "era": "child",
+  "why": "Bombable grotto in the upper crater; same visit."
+ },
+ {
+  "id": "kak-impas-house-freestanding-poh",
+  "chapter": "c04-dodongos-cavern",
+  "sectionHint": "s05 Owl to Kakariko",
+  "era": "child",
+  "why": "The summit owl drops Link on Impa's roof, the direct way in (ZD #12, SW). C: 05's Cucco-glide c03 option loses to the walkthroughs on method (rule A)."
+ },
+ {
+  "id": "kak-impas-house-cow",
+  "chapter": "c04-dodongos-cavern",
+  "sectionHint": "s05 Owl to Kakariko",
+  "era": "child",
+  "why": "Same room as the Piece of Heart (ZD 4.3); Epona's Song + empty Bottle."
+ },
+ {
+  "id": "kak-redead-grotto-chest",
+  "chapter": "c04-dodongos-cavern",
+  "sectionHint": "s05 Owl to Kakariko",
+  "era": "child",
+  "why": "Bomb the grotto near the first tree (ZD 5.1); child with Kokiri Sword or Sticks. Bombs first owned this chapter and Link is in Kakariko."
+ },
+ {
+  "id": "kak-20-gold-skulltula-reward",
+  "chapter": "c04-dodongos-cavern",
+  "sectionHint": "s05 Owl to Kakariko",
+  "era": "child",
+  "why": "Stone of Agony: 24 tokens held by this point. Optional in vanilla (rule B)."
+ },
+ {
+  "id": "hc-great-fairy-reward",
+  "chapter": "c05-jabu-jabu",
+  "sectionHint": "s01 Castle grounds and Market with Bombs",
+  "era": "child",
+  "why": "Din's Fire: Bombs + Magic Meter (c04) + Zelda's Lullaby."
+ },
+ {
+  "id": "market-bombchu-bowling-first-prize",
+  "chapter": "c05-jabu-jabu",
+  "sectionHint": "s01 Castle grounds and Market with Bombs",
+  "era": "child",
+  "why": "Opens after the Goron's Ruby; Bombs; 30 Rupees per game."
+ },
+ {
+  "id": "market-bombchu-bowling-second-prize",
+  "chapter": "c05-jabu-jabu",
+  "sectionHint": "s01 Castle grounds and Market with Bombs",
+  "era": "child",
+  "why": "Same alley, next win; Piece of Heart."
+ },
+ {
+  "id": "item-bombchu",
+  "chapter": "c05-jabu-jabu",
+  "sectionHint": "s01 Castle grounds and Market with Bombs",
+  "era": "child",
+  "why": "Bombchu Shop (back alley, night) opens after the Goron's Ruby; optional purchase, first Bombchus."
+ },
+ {
+  "id": "hf-near-market-grotto-chest",
+  "chapter": "c05-jabu-jabu",
+  "sectionHint": "s02 Hyrule Field grottos",
+  "era": "child",
+  "why": "Blast the boulder; Bombs owned since c04; on the way out of the Market."
+ },
+ {
+  "id": "hf-southeast-grotto-chest",
+  "chapter": "c05-jabu-jabu",
+  "sectionHint": "s02 Hyrule Field grottos",
+  "era": "child",
+  "why": "Blast the boulder; Bombs owned since c04."
+ },
+ {
+  "id": "hf-deku-scrub-grotto",
+  "chapter": "c05-jabu-jabu",
+  "sectionHint": "s02 Hyrule Field grottos",
+  "era": "child",
+  "why": "Bomb the fenced area near the Lake Hylia gate; Piece of Heart for 10 Rupees (GF-LK #13)."
+ },
+ {
+  "id": "zr-magic-bean-salesman",
+  "chapter": "c05-jabu-jabu",
+  "sectionHint": "s03 Zora's River",
+  "era": "child",
+  "why": "Child only; first visit to the river. Buy as many beans as the wallet allows (10, 20, 30 ... Rupees)."
+ },
+ {
+  "id": "bean-zoras-river",
+  "chapter": "c05-jabu-jabu",
+  "sectionHint": "s03 Zora's River",
+  "era": "child",
+  "why": "Plant beside the salesman right after buying."
+ },
+ {
+  "id": "zr-gs-tree",
+  "chapter": "c05-jabu-jabu",
+  "sectionHint": "s03 Zora's River",
+  "era": "child",
+  "why": "Roll into the tree at the river entrance."
+ },
+ {
+  "id": "zr-open-grotto-chest",
+  "chapter": "c05-jabu-jabu",
+  "sectionHint": "s03 Zora's River",
+  "era": "child",
+  "why": "Open grotto, no item."
+ },
+ {
+  "id": "zr-near-open-grotto-freestanding-poh",
+  "chapter": "c05-jabu-jabu",
+  "sectionHint": "s03 Zora's River",
+  "era": "child",
+  "why": "Child Cucco glide; first visit."
+ },
+ {
+  "id": "zr-near-domain-freestanding-poh",
+  "chapter": "c05-jabu-jabu",
+  "sectionHint": "s03 Zora's River",
+  "era": "child",
+  "why": "Child Cucco glide; first visit."
+ },
+ {
+  "id": "zr-frogs-zeldas-lullaby",
+  "chapter": "c05-jabu-jabu",
+  "sectionHint": "s03 Zora's River",
+  "era": "child",
+  "why": "Child + Zelda's Lullaby, known since c02."
+ },
+ {
+  "id": "zr-frogs-eponas-song",
+  "chapter": "c05-jabu-jabu",
+  "sectionHint": "s03 Zora's River",
+  "era": "child",
+  "why": "Child + Epona's Song, known since c02."
+ },
+ {
+  "id": "zr-frogs-sarias-song",
+  "chapter": "c05-jabu-jabu",
+  "sectionHint": "s03 Zora's River",
+  "era": "child",
+  "why": "Child + Saria's Song, known since c03."
+ },
+ {
+  "id": "zr-frogs-suns-song",
+  "chapter": "c05-jabu-jabu",
+  "sectionHint": "s03 Zora's River",
+  "era": "child",
+  "why": "Child + Sun's Song, known since c03."
+ },
+ {
+  "id": "zr-gs-ladder",
+  "chapter": "c05-jabu-jabu",
+  "sectionHint": "s03 Zora's River",
+  "era": "child",
+  "why": "Child + night; by the waterfall ladder."
+ },
+ {
+  "id": "zd-chest",
+  "chapter": "c05-jabu-jabu",
+  "sectionHint": "s04 Zora's Domain",
+  "era": "child",
+  "why": "Light the torches with one Deku Stick; Piece of Heart."
+ },
+ {
+  "id": "zd-diving-minigame",
+  "chapter": "c05-jabu-jabu",
+  "sectionHint": "s04 Zora's Domain",
+  "era": "child",
+  "why": "Silver Scale, 20 Rupees; required for Ruto's Letter."
+ },
+ {
+  "id": "lh-underwater-item",
+  "chapter": "c05-jabu-jabu",
+  "sectionHint": "s05 Lake Hylia (child)",
+  "era": "child",
+  "why": "Ruto's Letter (third Bottle): needs the Silver Scale. This mandatory visit carries every child lake check, which saves a separate c02 trip (SW's side trip)."
+ },
+ {
+  "id": "event-bonooru",
+  "chapter": "c05-jabu-jabu",
+  "sectionHint": "s05 Lake Hylia (child)",
+  "era": "child",
+  "why": "Scarecrow's Song, child half: play 8 notes to Bonooru. Needed before the adult half in c08."
+ },
+ {
+  "id": "lh-child-fishing",
+  "chapter": "c05-jabu-jabu",
+  "sectionHint": "s05 Lake Hylia (child)",
+  "era": "child",
+  "why": "Child, 20 Rupees; aim for 10 pounds or more (C-04)."
+ },
+ {
+  "id": "lh-loach-fishing",
+  "chapter": "c05-jabu-jabu",
+  "sectionHint": "s05 Lake Hylia (child)",
+  "era": "child",
+  "why": "Either age; optional and luck-heavy. Listed with the child fishing visit; can be done any later visit."
+ },
+ {
+  "id": "lh-gs-bean-patch",
+  "chapter": "c05-jabu-jabu",
+  "sectionHint": "s05 Lake Hylia (child)",
+  "era": "child",
+  "why": "Bugs + child weapon."
+ },
+ {
+  "id": "bean-lake-hylia",
+  "chapter": "c05-jabu-jabu",
+  "sectionHint": "s05 Lake Hylia (child)",
+  "era": "child",
+  "why": "Plant a bean by the lab now; the adult rides it in c08 for lh-freestanding-poh."
+ },
+ {
+  "id": "lh-gs-small-island",
+  "chapter": "c05-jabu-jabu",
+  "sectionHint": "s05 Lake Hylia (child)",
+  "era": "child",
+  "why": "Child + night; island pillar."
+ },
+ {
+  "id": "deliver-rutos-letter",
+  "chapter": "c05-jabu-jabu",
+  "sectionHint": "s06 Zora's Domain and Zora's Fountain",
+  "era": "child",
+  "why": "Show the letter to King Zora; opens the path to Zora's Fountain and frees the Bottle."
+ },
+ {
+  "id": "zf-gs-tree",
+  "chapter": "c05-jabu-jabu",
+  "sectionHint": "s06 Zora's Domain and Zora's Fountain",
+  "era": "child",
+  "why": "Roll into the tree; no item."
+ },
+ {
+  "id": "zf-great-fairy-reward",
+  "chapter": "c05-jabu-jabu",
+  "sectionHint": "s06 Zora's Domain and Zora's Fountain",
+  "era": "child",
+  "why": "Farore's Wind: Bombs + Zelda's Lullaby + Magic Meter."
+ },
+ {
+  "id": "jabu-jabus-belly-boomerang-chest",
+  "chapter": "c05-jabu-jabu",
+  "sectionHint": "s07 Inside Jabu-Jabu's Belly",
+  "era": "child",
+  "why": "Boomerang; mandatory."
+ },
+ {
+  "id": "jabu-jabus-belly-gs-water-switch-room",
+  "chapter": "c05-jabu-jabu",
+  "sectionHint": "s07 Inside Jabu-Jabu's Belly",
+  "era": "child",
+  "why": "No extra item."
+ },
+ {
+  "id": "jabu-jabus-belly-gs-lobby-basement-lower",
+  "chapter": "c05-jabu-jabu",
+  "sectionHint": "s07 Inside Jabu-Jabu's Belly",
+  "era": "child",
+  "why": "Boomerang."
+ },
+ {
+  "id": "jabu-jabus-belly-gs-lobby-basement-upper",
+  "chapter": "c05-jabu-jabu",
+  "sectionHint": "s07 Inside Jabu-Jabu's Belly",
+  "era": "child",
+  "why": "Boomerang."
+ },
+ {
+  "id": "jabu-jabus-belly-map-chest",
+  "chapter": "c05-jabu-jabu",
+  "sectionHint": "s07 Inside Jabu-Jabu's Belly",
+  "era": "child",
+  "why": "Free; red tentacle route."
+ },
+ {
+  "id": "jabu-jabus-belly-compass-chest",
+  "chapter": "c05-jabu-jabu",
+  "sectionHint": "s07 Inside Jabu-Jabu's Belly",
+  "era": "child",
+  "why": "Free; Shabom room (timed)."
+ },
+ {
+  "id": "jabu-jabus-belly-gs-near-boss",
+  "chapter": "c05-jabu-jabu",
+  "sectionHint": "s07 Inside Jabu-Jabu's Belly",
+  "era": "child",
+  "why": "Fairy Slingshot or Boomerang."
+ },
+ {
+  "id": "barinade",
+  "chapter": "c05-jabu-jabu",
+  "sectionHint": "s08 Boss: Barinade",
+  "era": "child",
+  "why": "Zora's Sapphire."
+ },
+ {
+  "id": "jabu-jabus-belly-barinade-heart",
+  "chapter": "c05-jabu-jabu",
+  "sectionHint": "s08 Boss: Barinade",
+  "era": "child",
+  "why": "Drops after the boss; take it before the blue warp."
+ },
+ {
+  "id": "zf-gs-above-the-log",
+  "chapter": "c05-jabu-jabu",
+  "sectionHint": "s09 Zora's Fountain at night",
+  "era": "child",
+  "why": "Boomerang + night; the blue warp leaves Link at the Fountain, so do it before leaving."
+ },
+ {
+  "id": "hf-ocarina-of-time-item",
+  "chapter": "c06-temple-of-time",
+  "sectionHint": "s01 Ocarina of Time",
+  "era": "child",
+  "why": "All 3 Spiritual Stones; cutscene at the castle drawbridge."
+ },
+ {
+  "id": "song-from-ocarina-of-time",
+  "chapter": "c06-temple-of-time",
+  "sectionHint": "s01 Ocarina of Time",
+  "era": "child",
+  "why": "Song of Time, taught right after the Ocarina of Time."
+ },
+ {
+  "id": "mask-keaton",
+  "chapter": "c06-temple-of-time",
+  "sectionHint": "s02 Keaton Mask run",
+  "era": "child",
+  "why": "Mask Shop opened in c03; doing the whole chain here saves 3 Market round trips (see route-plan.md decision D-04)."
+ },
+ {
+  "id": "hf-gs-near-kak-grotto",
+  "chapter": "c06-temple-of-time",
+  "sectionHint": "s02 Keaton Mask run",
+  "era": "child",
+  "why": "Bombs + Boomerang; the grotto is on the way to Kakariko."
+ },
+ {
+  "id": "kak-windmill-freestanding-poh",
+  "chapter": "c06-temple-of-time",
+  "sectionHint": "s02 Keaton Mask run",
+  "era": "child",
+  "why": "Child + Boomerang (logic); in Kakariko for the Keaton sale."
+ },
+ {
+  "id": "kak-30-gold-skulltula-reward",
+  "chapter": "c06-temple-of-time",
+  "sectionHint": "s02 Keaton Mask run",
+  "era": "child",
+  "why": "Giant's Wallet: 35 tokens held. Claim before the Bunny Hood sale so the 500-Rupee payout is not wasted."
+ },
+ {
+  "id": "mask-skull",
+  "chapter": "c06-temple-of-time",
+  "sectionHint": "s03 Forest sweep with the Skull Mask",
+  "era": "child",
+  "why": "Unlocked by paying for the Keaton Mask."
+ },
+ {
+  "id": "deku-theater-skull-mask",
+  "chapter": "c06-temple-of-time",
+  "sectionHint": "s03 Forest sweep with the Skull Mask",
+  "era": "child",
+  "why": "Wear the Skull Mask at the Deku Theater before selling it; Deku Stick capacity."
+ },
+ {
+  "id": "lw-deku-scrub-grotto-front",
+  "chapter": "c06-temple-of-time",
+  "sectionHint": "s03 Forest sweep with the Skull Mask",
+  "era": "child",
+  "why": "Bombable grotto (Bombs since c04); Deku Nut capacity, 40 Rupees. Grouped with the theater visit."
+ },
+ {
+  "id": "lw-near-shortcuts-grotto-chest",
+  "chapter": "c06-temple-of-time",
+  "sectionHint": "s03 Forest sweep with the Skull Mask",
+  "era": "child",
+  "why": "Bombable grotto; same Lost Woods visit."
+ },
+ {
+  "id": "bean-lost-woods-bridge",
+  "chapter": "c06-temple-of-time",
+  "sectionHint": "s03 Forest sweep with the Skull Mask",
+  "era": "child",
+  "why": "Plant now; the adult bean lift is a shortcut in the c08 trade timer."
+ },
+ {
+  "id": "bean-lost-woods-theater",
+  "chapter": "c06-temple-of-time",
+  "sectionHint": "s03 Forest sweep with the Skull Mask",
+  "era": "child",
+  "why": "Required for lw-gs-above-theater (c07); no trick-free alternative."
+ },
+ {
+  "id": "sfm-wolfos-grotto-chest",
+  "chapter": "c06-temple-of-time",
+  "sectionHint": "s03 Forest sweep with the Skull Mask",
+  "era": "child",
+  "why": "Bomb the grotto in the meadow; Stone of Agony not needed in vanilla (rule B)."
+ },
+ {
+  "id": "deku-tree-gs-basement-back-room",
+  "chapter": "c06-temple-of-time",
+  "sectionHint": "s03 Forest sweep with the Skull Mask",
+  "era": "child",
+  "why": "Bombs + Boomerang + lit Deku Stick; both walkthroughs defer it to this sweep."
+ },
+ {
+  "id": "bean-kokiri-forest",
+  "chapter": "c06-temple-of-time",
+  "sectionHint": "s03 Forest sweep with the Skull Mask",
+  "era": "child",
+  "why": "Plant beside the Kokiri Shop while in the village (no check depends on it)."
+ },
+ {
+  "id": "llr-gs-house-window",
+  "chapter": "c06-temple-of-time",
+  "sectionHint": "s03 Forest sweep with the Skull Mask",
+  "era": "child",
+  "why": "Boomerang + night; ranch is on the way back to the Market."
+ },
+ {
+  "id": "llr-gs-back-wall",
+  "chapter": "c06-temple-of-time",
+  "sectionHint": "s03 Forest sweep with the Skull Mask",
+  "era": "child",
+  "why": "Boomerang + night; same visit."
+ },
+ {
+  "id": "mask-spooky",
+  "chapter": "c06-temple-of-time",
+  "sectionHint": "s04 Kakariko, Graveyard and Death Mountain with the Spooky Mask",
+  "era": "child",
+  "why": "Unlocked by paying for the Skull Mask; sell to the Graveyard boy by day."
+ },
+ {
+  "id": "graveyard-royal-familys-tomb-chest",
+  "chapter": "c06-temple-of-time",
+  "sectionHint": "s04 Kakariko, Graveyard and Death Mountain with the Spooky Mask",
+  "era": "child",
+  "why": "Needs a fire source: Din's Fire (c05)."
+ },
+ {
+  "id": "graveyard-gs-wall",
+  "chapter": "c06-temple-of-time",
+  "sectionHint": "s04 Kakariko, Graveyard and Death Mountain with the Spooky Mask",
+  "era": "child",
+  "why": "Boomerang + night (Sun's Song after the daytime Spooky sale)."
+ },
+ {
+  "id": "bean-graveyard",
+  "chapter": "c06-temple-of-time",
+  "sectionHint": "s04 Kakariko, Graveyard and Death Mountain with the Spooky Mask",
+  "era": "child",
+  "why": "Plant now; the adult rides it in c07 for graveyard-freestanding-poh."
+ },
+ {
+  "id": "bean-death-mountain-trail",
+  "chapter": "c06-temple-of-time",
+  "sectionHint": "s04 Kakariko, Graveyard and Death Mountain with the Spooky Mask",
+  "era": "child",
+  "why": "Plant now (Bombs clear the way); optional shortcut, no check needs it on this route."
+ },
+ {
+  "id": "dodongos-cavern-gs-alcove-above-stairs",
+  "chapter": "c06-temple-of-time",
+  "sectionHint": "s04 Kakariko, Graveyard and Death Mountain with the Spooky Mask",
+  "era": "child",
+  "why": "Boomerang from the far bridge (logic has no staircase condition; ZD's staircase note treated as an error, 04 conflict 5)."
+ },
+ {
+  "id": "mask-bunny-hood",
+  "chapter": "c06-temple-of-time",
+  "sectionHint": "s05 South Hyrule sweep with the Bunny Hood",
+  "era": "child",
+  "why": "Needs all 3 Spiritual Stones (Running Man). Giant's Wallet claimed in s02 catches the full payout."
+ },
+ {
+  "id": "gv-waterfall-freestanding-poh",
+  "chapter": "c06-temple-of-time",
+  "sectionHint": "s05 South Hyrule sweep with the Bunny Hood",
+  "era": "child",
+  "why": "No item; one child Gerudo Valley trip covers all 5 valley checks here instead of a c02 side trip (D-05)."
+ },
+ {
+  "id": "gv-crate-freestanding-poh",
+  "chapter": "c06-temple-of-time",
+  "sectionHint": "s05 South Hyrule sweep with the Bunny Hood",
+  "era": "child",
+  "why": "Child Cucco glide to the crate ledge."
+ },
+ {
+  "id": "gv-gs-bean-patch",
+  "chapter": "c06-temple-of-time",
+  "sectionHint": "s05 South Hyrule sweep with the Bunny Hood",
+  "era": "child",
+  "why": "Bugs + child weapon."
+ },
+ {
+  "id": "gv-cow",
+  "chapter": "c06-temple-of-time",
+  "sectionHint": "s05 South Hyrule sweep with the Bunny Hood",
+  "era": "child",
+  "why": "Child + Epona's Song + empty Bottle."
+ },
+ {
+  "id": "bean-gerudo-valley",
+  "chapter": "c06-temple-of-time",
+  "sectionHint": "s05 South Hyrule sweep with the Bunny Hood",
+  "era": "child",
+  "why": "Plant now (no check depends on it)."
+ },
+ {
+  "id": "gv-gs-small-bridge",
+  "chapter": "c06-temple-of-time",
+  "sectionHint": "s05 South Hyrule sweep with the Bunny Hood",
+  "era": "child",
+  "why": "Boomerang + night."
+ },
+ {
+  "id": "hf-gs-cow-grotto",
+  "chapter": "c06-temple-of-time",
+  "sectionHint": "s05 South Hyrule sweep with the Bunny Hood",
+  "era": "child",
+  "why": "Bombs + Din's Fire for the webs + Boomerang (SW child sweep; GF-LK's adult Hammer route is later)."
+ },
+ {
+  "id": "hf-cow-grotto-cow",
+  "chapter": "c06-temple-of-time",
+  "sectionHint": "s05 South Hyrule sweep with the Bunny Hood",
+  "era": "child",
+  "why": "Same grotto; Epona's Song + empty Bottle."
+ },
+ {
+  "id": "lh-gs-lab-wall",
+  "chapter": "c06-temple-of-time",
+  "sectionHint": "s05 South Hyrule sweep with the Bunny Hood",
+  "era": "child",
+  "why": "Boomerang + night."
+ },
+ {
+  "id": "mask-truth",
+  "chapter": "c06-temple-of-time",
+  "sectionHint": "s06 Mask of Truth",
+  "era": "child",
+  "why": "Lent after all 4 masks are paid for."
+ },
+ {
+  "id": "mask-goron",
+  "chapter": "c06-temple-of-time",
+  "sectionHint": "s06 Mask of Truth",
+  "era": "child",
+  "why": "Lent after the Mask of Truth; no reward, listed for the masks category."
+ },
+ {
+  "id": "mask-zora",
+  "chapter": "c06-temple-of-time",
+  "sectionHint": "s06 Mask of Truth",
+  "era": "child",
+  "why": "Lent after the Mask of Truth; no reward."
+ },
+ {
+  "id": "mask-gerudo",
+  "chapter": "c06-temple-of-time",
+  "sectionHint": "s06 Mask of Truth",
+  "era": "child",
+  "why": "Lent after the Mask of Truth; no reward."
+ },
+ {
+  "id": "deku-theater-mask-of-truth",
+  "chapter": "c06-temple-of-time",
+  "sectionHint": "s06 Mask of Truth",
+  "era": "child",
+  "why": "Deku Nut capacity. Must happen before the Poacher's Saw (c08) on N64/GC (C-02 bug)."
+ },
+ {
+  "id": "master-sword-pedestal",
+  "chapter": "c06-temple-of-time",
+  "sectionHint": "s07 The Door of Time",
+  "era": "child",
+  "why": "Point of no return: Link cannot become a child again until the Forest Temple is finished."
+ },
+ {
+  "id": "tot-reward-from-rauru",
+  "chapter": "c07-forest-temple",
+  "sectionHint": "s01 Temple of Time, seven years later",
+  "era": "adult",
+  "why": "Light Medallion from Rauru on waking."
+ },
+ {
+  "id": "ogc-gs",
+  "chapter": "c07-forest-temple",
+  "sectionHint": "s02 Outside Ganon's Castle",
+  "era": "adult",
+  "why": "No item needed in logic (ZD uses the Hookshot); next to the Temple of Time."
+ },
+ {
+  "id": "event-epona",
+  "chapter": "c07-forest-temple",
+  "sectionHint": "s03 Lon Lon Ranch: Epona",
+  "era": "adult",
+  "why": "Adult + day + Epona's Song; win 2 races against Ingo."
+ },
+ {
+  "id": "minigame-llr-obstacle-course",
+  "chapter": "c07-forest-temple",
+  "sectionHint": "s03 Lon Lon Ranch: Epona",
+  "era": "adult",
+  "why": "Talk to Malon on Epona; under 50 s sends a cow to Link's House."
+ },
+ {
+  "id": "graveyard-dampe-race-hookshot-chest",
+  "chapter": "c07-forest-temple",
+  "sectionHint": "s04 Kakariko and the Graveyard (adult)",
+  "era": "adult",
+  "why": "Hookshot; adult, first race. Needed for the Forest Temple ledge."
+ },
+ {
+  "id": "graveyard-dampe-race-freestanding-poh",
+  "chapter": "c07-forest-temple",
+  "sectionHint": "s04 Kakariko and the Graveyard (adult)",
+  "era": "adult",
+  "why": "Race again under 60 s; SW takes it here."
+ },
+ {
+  "id": "graveyard-freestanding-poh",
+  "chapter": "c07-forest-temple",
+  "sectionHint": "s04 Kakariko and the Graveyard (adult)",
+  "era": "adult",
+  "why": "Ride the bean planted in c06."
+ },
+ {
+  "id": "song-from-windmill",
+  "chapter": "c07-forest-temple",
+  "sectionHint": "s04 Kakariko and the Graveyard (adult)",
+  "era": "adult",
+  "why": "Song of Storms, adult + Ocarina. Both walkthroughs learn it right after the Hookshot; 06's c08 slot is later than needed (D-02)."
+ },
+ {
+  "id": "kak-man-on-roof",
+  "chapter": "c07-forest-temple",
+  "sectionHint": "s04 Kakariko and the Graveyard (adult)",
+  "era": "adult",
+  "why": "Hookshot onto the roof (logic True for adult)."
+ },
+ {
+  "id": "kak-gs-above-impas-house",
+  "chapter": "c07-forest-temple",
+  "sectionHint": "s04 Kakariko and the Graveyard (adult)",
+  "era": "adult",
+  "why": "Adult + night (Hookshot)."
+ },
+ {
+  "id": "kak-anju-as-adult",
+  "chapter": "c07-forest-temple",
+  "sectionHint": "s04 Kakariko and the Graveyard (adult)",
+  "era": "adult",
+  "why": "Pocket Egg: adult + day; it hatches at the next dawn, ready for c08."
+ },
+ {
+  "id": "kak-40-gold-skulltula-reward",
+  "chapter": "c07-forest-temple",
+  "sectionHint": "s04 Kakariko and the Graveyard (adult)",
+  "era": "adult",
+  "why": "46 tokens held; collected on the first adult Kakariko visit instead of a child detour in c06."
+ },
+ {
+  "id": "kak-bazaar-item-1",
+  "chapter": "c07-forest-temple",
+  "sectionHint": "s04 Kakariko and the Graveyard (adult)",
+  "era": "adult",
+  "why": "Adult Hylian Shield purchase, day: optional, only to replace a lost shield."
+ },
+ {
+  "id": "kf-storms-grotto-chest",
+  "chapter": "c07-forest-temple",
+  "sectionHint": "s05 Kokiri Forest and the Lost Woods (adult)",
+  "era": "adult",
+  "why": "Song of Storms (s04) opens it; either age."
+ },
+ {
+  "id": "kf-gs-house-of-twins",
+  "chapter": "c07-forest-temple",
+  "sectionHint": "s05 Kokiri Forest and the Lost Woods (adult)",
+  "era": "adult",
+  "why": "Adult + night + Hookshot."
+ },
+ {
+  "id": "kf-links-house-cow",
+  "chapter": "c07-forest-temple",
+  "sectionHint": "s05 Kokiri Forest and the Lost Woods (adult)",
+  "era": "adult",
+  "why": "Obstacle course done in s03; Epona's Song + empty Bottle."
+ },
+ {
+  "id": "lw-gs-above-theater",
+  "chapter": "c07-forest-temple",
+  "sectionHint": "s05 Kokiri Forest and the Lost Woods (adult)",
+  "era": "adult",
+  "why": "Adult + night; ride the bean planted in c06."
+ },
+ {
+  "id": "sfm-gs",
+  "chapter": "c07-forest-temple",
+  "sectionHint": "s06 Sacred Forest Meadow (adult)",
+  "era": "adult",
+  "why": "Adult + night + Hookshot."
+ },
+ {
+  "id": "sheik-in-forest",
+  "chapter": "c07-forest-temple",
+  "sectionHint": "s06 Sacred Forest Meadow (adult)",
+  "era": "adult",
+  "why": "Minuet of Forest from Sheik on the way to the temple."
+ },
+ {
+  "id": "forest-temple-gs-first-room",
+  "chapter": "c07-forest-temple",
+  "sectionHint": "s07 Forest Temple",
+  "era": "adult",
+  "why": "Hookshot; first room."
+ },
+ {
+  "id": "forest-temple-first-room-chest",
+  "chapter": "c07-forest-temple",
+  "sectionHint": "s07 Forest Temple",
+  "era": "adult",
+  "why": "Free; first key."
+ },
+ {
+  "id": "forest-temple-gs-lobby",
+  "chapter": "c07-forest-temple",
+  "sectionHint": "s07 Forest Temple",
+  "era": "adult",
+  "why": "Hookshot."
+ },
+ {
+  "id": "forest-temple-first-stalfos-chest",
+  "chapter": "c07-forest-temple",
+  "sectionHint": "s07 Forest Temple",
+  "era": "adult",
+  "why": "Defeat the Stalfos."
+ },
+ {
+  "id": "forest-temple-map-chest",
+  "chapter": "c07-forest-temple",
+  "sectionHint": "s07 Forest Temple",
+  "era": "adult",
+  "why": "Free."
+ },
+ {
+  "id": "forest-temple-well-chest",
+  "chapter": "c07-forest-temple",
+  "sectionHint": "s07 Forest Temple",
+  "era": "adult",
+  "why": "Free after draining the well."
+ },
+ {
+  "id": "forest-temple-raised-island-courtyard-chest",
+  "chapter": "c07-forest-temple",
+  "sectionHint": "s07 Forest Temple",
+  "era": "adult",
+  "why": "Hookshot."
+ },
+ {
+  "id": "forest-temple-gs-raised-island-courtyard",
+  "chapter": "c07-forest-temple",
+  "sectionHint": "s07 Forest Temple",
+  "era": "adult",
+  "why": "Hookshot."
+ },
+ {
+  "id": "forest-temple-gs-level-island-courtyard",
+  "chapter": "c07-forest-temple",
+  "sectionHint": "s07 Forest Temple",
+  "era": "adult",
+  "why": "Hookshot from the upper ledge (or Longshot)."
+ },
+ {
+  "id": "forest-temple-eye-switch-chest",
+  "chapter": "c07-forest-temple",
+  "sectionHint": "s07 Forest Temple",
+  "era": "adult",
+  "why": "Goron's Bracelet + Fairy Bow; take it once the Bow is found."
+ },
+ {
+  "id": "forest-temple-boss-key-chest",
+  "chapter": "c07-forest-temple",
+  "sectionHint": "s07 Forest Temple",
+  "era": "adult",
+  "why": "Free."
+ },
+ {
+  "id": "forest-temple-floormaster-chest",
+  "chapter": "c07-forest-temple",
+  "sectionHint": "s07 Forest Temple",
+  "era": "adult",
+  "why": "Free."
+ },
+ {
+  "id": "forest-temple-bow-chest",
+  "chapter": "c07-forest-temple",
+  "sectionHint": "s07 Forest Temple",
+  "era": "adult",
+  "why": "Fairy Bow; mandatory."
+ },
+ {
+  "id": "forest-temple-red-poe-chest",
+  "chapter": "c07-forest-temple",
+  "sectionHint": "s07 Forest Temple",
+  "era": "adult",
+  "why": "Fairy Bow (Joelle)."
+ },
+ {
+  "id": "forest-temple-blue-poe-chest",
+  "chapter": "c07-forest-temple",
+  "sectionHint": "s07 Forest Temple",
+  "era": "adult",
+  "why": "Fairy Bow (Beth); compass."
+ },
+ {
+  "id": "forest-temple-falling-ceiling-room-chest",
+  "chapter": "c07-forest-temple",
+  "sectionHint": "s07 Forest Temple",
+  "era": "adult",
+  "why": "Free (ZD omits it; LL lists it)."
+ },
+ {
+  "id": "forest-temple-basement-chest",
+  "chapter": "c07-forest-temple",
+  "sectionHint": "s07 Forest Temple",
+  "era": "adult",
+  "why": "Free."
+ },
+ {
+  "id": "forest-temple-gs-basement",
+  "chapter": "c07-forest-temple",
+  "sectionHint": "s07 Forest Temple",
+  "era": "adult",
+  "why": "Hookshot."
+ },
+ {
+  "id": "phantom-ganon",
+  "chapter": "c07-forest-temple",
+  "sectionHint": "s08 Boss: Phantom Ganon",
+  "era": "adult",
+  "why": "Forest Medallion."
+ },
+ {
+  "id": "forest-temple-phantom-ganon-heart",
+  "chapter": "c07-forest-temple",
+  "sectionHint": "s08 Boss: Phantom Ganon",
+  "era": "adult",
+  "why": "Drops after the boss; take it before the blue warp."
+ },
+ {
+  "id": "sheik-at-temple",
+  "chapter": "c07-forest-temple",
+  "sectionHint": "s09 Prelude of Light",
+  "era": "adult",
+  "why": "Prelude of Light on the next Temple of Time entry with the Forest Medallion."
+ },
+ {
+  "id": "big-poe-hf-01",
+  "chapter": "c07-forest-temple",
+  "sectionHint": "s10 Big Poe hunt (sidequest)",
+  "era": "adult",
+  "why": "First point with Epona (s03), Fairy Bow (s07) and Bottles together."
+ },
+ {
+  "id": "big-poe-hf-02",
+  "chapter": "c07-forest-temple",
+  "sectionHint": "s10 Big Poe hunt (sidequest)",
+  "era": "adult",
+  "why": "Same hunt."
+ },
+ {
+  "id": "big-poe-hf-03",
+  "chapter": "c07-forest-temple",
+  "sectionHint": "s10 Big Poe hunt (sidequest)",
+  "era": "adult",
+  "why": "Same hunt."
+ },
+ {
+  "id": "big-poe-hf-04",
+  "chapter": "c07-forest-temple",
+  "sectionHint": "s10 Big Poe hunt (sidequest)",
+  "era": "adult",
+  "why": "Same hunt."
+ },
+ {
+  "id": "big-poe-hf-05",
+  "chapter": "c07-forest-temple",
+  "sectionHint": "s10 Big Poe hunt (sidequest)",
+  "era": "adult",
+  "why": "Same hunt."
+ },
+ {
+  "id": "big-poe-hf-06",
+  "chapter": "c07-forest-temple",
+  "sectionHint": "s10 Big Poe hunt (sidequest)",
+  "era": "adult",
+  "why": "Same hunt."
+ },
+ {
+  "id": "big-poe-hf-07",
+  "chapter": "c07-forest-temple",
+  "sectionHint": "s10 Big Poe hunt (sidequest)",
+  "era": "adult",
+  "why": "Same hunt."
+ },
+ {
+  "id": "big-poe-hf-08",
+  "chapter": "c07-forest-temple",
+  "sectionHint": "s10 Big Poe hunt (sidequest)",
+  "era": "adult",
+  "why": "Same hunt."
+ },
+ {
+  "id": "big-poe-hf-09",
+  "chapter": "c07-forest-temple",
+  "sectionHint": "s10 Big Poe hunt (sidequest)",
+  "era": "adult",
+  "why": "Same hunt."
+ },
+ {
+  "id": "big-poe-hf-10",
+  "chapter": "c07-forest-temple",
+  "sectionHint": "s10 Big Poe hunt (sidequest)",
+  "era": "adult",
+  "why": "Same hunt."
+ },
+ {
+  "id": "market-10-big-poes",
+  "chapter": "c07-forest-temple",
+  "sectionHint": "s10 Big Poe hunt (sidequest)",
+  "era": "adult",
+  "why": "Fourth Bottle at 1000 points; sell in batches of up to 3 bottles."
+ },
+ {
+  "id": "kak-50-gold-skulltula-reward",
+  "chapter": "c08-fire-temple",
+  "sectionHint": "s01 Kakariko: rewards and the trade begins",
+  "era": "adult",
+  "why": "54 tokens held after c07."
+ },
+ {
+  "id": "kak-shooting-gallery-reward",
+  "chapter": "c08-fire-temple",
+  "sectionHint": "s01 Kakariko: rewards and the trade begins",
+  "era": "adult",
+  "why": "Adult + day + Fairy Bow (c07); Quiver upgrade."
+ },
+ {
+  "id": "item-pocket-cucco",
+  "chapter": "c08-fire-temple",
+  "sectionHint": "s01 Kakariko: rewards and the trade begins",
+  "era": "adult",
+  "why": "The Pocket Egg (c07) hatches at a dawn."
+ },
+ {
+  "id": "event-wake-talon-kakariko",
+  "chapter": "c08-fire-temple",
+  "sectionHint": "s01 Kakariko: rewards and the trade begins",
+  "era": "adult",
+  "why": "Wake Talon with the Pocket Cucco; Anju will not trade until he is up."
+ },
+ {
+  "id": "kak-anju-trade-pocket-cucco",
+  "chapter": "c08-fire-temple",
+  "sectionHint": "s01 Kakariko: rewards and the trade begins",
+  "era": "adult",
+  "why": "Cojiro, adult + day."
+ },
+ {
+  "id": "lw-trade-cojiro",
+  "chapter": "c08-fire-temple",
+  "sectionHint": "s02 Biggoron's Sword trade, part 1",
+  "era": "adult",
+  "why": "Odd Mushroom from Grog; 3:00 timer, no warps."
+ },
+ {
+  "id": "kak-granny-trade-odd-mushroom",
+  "chapter": "c08-fire-temple",
+  "sectionHint": "s02 Biggoron's Sword trade, part 1",
+  "era": "adult",
+  "why": "Odd Potion from Granny in Kakariko."
+ },
+ {
+  "id": "kak-granny-buy-blue-potion",
+  "chapter": "c08-fire-temple",
+  "sectionHint": "s02 Biggoron's Sword trade, part 1",
+  "era": "adult",
+  "why": "Blue Potion, 100 Rupees + empty Bottle; unlocked by the trade just made."
+ },
+ {
+  "id": "lw-trade-odd-potion",
+  "chapter": "c08-fire-temple",
+  "sectionHint": "s02 Biggoron's Sword trade, part 1",
+  "era": "adult",
+  "why": "Poacher's Saw from Fado. Safe: the Mask of Truth Deku Nut upgrade was taken in c06 (C-02)."
+ },
+ {
+  "id": "pierre",
+  "chapter": "c08-fire-temple",
+  "sectionHint": "s03 Lake Hylia (adult) and the Scarecrow's Song",
+  "era": "adult",
+  "why": "Scarecrow's Song, adult half; needed for the Dodongo's Cavern GS and the Fire Temple scarecrow checks later this chapter (ZD 8.1 visits the lake here)."
+ },
+ {
+  "id": "lh-adult-fishing",
+  "chapter": "c08-fire-temple",
+  "sectionHint": "s03 Lake Hylia (adult) and the Scarecrow's Song",
+  "era": "adult",
+  "why": "Golden Scale; the pond works while the lake is drained."
+ },
+ {
+  "id": "lh-lab-dive",
+  "chapter": "c08-fire-temple",
+  "sectionHint": "s03 Lake Hylia (adult) and the Scarecrow's Song",
+  "era": "adult",
+  "why": "Golden Scale just won."
+ },
+ {
+  "id": "lh-freestanding-poh",
+  "chapter": "c08-fire-temple",
+  "sectionHint": "s03 Lake Hylia (adult) and the Scarecrow's Song",
+  "era": "adult",
+  "why": "Ride the bean planted in c05 onto the lab roof."
+ },
+ {
+  "id": "hf-tektite-grotto-freestanding-poh",
+  "chapter": "c08-fire-temple",
+  "sectionHint": "s03 Lake Hylia (adult) and the Scarecrow's Song",
+  "era": "adult",
+  "why": "Bombs + Golden Scale; on the way back across the field (ZD 8.1)."
+ },
+ {
+  "id": "gv-trade-poachers-saw",
+  "chapter": "c08-fire-temple",
+  "sectionHint": "s04 Gerudo Valley trade stop",
+  "era": "adult",
+  "why": "Broken Goron's Sword; Epona jump over the broken bridge."
+ },
+ {
+  "id": "gv-gs-behind-tent",
+  "chapter": "c08-fire-temple",
+  "sectionHint": "s04 Gerudo Valley trade stop",
+  "era": "adult",
+  "why": "Adult + night + Hookshot; already in the valley for the trade (04 had c13; earlier, no extra trip)."
+ },
+ {
+  "id": "gv-gs-pillar",
+  "chapter": "c08-fire-temple",
+  "sectionHint": "s04 Gerudo Valley trade stop",
+  "era": "adult",
+  "why": "Adult + night + Hookshot; same visit."
+ },
+ {
+  "id": "dmt-trade-broken-sword",
+  "chapter": "c08-fire-temple",
+  "sectionHint": "s05 Death Mountain Trail (adult)",
+  "era": "adult",
+  "why": "Prescription from Biggoron at the summit."
+ },
+ {
+  "id": "dmt-storms-grotto-chest",
+  "chapter": "c08-fire-temple",
+  "sectionHint": "s05 Death Mountain Trail (adult)",
+  "era": "adult",
+  "why": "Song of Storms (c07)."
+ },
+ {
+  "id": "dodongos-cavern-gs-scarecrow",
+  "chapter": "c08-fire-temple",
+  "sectionHint": "s05 Death Mountain Trail (adult)",
+  "era": "adult",
+  "why": "Scarecrow's Song (s03) + Hookshot."
+ },
+ {
+  "id": "gc-rolling-goron-as-adult",
+  "chapter": "c08-fire-temple",
+  "sectionHint": "s06 Goron City (adult)",
+  "era": "adult",
+  "why": "Goron Tunic: stop Link the Goron with a Bomb; required for the crater."
+ },
+ {
+  "id": "gc-gs-center-platform",
+  "chapter": "c08-fire-temple",
+  "sectionHint": "s06 Goron City (adult)",
+  "era": "adult",
+  "why": "Adult, any time (logic; ZD's night claim loses, rule A/C-09)."
+ },
+ {
+  "id": "gc-medigoron",
+  "chapter": "c08-fire-temple",
+  "sectionHint": "s06 Goron City (adult)",
+  "era": "adult",
+  "why": "Giant's Knife, 200 Rupees; wallet upgraded in c03/c06."
+ },
+ {
+  "id": "gc-shop-item-5",
+  "chapter": "c08-fire-temple",
+  "sectionHint": "s06 Goron City (adult)",
+  "era": "adult",
+  "why": "Spare Goron Tunic, 200 Rupees: optional."
+ },
+ {
+  "id": "sheik-in-crater",
+  "chapter": "c08-fire-temple",
+  "sectionHint": "s07 Death Mountain Crater",
+  "era": "adult",
+  "why": "Bolero of Fire at the crater bridge."
+ },
+ {
+  "id": "fire-temple-near-boss-chest",
+  "chapter": "c08-fire-temple",
+  "sectionHint": "s08 Fire Temple",
+  "era": "adult",
+  "why": "Free, first floor."
+ },
+ {
+  "id": "fire-temple-flare-dancer-chest",
+  "chapter": "c08-fire-temple",
+  "sectionHint": "s08 Fire Temple",
+  "era": "adult",
+  "why": "Behind the first Flare Dancer area (Hammer route, compiler confirms order)."
+ },
+ {
+  "id": "fire-temple-boss-key-chest",
+  "chapter": "c08-fire-temple",
+  "sectionHint": "s08 Fire Temple",
+  "era": "adult",
+  "why": "Free in its loop."
+ },
+ {
+  "id": "fire-temple-gs-boss-key-loop",
+  "chapter": "c08-fire-temple",
+  "sectionHint": "s08 Fire Temple",
+  "era": "adult",
+  "why": "Free in the same loop."
+ },
+ {
+  "id": "fire-temple-big-lava-room-lower-open-door-chest",
+  "chapter": "c08-fire-temple",
+  "sectionHint": "s08 Fire Temple",
+  "era": "adult",
+  "why": "Free."
+ },
+ {
+  "id": "fire-temple-big-lava-room-blocked-door-chest",
+  "chapter": "c08-fire-temple",
+  "sectionHint": "s08 Fire Temple",
+  "era": "adult",
+  "why": "Bombs."
+ },
+ {
+  "id": "fire-temple-gs-song-of-time-room",
+  "chapter": "c08-fire-temple",
+  "sectionHint": "s08 Fire Temple",
+  "era": "adult",
+  "why": "Song of Time."
+ },
+ {
+  "id": "fire-temple-boulder-maze-lower-chest",
+  "chapter": "c08-fire-temple",
+  "sectionHint": "s08 Fire Temple",
+  "era": "adult",
+  "why": "Free."
+ },
+ {
+  "id": "fire-temple-boulder-maze-side-room-chest",
+  "chapter": "c08-fire-temple",
+  "sectionHint": "s08 Fire Temple",
+  "era": "adult",
+  "why": "Free."
+ },
+ {
+  "id": "fire-temple-gs-boulder-maze",
+  "chapter": "c08-fire-temple",
+  "sectionHint": "s08 Fire Temple",
+  "era": "adult",
+  "why": "Bombs."
+ },
+ {
+  "id": "fire-temple-map-chest",
+  "chapter": "c08-fire-temple",
+  "sectionHint": "s08 Fire Temple",
+  "era": "adult",
+  "why": "Fairy Bow."
+ },
+ {
+  "id": "fire-temple-boulder-maze-upper-chest",
+  "chapter": "c08-fire-temple",
+  "sectionHint": "s08 Fire Temple",
+  "era": "adult",
+  "why": "Free."
+ },
+ {
+  "id": "fire-temple-boulder-maze-shortcut-chest",
+  "chapter": "c08-fire-temple",
+  "sectionHint": "s08 Fire Temple",
+  "era": "adult",
+  "why": "Bombs."
+ },
+ {
+  "id": "fire-temple-scarecrow-chest",
+  "chapter": "c08-fire-temple",
+  "sectionHint": "s08 Fire Temple",
+  "era": "adult",
+  "why": "Scarecrow's Song (s03) + Hookshot."
+ },
+ {
+  "id": "fire-temple-gs-scarecrow-climb",
+  "chapter": "c08-fire-temple",
+  "sectionHint": "s08 Fire Temple",
+  "era": "adult",
+  "why": "Scarecrow's Song + Hookshot."
+ },
+ {
+  "id": "fire-temple-gs-scarecrow-top",
+  "chapter": "c08-fire-temple",
+  "sectionHint": "s08 Fire Temple",
+  "era": "adult",
+  "why": "Scarecrow's Song + Hookshot."
+ },
+ {
+  "id": "fire-temple-compass-chest",
+  "chapter": "c08-fire-temple",
+  "sectionHint": "s08 Fire Temple",
+  "era": "adult",
+  "why": "Free."
+ },
+ {
+  "id": "fire-temple-megaton-hammer-chest",
+  "chapter": "c08-fire-temple",
+  "sectionHint": "s08 Fire Temple",
+  "era": "adult",
+  "why": "Megaton Hammer; Bombs."
+ },
+ {
+  "id": "fire-temple-highest-goron-chest",
+  "chapter": "c08-fire-temple",
+  "sectionHint": "s08 Fire Temple",
+  "era": "adult",
+  "why": "Megaton Hammer + Song of Time."
+ },
+ {
+  "id": "volvagia",
+  "chapter": "c08-fire-temple",
+  "sectionHint": "s09 Boss: Volvagia",
+  "era": "adult",
+  "why": "Fire Medallion."
+ },
+ {
+  "id": "fire-temple-volvagia-heart",
+  "chapter": "c08-fire-temple",
+  "sectionHint": "s09 Boss: Volvagia",
+  "era": "adult",
+  "why": "Drops after the boss; take it before the blue warp."
+ },
+ {
+  "id": "dmc-great-fairy-reward",
+  "chapter": "c08-fire-temple",
+  "sectionHint": "s10 Megaton Hammer sweep",
+  "era": "adult",
+  "why": "Double Magic: Hammer on the crater rocks + Zelda's Lullaby."
+ },
+ {
+  "id": "gc-maze-left-chest",
+  "chapter": "c08-fire-temple",
+  "sectionHint": "s10 Megaton Hammer sweep",
+  "era": "adult",
+  "why": "Hammer the Goron City maze boulder."
+ },
+ {
+  "id": "dmt-gs-above-dodongos-cavern",
+  "chapter": "c08-fire-temple",
+  "sectionHint": "s10 Megaton Hammer sweep",
+  "era": "adult",
+  "why": "Adult + night + Hammer."
+ },
+ {
+  "id": "dmt-gs-falling-rocks-path",
+  "chapter": "c08-fire-temple",
+  "sectionHint": "s10 Megaton Hammer sweep",
+  "era": "adult",
+  "why": "Adult + night + Hammer."
+ },
+ {
+  "id": "zr-gs-near-raised-grottos",
+  "chapter": "c09-ice-cavern",
+  "sectionHint": "s01 Zora's River (adult)",
+  "era": "adult",
+  "why": "Adult + night + Hookshot; on the way to the Domain."
+ },
+ {
+  "id": "zr-gs-above-bridge",
+  "chapter": "c09-ice-cavern",
+  "sectionHint": "s01 Zora's River (adult)",
+  "era": "adult",
+  "why": "Adult + night + Hookshot (logic night; ZD box silent, C ZD #66)."
+ },
+ {
+  "id": "zd-gs-frozen-waterfall",
+  "chapter": "c09-ice-cavern",
+  "sectionHint": "s02 Frozen Zora's Domain and Fountain",
+  "era": "adult",
+  "why": "Adult + night; Hookshot or Fairy Bow."
+ },
+ {
+  "id": "zf-iceberg-freestanding-poh",
+  "chapter": "c09-ice-cavern",
+  "sectionHint": "s02 Frozen Zora's Domain and Fountain",
+  "era": "adult",
+  "why": "Adult, no item."
+ },
+ {
+  "id": "ice-cavern-gs-spinning-scythe-room",
+  "chapter": "c09-ice-cavern",
+  "sectionHint": "s03 Ice Cavern",
+  "era": "adult",
+  "why": "Hookshot."
+ },
+ {
+  "id": "ice-cavern-map-chest",
+  "chapter": "c09-ice-cavern",
+  "sectionHint": "s03 Ice Cavern",
+  "era": "adult",
+  "why": "Blue Fire in a Bottle."
+ },
+ {
+  "id": "ice-cavern-compass-chest",
+  "chapter": "c09-ice-cavern",
+  "sectionHint": "s03 Ice Cavern",
+  "era": "adult",
+  "why": "Free."
+ },
+ {
+  "id": "ice-cavern-freestanding-poh",
+  "chapter": "c09-ice-cavern",
+  "sectionHint": "s03 Ice Cavern",
+  "era": "adult",
+  "why": "Blue Fire; the only Piece of Heart inside a dungeon."
+ },
+ {
+  "id": "ice-cavern-gs-heart-piece-room",
+  "chapter": "c09-ice-cavern",
+  "sectionHint": "s03 Ice Cavern",
+  "era": "adult",
+  "why": "Hookshot (Blue Fire to enter)."
+ },
+ {
+  "id": "ice-cavern-gs-push-block-room",
+  "chapter": "c09-ice-cavern",
+  "sectionHint": "s03 Ice Cavern",
+  "era": "adult",
+  "why": "Hookshot (Blue Fire to enter)."
+ },
+ {
+  "id": "ice-cavern-iron-boots-chest",
+  "chapter": "c09-ice-cavern",
+  "sectionHint": "s03 Ice Cavern",
+  "era": "adult",
+  "why": "Iron Boots; mandatory for the Water Temple (C-10)."
+ },
+ {
+  "id": "sheik-in-ice-cavern",
+  "chapter": "c09-ice-cavern",
+  "sectionHint": "s03 Ice Cavern",
+  "era": "adult",
+  "why": "Serenade of Water after the Iron Boots."
+ },
+ {
+  "id": "zd-king-zora-thawed",
+  "chapter": "c09-ice-cavern",
+  "sectionHint": "s04 King Zora and the Fountain floor",
+  "era": "adult",
+  "why": "Zora Tunic: Blue Fire on King Zora."
+ },
+ {
+  "id": "zd-shop-item-1",
+  "chapter": "c09-ice-cavern",
+  "sectionHint": "s04 King Zora and the Fountain floor",
+  "era": "adult",
+  "why": "Spare Zora Tunic, 300 Rupees: optional; shop needs Blue Fire as adult."
+ },
+ {
+  "id": "zf-bottom-freestanding-poh",
+  "chapter": "c09-ice-cavern",
+  "sectionHint": "s04 King Zora and the Fountain floor",
+  "era": "adult",
+  "why": "Iron Boots + Zora Tunic."
+ },
+ {
+  "id": "zd-trade-prescription",
+  "chapter": "c09-ice-cavern",
+  "sectionHint": "s05 Biggoron's Sword trade, part 2",
+  "era": "adult",
+  "why": "Eyeball Frog: King Zora must be thawed (s04); 3:00 timer."
+ },
+ {
+  "id": "lh-trade-eyeball-frog",
+  "chapter": "c09-ice-cavern",
+  "sectionHint": "s05 Biggoron's Sword trade, part 2",
+  "era": "adult",
+  "why": "World's Finest Eye Drops at the lab; 4:00 timer. No warp songs."
+ },
+ {
+  "id": "dmt-trade-eyedrops",
+  "chapter": "c09-ice-cavern",
+  "sectionHint": "s05 Biggoron's Sword trade, part 2",
+  "era": "adult",
+  "why": "Claim Check. Must run before the Water Temple: after c10 the Kakariko cutscene fires on entry and would eat the 4:00 timer (SW)."
+ },
+ {
+  "id": "dmt-biggoron",
+  "chapter": "c09-ice-cavern",
+  "sectionHint": "s05 Biggoron's Sword trade, part 2",
+  "era": "adult",
+  "why": "Biggoron's Sword after 3 dawns (decomp); pass time with the Sun's Song."
+ },
+ {
+  "id": "lh-gs-lab-crate",
+  "chapter": "c10-water-temple",
+  "sectionHint": "s01 Lake Hylia (drained)",
+  "era": "adult",
+  "why": "Iron Boots + Hookshot in the lab pool (any time per logic; SW's night claim loses, C-09)."
+ },
+ {
+  "id": "water-temple-map-chest",
+  "chapter": "c10-water-temple",
+  "sectionHint": "s02 Water Temple",
+  "era": "adult",
+  "why": "Raise the water."
+ },
+ {
+  "id": "water-temple-compass-chest",
+  "chapter": "c10-water-temple",
+  "sectionHint": "s02 Water Temple",
+  "era": "adult",
+  "why": "Zelda's Lullaby/Iron Boots + Hookshot."
+ },
+ {
+  "id": "water-temple-cracked-wall-chest",
+  "chapter": "c10-water-temple",
+  "sectionHint": "s02 Water Temple",
+  "era": "adult",
+  "why": "Bombs."
+ },
+ {
+  "id": "water-temple-torches-chest",
+  "chapter": "c10-water-temple",
+  "sectionHint": "s02 Water Temple",
+  "era": "adult",
+  "why": "Fairy Bow or Din's Fire."
+ },
+ {
+  "id": "water-temple-gs-behind-gate",
+  "chapter": "c10-water-temple",
+  "sectionHint": "s02 Water Temple",
+  "era": "adult",
+  "why": "Lowest water level, Bombs, Iron Boots, Hookshot."
+ },
+ {
+  "id": "water-temple-central-pillar-chest",
+  "chapter": "c10-water-temple",
+  "sectionHint": "s02 Water Temple",
+  "era": "adult",
+  "why": "Iron Boots + Zora Tunic + Hookshot."
+ },
+ {
+  "id": "water-temple-central-bow-target-chest",
+  "chapter": "c10-water-temple",
+  "sectionHint": "s02 Water Temple",
+  "era": "adult",
+  "why": "Fairy Bow on the eye switch."
+ },
+ {
+  "id": "water-temple-boss-key-chest",
+  "chapter": "c10-water-temple",
+  "sectionHint": "s02 Water Temple",
+  "era": "adult",
+  "why": "After the Longshot route."
+ },
+ {
+  "id": "water-temple-longshot-chest",
+  "chapter": "c10-water-temple",
+  "sectionHint": "s02 Water Temple",
+  "era": "adult",
+  "why": "Longshot after Dark Link."
+ },
+ {
+  "id": "water-temple-river-chest",
+  "chapter": "c10-water-temple",
+  "sectionHint": "s02 Water Temple",
+  "era": "adult",
+  "why": "Fairy Bow."
+ },
+ {
+  "id": "water-temple-gs-river",
+  "chapter": "c10-water-temple",
+  "sectionHint": "s02 Water Temple",
+  "era": "adult",
+  "why": "Iron Boots + Zora Tunic (Longshot)."
+ },
+ {
+  "id": "water-temple-dragon-chest",
+  "chapter": "c10-water-temple",
+  "sectionHint": "s02 Water Temple",
+  "era": "adult",
+  "why": "Free in its room."
+ },
+ {
+  "id": "water-temple-gs-falling-platform-room",
+  "chapter": "c10-water-temple",
+  "sectionHint": "s02 Water Temple",
+  "era": "adult",
+  "why": "Longshot."
+ },
+ {
+  "id": "water-temple-gs-central-pillar",
+  "chapter": "c10-water-temple",
+  "sectionHint": "s02 Water Temple",
+  "era": "adult",
+  "why": "Longshot."
+ },
+ {
+  "id": "water-temple-gs-near-boss-key-chest",
+  "chapter": "c10-water-temple",
+  "sectionHint": "s02 Water Temple",
+  "era": "adult",
+  "why": "Longshot + Iron Boots."
+ },
+ {
+  "id": "morpha",
+  "chapter": "c10-water-temple",
+  "sectionHint": "s03 Boss: Morpha",
+  "era": "adult",
+  "why": "Water Medallion."
+ },
+ {
+  "id": "water-temple-morpha-heart",
+  "chapter": "c10-water-temple",
+  "sectionHint": "s03 Boss: Morpha",
+  "era": "adult",
+  "why": "Drops after the boss; take it before the blue warp."
+ },
+ {
+  "id": "lh-sun",
+  "chapter": "c10-water-temple",
+  "sectionHint": "s04 Lake Hylia refilled",
+  "era": "adult",
+  "why": "Fire Arrows: Fairy Bow at the rising sun once the lake refills."
+ },
+ {
+  "id": "lh-gs-tree",
+  "chapter": "c10-water-temple",
+  "sectionHint": "s04 Lake Hylia refilled",
+  "era": "adult",
+  "why": "Adult + night + Longshot."
+ },
+ {
+  "id": "sheik-in-kakariko",
+  "chapter": "c11-bottom-of-well",
+  "sectionHint": "s01 Kakariko in flames",
+  "era": "adult",
+  "why": "Nocturne of Shadow: first Kakariko entry with the Forest, Fire and Water Medallions."
+ },
+ {
+  "id": "hc-gs-storms-grotto",
+  "chapter": "c11-bottom-of-well",
+  "sectionHint": "s02 Child trip: Song of Storms checks",
+  "era": "child",
+  "why": "Child + Song of Storms + Bombs + Boomerang; first child trip after learning the song in c07 that is not a detour."
+ },
+ {
+  "id": "zr-frogs-in-the-rain",
+  "chapter": "c11-bottom-of-well",
+  "sectionHint": "s02 Child trip: Song of Storms checks",
+  "era": "child",
+  "why": "Child + Song of Storms."
+ },
+ {
+  "id": "zr-frogs-song-of-time",
+  "chapter": "c11-bottom-of-well",
+  "sectionHint": "s02 Child trip: Song of Storms checks",
+  "era": "child",
+  "why": "Child + Song of Time; held back from c06 to share this frog visit."
+ },
+ {
+  "id": "zr-frogs-ocarina-game",
+  "chapter": "c11-bottom-of-well",
+  "sectionHint": "s02 Child trip: Song of Storms checks",
+  "era": "child",
+  "why": "Child after all 6 frog songs (Song of Storms included)."
+ },
+ {
+  "id": "bean-death-mountain-crater",
+  "chapter": "c11-bottom-of-well",
+  "sectionHint": "s02 Child trip: Song of Storms checks",
+  "era": "child",
+  "why": "Buy the last beans at Zora's River, then Bolero of Fire (c08) takes the child to the crater soil."
+ },
+ {
+  "id": "dmc-gs-bean-patch",
+  "chapter": "c11-bottom-of-well",
+  "sectionHint": "s02 Child trip: Song of Storms checks",
+  "era": "child",
+  "why": "Child + Bolero + Bugs; same crater visit."
+ },
+ {
+  "id": "event-drain-well",
+  "chapter": "c11-bottom-of-well",
+  "sectionHint": "s03 Bottom of the Well",
+  "era": "child",
+  "why": "Child + Song of Storms in the Windmill drains the well."
+ },
+ {
+  "id": "bottom-of-the-well-front-left-fake-wall-chest",
+  "chapter": "c11-bottom-of-well",
+  "sectionHint": "s03 Bottom of the Well",
+  "era": "child",
+  "why": "Free."
+ },
+ {
+  "id": "bottom-of-the-well-front-center-bombable-chest",
+  "chapter": "c11-bottom-of-well",
+  "sectionHint": "s03 Bottom of the Well",
+  "era": "child",
+  "why": "Bombs."
+ },
+ {
+  "id": "bottom-of-the-well-right-bottom-fake-wall-chest",
+  "chapter": "c11-bottom-of-well",
+  "sectionHint": "s03 Bottom of the Well",
+  "era": "child",
+  "why": "Free."
+ },
+ {
+  "id": "bottom-of-the-well-compass-chest",
+  "chapter": "c11-bottom-of-well",
+  "sectionHint": "s03 Bottom of the Well",
+  "era": "child",
+  "why": "Free."
+ },
+ {
+  "id": "bottom-of-the-well-center-skulltula-chest",
+  "chapter": "c11-bottom-of-well",
+  "sectionHint": "s03 Bottom of the Well",
+  "era": "child",
+  "why": "Free."
+ },
+ {
+  "id": "bottom-of-the-well-back-left-bombable-chest",
+  "chapter": "c11-bottom-of-well",
+  "sectionHint": "s03 Bottom of the Well",
+  "era": "child",
+  "why": "Bombs."
+ },
+ {
+  "id": "bottom-of-the-well-freestanding-key",
+  "chapter": "c11-bottom-of-well",
+  "sectionHint": "s03 Bottom of the Well",
+  "era": "child",
+  "why": "Deku Sticks or Din's Fire."
+ },
+ {
+  "id": "bottom-of-the-well-fire-keese-chest",
+  "chapter": "c11-bottom-of-well",
+  "sectionHint": "s03 Bottom of the Well",
+  "era": "child",
+  "why": "Free (Deku Shield)."
+ },
+ {
+  "id": "bottom-of-the-well-like-like-chest",
+  "chapter": "c11-bottom-of-well",
+  "sectionHint": "s03 Bottom of the Well",
+  "era": "child",
+  "why": "Free (Hylian Shield)."
+ },
+ {
+  "id": "bottom-of-the-well-gs-like-like-cage",
+  "chapter": "c11-bottom-of-well",
+  "sectionHint": "s03 Bottom of the Well",
+  "era": "child",
+  "why": "Boomerang."
+ },
+ {
+  "id": "bottom-of-the-well-gs-west-inner-room",
+  "chapter": "c11-bottom-of-well",
+  "sectionHint": "s03 Bottom of the Well",
+  "era": "child",
+  "why": "Boomerang + Small Key."
+ },
+ {
+  "id": "bottom-of-the-well-gs-east-inner-room",
+  "chapter": "c11-bottom-of-well",
+  "sectionHint": "s03 Bottom of the Well",
+  "era": "child",
+  "why": "Boomerang + Small Key."
+ },
+ {
+  "id": "bottom-of-the-well-map-chest",
+  "chapter": "c11-bottom-of-well",
+  "sectionHint": "s03 Bottom of the Well",
+  "era": "child",
+  "why": "Bombs."
+ },
+ {
+  "id": "bottom-of-the-well-underwater-left-chest",
+  "chapter": "c11-bottom-of-well",
+  "sectionHint": "s03 Bottom of the Well",
+  "era": "child",
+  "why": "Zelda's Lullaby drains the water."
+ },
+ {
+  "id": "bottom-of-the-well-underwater-front-chest",
+  "chapter": "c11-bottom-of-well",
+  "sectionHint": "s03 Bottom of the Well",
+  "era": "child",
+  "why": "Zelda's Lullaby."
+ },
+ {
+  "id": "bottom-of-the-well-lens-of-truth-chest",
+  "chapter": "c11-bottom-of-well",
+  "sectionHint": "s03 Bottom of the Well",
+  "era": "child",
+  "why": "Lens of Truth: Zelda's Lullaby + Kokiri Sword (Dead Hand)."
+ },
+ {
+  "id": "bottom-of-the-well-invisible-chest",
+  "chapter": "c11-bottom-of-well",
+  "sectionHint": "s03 Bottom of the Well",
+  "era": "child",
+  "why": "Lens of Truth, just obtained."
+ },
+ {
+  "id": "market-treasure-chest-game-reward",
+  "chapter": "c11-bottom-of-well",
+  "sectionHint": "s04 Treasure Chest Game",
+  "era": "child",
+  "why": "Child + night + 10 Rupees; the Lens of Truth (s03) makes it reliable (logic requires it; vanilla allows luck)."
+ },
+ {
+  "id": "dmc-volcano-freestanding-poh",
+  "chapter": "c12-shadow-temple",
+  "sectionHint": "s01 Death Mountain Crater bean ride",
+  "era": "adult",
+  "why": "Adult Bolero; ride the bean planted in c11. First adult moment after planting."
+ },
+ {
+  "id": "shadow-temple-map-chest",
+  "chapter": "c12-shadow-temple",
+  "sectionHint": "s02 Shadow Temple",
+  "era": "adult",
+  "why": "Lens of Truth."
+ },
+ {
+  "id": "shadow-temple-hover-boots-chest",
+  "chapter": "c12-shadow-temple",
+  "sectionHint": "s02 Shadow Temple",
+  "era": "adult",
+  "why": "Hover Boots after Dead Hand."
+ },
+ {
+  "id": "shadow-temple-compass-chest",
+  "chapter": "c12-shadow-temple",
+  "sectionHint": "s02 Shadow Temple",
+  "era": "adult",
+  "why": "Free."
+ },
+ {
+  "id": "shadow-temple-early-silver-rupee-chest",
+  "chapter": "c12-shadow-temple",
+  "sectionHint": "s02 Shadow Temple",
+  "era": "adult",
+  "why": "Silver Rupees (Hover Boots)."
+ },
+ {
+  "id": "shadow-temple-invisible-blades-visible-chest",
+  "chapter": "c12-shadow-temple",
+  "sectionHint": "s02 Shadow Temple",
+  "era": "adult",
+  "why": "Free."
+ },
+ {
+  "id": "shadow-temple-invisible-blades-invisible-chest",
+  "chapter": "c12-shadow-temple",
+  "sectionHint": "s02 Shadow Temple",
+  "era": "adult",
+  "why": "Lens of Truth."
+ },
+ {
+  "id": "shadow-temple-gs-invisible-blades-room",
+  "chapter": "c12-shadow-temple",
+  "sectionHint": "s02 Shadow Temple",
+  "era": "adult",
+  "why": "Free in the room."
+ },
+ {
+  "id": "shadow-temple-falling-spikes-lower-chest",
+  "chapter": "c12-shadow-temple",
+  "sectionHint": "s02 Shadow Temple",
+  "era": "adult",
+  "why": "Free."
+ },
+ {
+  "id": "shadow-temple-falling-spikes-upper-chest",
+  "chapter": "c12-shadow-temple",
+  "sectionHint": "s02 Shadow Temple",
+  "era": "adult",
+  "why": "Goron's Bracelet (block)."
+ },
+ {
+  "id": "shadow-temple-falling-spikes-switch-chest",
+  "chapter": "c12-shadow-temple",
+  "sectionHint": "s02 Shadow Temple",
+  "era": "adult",
+  "why": "Goron's Bracelet (block)."
+ },
+ {
+  "id": "shadow-temple-gs-falling-spikes-room",
+  "chapter": "c12-shadow-temple",
+  "sectionHint": "s02 Shadow Temple",
+  "era": "adult",
+  "why": "Hookshot."
+ },
+ {
+  "id": "shadow-temple-invisible-spikes-chest",
+  "chapter": "c12-shadow-temple",
+  "sectionHint": "s02 Shadow Temple",
+  "era": "adult",
+  "why": "Free."
+ },
+ {
+  "id": "shadow-temple-freestanding-key",
+  "chapter": "c12-shadow-temple",
+  "sectionHint": "s02 Shadow Temple",
+  "era": "adult",
+  "why": "Silver Rupees + Bombs."
+ },
+ {
+  "id": "shadow-temple-gs-single-giant-pot",
+  "chapter": "c12-shadow-temple",
+  "sectionHint": "s02 Shadow Temple",
+  "era": "adult",
+  "why": "Silver Rupees in the invisible-spikes room."
+ },
+ {
+  "id": "shadow-temple-wind-hint-chest",
+  "chapter": "c12-shadow-temple",
+  "sectionHint": "s02 Shadow Temple",
+  "era": "adult",
+  "why": "Free."
+ },
+ {
+  "id": "shadow-temple-after-wind-enemy-chest",
+  "chapter": "c12-shadow-temple",
+  "sectionHint": "s02 Shadow Temple",
+  "era": "adult",
+  "why": "Free."
+ },
+ {
+  "id": "shadow-temple-after-wind-hidden-chest",
+  "chapter": "c12-shadow-temple",
+  "sectionHint": "s02 Shadow Temple",
+  "era": "adult",
+  "why": "Bombs."
+ },
+ {
+  "id": "shadow-temple-gs-near-ship",
+  "chapter": "c12-shadow-temple",
+  "sectionHint": "s02 Shadow Temple",
+  "era": "adult",
+  "why": "Longshot (logic; ZD adds the Scarecrow's Song)."
+ },
+ {
+  "id": "shadow-temple-spike-walls-left-chest",
+  "chapter": "c12-shadow-temple",
+  "sectionHint": "s02 Shadow Temple",
+  "era": "adult",
+  "why": "Din's Fire."
+ },
+ {
+  "id": "shadow-temple-boss-key-chest",
+  "chapter": "c12-shadow-temple",
+  "sectionHint": "s02 Shadow Temple",
+  "era": "adult",
+  "why": "Din's Fire."
+ },
+ {
+  "id": "shadow-temple-invisible-floormaster-chest",
+  "chapter": "c12-shadow-temple",
+  "sectionHint": "s02 Shadow Temple",
+  "era": "adult",
+  "why": "Free."
+ },
+ {
+  "id": "shadow-temple-gs-triple-giant-pot",
+  "chapter": "c12-shadow-temple",
+  "sectionHint": "s02 Shadow Temple",
+  "era": "adult",
+  "why": "Free."
+ },
+ {
+  "id": "bongo-bongo",
+  "chapter": "c12-shadow-temple",
+  "sectionHint": "s03 Boss: Bongo Bongo",
+  "era": "adult",
+  "why": "Shadow Medallion."
+ },
+ {
+  "id": "shadow-temple-bongo-bongo-heart",
+  "chapter": "c12-shadow-temple",
+  "sectionHint": "s03 Boss: Bongo Bongo",
+  "era": "adult",
+  "why": "Drops after the boss; take it before the blue warp."
+ },
+ {
+  "id": "gv-chest",
+  "chapter": "c13-spirit-temple",
+  "sectionHint": "s01 Gerudo Valley (adult)",
+  "era": "adult",
+  "why": "Megaton Hammer (c08); on the way to the fortress, so no separate trip."
+ },
+ {
+  "id": "hideout-1-torch-jail-gerudo-key",
+  "chapter": "c13-spirit-temple",
+  "sectionHint": "s02 Gerudo's Fortress: the carpenters",
+  "era": "adult",
+  "why": "Defeat the Gerudo guarding this cell; the ZD carpenter-to-cell mapping is unknown (02 gap)."
+ },
+ {
+  "id": "hideout-2-torches-jail-gerudo-key",
+  "chapter": "c13-spirit-temple",
+  "sectionHint": "s02 Gerudo's Fortress: the carpenters",
+  "era": "adult",
+  "why": "Same, second cell."
+ },
+ {
+  "id": "hideout-3-torches-jail-gerudo-key",
+  "chapter": "c13-spirit-temple",
+  "sectionHint": "s02 Gerudo's Fortress: the carpenters",
+  "era": "adult",
+  "why": "Same, third cell."
+ },
+ {
+  "id": "hideout-4-torches-jail-gerudo-key",
+  "chapter": "c13-spirit-temple",
+  "sectionHint": "s02 Gerudo's Fortress: the carpenters",
+  "era": "adult",
+  "why": "Same, fourth cell."
+ },
+ {
+  "id": "hideout-gerudo-membership-card",
+  "chapter": "c13-spirit-temple",
+  "sectionHint": "s02 Gerudo's Fortress: the carpenters",
+  "era": "adult",
+  "why": "Gerudo's Membership Card after all 4 carpenters."
+ },
+ {
+  "id": "gf-freestanding-poh",
+  "chapter": "c13-spirit-temple",
+  "sectionHint": "s02 Gerudo's Fortress: the carpenters",
+  "era": "adult",
+  "why": "Not a vanilla check: out-of-logic, child-only, glitch-only piece (rule B; 08 conflict 1). Listed once for ledger completeness; the walkthrough must not route it and it is not one of the 36."
+ },
+ {
+  "id": "gf-gs-top-floor",
+  "chapter": "c13-spirit-temple",
+  "sectionHint": "s03 Gerudo's Fortress extras",
+  "era": "adult",
+  "why": "Adult + night; rooftop route."
+ },
+ {
+  "id": "gf-chest",
+  "chapter": "c13-spirit-temple",
+  "sectionHint": "s03 Gerudo's Fortress extras",
+  "era": "adult",
+  "why": "Longshot (c10) across the roof gap."
+ },
+ {
+  "id": "gf-gs-archery-range",
+  "chapter": "c13-spirit-temple",
+  "sectionHint": "s03 Gerudo's Fortress extras",
+  "era": "adult",
+  "why": "Adult + night + Hookshot + Membership Card."
+ },
+ {
+  "id": "gf-hba-1000-points",
+  "chapter": "c13-spirit-temple",
+  "sectionHint": "s03 Gerudo's Fortress extras",
+  "era": "adult",
+  "why": "Day + Epona + Fairy Bow + Membership Card; the 1000-point prize comes first."
+ },
+ {
+  "id": "gf-hba-1500-points",
+  "chapter": "c13-spirit-temple",
+  "sectionHint": "s03 Gerudo's Fortress extras",
+  "era": "adult",
+  "why": "Same, a later run of 1500+; Quiver upgrade."
+ },
+ {
+  "id": "wasteland-bombchu-salesman",
+  "chapter": "c13-spirit-temple",
+  "sectionHint": "s04 Haunted Wasteland",
+  "era": "adult",
+  "why": "Carpet merchant; Hover Boots (c12) or Longshot to reach; Adult's Wallet."
+ },
+ {
+  "id": "wasteland-gs",
+  "chapter": "c13-spirit-temple",
+  "sectionHint": "s04 Haunted Wasteland",
+  "era": "adult",
+  "why": "Hookshot inside the stone building."
+ },
+ {
+  "id": "wasteland-chest",
+  "chapter": "c13-spirit-temple",
+  "sectionHint": "s04 Haunted Wasteland",
+  "era": "adult",
+  "why": "Fire source: Din's Fire or Fire Arrows."
+ },
+ {
+  "id": "sheik-at-colossus",
+  "chapter": "c13-spirit-temple",
+  "sectionHint": "s05 Desert Colossus (adult)",
+  "era": "adult",
+  "why": "Requiem of Spirit on arrival."
+ },
+ {
+  "id": "colossus-great-fairy-reward",
+  "chapter": "c13-spirit-temple",
+  "sectionHint": "s05 Desert Colossus (adult)",
+  "era": "adult",
+  "why": "Nayru's Love: Bombs on the cracked wall + Zelda's Lullaby (Lens not needed, 05 conflict 4)."
+ },
+ {
+  "id": "colossus-gs-tree",
+  "chapter": "c13-spirit-temple",
+  "sectionHint": "s05 Desert Colossus (adult)",
+  "era": "adult",
+  "why": "Adult + night + Hookshot."
+ },
+ {
+  "id": "colossus-gs-bean-patch",
+  "chapter": "c13-spirit-temple",
+  "sectionHint": "s06 Child Colossus and the Spirit Temple (child half)",
+  "era": "child",
+  "why": "Child via Requiem + Bugs."
+ },
+ {
+  "id": "bean-desert-colossus",
+  "chapter": "c13-spirit-temple",
+  "sectionHint": "s06 Child Colossus and the Spirit Temple (child half)",
+  "era": "child",
+  "why": "Plant now (beans bought c11); the adult rides it in s08."
+ },
+ {
+  "id": "spirit-temple-child-bridge-chest",
+  "chapter": "c13-spirit-temple",
+  "sectionHint": "s06 Child Colossus and the Spirit Temple (child half)",
+  "era": "child",
+  "why": "Child side; free."
+ },
+ {
+  "id": "spirit-temple-gs-metal-fence",
+  "chapter": "c13-spirit-temple",
+  "sectionHint": "s06 Child Colossus and the Spirit Temple (child half)",
+  "era": "child",
+  "why": "Boomerang."
+ },
+ {
+  "id": "spirit-temple-child-early-torches-chest",
+  "chapter": "c13-spirit-temple",
+  "sectionHint": "s06 Child Colossus and the Spirit Temple (child half)",
+  "era": "child",
+  "why": "Deku Sticks or Din's Fire."
+ },
+ {
+  "id": "spirit-temple-gs-sun-on-floor-room",
+  "chapter": "c13-spirit-temple",
+  "sectionHint": "s06 Child Colossus and the Spirit Temple (child half)",
+  "era": "child",
+  "why": "Child projectile (Boomerang)."
+ },
+ {
+  "id": "spirit-temple-child-climb-north-chest",
+  "chapter": "c13-spirit-temple",
+  "sectionHint": "s06 Child Colossus and the Spirit Temple (child half)",
+  "era": "child",
+  "why": "Child projectile."
+ },
+ {
+  "id": "spirit-temple-child-climb-east-chest",
+  "chapter": "c13-spirit-temple",
+  "sectionHint": "s06 Child Colossus and the Spirit Temple (child half)",
+  "era": "child",
+  "why": "Child projectile."
+ },
+ {
+  "id": "spirit-temple-sun-block-room-chest",
+  "chapter": "c13-spirit-temple",
+  "sectionHint": "s06 Child Colossus and the Spirit Temple (child half)",
+  "era": "child",
+  "why": "Deku Sticks to light the torches."
+ },
+ {
+  "id": "spirit-temple-gs-hall-after-sun-block-room",
+  "chapter": "c13-spirit-temple",
+  "sectionHint": "s06 Child Colossus and the Spirit Temple (child half)",
+  "era": "child",
+  "why": "Boomerang."
+ },
+ {
+  "id": "spirit-temple-silver-gauntlets-chest",
+  "chapter": "c13-spirit-temple",
+  "sectionHint": "s06 Child Colossus and the Spirit Temple (child half)",
+  "era": "child",
+  "why": "Silver Gauntlets, obtained as a child, used as an adult."
+ },
+ {
+  "id": "spirit-temple-map-chest",
+  "chapter": "c13-spirit-temple",
+  "sectionHint": "s07 Spirit Temple (adult half)",
+  "era": "adult",
+  "why": "Fire source (adult)."
+ },
+ {
+  "id": "spirit-temple-compass-chest",
+  "chapter": "c13-spirit-temple",
+  "sectionHint": "s07 Spirit Temple (adult half)",
+  "era": "adult",
+  "why": "Hookshot + Zelda's Lullaby."
+ },
+ {
+  "id": "spirit-temple-early-adult-right-chest",
+  "chapter": "c13-spirit-temple",
+  "sectionHint": "s07 Spirit Temple (adult half)",
+  "era": "adult",
+  "why": "Silver Rupees in the boulder room."
+ },
+ {
+  "id": "spirit-temple-gs-boulder-room",
+  "chapter": "c13-spirit-temple",
+  "sectionHint": "s07 Spirit Temple (adult half)",
+  "era": "adult",
+  "why": "Song of Time."
+ },
+ {
+  "id": "spirit-temple-first-mirror-left-chest",
+  "chapter": "c13-spirit-temple",
+  "sectionHint": "s07 Spirit Temple (adult half)",
+  "era": "adult",
+  "why": "Ice Trap: listed for completeness; warn."
+ },
+ {
+  "id": "spirit-temple-first-mirror-right-chest",
+  "chapter": "c13-spirit-temple",
+  "sectionHint": "s07 Spirit Temple (adult half)",
+  "era": "adult",
+  "why": "Free."
+ },
+ {
+  "id": "spirit-temple-statue-room-hand-chest",
+  "chapter": "c13-spirit-temple",
+  "sectionHint": "s07 Spirit Temple (adult half)",
+  "era": "adult",
+  "why": "Zelda's Lullaby."
+ },
+ {
+  "id": "spirit-temple-statue-room-northeast-chest",
+  "chapter": "c13-spirit-temple",
+  "sectionHint": "s07 Spirit Temple (adult half)",
+  "era": "adult",
+  "why": "Zelda's Lullaby + Hookshot or Hover Boots."
+ },
+ {
+  "id": "spirit-temple-gs-lobby",
+  "chapter": "c13-spirit-temple",
+  "sectionHint": "s07 Spirit Temple (adult half)",
+  "era": "adult",
+  "why": "Hookshot or Hover Boots (logic); ZD's Scarecrow + Longshot is the fallback (04 conflict 1)."
+ },
+ {
+  "id": "spirit-temple-near-four-armos-chest",
+  "chapter": "c13-spirit-temple",
+  "sectionHint": "s07 Spirit Temple (adult half)",
+  "era": "adult",
+  "why": "Mirror Shield."
+ },
+ {
+  "id": "spirit-temple-hallway-right-invisible-chest",
+  "chapter": "c13-spirit-temple",
+  "sectionHint": "s07 Spirit Temple (adult half)",
+  "era": "adult",
+  "why": "Lens of Truth."
+ },
+ {
+  "id": "spirit-temple-hallway-left-invisible-chest",
+  "chapter": "c13-spirit-temple",
+  "sectionHint": "s07 Spirit Temple (adult half)",
+  "era": "adult",
+  "why": "Lens of Truth."
+ },
+ {
+  "id": "spirit-temple-mirror-shield-chest",
+  "chapter": "c13-spirit-temple",
+  "sectionHint": "s07 Spirit Temple (adult half)",
+  "era": "adult",
+  "why": "Mirror Shield; mandatory."
+ },
+ {
+  "id": "spirit-temple-boss-key-chest",
+  "chapter": "c13-spirit-temple",
+  "sectionHint": "s07 Spirit Temple (adult half)",
+  "era": "adult",
+  "why": "Zelda's Lullaby + Fairy Bow + Hookshot."
+ },
+ {
+  "id": "spirit-temple-topmost-chest",
+  "chapter": "c13-spirit-temple",
+  "sectionHint": "s07 Spirit Temple (adult half)",
+  "era": "adult",
+  "why": "Mirror Shield."
+ },
+ {
+  "id": "twinrova",
+  "chapter": "c13-spirit-temple",
+  "sectionHint": "s08 Boss: Twinrova",
+  "era": "adult",
+  "why": "Spirit Medallion."
+ },
+ {
+  "id": "spirit-temple-twinrova-heart",
+  "chapter": "c13-spirit-temple",
+  "sectionHint": "s08 Boss: Twinrova",
+  "era": "adult",
+  "why": "Drops after the boss; take it before the blue warp."
+ },
+ {
+  "id": "colossus-freestanding-poh",
+  "chapter": "c13-spirit-temple",
+  "sectionHint": "s09 Adult Colossus bean ride",
+  "era": "adult",
+  "why": "Ride the bean planted in s06."
+ },
+ {
+  "id": "colossus-gs-hill",
+  "chapter": "c13-spirit-temple",
+  "sectionHint": "s09 Adult Colossus bean ride",
+  "era": "adult",
+  "why": "Adult + night; same bean ride (or Longshot)."
+ },
+ {
+  "id": "gerudo-training-ground-lobby-left-chest",
+  "chapter": "c13-spirit-temple",
+  "sectionHint": "s10 Gerudo Training Ground",
+  "era": "adult",
+  "why": "Fairy Bow."
+ },
+ {
+  "id": "gerudo-training-ground-lobby-right-chest",
+  "chapter": "c13-spirit-temple",
+  "sectionHint": "s10 Gerudo Training Ground",
+  "era": "adult",
+  "why": "Fairy Bow."
+ },
+ {
+  "id": "gerudo-training-ground-stalfos-chest",
+  "chapter": "c13-spirit-temple",
+  "sectionHint": "s10 Gerudo Training Ground",
+  "era": "adult",
+  "why": "Defeat the Stalfos."
+ },
+ {
+  "id": "gerudo-training-ground-beamos-chest",
+  "chapter": "c13-spirit-temple",
+  "sectionHint": "s10 Gerudo Training Ground",
+  "era": "adult",
+  "why": "Bombs."
+ },
+ {
+  "id": "gerudo-training-ground-before-heavy-block-chest",
+  "chapter": "c13-spirit-temple",
+  "sectionHint": "s10 Gerudo Training Ground",
+  "era": "adult",
+  "why": "Free (ZD omits it)."
+ },
+ {
+  "id": "gerudo-training-ground-heavy-block-first-chest",
+  "chapter": "c13-spirit-temple",
+  "sectionHint": "s10 Gerudo Training Ground",
+  "era": "adult",
+  "why": "Silver Gauntlets (c13 s06)."
+ },
+ {
+  "id": "gerudo-training-ground-heavy-block-second-chest",
+  "chapter": "c13-spirit-temple",
+  "sectionHint": "s10 Gerudo Training Ground",
+  "era": "adult",
+  "why": "Silver Gauntlets."
+ },
+ {
+  "id": "gerudo-training-ground-heavy-block-third-chest",
+  "chapter": "c13-spirit-temple",
+  "sectionHint": "s10 Gerudo Training Ground",
+  "era": "adult",
+  "why": "Silver Gauntlets."
+ },
+ {
+  "id": "gerudo-training-ground-heavy-block-fourth-chest",
+  "chapter": "c13-spirit-temple",
+  "sectionHint": "s10 Gerudo Training Ground",
+  "era": "adult",
+  "why": "Ice Trap: warn."
+ },
+ {
+  "id": "gerudo-training-ground-eye-statue-chest",
+  "chapter": "c13-spirit-temple",
+  "sectionHint": "s10 Gerudo Training Ground",
+  "era": "adult",
+  "why": "Fairy Bow."
+ },
+ {
+  "id": "gerudo-training-ground-near-scarecrow-chest",
+  "chapter": "c13-spirit-temple",
+  "sectionHint": "s10 Gerudo Training Ground",
+  "era": "adult",
+  "why": "Fairy Bow."
+ },
+ {
+  "id": "gerudo-training-ground-hammer-room-clear-chest",
+  "chapter": "c13-spirit-temple",
+  "sectionHint": "s10 Gerudo Training Ground",
+  "era": "adult",
+  "why": "Free."
+ },
+ {
+  "id": "gerudo-training-ground-hammer-room-switch-chest",
+  "chapter": "c13-spirit-temple",
+  "sectionHint": "s10 Gerudo Training Ground",
+  "era": "adult",
+  "why": "Megaton Hammer."
+ },
+ {
+  "id": "gerudo-training-ground-freestanding-key",
+  "chapter": "c13-spirit-temple",
+  "sectionHint": "s10 Gerudo Training Ground",
+  "era": "adult",
+  "why": "Free."
+ },
+ {
+  "id": "gerudo-training-ground-underwater-silver-rupee-chest",
+  "chapter": "c13-spirit-temple",
+  "sectionHint": "s10 Gerudo Training Ground",
+  "era": "adult",
+  "why": "Iron Boots + Silver Rupees."
+ },
+ {
+  "id": "gerudo-training-ground-maze-right-central-chest",
+  "chapter": "c13-spirit-temple",
+  "sectionHint": "s10 Gerudo Training Ground",
+  "era": "adult",
+  "why": "Free (ZD omits it)."
+ },
+ {
+  "id": "gerudo-training-ground-maze-right-side-chest",
+  "chapter": "c13-spirit-temple",
+  "sectionHint": "s10 Gerudo Training Ground",
+  "era": "adult",
+  "why": "Free (ZD omits it)."
+ },
+ {
+  "id": "gerudo-training-ground-hidden-ceiling-chest",
+  "chapter": "c13-spirit-temple",
+  "sectionHint": "s10 Gerudo Training Ground",
+  "era": "adult",
+  "why": "Lens of Truth + 3 keys."
+ },
+ {
+  "id": "gerudo-training-ground-maze-path-first-chest",
+  "chapter": "c13-spirit-temple",
+  "sectionHint": "s10 Gerudo Training Ground",
+  "era": "adult",
+  "why": "4 keys."
+ },
+ {
+  "id": "gerudo-training-ground-maze-path-second-chest",
+  "chapter": "c13-spirit-temple",
+  "sectionHint": "s10 Gerudo Training Ground",
+  "era": "adult",
+  "why": "6 keys."
+ },
+ {
+  "id": "gerudo-training-ground-maze-path-third-chest",
+  "chapter": "c13-spirit-temple",
+  "sectionHint": "s10 Gerudo Training Ground",
+  "era": "adult",
+  "why": "7 keys."
+ },
+ {
+  "id": "gerudo-training-ground-maze-path-final-chest",
+  "chapter": "c13-spirit-temple",
+  "sectionHint": "s10 Gerudo Training Ground",
+  "era": "adult",
+  "why": "Ice Arrows: 9 keys. GTG needs the Silver Gauntlets, so after the Spirit child half at the earliest; done here because the fortress is next door (GF-LK after Spirit; ZD c14)."
+ },
+ {
+  "id": "minigame-marathon",
+  "chapter": "c13-spirit-temple",
+  "sectionHint": "s11 Running Man's marathon (optional)",
+  "era": "adult",
+  "why": "Unlocked when all 4 carpenters are free; no prize, so it is optional."
+ },
+ {
+  "id": "tot-light-arrows-cutscene",
+  "chapter": "c14-ganons-castle",
+  "sectionHint": "s01 Light Arrows",
+  "era": "adult",
+  "why": "Shadow + Spirit Medallions; next Temple of Time entry."
+ },
+ {
+  "id": "zf-gs-hidden-cave",
+  "chapter": "c14-ganons-castle",
+  "sectionHint": "s02 The last Gold Skulltula",
+  "era": "adult",
+  "why": "Silver Gauntlets + Bombs + Hookshot + night; both walkthroughs take it as #100 just before the castle."
+ },
+ {
+  "id": "kak-100-gold-skulltula-reward",
+  "chapter": "c14-ganons-castle",
+  "sectionHint": "s02 The last Gold Skulltula",
+  "era": "adult",
+  "why": "100 tokens; repeatable Huge Rupee."
+ },
+ {
+  "id": "ganons-castle-forest-trial-chest",
+  "chapter": "c14-ganons-castle",
+  "sectionHint": "s03 Ganon's Castle trials",
+  "era": "adult",
+  "why": "Free."
+ },
+ {
+  "id": "ganons-castle-water-trial-left-chest",
+  "chapter": "c14-ganons-castle",
+  "sectionHint": "s03 Ganon's Castle trials",
+  "era": "adult",
+  "why": "Ice Trap: warn."
+ },
+ {
+  "id": "ganons-castle-water-trial-right-chest",
+  "chapter": "c14-ganons-castle",
+  "sectionHint": "s03 Ganon's Castle trials",
+  "era": "adult",
+  "why": "Free."
+ },
+ {
+  "id": "ganons-castle-shadow-trial-front-chest",
+  "chapter": "c14-ganons-castle",
+  "sectionHint": "s03 Ganon's Castle trials",
+  "era": "adult",
+  "why": "Hookshot/Hover Boots/Song of Time."
+ },
+ {
+  "id": "ganons-castle-shadow-trial-golden-gauntlets-chest",
+  "chapter": "c14-ganons-castle",
+  "sectionHint": "s03 Ganon's Castle trials",
+  "era": "adult",
+  "why": "Golden Gauntlets: Longshot or Fire Arrows, then Hover Boots or fire. Do this trial first: the Light trial and the Great Fairy need it."
+ },
+ {
+  "id": "ganons-castle-spirit-trial-crystal-switch-chest",
+  "chapter": "c14-ganons-castle",
+  "sectionHint": "s03 Ganon's Castle trials",
+  "era": "adult",
+  "why": "Bombchus or jump slash."
+ },
+ {
+  "id": "ganons-castle-spirit-trial-invisible-chest",
+  "chapter": "c14-ganons-castle",
+  "sectionHint": "s03 Ganon's Castle trials",
+  "era": "adult",
+  "why": "Lens of Truth (ZD omits it)."
+ },
+ {
+  "id": "ganons-castle-light-trial-first-left-chest",
+  "chapter": "c14-ganons-castle",
+  "sectionHint": "s03 Ganon's Castle trials",
+  "era": "adult",
+  "why": "Free."
+ },
+ {
+  "id": "ganons-castle-light-trial-second-left-chest",
+  "chapter": "c14-ganons-castle",
+  "sectionHint": "s03 Ganon's Castle trials",
+  "era": "adult",
+  "why": "Ice Trap: warn."
+ },
+ {
+  "id": "ganons-castle-light-trial-third-left-chest",
+  "chapter": "c14-ganons-castle",
+  "sectionHint": "s03 Ganon's Castle trials",
+  "era": "adult",
+  "why": "Free."
+ },
+ {
+  "id": "ganons-castle-light-trial-first-right-chest",
+  "chapter": "c14-ganons-castle",
+  "sectionHint": "s03 Ganon's Castle trials",
+  "era": "adult",
+  "why": "Ice Trap: warn."
+ },
+ {
+  "id": "ganons-castle-light-trial-second-right-chest",
+  "chapter": "c14-ganons-castle",
+  "sectionHint": "s03 Ganon's Castle trials",
+  "era": "adult",
+  "why": "Free."
+ },
+ {
+  "id": "ganons-castle-light-trial-third-right-chest",
+  "chapter": "c14-ganons-castle",
+  "sectionHint": "s03 Ganon's Castle trials",
+  "era": "adult",
+  "why": "Ice Trap: warn."
+ },
+ {
+  "id": "ganons-castle-light-trial-invisible-enemies-chest",
+  "chapter": "c14-ganons-castle",
+  "sectionHint": "s03 Ganon's Castle trials",
+  "era": "adult",
+  "why": "Lens of Truth."
+ },
+ {
+  "id": "ganons-castle-light-trial-lullaby-chest",
+  "chapter": "c14-ganons-castle",
+  "sectionHint": "s03 Ganon's Castle trials",
+  "era": "adult",
+  "why": "Zelda's Lullaby + 1 key."
+ },
+ {
+  "id": "ogc-great-fairy-reward",
+  "chapter": "c14-ganons-castle",
+  "sectionHint": "s04 Great Fairy outside the castle",
+  "era": "adult",
+  "why": "Double Defense: Golden Gauntlets (s03) lift the pillar; Magic Meter owned."
+ },
+ {
+  "id": "ganons-tower-boss-key-chest",
+  "chapter": "c14-ganons-castle",
+  "sectionHint": "s05 Ganon's Tower",
+  "era": "adult",
+  "why": "Free; last chest. Save before Ganondorf: no saving after the tower falls."
+ }
+]

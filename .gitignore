@@ -1,0 +1,16 @@
+# Third-party files: kept locally for research, never published.
+fishing.c
+research/sources/
+
+# Raw research notes and the ledger built from the sources above. They are
+# drafted from outside walkthroughs and haven't been checked for copied text.
+research/*.md
+research/ledger.json
+# ...except the route plan, which is our own work.
+!research/route-plan.md
+
+# OS / editor clutter
+Thumbs.db
+desktop.ini
+.DS_Store
+.vscode/

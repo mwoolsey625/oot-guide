@@ -30,16 +30,16 @@ OOT.walkthrough.push({
           remake: "Nintendo has confirmed a reworked item system with single-button item swapping, so the equipment and item screens may look different from the original." },
         { id: "c01-s01-04",
           text: "Talk to Mido with both items equipped and he steps aside. Cut down the 3 Withered Deku Babas on the path for your first **Deku Sticks**, then speak to the Great Deku Tree and walk into his mouth.",
-          collect: ["item-deku-stick", "item-deku-nut"],
-          tip: "Live Deku Babas leave **Deku Nuts** when cut down normally and Deku Sticks when struck while they stand stiff. You meet more just inside the tree." }
+          collect: ["item-deku-stick"],
+          tip: "Live Deku Babas, which you meet just inside the tree, leave Deku Nuts when cut down normally and Deku Sticks when struck while they stand stiff." }
       ]
     },
     {
-      id: "c01-s02", title: "Inside the Deku Tree: upper floors", era: "child", kind: "dungeon",
+      id: "c01-s02", title: "Inside the Deku Tree: Upper Floors", era: "child", kind: "dungeon",
       steps: [
         { id: "c01-s02-01",
-          text: "Climb the wooden walkway that winds up the wall of the main room, using the ladder or the vines, and follow it round to the large chest with the **Dungeon Map**.",
-          collect: ["deku-tree-map-chest"],
+          text: "Cut down the Deku Babas by the entrance for **Deku Nuts**. Then climb the wooden walkway that winds up the wall of the main room, using the ladder or the vines, and follow it round to the large chest with the **Dungeon Map**.",
+          collect: ["item-deku-nut", "deku-tree-map-chest"],
           tip: "Equip Deku Sticks and Deku Nuts now; this dungeon uses both. The web over the middle of the floor can't be broken yet." },
         { id: "c01-s02-02",
           text: "Take the door at the end of the walkway and raise your shield so the Deku Scrub's nut bounces back and hits it. In the next room, cross the platform to the large chest with the **Fairy Slingshot**, then climb the vines to a small chest with a Recovery Heart.",
@@ -57,7 +57,7 @@ OOT.walkthrough.push({
       ]
     },
     {
-      id: "c01-s03", title: "Inside the Deku Tree: basement", era: "child", kind: "dungeon",
+      id: "c01-s03", title: "Inside the Deku Tree: Basement", era: "child", kind: "dungeon",
       steps: [
         { id: "c01-s03-01",
           text: "From the top floor, jump so that Link lands in the exact center of the web over the main room floor; it tears and drops you into the flooded basement. Turn to the vines that lead back up, shoot the Gold Skulltula on them with the Fairy Slingshot and climb up for its token.",
@@ -91,12 +91,9 @@ OOT.walkthrough.push({
       id: "c01-s04", title: "Queen Gohma", era: "child", kind: "boss",
       steps: [
         { id: "c01-s04-01",
-          text: "Enter the boss chamber and look up at the ceiling to wake Queen Gohma. Stun her each time her eye turns red, then attack while she is down (see the boss card).",
-          collect: [],
-          warn: "The door seals behind you. Stock up on Deku Sticks and Deku Nuts before going in." },
-        { id: "c01-s04-02",
-          text: "Take the **Heart Container** she leaves, then step into the blue light. Outside, the Great Deku Tree gives you **Kokiri's Emerald**, the Spiritual Stone of the Forest.",
+          text: "Enter the boss chamber and look up at the ceiling to wake Queen Gohma. Stun her each time her eye turns red and attack while she is down (see the boss card), then take the **Heart Container** and step into the blue light; outside, the Great Deku Tree gives you **Kokiri's Emerald**, the Spiritual Stone of the Forest.",
           collect: ["deku-tree-queen-gohma-heart", "queen-gohma"],
+          warn: "The door seals behind you. Stock up on Deku Sticks and Deku Nuts before going in.",
           tip: "Pick up the Heart Container before stepping into the light, which ends the visit." }
       ]
     }
@@ -149,7 +146,7 @@ OOT.walkthrough.push({
       ]
     },
     {
-      id: "c02-s02", title: "Hyrule Castle and the Market at night", era: "child", kind: "overworld",
+      id: "c02-s02", title: "Hyrule Castle and the Market at Night", era: "child", kind: "overworld",
       steps: [
         { id: "c02-s02-01",
           text: "Follow the road from the Market toward **Hyrule Castle**. The owl perches in a tree beside the road; once he flies off, roll into that tree and defeat the Gold Skulltula that drops.",
@@ -220,12 +217,12 @@ OOT.walkthrough.push({
   gains: ["Sun's Song", "Saria's Song", "Bottle", "Hylian Shield", "Adult's Wallet", "Deku Stick capacity upgrade", "Deku Seed Bullet Bag upgrade", "Goron's Bracelet", "5 Pieces of Heart", "10 Gold Skulltula Tokens"],
   sections: [
     {
-      id: "c03-s01", title: "Kakariko Village by day", era: "child", kind: "overworld",
+      id: "c03-s01", title: "Kakariko Village by Day", era: "child", kind: "overworld",
       steps: [
         { id: "c03-s01-01",
           text: "Enter **Kakariko Village** from Hyrule Field and climb to the gate at the top of the village. Show **Zelda's Letter** to the guard: he opens the way to **Death Mountain Trail** and mentions that his son wants a mask from the **Happy Mask Shop**, which now opens in the Market.",
           collect: ["event-zeldas-letter-to-guard"],
-          tip: "This guide runs the mask trades in chapter 6, once every buyer is available, so leave the shop for now." },
+          tip: "This guide runs the mask trades in chapter 6, once every buyer is available, so leave the shop for now. If you arrive at night, it stays night in the village: after the guard, go back down to Hyrule Field and wait near the Kakariko stairs until the rooster crows, then return for Anju." },
         { id: "c03-s01-02",
           text: "Anju, by the Cucco pen, wants her 7 Cuccos back, and 2 of them are in the fenced yard at the back of the village, between the 2 potion shops. Carry a Cucco up the stairs by the Graveyard entrance and glide from the ledge over the tall fence. Inside, drop into the open hole for a grotto chest with 20 Rupees, then throw both yard Cuccos (one is up a tall ladder) back over the fence.",
           collect: ["kak-open-grotto-chest"],
@@ -240,7 +237,7 @@ OOT.walkthrough.push({
       ]
     },
     {
-      id: "c03-s02", title: "Kakariko Graveyard", era: "child", kind: "sweep",
+      id: "c03-s02", title: "Kakariko Graveyard", era: "child", kind: "overworld",
       steps: [
         { id: "c03-s02-01",
           text: "Enter **Kakariko Graveyard** right of the windmill and go to the large tomb at the back. Stand on the Triforce mark in front of it and play **Zelda's Lullaby**; lightning blows open the **Royal Family's Tomb**. Inside, defeat the 5 Keese to open the door, slip past the ReDeads, and read the inscription at the end to learn the **Sun's Song**.",
@@ -254,7 +251,7 @@ OOT.walkthrough.push({
           tip: "Playing the Sun's Song where time is frozen jumps the clock to midnight, too late for Dampé. If it is already night in the field, play the song twice. A child can only pull graves at night, when the boy who guards them has gone home.",
           remake: "Nintendo says time now passes wherever you are, so the Graveyard's evening window can close while you work; confirm Dampé's hours after launch." },
         { id: "c03-s02-03",
-          text: "In the back row nearest the Royal Family's Tomb, pull the fourth grave from the left and drop in. Freeze the ReDead with the Sun's Song and defeat it from behind, then play the Sun's Song again on the platform steps to make a chest with a **Piece of Heart** appear.",
+          text: "In the back row nearest the Royal Family's Tomb, stand with your back to the tomb and pull the fourth grave from the left (the second from the left as you walk in from the entrance), then drop in. Freeze the ReDead with the Sun's Song and defeat it from behind, then play the Sun's Song again on the platform steps to make a chest with a **Piece of Heart** appear.",
           collect: ["graveyard-heart-piece-grave-chest"],
           time: "night",
           tip: "The right grave has a ReDead inside. If yours doesn't, climb out and try its neighbor." },
@@ -270,7 +267,7 @@ OOT.walkthrough.push({
       ]
     },
     {
-      id: "c03-s03", title: "Kakariko Village at night", era: "child", kind: "sweep",
+      id: "c03-s03", title: "Kakariko Village at Night", era: "child", kind: "sweep",
       steps: [
         { id: "c03-s03-01",
           text: "Return to the village while it is still night; time stands still here too. Roll into the tree near the entrance from Hyrule Field, then defeat the Gold Skulltula on the unfinished building in the middle of the village and the one on the side wall of the House of Skulltula.",
@@ -288,7 +285,7 @@ OOT.walkthrough.push({
       ]
     },
     {
-      id: "c03-s04", title: "Death Mountain Trail and the Goron City shortcut", era: "child", kind: "overworld",
+      id: "c03-s04", title: "Death Mountain Trail and the Goron City Shortcut", era: "child", kind: "overworld",
       steps: [
         { id: "c03-s04-01",
           text: "Go through the gate and up Death Mountain Trail, past the Red Tektites and the Goron by the giant boulder. Within sight of the **Goron City** entrance, find the ledge where a Goron sits by a Bomb Flower; stand at the low part of the fence beside the flower and backflip over it to land on the ledge above the cavern entrance, which holds a **Piece of Heart**.",
@@ -298,7 +295,7 @@ OOT.walkthrough.push({
         { id: "c03-s04-02",
           text: "In Goron City, go down to the bottom floor and play Zelda's Lullaby on the mat in front of Darunia's door; he refuses to help for now. Light a Deku Stick at the torch in his room, light the torches on the bottom floor, then carry the flame to the Bomb Flowers beside the boulders blocking a passage on the floor above, where a Goron talks about music; the blast opens a tunnel into the **Lost Woods**.",
           collect: [],
-          tip: "Lighting the bottom-floor torches also starts the big urn spinning. Its Piece of Heart needs Bombs, so it waits until chapter 4." }
+          tip: "Lighting the bottom-floor torches also starts the big urn spinning. Its Piece of Heart needs a Bomb Flower (once you have the Goron's Bracelet) or a Bomb thrown in from the floor above; this guide takes it in chapter 4." }
       ]
     },
     {
@@ -330,10 +327,10 @@ OOT.walkthrough.push({
       ]
     },
     {
-      id: "c03-s06", title: "Back through the forest to Darunia", era: "child", kind: "sweep",
+      id: "c03-s06", title: "Back Through the Forest to Darunia", era: "child", kind: "overworld",
       steps: [
         { id: "c03-s06-01",
-          text: "In the Lost Woods, go left from the Kokiri Forest entrance, stand on the low stump and play Saria's Song for the Skull Kid on the log. He gives you a **Piece of Heart**.",
+          text: "In the Lost Woods, go left from the Kokiri Forest entrance, stand on the low stump and play Saria's Song for the Skull Kid on the stump facing you. He gives you a **Piece of Heart**.",
           collect: ["lw-skull-kid"] },
         { id: "c03-s06-02",
           text: "In **Kokiri Forest**, release Bugs on the soft soil right behind the **Kokiri Shop** and defeat the Gold Skulltula.",
@@ -374,7 +371,7 @@ OOT.walkthrough.push({
       ]
     },
     {
-      id: "c04-s02", title: "Dodongo's Cavern: lower floor", era: "child", kind: "dungeon",
+      id: "c04-s02", title: "Dodongo's Cavern: Lower Floor", era: "child", kind: "dungeon",
       steps: [
         { id: "c04-s02-01",
           text: "Throw a Bomb Flower at the cracked wall inside the entrance. In the main cavern, reach the left side (over the center platform, or along the lava edge and up a ladder), throw the lone Bomb Flower there at the cracked wall and open the chest for the **Dungeon Map**.",
@@ -399,7 +396,7 @@ OOT.walkthrough.push({
       ]
     },
     {
-      id: "c04-s03", title: "Dodongo's Cavern: upper floor", era: "child", kind: "dungeon",
+      id: "c04-s03", title: "Dodongo's Cavern: Upper Floor", era: "child", kind: "dungeon",
       steps: [
         { id: "c04-s03-01",
           text: "In the hexagonal Armos room, pull the one lifeless Armos statue on the center platform away from the ladder, climb up and press the switch. Cross the bridge over the main cavern to the room with blade traps, pull the stone block back from the wall, then push it to the platform and climb up to a small chest with 20 Rupees.",
@@ -429,10 +426,7 @@ OOT.walkthrough.push({
       id: "c04-s04", title: "King Dodongo", era: "child", kind: "boss",
       steps: [
         { id: "c04-s04-01",
-          text: "Defeat King Dodongo: each time he stops to inhale, throw a Bomb into his open mouth, then strike him while he is down (see the boss card).",
-          collect: [] },
-        { id: "c04-s04-02",
-          text: "Take the **Heart Container** and step into the blue light. Darunia names you his Sworn Brother and gives you the **Goron's Ruby**, the Spiritual Stone of Fire.",
+          text: "Defeat King Dodongo: each time he stops to inhale, throw a Bomb into his open mouth, then strike him while he is down (see the boss card). Take the **Heart Container** and step into the blue light; Darunia names you his Sworn Brother and gives you the **Goron's Ruby**, the Spiritual Stone of Fire.",
           collect: ["dodongos-cavern-king-dodongo-heart", "king-dodongo"],
           tip: "With the Goron's Ruby in hand, the Market's Bombchu Bowling Alley and Bombchu Shop open, and shops start selling Bombs." }
       ]
@@ -461,7 +455,7 @@ OOT.walkthrough.push({
       ]
     },
     {
-      id: "c04-s06", title: "The summit and the crater", era: "child", kind: "sweep",
+      id: "c04-s06", title: "The Summit and the Crater", era: "child", kind: "overworld",
       steps: [
         { id: "c04-s06-01",
           text: "Where the trail forks above the cavern, take the highest path and bomb the boulders blocking it. Bomb the boulder above them as well, drop into the hole it hid, and play Epona's Song for the cow inside to fill an empty Bottle with milk.",
@@ -491,7 +485,7 @@ OOT.walkthrough.push({
           collect: ["kak-impas-house-freestanding-poh", "kak-impas-house-cow"],
           tip: "If you fall to the ground too early, playing the Sun's Song reloads the area at your entry point, back on the roof." },
         { id: "c04-s07-02",
-          text: "Just past the tree near the village entrance, bomb the ground to open a hidden grotto. Inside, defeat the 2 ReDeads (the Sun's Song freezes them) and open the chest for a **Huge Rupee** worth 200 Rupees.",
+          text: "In the middle of the village, between the large tree by the entrance and the well, bomb the ground to open a hidden grotto. Inside, defeat the 2 ReDeads (the Sun's Song freezes them) and open the chest for a **Huge Rupee** worth 200 Rupees.",
           collect: ["kak-redead-grotto-chest"],
           tip: "Spend some Rupees first if you can: the Adult's Wallet holds exactly 200." },
         { id: "c04-s07-03",
@@ -522,10 +516,10 @@ OOT.walkthrough.push({
   gains: ["Din's Fire", "Farore's Wind", "Silver Scale", "Boomerang", "Zora's Sapphire", "Heart Container", "Bottle (Ruto's Letter)", "Bomb Bag upgrade", "Magic Beans", "6 Pieces of Heart", "10 Gold Skulltula Tokens"],
   sections: [
     {
-      id: "c05-s01", title: "Castle, Market and Hyrule Field with Bombs", era: "child", kind: "sweep",
+      id: "c05-s01", title: "Castle, Market and Hyrule Field with Bombs", era: "child", kind: "overworld",
       steps: [
         { id: "c05-s01-01",
-          text: "On the road to Hyrule Castle, turn right instead of left where the road reaches the gate, to a boulder behind a sign that reads \"Dead End\". Bomb the boulder, crawl into the passage and play Zelda's Lullaby on the Triforce mark; the Great Fairy gives you **Din's Fire**.",
+          text: "At **Hyrule Castle**, climb the central vine on the wall as you did to reach Talon, drop down on the far side of the guard's gate and go straight ahead to a sign that reads \"Dead End\". Bomb the boulder behind it, crawl into the passage and play Zelda's Lullaby on the Triforce mark; the Great Fairy gives you **Din's Fire**.",
           collect: ["hc-great-fairy-reward"],
           remake: "Songs can be played with the controller or by humming into the microphone (confirmed); the note layout is not announced yet." },
         { id: "c05-s01-02",
@@ -592,7 +586,7 @@ OOT.walkthrough.push({
       ]
     },
     {
-      id: "c05-s04", title: "Lake Hylia", era: "child", kind: "sweep",
+      id: "c05-s04", title: "Lake Hylia", era: "child", kind: "overworld",
       steps: [
         { id: "c05-s04-01",
           text: "With the Silver Scale, dive into the deepest part of the Domain's pool and swim through the tunnel at the bottom to **Lake Hylia**. By the stone pillar ruins near the shore, dive where Navi points to find a **Bottle** holding **Ruto's Letter**.",
@@ -626,16 +620,16 @@ OOT.walkthrough.push({
           collect: [],
           tip: "The Zora Shop also sells a Fish for 200 Rupees." },
         { id: "c05-s05-02",
-          text: "At Zora's Fountain, roll into the lone tree on the small patch of land away from Lord Jabu-Jabu and defeat the Gold Skulltula that drops.",
+          text: "At Zora's Fountain, cross to the small patch of land in the southeast, east of the entrance from Zora's Domain, and roll into the tree there; defeat the Gold Skulltula that drops.",
           collect: ["zf-gs-tree"] },
         { id: "c05-s05-03",
-          text: "In the corner behind Lord Jabu-Jabu, bomb the cracked wall beside the silver boulder to open a Great Fairy's Fountain, then play Zelda's Lullaby inside for **Farore's Wind**.",
+          text: "On the same patch of land, bomb the cracked wall beside the silver boulder to open a Great Fairy's Fountain, then play Zelda's Lullaby inside for **Farore's Wind**.",
           collect: ["zf-great-fairy-reward"],
           tip: "Farore's Wind sets a return point inside a dungeon. Going back in time erases it." }
       ]
     },
     {
-      id: "c05-s06", title: "Inside Jabu-Jabu's Belly: with Ruto", era: "child", kind: "dungeon",
+      id: "c05-s06", title: "Inside Jabu-Jabu's Belly: With Ruto", era: "child", kind: "dungeon",
       steps: [
         { id: "c05-s06-01",
           text: "Release the Fish in front of Lord Jabu-Jabu and he swallows you. Shoot the switch dangling from the ceiling at the narrow end of the first room with the Fairy Slingshot, cross the next room to the far door, and drop through the hole after Princess Ruto; talk to her until she lets you carry her.",
@@ -660,7 +654,7 @@ OOT.walkthrough.push({
       ]
     },
     {
-      id: "c05-s07", title: "Inside Jabu-Jabu's Belly: tentacles and Big Octo", era: "child", kind: "dungeon",
+      id: "c05-s07", title: "Inside Jabu-Jabu's Belly: Tentacles and Big Octo", era: "child", kind: "dungeon",
       steps: [
         { id: "c05-s07-01",
           text: "Defeat the blue tentacle in the room next to the Boomerang room, then the green one off the middle passage, destroying the Biri there first. With all 3 tentacles gone, the passages they blocked are clear.",
@@ -671,7 +665,8 @@ OOT.walkthrough.push({
         { id: "c05-s07-03",
           text: "Throw Ruto onto the central platform in the next chamber; she finds her Spiritual Stone and is carried off, and Big Octo appears. Stun it with the Boomerang, run around to its back and strike the soft spot there, repeating until it falls, then ride the platform up.",
           collect: [],
-          tip: "On the N64 version a Deku Stick jump attack on its back defeats it in one hit. It leaves 3 Recovery Hearts." },
+          tip: "A Deku Stick jump attack on its back defeats it in one hit. It leaves 3 Recovery Hearts.",
+          remake: "The 3DS version removed the one-hit Deku Stick kill; confirm on Switch 2 after launch." },
         { id: "c05-s07-04",
           text: "Freeze the red jelly blocks with the Boomerang and use them as stepping stones, ride the platform down, and set a box on the door switch so it stays pressed. In the last room, defeat the Biri, then the Gold Skulltula on the vines, climb for its token, and throw the Boomerang at the switch behind the web-like barrier to open the boss door.",
           collect: ["jabu-jabus-belly-gs-near-boss"] }
@@ -681,15 +676,12 @@ OOT.walkthrough.push({
       id: "c05-s08", title: "Barinade", era: "child", kind: "boss",
       steps: [
         { id: "c05-s08-01",
-          text: "Defeat Barinade: cut its 3 tethers to the ceiling with the Boomerang, then stun its body and clear away the jellies circling it (see the boss card).",
-          collect: [] },
-        { id: "c05-s08-02",
-          text: "Take the **Heart Container** and step into the blue light with Ruto. She gives you **Zora's Sapphire**, the Spiritual Stone of Water, and you are left at Zora's Fountain.",
+          text: "Defeat Barinade: cut its 3 tethers to the ceiling with the Boomerang, then stun its body and clear away the jellies circling it (see the boss card). Take the **Heart Container** and step into the blue light with Ruto; she gives you **Zora's Sapphire**, the Spiritual Stone of Water, and you are left at Zora's Fountain.",
           collect: ["jabu-jabus-belly-barinade-heart", "barinade"] }
       ]
     },
     {
-      id: "c05-s09", title: "Zora's Fountain at night", era: "child", kind: "sweep",
+      id: "c05-s09", title: "Zora's Fountain at Night", era: "child", kind: "sweep",
       steps: [
         { id: "c05-s09-01",
           text: "Play the Sun's Song to bring night, which never falls on its own here. Stand on the log near the exit, left of Lord Jabu-Jabu, and throw the Boomerang at the Gold Skulltula on the wall above it, then again to pull in its token.",
@@ -720,7 +712,7 @@ OOT.walkthrough.push({
   gains: ["Ocarina of Time", "Song of Time", "Giant's Wallet", "Deku Stick capacity upgrade", "2 Deku Nut capacity upgrades", "Mask of Truth", "3 Pieces of Heart", "10 Gold Skulltula Tokens", "Master Sword"],
   sections: [
     {
-      id: "c06-s01", title: "The Ocarina of Time and the Keaton Mask", era: "child", kind: "sidequest",
+      id: "c06-s01", title: "The Ocarina of Time and the Keaton Mask", era: "child", kind: "overworld",
       steps: [
         { id: "c06-s01-01",
           text: "Head for the Market drawbridge with all 3 Spiritual Stones. A scene plays in which Zelda and Impa flee on horseback and Zelda throws something into the moat; dive into the moat where it fell for the **Ocarina of Time**, and a vision of Zelda teaches you the **Song of Time**.",

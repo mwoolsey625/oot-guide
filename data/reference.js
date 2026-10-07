@@ -64,10 +64,10 @@ window.OOT.reference = {
         "He then curls up and rolls around the arena. Wait by the lava edge or in an inner corner, or block with your shield, until he uncurls, then repeat."
       ] },
     { id: "boss-barinade", name: "Bio-electric Anemone Barinade", location: "Inside Jabu-Jabu's Belly",
-      weakness: "Its body, once the Boomerang has stunned it and the Biri are gone.",
+      weakness: "Its body, once the Boomerang has stunned it and the Bari are gone.",
       strategy: [
         "Circle the room to dodge its beams and use the **Boomerang** on the 3 tentacles that tie it to the ceiling.",
-        "Next, Biri jellies spin around it. Hit its body with the Boomerang to stun it and break their link, then clear the jellies with your sword, **Deku Nuts** or the Boomerang.",
+        "Next, 10 Bari jellies circle it in 2 rings of 5. Hit its body with the Boomerang to stun it and break their link, then clear the jellies with your sword, **Deku Nuts** or the Boomerang.",
         "Without its jellies, it spins around the room shooting electricity that your shield cannot block. Boomerang it to knock it down, slash it, and repeat as it burrows and comes back."
       ] },
     { id: "boss-phantom-ganon", name: "Evil Spirit from Beyond Phantom Ganon", location: "Forest Temple",
@@ -113,7 +113,7 @@ window.OOT.reference = {
     { id: "boss-ganondorf", name: "Great King of Evil Ganondorf", location: "Ganon's Tower",
       weakness: "Light Arrows while he is stunned.",
       strategy: [
-        "Keep your distance; his slam knocks floor tiles away. The corner tiles never fall.",
+        "Keep your distance; his slam knocks floor tiles away.",
         "When he throws a ball of energy, swing your sword to send it back, and keep the rally going until it hits him.",
         "While he is stunned, shoot him with a **Light Arrow**, then run in and slash him. He is also open to a Light Arrow while he raises his hands to charge.",
         "His charged volley cannot be blocked with a shield; dodge it, or send it back with a Spin Attack. If you fall to the floor below, its pots hold arrows and magic; climb back up."
@@ -122,7 +122,7 @@ window.OOT.reference = {
       weakness: "His tail.",
       strategy: [
         "He knocks the **Master Sword** out of the ring of fire at the start. Fight with the **Megaton Hammer** or **Biggoron's Sword** until you get it back.",
-        "Stun him with a **Light Arrow** (Deku Nuts and Din's Fire also work), get behind him, and strike his tail.",
+        "Stun him with a **Light Arrow**, get behind him, and strike his tail.",
         "After enough hits he collapses and the flames drop for a moment: grab the Master Sword.",
         "Keep hitting his tail. When he falls again, Zelda holds him in place; finish him with the Master Sword, the only weapon that can land the last blow."
       ] }
@@ -272,7 +272,7 @@ window.OOT.reference = {
       notes: "Vanishes when you target it and reappears on a rhythm. It leaves a soul you can catch in a Bottle and sell. In Hyrule Field, an ordinary Poe sometimes appears at a Big Poe spot when you are on foot." },
     { id: "enemy-poe-sisters", name: "Poe Sisters (Joelle, Beth, Amy and Meg)", locations: ["Forest Temple"],
       weakness: "Fairy Bow and sword.",
-      notes: "Minibosses who steal the flames from the main hall's torches. Shoot Joelle's and Beth's portraits 3 times to call them out. Amy appears after you solve her block picture. Meg splits into 4 copies; the real one is the copy that spins an extra time. Beating all 4 opens the way to Phantom Ganon." },
+      notes: "Minibosses who steal the flames from the main hall's torches. Shoot Joelle's and Beth's portraits 3 times to call them out. Amy appears after you solve her block picture. Meg splits into 4 copies; the real one is the first copy to spin once they surround you. Beating all 4 opens the way to Phantom Ganon." },
     { id: "enemy-red-bubble", name: "Red Bubble", locations: ["Death Mountain Crater", "Fire Temple", "Shadow Temple", "Gerudo Training Ground", "Ganon's Castle"],
       weakness: "Sword; your shield knocks it back.",
       notes: "Leaps out of lava and pits near ledges and sets you on fire." },

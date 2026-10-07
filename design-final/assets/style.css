@@ -702,6 +702,12 @@ main {
 .nb.c { background: color-mix(in srgb, var(--btn-c) 22%, transparent); color: var(--btn-c); border: 2px solid var(--btn-c); }
 .nb.a { background: color-mix(in srgb, var(--btn-a) 22%, transparent); color: var(--btn-a); border: 2px solid var(--btn-a); font-family: var(--font-display); }
 .nb.x { background: var(--bg-sunk); color: var(--ink-2); border: 2px solid var(--line-2); }
+/* Switch 2 notes: same layout, neutral ink until the remake's controls are confirmed */
+.nb.n { background: var(--bg-sunk); color: var(--ink); border: 2px solid var(--ink-3); font-family: var(--font-display); }
+/* note sequences inside step text */
+.notes-inline { display: inline-flex; gap: 3px; vertical-align: middle; margin: 0 2px; }
+.notes-inline .nb { width: 24px; height: 24px; font-size: .75rem; border-width: 1.5px; }
+.notes-inline .nb svg { width: 13px; height: 13px; }
 .staff { width: 100%; max-width: 440px; height: auto; margin-top: 12px; display: block; color: var(--ink-3); }
 .staff .ln { stroke: currentColor; stroke-width: 1; opacity: .55; }
 .staff .hc { fill: color-mix(in srgb, var(--btn-c) 25%, var(--bg-2)); stroke: var(--btn-c); stroke-width: 2; }

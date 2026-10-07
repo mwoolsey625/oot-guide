@@ -21,6 +21,10 @@ Nobody has played it yet, so no source covers it. Our approach:
   is flagged on the step with a `remake` note so a post-launch pass can confirm it.
 - Never present a remake detail as fact without a source. Never present the baseline as
   confirmed for the remake.
+- **One text, two versions.** The site has a version setting (N64 / Switch 2), so people
+  can play the original with it too. N64 hides `remake` notes; Switch 2 shows them and,
+  once the remake's names are confirmed, swaps item names via `research/name-map.json`.
+  So step text must read correctly on both: see "Write for both versions" below.
 
 ## Copyright rule (the site is public)
 
@@ -87,6 +91,7 @@ OOT.walkthrough.push({
       warn: "",                    // optional: missable / point of no return / trap
       time: "",                    // optional: "night" | "day"
       remake: ""                   // optional: how a confirmed/possible remake change affects this
+                                   //   (hidden when the reader picks N64)
     }]
   }],
   boss: { id: "boss-gohma", name: "Parasitic Armored Arachnid Gohma",
@@ -123,7 +128,7 @@ masks (Happy Mask Shop), adult-trade (Biggoron Sword sequence), skulltula-reward
 
 ```js
 OOT.reference = {
-  songs:     [{ id, name, notes: "↑ ← → …", effect, learnedFrom, chapter }],
+  songs:     [{ id, name, notes: "A ↓ → ←", effect, learnedFrom, chapter }],  // "A" + arrows only
   bosses:    [{ id, name, location, weakness, strategy: [] }],
   bestiary:  [{ id, name, locations: [], weakness, notes }],
   minigames: [{ id, name, location, age, cost, rewards: [] }],
@@ -151,6 +156,17 @@ OOT.reference = {
 - Numbers as digits ("3 Deku Babas", "50 Rupees"). Rupee costs always written "X Rupees".
 - Item names exactly as the original English game spells them (Fairy Slingshot,
   Megaton Hammer, Bombchus, Lens of Truth, Gold Skulltula, Piece of Heart).
+- **Write for both versions.** The same text serves N64 and Switch 2 readers, and the
+  remake's controls are unknown until launch. Never name a button or input (A, B,
+  C-buttons, Z, L, R, Start, Control Stick, ZL/ZR, Z-targeting): describe the action
+  instead ("target the Deku Scrub", "roll into the boulder", "raise your shield",
+  "use the **Boomerang**", "play **Zelda's Lullaby**"). Refer to songs by name, not notes.
+- Where specific notes are unavoidable (Scarecrow's Song, an ocarina memory game), write
+  them as a token in the same notation as `reference.songs[].notes`: `{notes:A ↓ → ↓}`
+  ("A" plus arrows, space-separated). The site draws it per version.
+- If a technique may work differently in the remake (it reportedly adds a jump button),
+  state the goal ("jump across to the ledge") and put the difference in `remake`. Only
+  `remake` notes may name remake controls.
 - `warn` is reserved for: missable content, points of no return, one-way doors, traps that
   cost items. `tip` is for optional help.
 - No hype, no jokes, no "simply". Neutral and exact.

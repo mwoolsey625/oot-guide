@@ -75,6 +75,8 @@
   /* collapsed walkthrough sections, keyed by section id (merged from Waypoint) */
   if (!prefs.collapsed || typeof prefs.collapsed !== 'object' || Array.isArray(prefs.collapsed)) prefs.collapsed = {};
   prefs.hideDone = !!prefs.hideDone;
+  /* which game the reader plays: 'n64' hides remake notes and draws ocarina notes as N64 buttons */
+  if (prefs.version !== 'n64') prefs.version = 'switch2';
 
   function normalizeProgress(p) {
     var out = { done: {}, last: null };
@@ -97,8 +99,13 @@
       return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
     });
   }
-  function md(s) { return esc(s).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>'); }
-  function plain(s) { return String(s || '').replace(/\*\*/g, ''); }
+  /* {notes:A ↓ → ↓} in guide text is an ocarina note sequence, drawn for the chosen version */
+  var NOTES_TOKEN = /\{notes:([^}]*)\}/g;
+  function md(s) {
+    return esc(s).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+      .replace(NOTES_TOKEN, function (m, seq) { return inlineNotes(seq); });
+  }
+  function plain(s) { return String(s || '').replace(/\*\*/g, '').replace(NOTES_TOKEN, '$1'); }
   function chNum(ch) { return typeof ch.num === 'number' ? ch.num : (parseInt(String(ch.id).slice(1, 3), 10) || 0); }
   function numFromId(id) { var n = parseInt(String(id || '').slice(1, 3), 10); return isNaN(n) ? null : n; }
   function realmOf(ch) { return REALMS[String(ch.id).slice(0, 3)] || (ch.era === 'adult' ? 'adult' : 'child'); }
@@ -316,7 +323,7 @@
       '</button>';
   }
   function note(kind, text) {
-    if (!text) return '';
+    if (!text || (kind === 'remake' && prefs.version === 'n64')) return '';
     var map = { tip: ['i-spark', 'Hint'], warn: ['i-caution', 'Caution'], remake: ['i-hourglass', 'Remake check · unconfirmed'] };
     return '<div class="note ' + kind + '">' + ico(map[kind][0]) + '<div><b>' + map[kind][1] + '</b>' + md(text) + '</div></div>';
   }
@@ -763,9 +770,12 @@
       return acc;
     }, []).filter(Boolean);
   }
+  /* N64 draws the real A / C buttons. Switch 2 controls are unknown until launch, so its
+     notes use the same layout in neutral ink; set the remake's glyphs here once confirmed. */
   function noteButton(t) {
-    if (t === 'A') return '<span class="nb a" aria-hidden="true">A</span>';
-    if (ARROW_ROT.hasOwnProperty(t)) return '<span class="nb c" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 15 12 8.5l6 6.5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="rotate(' + ARROW_ROT[t] + ' 12 12)"/></svg></span>';
+    var n64 = prefs.version === 'n64';
+    if (t === 'A') return '<span class="nb ' + (n64 ? 'a' : 'n') + '" aria-hidden="true">A</span>';
+    if (ARROW_ROT.hasOwnProperty(t)) return '<span class="nb ' + (n64 ? 'c' : 'n') + '" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 15 12 8.5l6 6.5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="rotate(' + ARROW_ROT[t] + ' 12 12)"/></svg></span>';
     return '<span class="nb x" aria-hidden="true">' + esc(t) + '</span>';
   }
   function staff(tokens) {
@@ -779,9 +789,16 @@
     });
     return h + '</svg>';
   }
+  function spokenNotes(toks) {
+    return toks.map(function (t) { return t === 'A' ? 'A' : ({ '↑': 'up', '↓': 'down', '←': 'left', '→': 'right' })[t] || t; }).join(', ');
+  }
+  function inlineNotes(seq) {
+    var toks = noteTokens(seq);
+    return '<span class="notes-inline" role="img" aria-label="Notes: ' + esc(spokenNotes(toks)) + '">' + toks.map(noteButton).join('') + '</span>';
+  }
   function songCard(s) {
     var toks = noteTokens(s.notes), cid = songItemId(s.name);
-    var spoken = toks.map(function (t) { return t === 'A' ? 'A' : ({ '↑': 'up', '↓': 'down', '←': 'left', '→': 'right' })[t] || t; }).join(', ');
+    var spoken = spokenNotes(toks);
     return '<article class="card entry song" id="s-' + esc(s.id) + '"><div class="entry-head"><h2>' + esc(s.name) + '</h2>' + (cid ? chip(cid).replace('class="chip', 'class="chip chip-song') : '') + '</div>' +
       '<div class="notes-row" role="img" aria-label="Notes: ' + esc(spoken) + '">' + toks.map(noteButton).join('') + '</div>' + staff(toks) +
       '<dl><dt>Effect</dt><dd>' + md(s.effect) + '</dd><dt>From</dt><dd>' + esc(s.learnedFrom) + '</dd>' +
@@ -811,7 +828,7 @@
       (ch.sections || []).forEach(function (sec) {
         (sec.steps || []).forEach(function (st, i) {
           add({ type: 'Ch ' + chNum(ch) + ' · ' + sec.title + ' · step ' + (i + 1), glyph: 'k-' + (KINDS[sec.kind] ? sec.kind : 'overworld'),
-            title: plain(st.text), text: [st.tip, st.warn, st.remake].filter(Boolean).join(' '), extra: st.time ? st.time + ' only' : '', route: 'ch/' + ch.id + '/' + st.id, check: st.id, also: st.collect || [], step: true });
+            title: plain(st.text), text: [st.tip, st.warn, prefs.version === 'n64' ? '' : st.remake].filter(Boolean).join(' '), extra: st.time ? st.time + ' only' : '', route: 'ch/' + ch.id + '/' + st.id, check: st.id, also: st.collect || [], step: true });
         });
       });
     });
@@ -908,6 +925,8 @@
     h += Store.ok()
       ? '<div class="notice ok">Progress saves on this device automatically. Export a copy to move it to another browser.</div>'
       : '<div class="notice"><b>Storage is blocked in this browser.</b> Your checks last until you close this tab. Use Export to keep them.</div>';
+    h += '<section class="card set-group"><h2>Game version</h2><p>Pick the version you are playing. Original (N64) hides the Remake check notes and shows ocarina notes as N64 buttons. Switch 2 shows the notes; its controls are confirmed after launch, so ocarina notes stay neutral until then.</p>' +
+      seg2('version', prefs.version, [['n64', 'Original (N64)'], ['switch2', 'Switch 2']]) + '</section>';
     h += '<section class="card set-group"><h2>Theme</h2><p>Day is sunlit vellum; Night is a dark sky for a dim room. System follows your phone.</p>' +
       seg2('theme', prefs.theme, [['system', 'System'], ['light', 'Day'], ['dark', 'Night']]) + '</section>';
     h += '<section class="card set-group"><h2>Text size</h2><p>Larger text helps at arm\'s length or across a desk.</p>' +
@@ -1215,6 +1234,7 @@
     }
     else if (kind === 'theme') { prefs.theme = val; savePrefs(); applyTheme(); renderSettings(); }
     else if (kind === 'theme-toggle') { prefs.theme = isDark() ? 'light' : 'dark'; savePrefs(); applyTheme(); if (current.view === 'settings') renderSettings(); }
+    else if (kind === 'version') { prefs.version = val === 'n64' ? 'n64' : 'switch2'; savePrefs(); searchIndex = null; renderSettings(); }
     else if (kind === 'scale') { prefs.scale = parseFloat(val) || 1; savePrefs(); applyTheme(); renderSettings(); }
     else if (kind === 'hide-done') { prefs.hideDone = !prefs.hideDone; savePrefs(); applyTheme(); act.setAttribute('aria-checked', String(!!prefs.hideDone)); }
     else if (kind === 'sec') {

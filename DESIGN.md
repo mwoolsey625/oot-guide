@@ -80,7 +80,7 @@ thumb zone:
   step also checks its chips. Every toggle shows an **Undo** toast for a mis-tap.
   Unrecognised `collect` IDs appear as muted chips with a readable name rather than
   vanishing, labelled by kind from the ID: "Chest" (the ID contains `chest`), "Key"
-  (contains `key`) or "Prize" (minigame prizes and purchases).
+  (contains `key`) or "Prize" (minigame prizes).
 - **Notes**, each with its own treatment:
   - **Hint:** teal panel with a sparkle.
   - **Caution:** rust panel with a solid left rule and a diamond "!". This is for
@@ -149,11 +149,14 @@ thumb zone:
   This was tested by forcing `localStorage` to throw.
 - Export writes `oot-guide-progress-YYYY-MM-DD.json` (`{app, version, done[], last}`).
   Import validates the file and asks before replacing.
-- Saved progress and exports carry a format `version` (now 2). Ticks are keyed by step id, so
-  when steps are removed or renumbered, bump `PROGRESS_VERSION` in app.js and add a migration
-  that `normalizeProgress` runs on older saves and imports. A migrated save is written back on load
-  so it is never migrated twice. Version 2 dropped the cows: in the original game a cow only
-  refills a Bottle, so they are not collectibles, and the steps that existed only for one are gone.
+- Saved progress and exports carry a format `version` (now 3). Ticks are keyed by step id and
+  collect id, so when steps or collect ids are removed or renumbered, bump `PROGRESS_VERSION` in
+  app.js and add a migration that `normalizeProgress` runs on older saves and imports. A migrated
+  save is written back on load so it is never migrated twice. Version 2 dropped the cows: in the
+  original game a cow only refills a Bottle, so they are not collectibles, and the steps that
+  existed only for one are gone. Version 3 dropped the Hylian Loach, Granny's Blue Potion and
+  the Wasteland Bombchus for the same reason (they repeat and record nothing); no step changed.
+  Randomizer location lists treat all of these as checks; `tools/validate.js` keeps them out.
 - Hash routes: `#/journey`, `#/ch/<chapter>[/<step-or-section>]`,
   `#/collect[/<cat>[/<item>]]`, `#/search/<q>`, `#/lore[/<page>[/<id>]]`, `#/settings`.
 - The fixture in `data/` is marked `FIXTURE — replaced by compiled data` and is not

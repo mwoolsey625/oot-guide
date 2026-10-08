@@ -206,17 +206,22 @@ for (const [id, list] of Object.entries(itemsById)) {
 /* ------------------------------------------------------------------ ledger coverage + collect ids */
 const ledgerById = {};
 for (const row of LEDGER) ledgerById[row.id] = row;
-const outOfLogic = [], cows = [];
+/* randomizer-only checks: in the original game these repeat as often as you like and record nothing, so they
+   are not collectibles. A cow refills an empty Bottle with milk; the Hylian Loach pays a purple Rupee every
+   catch (fishing.c: "doesn't record loach"); Granny's Blue Potion and the carpet merchant's Bombchus are
+   plain purchases (decomp z_en_ds.c / z_en_js.c set no flag). */
+const REPEATABLE = new Set(['lh-loach-fishing', 'kak-granny-buy-blue-potion', 'wasteland-bombchu-salesman']);
+const isRepeatable = row => row.type === 'cow' || REPEATABLE.has(row.id);
+const outOfLogic = [], repeatable = [];
 for (const row of LEDGER) {
   if (itemsById[row.id] || collectAt[row.id]) continue;
   if ((row.tags || []).includes('out-of-logic')) { outOfLogic.push(row.id); continue; }
-  // in the original game a cow only refills an empty Bottle with milk, every time; nothing is collected or recorded
-  if (row.type === 'cow') { cows.push(row.id); continue; }
+  if (isRepeatable(row)) { repeatable.push(row.id); continue; }
   err('ledger', `${row.id} (${row.type}, ${row.vanillaItem}) is not covered by any collectible or step`);
 }
 if (outOfLogic.length) note(`Ledger rows tagged out-of-logic and left out on purpose (rule B, see research/compile-notes-integration.md): ${outOfLogic.join(', ')}`);
-if (cows.length) note(`${cows.length} cow rows left out on purpose: randomizer checks only; in the original game a cow just refills a Bottle with milk.`);
-for (const row of LEDGER) if (row.type === 'cow' && (itemsById[row.id] || collectAt[row.id])) err('ledger', `${row.id}: cows are not collectibles (they only refill a Bottle); remove it from the guide`);
+if (repeatable.length) note(`${repeatable.length} ledger rows left out on purpose: randomizer checks only; in the original game they repeat and record nothing (9 cows, the Hylian Loach, Granny's Blue Potion, the Wasteland Bombchus).`);
+for (const row of LEDGER) if (isRepeatable(row) && (itemsById[row.id] || collectAt[row.id])) err('ledger', `${row.id}: repeats in the original game and records nothing, so it is not a collectible; remove it from the guide`);
 
 // category membership must match the ledger where the ledger can say
 const setEq = (label, want, have) => {

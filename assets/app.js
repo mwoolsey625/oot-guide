@@ -68,7 +68,7 @@
 
   var KEY_P = 'oot-guide.progress.v1', KEY_S = 'oot-guide.prefs.v1';
   /* progress format: saves and exports carry `version`; anything without one is version 1 */
-  var PROGRESS_VERSION = 2;
+  var PROGRESS_VERSION = 3;
   /* version 2: cows stopped being collectibles (in the original game they only refill a Bottle; they were
      checks only in the randomizer's location list), and the steps that existed only for a cow went with them.
      Each list gives the old step numbers that survive, in their new order. */
@@ -96,8 +96,14 @@
       else if (p.done && typeof p.done === 'object') Object.keys(p.done).forEach(function (id) { if (p.done[id]) out.done[id] = 1; });
       if (p.last && typeof p.last === 'object') out.last = { chapter: String(p.last.chapter || ''), step: String(p.last.step || '') };
       if (!(p.version >= 2)) migrateV1(out);
+      if (!(p.version >= 3)) migrateV2(out);
     }
     return out;
+  }
+  /* version 2 -> 3: the Hylian Loach, Granny's Blue Potion and the Wasteland Bombchus stopped being collectibles
+     for the same reason as the cows (they repeat and record nothing in the original game); no step changed */
+  function migrateV2(out) {
+    ['lh-loach-fishing', 'kak-granny-buy-blue-potion', 'wasteland-bombchu-salesman'].forEach(function (id) { delete out.done[id]; });
   }
   /* version 1 -> 2: drop the cow ticks and move step ticks to their new numbers (V2_STEPS) */
   function migrateV1(out) {
@@ -160,7 +166,7 @@
   function itemInfo(id) {
     var hit = itemById[id];
     if (hit) return { id: id, name: hit.item.name, catId: hit.cat.id, catName: hit.cat.name, time: hit.item.time, minor: false, item: hit.item, cat: hit.cat };
-    /* ledger checks outside the collectible categories: every chest id says "chest", every loose key "key"; the rest are minigame prizes and purchases */
+    /* ledger checks outside the collectible categories: every chest id says "chest", every loose key "key"; the rest are minigame prizes */
     var k = /chest/.test(id) ? MINOR[0] : /key/.test(id) ? MINOR[1] : MINOR[2];
     return { id: id, name: humanize(id), catId: k.id, catName: k.name, groupName: k.group, time: '', minor: true };
   }

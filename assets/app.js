@@ -72,8 +72,10 @@
   if (['system', 'light', 'dark'].indexOf(prefs.theme) < 0) prefs.theme = 'system';
   if (typeof prefs.scale !== 'number') prefs.scale = 1;
   if (!prefs.filters || typeof prefs.filters !== 'object') prefs.filters = {};
-  /* collapsed walkthrough sections, keyed by section id (merged from Waypoint) */
-  if (!prefs.collapsed || typeof prefs.collapsed !== 'object' || Array.isArray(prefs.collapsed)) prefs.collapsed = {};
+  /* walkthrough sections start folded; prefs.open lists the ones the reader has opened, keyed by section id.
+     The older prefs.collapsed (folded-list, open by default) is dropped. */
+  if (!prefs.open || typeof prefs.open !== 'object' || Array.isArray(prefs.open)) prefs.open = {};
+  delete prefs.collapsed;
   prefs.hideDone = !!prefs.hideDone;
   /* which game the reader plays: 'n64' hides remake notes and draws ocarina notes as N64 buttons */
   if (prefs.version !== 'n64') prefs.version = 'switch2';
@@ -223,7 +225,7 @@
     var val = !isDone(id);
     var lastBefore = progress.last ? { chapter: progress.last.chapter, step: progress.last.step } : null;
     var secId = stepById[id] ? stepById[id].sec.id : null;
-    var wasClear = secId ? secClear(secId) : false, collapsedBefore = secId ? !!prefs.collapsed[secId] : false;
+    var wasClear = secId ? secClear(secId) : false, collapsedBefore = secId ? !prefs.open[secId] : false;
     if (stepById[id]) progress.last = { chapter: stepById[id].ch.id, step: id };
     setDone(ids, val);
     /* the last step of a section was just checked: the section clears and folds away */
@@ -251,7 +253,7 @@
     return el && el.classList.contains('section') ? el : null;
   }
   function setCollapsed(secId, val, animate) {
-    if (val) prefs.collapsed[secId] = 1; else delete prefs.collapsed[secId];
+    if (val) delete prefs.open[secId]; else prefs.open[secId] = 1;
     savePrefs();
     var el = secEl(secId);
     if (!el) return;
@@ -264,13 +266,13 @@
   }
   function scheduleCollapse(secId) {
     /* persist straight away so a reload honours it, then fold after the tick has had a moment to land */
-    prefs.collapsed[secId] = 1; savePrefs();
+    delete prefs.open[secId]; savePrefs();
     var el = secEl(secId);
     if (!el) return;
     cancelCollapse(secId);
     collapseTimers[secId] = setTimeout(function () {
       delete collapseTimers[secId];
-      if (!el.isConnected || !prefs.collapsed[secId]) return;
+      if (!el.isConnected || prefs.open[secId]) return;
       if (el.contains(document.activeElement) && !el.querySelector('.sec-head').contains(document.activeElement)) {
         var t = el.querySelector('.sec-toggle');
         if (t) { try { t.focus({ preventScroll: true }); } catch (e) { t.focus(); } }
@@ -363,7 +365,7 @@
     var collectIds = chapterCollect(ch);
     /* a deep link always lands in an open section */
     var tSec = target && stepById[target] && stepById[target].ch === ch ? stepById[target].sec.id : (target && sectionById[target] && sectionById[target].ch === ch ? target : null);
-    if (tSec && prefs.collapsed[tSec]) { delete prefs.collapsed[tSec]; savePrefs(); }
+    if (tSec && !prefs.open[tSec]) { prefs.open[tSec] = 1; savePrefs(); }
 
     var h = '<div data-realm="' + realm + '" class="era-' + esc(ch.era) + '">';
     h += '<header class="front">' + frontArt().replace('class="era-' + (ch.era === 'adult' ? 'child' : 'adult') + '"', 'style="display:none"') +
@@ -408,12 +410,12 @@
     }).join('');
   }
   /* Each section is a collapsible group: the header is a real button (inside the h2) with the kind icon,
-     title, era badge when it differs from the chapter, an x/y count and a chevron. Collapsed state lives in
-     prefs.collapsed; finished steps can be tucked away at render time (prefs.hideDone). */
+     title, era badge when it differs from the chapter, an x/y count and a chevron. Sections start folded;
+     the ones the reader opened live in prefs.open; finished steps can be tucked away at render time (prefs.hideDone). */
   function renderSection(ch, sec, target) {
     var era = sec.era || ch.era, kind = KINDS[sec.kind] ? sec.kind : 'overworld';
     var steps = sec.steps || [];
-    var closed = !!prefs.collapsed[sec.id], clear = secClear(sec.id), bodyId = 'sb-' + sec.id;
+    var closed = !prefs.open[sec.id], clear = secClear(sec.id), bodyId = 'sb-' + sec.id;
     var h = '<section class="section k-' + kind + (closed ? ' is-collapsed' : '') + (clear ? ' is-clear' : '') + '" id="s-' + esc(sec.id) + '" data-sec="' + esc(sec.id) + '" data-era="' + esc(era) + '" data-title="' + esc(sec.title) + '">' +
       '<header class="sec-head"><h2 class="sec-h"><button type="button" class="sec-toggle" data-act="sec" data-sec="' + esc(sec.id) + '" aria-expanded="' + (closed ? 'false' : 'true') + '" aria-controls="' + esc(bodyId) + '">' +
       '<span class="sec-ico">' + ico('k-' + kind, 'ico-kind') + ico('i-tick', 'ico-clear') + '</span>' +
@@ -1039,7 +1041,7 @@
       html: '<p>This clears all <b>' + n + '</b> check' + (n === 1 ? '' : 's') + ' and reopens every folded section. It cannot be undone unless you exported a copy first.</p>',
       actions: [
         { label: 'Reset all', cls: 'danger', run: function () {
-          progress = { done: {}, last: null }; prefs.collapsed = {};
+          progress = { done: {}, last: null }; prefs.open = {};
           saveProgress(); savePrefs(); renderSettings(); toast('Progress cleared');
         } },
         { label: 'Cancel' }

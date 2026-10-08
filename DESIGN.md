@@ -163,9 +163,10 @@ fonts and realm colours. None of Waypoint's styling was carried over.
 - **Collapsible sections.** Each section header is a real `<button>` inside the `h2`, with
   `aria-expanded` and `aria-controls`. It shows the kind icon, the title, the kind label, an
   era badge when the section's era differs from the chapter's, an `x/y` count pill and a
-  chevron. The era rule (leaf vine or blade line) still runs under the header. Collapsed
-  state is saved per section id in `prefs.collapsed`, inside `oot-guide.prefs.v1`. No new
-  storage key was added.
+  chevron. The era rule (leaf vine or blade line) still runs under the header. Sections
+  start folded, so a chapter opens as a list of headers with counts. The sections you open
+  are saved per section id in `prefs.open`, inside `oot-guide.prefs.v1`. No new storage key
+  was added. The older `prefs.collapsed` (open by default) is dropped on load.
 - **Cleared sections fold away.** When the last step of a section is checked:
   - The kind icon becomes a filled realm-coloured seal with a tick (gold for sweeps and
     side quests).
@@ -179,7 +180,7 @@ fonts and realm colours. None of Waypoint's styling was carried over.
   updates counts. **Undo** in the toast does reverse the fold, so the step you un-ticked
   stays in view.
 - **Targets open their section first.** Before scrolling, these all open the section the
-  target sits in and clear its collapsed flag:
+  target sits in and mark it open:
   - deep links (`#/ch/<id>/<stepId>` and `#/ch/<id>/<sectionId>`)
   - the **Next step** button
   - search results
@@ -209,4 +210,4 @@ fonts and realm colours. None of Waypoint's styling was carried over.
     If that also fails, it selects the text and tells you to copy it by hand.
   - **Import** takes a file or pasted text. It checks the input and shows errors inline,
     then asks before replacing.
-  - **Reset** asks first, then also clears `prefs.collapsed`.
+  - **Reset** asks first, then also clears `prefs.open`, so every section folds again.

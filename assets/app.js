@@ -67,7 +67,16 @@
   function readJSON(k) { try { var s = Store.get(k); return s ? JSON.parse(s) : null; } catch (e) { return null; } }
 
   var KEY_P = 'oot-guide.progress.v1', KEY_S = 'oot-guide.prefs.v1';
-  var progress = normalizeProgress(readJSON(KEY_P));
+  /* progress format: saves and exports carry `version`; anything without one is version 1 */
+  var PROGRESS_VERSION = 2;
+  /* version 2: cows stopped being collectibles (in the original game they only refill a Bottle; they were
+     checks only in the randomizer's location list), and the steps that existed only for a cow went with them.
+     Each list gives the old step numbers that survive, in their new order. */
+  var V2_STEPS = { 'c02-s03': [1, 2, 3, 4, 6], 'c04-s06': [2, 3, 4], 'c07-s04': [1, 3, 4, 5, 6] };
+  var storedProgress = readJSON(KEY_P);
+  var progress = normalizeProgress(storedProgress);
+  /* write a migrated save back at once, so it is never migrated twice */
+  if (storedProgress && storedProgress.version !== PROGRESS_VERSION) saveProgress();
   var prefs = readJSON(KEY_S) || {};
   if (['system', 'light', 'dark'].indexOf(prefs.theme) < 0) prefs.theme = 'system';
   if (typeof prefs.scale !== 'number') prefs.scale = 1;
@@ -81,13 +90,32 @@
   if (prefs.version !== 'n64') prefs.version = 'switch2';
 
   function normalizeProgress(p) {
-    var out = { done: {}, last: null };
+    var out = { version: PROGRESS_VERSION, done: {}, last: null };
     if (p && typeof p === 'object') {
       if (Array.isArray(p.done)) p.done.forEach(function (id) { if (typeof id === 'string') out.done[id] = 1; });
       else if (p.done && typeof p.done === 'object') Object.keys(p.done).forEach(function (id) { if (p.done[id]) out.done[id] = 1; });
       if (p.last && typeof p.last === 'object') out.last = { chapter: String(p.last.chapter || ''), step: String(p.last.step || '') };
+      if (!(p.version >= 2)) migrateV1(out);
     }
     return out;
+  }
+  /* version 1 -> 2: drop the cow ticks and move step ticks to their new numbers (V2_STEPS) */
+  function migrateV1(out) {
+    var d = out.done;
+    ['llr-stables-left-cow', 'llr-stables-right-cow', 'llr-tower-left-cow', 'llr-tower-right-cow', 'kak-impas-house-cow',
+      'dmt-cow-grotto-cow', 'gv-cow', 'hf-cow-grotto-cow', 'kf-links-house-cow'].forEach(function (id) { delete d[id]; });
+    var sid = function (sec, n) { return sec + '-' + (n < 10 ? '0' : '') + n; };
+    Object.keys(V2_STEPS).forEach(function (sec) {
+      var keep = V2_STEPS[sec], was = {}, n;
+      for (n = 1; n <= keep[keep.length - 1]; n++) { was[n] = !!d[sid(sec, n)]; delete d[sid(sec, n)]; }
+      keep.forEach(function (old, i) { if (was[old]) d[sid(sec, i + 1)] = 1; });
+      /* the resume point moves with its step; a removed step resumes from the one before it */
+      if (out.last && out.last.step.indexOf(sec + '-') === 0) {
+        var at = parseInt(out.last.step.slice(-2), 10), to = 0;
+        keep.forEach(function (old, i) { if (old <= at) to = i + 1; });
+        out.last.step = sid(sec, to || 1);
+      }
+    });
   }
   function saveProgress() { Store.set(KEY_P, JSON.stringify(progress)); }
   function savePrefs() { Store.set(KEY_S, JSON.stringify(prefs)); }
@@ -956,7 +984,7 @@
   /* Export / Import / Reset use an in-page dialog: window.confirm/prompt and <a download> are blocked in
      some embeds (the claude.ai Artifact preview among them), so every path has a copy/paste fallback. */
   function exportProgress() {
-    var data = { app: 'oot-guide', version: 1, exportedAt: new Date().toISOString(), done: Object.keys(progress.done).sort(), last: progress.last };
+    var data = { app: 'oot-guide', version: PROGRESS_VERSION, exportedAt: new Date().toISOString(), done: Object.keys(progress.done).sort(), last: progress.last };
     var json = JSON.stringify(data, null, 2);
     openDialog({
       title: 'Export progress',
@@ -1038,10 +1066,10 @@
     var n = Object.keys(progress.done).length;
     openDialog({
       title: 'Reset all progress?',
-      html: '<p>This clears all <b>' + n + '</b> check' + (n === 1 ? '' : 's') + ' and reopens every folded section. It cannot be undone unless you exported a copy first.</p>',
+      html: '<p>This clears all <b>' + n + '</b> check' + (n === 1 ? '' : 's') + ' and folds every section again. It cannot be undone unless you exported a copy first.</p>',
       actions: [
         { label: 'Reset all', cls: 'danger', run: function () {
-          progress = { done: {}, last: null }; prefs.open = {};
+          progress = normalizeProgress(null); prefs.open = {};
           saveProgress(); savePrefs(); renderSettings(); toast('Progress cleared');
         } },
         { label: 'Cancel' }

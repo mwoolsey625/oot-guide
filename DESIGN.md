@@ -149,6 +149,11 @@ thumb zone:
   This was tested by forcing `localStorage` to throw.
 - Export writes `oot-guide-progress-YYYY-MM-DD.json` (`{app, version, done[], last}`).
   Import validates the file and asks before replacing.
+- Saved progress and exports carry a format `version` (now 2). Ticks are keyed by step id, so
+  when steps are removed or renumbered, bump `PROGRESS_VERSION` in app.js and add a migration
+  that `normalizeProgress` runs on older saves and imports. A migrated save is written back on load
+  so it is never migrated twice. Version 2 dropped the cows: in the original game a cow only
+  refills a Bottle, so they are not collectibles, and the steps that existed only for one are gone.
 - Hash routes: `#/journey`, `#/ch/<chapter>[/<step-or-section>]`,
   `#/collect[/<cat>[/<item>]]`, `#/search/<q>`, `#/lore[/<page>[/<id>]]`, `#/settings`.
 - The fixture in `data/` is marked `FIXTURE — replaced by compiled data` and is not

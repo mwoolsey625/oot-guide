@@ -206,13 +206,17 @@ for (const [id, list] of Object.entries(itemsById)) {
 /* ------------------------------------------------------------------ ledger coverage + collect ids */
 const ledgerById = {};
 for (const row of LEDGER) ledgerById[row.id] = row;
-const outOfLogic = [];
+const outOfLogic = [], cows = [];
 for (const row of LEDGER) {
   if (itemsById[row.id] || collectAt[row.id]) continue;
   if ((row.tags || []).includes('out-of-logic')) { outOfLogic.push(row.id); continue; }
+  // in the original game a cow only refills an empty Bottle with milk, every time; nothing is collected or recorded
+  if (row.type === 'cow') { cows.push(row.id); continue; }
   err('ledger', `${row.id} (${row.type}, ${row.vanillaItem}) is not covered by any collectible or step`);
 }
 if (outOfLogic.length) note(`Ledger rows tagged out-of-logic and left out on purpose (rule B, see research/compile-notes-integration.md): ${outOfLogic.join(', ')}`);
+if (cows.length) note(`${cows.length} cow rows left out on purpose: randomizer checks only; in the original game a cow just refills a Bottle with milk.`);
+for (const row of LEDGER) if (row.type === 'cow' && (itemsById[row.id] || collectAt[row.id])) err('ledger', `${row.id}: cows are not collectibles (they only refill a Bottle); remove it from the guide`);
 
 // category membership must match the ledger where the ledger can say
 const setEq = (label, want, have) => {
@@ -227,7 +231,6 @@ setEq('gold-skulltulas', real.filter((r) => r.type === 'gold-skulltula').map((r)
 setEq('heart-pieces', real.filter((r) => /^Piece of Heart\b/.test(r.vanillaItem)).map((r) => r.id), catIds('heart-pieces'));
 setEq('heart-containers', real.filter((r) => r.type === 'heart-container').map((r) => r.id), catIds('heart-containers'));
 setEq('great-fairies', real.filter((r) => r.type === 'great-fairy').map((r) => r.id), catIds('great-fairies'));
-if (CATS.some((c) => c.id === 'cows')) setEq('cows', real.filter((r) => r.type === 'cow').map((r) => r.id), catIds('cows'));
 const ledgerSongs = real.filter((r) => r.type === 'song').map((r) => r.id);
 for (const s of ledgerSongs) if (!catIds('songs').includes(s)) err('totals', `songs: ledger song ${s} missing from the category`);
 

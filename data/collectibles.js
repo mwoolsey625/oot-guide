@@ -30,7 +30,7 @@ window.OOT.collectibles = [
         chapter: "c03-kakariko-lost-woods", step: "c03-s06-02", missable: false, remake: "" },
       { id: "kf-gs-house-of-twins", name: "Wall above the House of Twins", area: "Kokiri Forest", age: "adult", time: "night",
         requires: ["Hookshot"], how: "Look up at the wall above the House of Twins. Hookshot the Gold Skulltula, then Hookshot the token down.",
-        chapter: "c07-forest-temple", step: "c07-s04-03", missable: false,
+        chapter: "c07-forest-temple", step: "c07-s04-02", missable: false,
         remake: "Time keeps running in Kokiri Forest in the remake (confirmed), so you can wait for night here. Whether this Gold Skulltula is still night-only is unconfirmed." },
 
       { id: "lw-gs-bean-patch-near-bridge", name: "Soft soil by the bridge", area: "Lost Woods", age: "child", time: "any",
@@ -41,12 +41,12 @@ window.OOT.collectibles = [
         chapter: "c03-kakariko-lost-woods", step: "c03-s05-04", missable: false, remake: "" },
       { id: "lw-gs-above-theater", name: "High ledge above the Deku Theater clearing", area: "Lost Woods", age: "adult", time: "night",
         requires: ["Magic Bean"], how: "This needs the bean you planted as a child in the soft soil by the Deku Theater. As an adult, ride the bean plant up to the high ledge and defeat the Gold Skulltula there.",
-        chapter: "c07-forest-temple", step: "c07-s04-04", missable: false,
+        chapter: "c07-forest-temple", step: "c07-s04-03", missable: false,
         remake: "Time keeps running in the Lost Woods in the remake (confirmed), so night can arrive or end while you are there. Whether this Gold Skulltula is still night-only is unconfirmed." },
 
       { id: "sfm-gs", name: "Wall of the upper meadow", area: "Sacred Forest Meadow", age: "adult", time: "night",
         requires: ["Hookshot"], how: "Past the Club Moblin, climb the ladder at the end of the meadow, go left, and Hookshot the Gold Skulltula on the wall.",
-        chapter: "c07-forest-temple", step: "c07-s04-06", missable: false,
+        chapter: "c07-forest-temple", step: "c07-s04-05", missable: false,
         remake: "Time keeps running everywhere in the remake (confirmed). Whether this Gold Skulltula is still night-only is unconfirmed." },
 
       { id: "hf-gs-near-kak-grotto", name: "Grotto by the bridge toward Kakariko", area: "Hyrule Field", age: "either", time: "any",
@@ -72,7 +72,7 @@ window.OOT.collectibles = [
         chapter: "c02-hyrule-castle", step: "c02-s03-03", missable: false, remake: "" },
       { id: "llr-gs-rain-shed", name: "Rain shed outside the corral", area: "Lon Lon Ranch", age: "child", time: "night",
         requires: [], how: "Walk around the outside of the corral fence to the small roofed shelter at the far end of the ranch. The Gold Skulltula is on its boards.",
-        chapter: "c02-hyrule-castle", step: "c02-s03-06", missable: false,
+        chapter: "c02-hyrule-castle", step: "c02-s03-05", missable: false,
         remake: "Time keeps running at the ranch in the remake (confirmed), so night can end while you are there. Whether this Gold Skulltula is still night-only is unconfirmed." },
       { id: "llr-gs-house-window", name: "Ranch house window", area: "Lon Lon Ranch", age: "child", time: "night",
         requires: ["Boomerang"], how: "Use the Boomerang on the Gold Skulltula on the window of the building to your left as you enter the ranch, then on its token.",
@@ -140,7 +140,7 @@ window.OOT.collectibles = [
 
       { id: "dmc-gs-crate", name: "Crate at the summit entrance", area: "Death Mountain Crater", age: "child", time: "any",
         requires: ["Bombs"], how: "Enter the crater from the top of Death Mountain and roll into the wooden crate beside the entrance. The heat timer runs while you are inside.",
-        chapter: "c04-dodongos-cavern", step: "c04-s06-03", missable: false, remake: "" },
+        chapter: "c04-dodongos-cavern", step: "c04-s06-02", missable: false, remake: "" },
       { id: "dmc-gs-bean-patch", name: "Soft soil by the warp pad", area: "Death Mountain Crater", age: "child", time: "any",
         requires: ["Bolero of Fire", "Bottle", "Bugs"], how: "As a child, play the Bolero of Fire to warp into the crater and release Bugs on the soft soil next to the warp pad.",
         chapter: "c11-bottom-of-well", step: "c11-s02-04", missable: false, remake: "" },
@@ -412,7 +412,7 @@ window.OOT.collectibles = [
         chapter: "c04-dodongos-cavern", step: "c04-s05-05", missable: false, remake: "" },
       { id: "dmc-wall-freestanding-poh", name: "Alcove in the crater wall", area: "Death Mountain Crater", age: "either", time: "any",
         requires: ["Bombs"], how: "Enter the crater from the summit with a full heat timer. Walk off the ledge toward the platform below so Link grabs the climbable wall, and climb down to the alcove holding the piece. Dropping into the lava afterward returns you to the entrance for the cost of some health.",
-        chapter: "c04-dodongos-cavern", step: "c04-s06-04", missable: false,
+        chapter: "c04-dodongos-cavern", step: "c04-s06-03", missable: false,
         remake: "The remake replaces automatic jumping with a jump button (confirmed); stepping off this ledge may behave differently." },
       { id: "kak-impas-house-freestanding-poh", name: "Cow cage behind Impa's House", area: "Kakariko Village", age: "either", time: "any",
         requires: [], how: "Talk to the owl at the Death Mountain summit and hold on as he flies you to a Kakariko roof. Walk to the right edge above the Cucco pen, drop onto the thatched overhang, turn around and go through the hole in the wall into the cow's cage. As an adult you can reach the overhang with the Hookshot from the House of Skulltula roof.",
@@ -575,7 +575,7 @@ window.OOT.collectibles = [
         remake: "The Switch 2 note-to-button mapping is not announced; songs can also be played by humming into the microphone (confirmed)." },
       { id: "sheik-in-forest", name: "Minuet of Forest", area: "Sacred Forest Meadow", age: "adult", time: "any",
         requires: [], how: "Sneak past the Moblins in the meadow maze to the top of the steps; Sheik teaches it there. It warps you to the Sacred Forest Meadow.",
-        chapter: "c07-forest-temple", step: "c07-s04-05", missable: false,
+        chapter: "c07-forest-temple", step: "c07-s04-04", missable: false,
         remake: "The Switch 2 note-to-button mapping is not announced; songs can also be played by humming into the microphone (confirmed)." },
       { id: "sheik-at-temple", name: "Prelude of Light", area: "Temple of Time", age: "adult", time: "any",
         requires: ["Forest Medallion"], how: "Return to the Temple of Time after clearing the Forest Temple; Sheik teaches it there. It warps you to the Temple of Time.",
@@ -796,7 +796,7 @@ window.OOT.collectibles = [
         chapter: "c04-dodongos-cavern", step: "c04-s05-04", missable: false, remake: "" },
       { id: "dmt-great-fairy-reward", name: "Magic Meter", area: "Death Mountain Trail", age: "either", time: "any",
         requires: ["Bombs", "Zelda's Lullaby"], how: "At the Death Mountain summit, bomb the cracked wall near the owl, go in and play Zelda's Lullaby. The Great Fairy grants the Magic Meter and a stronger charged Spin Attack. Visit her first: every other Great Fairy vanishes if you have no magic yet.",
-        chapter: "c04-dodongos-cavern", step: "c04-s06-02", missable: false, remake: "" },
+        chapter: "c04-dodongos-cavern", step: "c04-s06-01", missable: false, remake: "" },
       { id: "kak-20-gold-skulltula-reward", name: "Stone of Agony", area: "Kakariko Village", age: "either", time: "any",
         requires: ["20 Gold Skulltula Tokens"], how: "Reward for 20 tokens at the House of Skulltula. It signals when you are near a hidden grotto or another secret. Hidden grottos open with a Bomb or the Megaton Hammer whether you carry it or not.",
         chapter: "c04-dodongos-cavern", step: "c04-s07-03", missable: false,
@@ -895,7 +895,7 @@ window.OOT.collectibles = [
     items: [
       { id: "dmt-great-fairy-reward", name: "Great Fairy, Death Mountain summit (Magic Meter)", area: "Death Mountain Trail", age: "either", time: "any",
         requires: ["Bombs", "Zelda's Lullaby"], how: "At the summit, bomb the cracked wall near the owl. She grants the Magic Meter and a stronger charged Spin Attack.",
-        chapter: "c04-dodongos-cavern", step: "c04-s06-02", missable: false, remake: "" },
+        chapter: "c04-dodongos-cavern", step: "c04-s06-01", missable: false, remake: "" },
       { id: "hc-great-fairy-reward", name: "Great Fairy, Hyrule Castle (Din's Fire)", area: "Hyrule Castle", age: "child", time: "any",
         requires: ["Bombs", "Zelda's Lullaby", "Magic Meter"], how: "On the castle grounds, bomb the boulder behind the 'Dead End' sign and crawl in. She grants Din's Fire. Only child Link can reach this fountain.",
         chapter: "c05-jabu-jabu", step: "c05-s01-01", missable: false, remake: "" },
@@ -1130,40 +1130,6 @@ window.OOT.collectibles = [
       { id: "event-zeldas-letter-to-guard", name: "Show the letter at the Death Mountain gate", area: "Kakariko Village", age: "child", time: "any",
         requires: ["Zelda's Letter"], how: "Show Zelda's Letter to the guard at the gate to Death Mountain Trail in Kakariko. He opens the gate and mentions his son wants a mask from the Happy Mask Shop.",
         chapter: "c03-kakariko-lost-woods", step: "c03-s01-01", missable: false, remake: "" }
-    ]
-  },
-
-  {
-    id: "cows", name: "Cows", total: 9,
-    note: "Play Epona's Song next to a cow while you hold an empty Bottle and it fills the Bottle with Lon Lon Milk. Without an empty Bottle you get nothing.",
-    items: [
-      { id: "llr-stables-left-cow", name: "Stable cow (left)", area: "Lon Lon Ranch", age: "either", time: "any",
-        requires: ["Epona's Song", "Bottle"], how: "In the stable at Lon Lon Ranch, play Epona's Song beside the cow on the left.",
-        chapter: "c02-hyrule-castle", step: "c02-s03-05", missable: false, remake: "" },
-      { id: "llr-stables-right-cow", name: "Stable cow (right)", area: "Lon Lon Ranch", age: "either", time: "any",
-        requires: ["Epona's Song", "Bottle"], how: "In the same stable, play Epona's Song beside the cow on the right.",
-        chapter: "c02-hyrule-castle", step: "c02-s03-05", missable: false, remake: "" },
-      { id: "llr-tower-left-cow", name: "Silo cow (left)", area: "Lon Lon Ranch", age: "either", time: "any",
-        requires: ["Epona's Song", "Bottle"], how: "In the silo at the back of the ranch, play Epona's Song beside the cow on the left.",
-        chapter: "c02-hyrule-castle", step: "c02-s03-04", missable: false, remake: "" },
-      { id: "llr-tower-right-cow", name: "Silo cow (right)", area: "Lon Lon Ranch", age: "either", time: "any",
-        requires: ["Epona's Song", "Bottle"], how: "In the silo, play Epona's Song beside the cow on the right.",
-        chapter: "c02-hyrule-castle", step: "c02-s03-04", missable: false, remake: "" },
-      { id: "kak-impas-house-cow", name: "Cow in Impa's House", area: "Kakariko Village", age: "either", time: "any",
-        requires: ["Epona's Song", "Bottle"], how: "The cow stands in the caged room at the back of Impa's House, where the Piece of Heart is.",
-        chapter: "c04-dodongos-cavern", step: "c04-s07-01", missable: false, remake: "" },
-      { id: "dmt-cow-grotto-cow", name: "Grotto cow on the upper trail", area: "Death Mountain Trail", age: "either", time: "any",
-        requires: ["Bombs", "Epona's Song", "Bottle"], how: "On the upper trail toward the summit, bomb the boulder that covers a hole in the ground and drop into the grotto with the cow.",
-        chapter: "c04-dodongos-cavern", step: "c04-s06-01", missable: false, remake: "" },
-      { id: "gv-cow", name: "Riverside cow", area: "Gerudo Valley", age: "child", time: "any",
-        requires: ["Epona's Song", "Bottle"], how: "The cow stands on the riverside ledge with the Gerudo woman; glide down to it with a Cucco from the bridge.",
-        chapter: "c06-temple-of-time", step: "c06-s05-06", missable: false, remake: "" },
-      { id: "hf-cow-grotto-cow", name: "Cow in the grotto by Gerudo Valley", area: "Hyrule Field", age: "either", time: "any",
-        requires: ["Bombs", "Din's Fire", "Epona's Song", "Bottle"], how: "Bomb the middle of the ring of rocks near the Gerudo Valley entrance, drop in, and burn the webs with Din's Fire to reach the cow.",
-        chapter: "c06-temple-of-time", step: "c06-s05-02", missable: false, remake: "" },
-      { id: "kf-links-house-cow", name: "Cow in Link's House", area: "Kokiri Forest", age: "adult", time: "any",
-        requires: ["Epona", "Epona's Song", "Bottle"], how: "Finish Malon's obstacle course at Lon Lon Ranch in under 50 seconds as an adult, and a cow moves into Link's House.",
-        chapter: "c07-forest-temple", step: "c07-s04-02", missable: false, remake: "" }
     ]
   }
 ];

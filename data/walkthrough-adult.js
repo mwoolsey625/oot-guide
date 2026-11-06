@@ -21,10 +21,10 @@ OOT.walkthrough.push({
         { id: "c07-s01-02", text: "By day at **Lon Lon Ranch**, pay Ingo 10 Rupees for a ride, then play **Epona's Song** in the corral to call Epona. Bet 50 Rupees on a race against Ingo and win twice to keep her; when he locks the gate, jump the fence on horseback.",
           collect: [], time: "day",
           tip: "Ingo leaves a moment early and swings wide on the bends. Hold the inside line and save your carrots for the last stretch.",
-          remake: "Nintendo has confirmed that time now passes in every area, so the ranch can turn to night during your visit. Epona is a daytime-only event in the original; confirm the rule after launch." },
+          remake: "Time now passes in every area (confirmed), so the ranch can turn to night during your visit. Epona is a daytime-only event in the original; whether that rule changed has not been reported yet." },
         { id: "c07-s01-03", text: "Ride back into the ranch and talk to Malon while mounted to run her obstacle course. Clear 2 laps of fences in under 50 seconds and she sends a cow to **Link's House** in Kokiri Forest.",
           collect: [], time: "day",
-          remake: "Time keeps running at the ranch in the remake (confirmed), so the daytime window can close. The 50-second limit is unconfirmed for the remake." }
+          remake: "Time keeps running at the ranch in the remake (confirmed), so the daytime window can close. Whether the 50-second limit changed has not been reported yet." }
       ]
     },
     {
@@ -36,12 +36,12 @@ OOT.walkthrough.push({
         { id: "c07-s02-02", text: "Pull back the grave with flowers in front of it, next to the bean plant, and drop into **Dampé's Grave**. Chase his ghost through the tunnels to the chest at the far end for the **Hookshot**.",
           collect: ["graveyard-dampe-race-hookshot-chest"],
           tip: "Keep to the left wall at first. Past the first door, follow the right wall into the big room and leave by its right exit. The flames he drops knock you down, so do not trail him too closely.",
-          remake: "The remake adds a dash (confirmed by Nintendo), which may make this chase easier. Check whether the tunnel layout changed." },
+          remake: "The remake adds a dash (confirmed), which may make this chase easier. Whether the tunnel layout changed has not been reported yet." },
         { id: "c07-s02-03", text: "Past the chest, play the **Song of Time** to clear the blue block and climb the stairs into the **Windmill**. Talk to the man turning the music box to learn the **Song of Storms**.",
           collect: ["song-from-windmill"] },
         { id: "c07-s02-04", text: "Go back to Dampé's grave and race him a second time. Reach the end in 60 seconds or less and a **Piece of Heart** appears at the finish.",
           collect: ["graveyard-dampe-race-freestanding-poh"],
-          remake: "Nintendo has confirmed a dash in the remake; the 60-second limit may also have been retuned. Confirm after launch." }
+          remake: "The remake adds a dash (confirmed). Whether the 60-second limit changed has not been reported yet." }
       ]
     },
     {
@@ -54,7 +54,8 @@ OOT.walkthrough.push({
           tip: "The adult Bazaar sells a Hylian Shield for 80 Rupees by day. You only need it if a Like Like ever eats yours.",
           remake: "Time now passes inside Kakariko (confirmed). Anju's trade and the Bazaar are daytime-only in the original, so they can close while you are in town." },
         { id: "c07-s03-03", text: "Enter the **House of Skulltula** with at least 40 tokens (you should hold 45) and take the 40-token reward, a pack of 10 **Bombchus**.",
-          collect: ["kak-40-gold-skulltula-reward"] },
+          collect: ["kak-40-gold-skulltula-reward"],
+          remake: "Reported: a post-launch guide gives this reward as 20 Bombchus on Switch 2." },
         { id: "c07-s03-04", text: "Play the **Sun's Song** to bring night. Hookshot from the street onto the roof of the House of Skulltula, then across to the roof of **Impa's House**, where the Gold Skulltula waits.",
           collect: ["kak-gs-above-impas-house"], time: "night",
           remake: "Time now flows in Kakariko (confirmed), so night can end mid-hunt. You can wait for night in town instead of playing the Sun's Song." }
@@ -71,13 +72,13 @@ OOT.walkthrough.push({
           remake: "Kokiri Forest was frozen in time in the original; the remake keeps time running everywhere (confirmed), so night can now arrive or end while you are here." },
         { id: "c07-s04-03", text: "In the Lost Woods go right, left, right; play **Saria's Song** to get Mido out of the way. In the next clearing, turn left and at night ride the bean plant from the theater soil up to the high ledge, where a Gold Skulltula waits.",
           collect: ["lw-gs-above-theater"], time: "night",
-          remake: "Time now passes in the Lost Woods (confirmed), so the night window can close while you ride the plant." },
+          remake: "Time now passes in the Lost Woods (confirmed). Reported: 2 post-launch lists show this token with no night condition, though the original needed night. Try by day first. If it is not there, come back at night." },
         { id: "c07-s04-04", text: "Continue through the Lost Woods (right, left, right, left, straight, left, right from the entrance) to the **Sacred Forest Meadow**. Slip past the Moblins in the maze, and at the top of the steps Sheik teaches you the **Minuet of Forest**.",
           collect: ["sheik-in-forest"],
           tip: "Wait in the alcoves until a patrolling Moblin turns away. For the club-swinging Moblin at the steps, weave toward it and slash at its feet; it drops Rupees." },
         { id: "c07-s04-05", text: "Still at night, climb the ladder at the end of the maze, go left and Hookshot the Gold Skulltula on the wall.",
           collect: ["sfm-gs"], time: "night",
-          remake: "Night-only Gold Skulltulas are unconfirmed for the remake, where time now runs everywhere. Check this one after launch." }
+          remake: "Reported: a post-launch guide still places this Gold Skulltula at night, on the meadow's east wall. Time keeps running, so night can end while you are here; play the Sun's Song to bring it back." }
       ]
     },
     {
@@ -86,18 +87,21 @@ OOT.walkthrough.push({
         { id: "c07-s05-01", text: "Hookshot to the tree branch above the meadow steps to reach the **Forest Temple**. Beat the 2 Wolfos inside, climb the vines on the right, Hookshot the Gold Skulltula on the vines, then walk the branches to the chest with a **Small Key**.",
           collect: ["forest-temple-gs-first-room", "forest-temple-first-room-chest"],
           tip: "Wolfos guard their front. Wait for one to lunge, then hit its back or tail. The Big Skulltula in the next hallway falls to the Hookshot.",
-          remake: "Previews confirm the Forest Temple keeps its original layout, with some rooms changed. This chapter follows the original; the changes reported so far are noted on the steps they affect." },
+          remake: "On Switch 2 the Forest Temple has the same rooms with new connections (confirmed). The steps here follow the original, so read each note as you go; the room details rest on post-launch walkthroughs (reported). Reported: a Hookshot target replaces the tree branch at the entrance, and the branches to the Small Key chest are still here. The vines and the Gold Skulltula at the top of them are still here (confirmed)." },
         { id: "c07-s05-02", text: "In the main hall, after the Poe Sisters steal the torch flames, cross to the far side and climb the ledge and stairs. A Gold Skulltula sits on the wall to the right of the door at the top.",
           collect: ["forest-temple-gs-lobby"] },
         { id: "c07-s05-03", text: "Through that door, past a Blue Bubble, the next room locks you in with 2 Stalfos. Defeat both and open the chest that appears for a **Small Key**.",
           collect: ["forest-temple-first-stalfos-chest"],
           tip: "A fairy waits in a pot here. Shield-bash the Blue Bubble or stun it before you strike." },
         { id: "c07-s05-04", text: "Back in the main hall, play the **Song of Time** at the block in the left-hand doorway as you face the far side. In the courtyard beyond, keep right, Hookshot the Skullwalltulas on the vines and climb to the door at the top; beat the Blue Bubble inside for the **Dungeon Map**.",
-          collect: ["forest-temple-map-chest"] },
+          collect: ["forest-temple-map-chest"],
+          remake: "Reported: on Switch 2 the Dungeon Map is not behind this Blue Bubble. Go past the Song of Time block and the Deku Baba, Hookshot the Skulltulas on the vine wall and climb to the ledge. Past a Blue Bubble, Hookshot the target on the right wall to reach the floor switch that drains the well. Take the well's key first, as in the next steps. The Map is then in a large chest on the ledge north of the well, reached by Hookshot." },
         { id: "c07-s05-05", text: "Go on into the other courtyard, Hookshot the target above the platform and step on the switch to drain the well. Drop into the water, climb out, and Hookshot the side of the small chest on the raised ledge to pull yourself up; open it, then take the Gold Skulltula around the corner.",
-          collect: ["forest-temple-raised-island-courtyard-chest", "forest-temple-gs-raised-island-courtyard"] },
+          collect: ["forest-temple-raised-island-courtyard-chest", "forest-temple-gs-raised-island-courtyard"],
+          remake: "Reported: the floor switch still drains the well. Post-launch walkthroughs do not mention this small chest on a raised ledge, and its place on Switch 2 has not been reported. Reported: one list reaches this courtyard's Gold Skulltula another way, and it may be the token listed here. In the north-east room, push a block down for a shortcut, look up for a Scarecrow's Song spot, play the Song and Hookshot up to the token. If you already know the Song, try that. If not, try the ledge route written here." },
         { id: "c07-s05-06", text: "Climb down into the drained well and run to its far end for a chest with a **Small Key**. Climb out and return to the main hall.",
-          collect: ["forest-temple-well-chest"] }
+          collect: ["forest-temple-well-chest"],
+          remake: "Reported: the well still holds a Small Key. When you climb out, go north and Hookshot up to the ledge for the large Dungeon Map chest before you return to the main hall." }
       ]
     },
     {
@@ -106,18 +110,20 @@ OOT.walkthrough.push({
         { id: "c07-s06-01", text: "Unlock the main hall's west door (on the map) and Hookshot the Skulltula in the hallway. In the block room, pull the blue block out until it lines up with the wall corner, push it back from the side, then push it into its slot; climb the uncovered ladder and push the red block until it stops.",
           collect: [],
           tip: "If the order goes wrong, the blocks can be pulled back out. The goal is a staircase of blocks to the hidden ledge on the right.",
-          remake: "Previews confirm a new lift in this block-pushing room. How it changes the climb has not been described, so the block moves here may be shorter or different in the remake." },
+          remake: "This room has a new lift (confirmed). Reported: a Wallmaster drops near the start, so keep moving. Arrows on the floor show which way to push and pull each block, so follow them instead of the moves written here. Upstairs, after 2 Blue Bubbles, a floor switch on the left, before the eye-switch door, calls the lift. It gives you a shortcut back past the block puzzle." },
         { id: "c07-s06-02", text: "From the blue block, jump to the hidden ledge on the right and push the red block until it locks, then take the locked door at the top. Cross the twisted corridor and the tilted room, pass through the painting room and enter the Stalfos room for the **Fairy Bow**.",
           collect: ["forest-temple-bow-chest"],
           tip: "Avoid the pit in the middle of the Stalfos room; it drops you back to the earlier 2-Stalfos room. Beat the first Stalfos, then finish the next 2 close together or one revives. A Wallmaster's shadow in the tilted room means move: a grab sends you back to the entrance.",
-          remake: "The remake uses a jump button instead of automatic jumping (confirmed). Jump the gaps in the tilted room yourself. One preview says the pit in the middle of the Stalfos room is now a shallow pool of acid that hurts Link, and that the 2 later Stalfos rise out of it (reported in previews)." },
+          remake: "The remake uses a jump button instead of automatic jumping (confirmed). Jump the gaps in the tilted room yourself. Reported: the pit in the middle of the Stalfos room is now a shallow pool of acid that hurts Link, not a drop, and the 2 later Stalfos rise out of it." },
         { id: "c07-s06-03", text: "Return to the painting room you passed and shoot Joelle's portrait with the **Fairy Bow** each time it appears (she moves frames as you approach). After 3 hits she fights you at the foot of the stairs; win to relight the red torch and take the **Small Key** from the chest.",
           collect: ["forest-temple-red-poe-chest"],
-          tip: "Shoot the portraits from the middle level of the stairs. Keep your shield up while she is invisible and strike when she reappears." },
+          tip: "Shoot the portraits from the middle level of the stairs. Keep your shield up while she is invisible and strike when she reappears.",
+          remake: "Reported: the Small Key comes when you beat her, and it opens the door back in the Stalfos room. Whether it still sits in a chest has not been settled." },
         { id: "c07-s06-04", text: "Go back through the Stalfos room to the other painting room and beat Beth the same way. The chest after her fight holds the **Compass**.",
           collect: ["forest-temple-blue-poe-chest"] },
         { id: "c07-s06-05", text: "Return to the block room. Standing on the blue block's level, shoot the eye switch there for a chest of arrows, then at the top shoot the silver eye switch above the door to straighten the twisted corridor.",
-          collect: ["forest-temple-eye-switch-chest"] },
+          collect: ["forest-temple-eye-switch-chest"],
+          remake: "Reported: on Switch 2 this eye switch makes a chest with a Purple Rupee, not arrows, and it is optional. It is around the corner from where you first pushed the second block. The eye switch above the door before the twisted corridor still straightens it." },
         { id: "c07-s06-06", text: "Walk the straightened corridor into the tilted room, now level, and drop down to the large chest for the **Boss Key**.",
           collect: ["forest-temple-boss-key-chest"] }
       ]
@@ -127,30 +133,34 @@ OOT.walkthrough.push({
       steps: [
         { id: "c07-s07-01", text: "Drop through the hole by the Boss Key chest and beat the 2 Blue Bubbles to open the door; you come out in the west courtyard (on the map). Jump to the narrow platform with Recovery Hearts and take the Gold Skulltula on the wall above it.",
           collect: ["forest-temple-gs-level-island-courtyard"],
-          remake: "Jumps are manual in the remake (confirmed); make the hop to the platform yourself." },
+          remake: "Jumps are manual in the remake (confirmed); make the hop to the platform yourself. Reported: you come out on an upper ledge with 2 doors. Reports of where the Gold Skulltula sits differ. One puts it on the wall beside the south ledge you land on. Another says the door ahead leads around a corner to a ledge with it. Look at the wall by your landing ledge first, then try the door." },
         { id: "c07-s07-02", text: "Shoot or stun the Big Deku Baba in the way. The last alcove on the right hides a door: defeat the Floormaster inside, then the 3 small hands it splits into, and open the chest for a **Small Key**.",
           collect: ["forest-temple-floormaster-chest"],
-          tip: "A Spin Attack clears the 3 small hands together. The door on the right leads back to the block room." },
+          tip: "A Spin Attack clears the 3 small hands together. The door on the right leads back to the block room.",
+          remake: "Reported: from the upper ledge, the Floormaster is behind the door on the right. It still splits when beaten, and the Small Key chest is still the reward." },
         { id: "c07-s07-03", text: "From the top of the block room, shoot the silver eye switch again to twist the corridor back, then cross Joelle's room and the Stalfos room to the locked door at the top of Beth's room. Pass the second twisted corridor and the Green Bubble hall, ride the moving platform in the torch room, and melt the frozen eye switch with an arrow shot through the lit torch (or Din's Fire beside it).",
           collect: [],
-          remake: "One preview says the torch room with the frozen eye switch no longer has its rotating pillars; an arrow through the lit torch still melts the switch (reported in previews)." },
+          remake: "Reported: this room has no rotating pillars or moving platform on Switch 2. Step on the switch to light the torch, run to the far side and shoot an arrow through the flame at the iced eye switch above the door. If it does not trigger once the ice melts, shoot it again. The corridor then twists; go down it and drop through the hole." },
         { id: "c07-s07-04", text: "Drop into the hole the twisted corridor now exposes. In the room with the falling ceiling, move between the safe gaps by watching the shadows, open the small chest, and step on the switch to unlock the far door.",
           collect: ["forest-temple-falling-ceiling-room-chest"],
-          tip: "The camera is fixed overhead in this room and you cannot target. Stand under the holes in the ceiling when it drops." },
+          tip: "The camera is fixed overhead in this room and you cannot target. Stand under the holes in the ceiling when it drops.",
+          remake: "Reported: push the block off the ledge outside the right-hand door to make a shortcut. Giant Skulltulas hide under shaded squares. The switch on the right opens the end door and is a safe spot. The chest may hold Bombs rather than arrows." },
         { id: "c07-s07-05", text: "In the next room, shoot Amy's painting so it breaks into blocks, then push and pull them into the picture before the timer runs out. Solving it summons Amy; beat her to relight the green torch.",
           collect: [],
           tip: "Clear the blue middle block first, then pull the rest toward the fixed block. Leave and re-enter the room to reset a failed attempt.",
-          remake: "One preview says this picture puzzle no longer has a time limit (reported in previews)." },
+          remake: "Reported: this picture puzzle has no time limit on Switch 2, so take your time. 2 blocks look alike. Wait for all the blocks to move and ignore the one that stays still." },
         { id: "c07-s07-06", text: "Return to the main hall's balcony, where Meg splits into 4 copies. Shoot the real one, the copy that spins once more than the others, until she falls; all 4 flames are back and the central elevator works.",
           collect: [],
-          tip: "Spin Attacks, Din's Fire and Deku Nuts only hit the copies." }
+          tip: "Spin Attacks, Din's Fire and Deku Nuts only hit the copies.",
+          remake: "Reported: on Switch 2 you first shoot the purple Poe in the corridor past the picture puzzle, then return to the main hall. The real Meg is still the copy that spins while the others stay fixed on you." }
       ]
     },
     {
       id: "c07-s08", title: "Phantom Ganon", era: "adult", kind: "boss",
       steps: [
         { id: "c07-s08-01", text: "Ride the elevator to the basement and push the wall handle to rotate the room. Turn it counterclockwise one stop at a time: press the switch on the white floor, then the one on the red floor, then open the chest of arrows and take the Gold Skulltula, then press the switch on the blue floor to open the bars to the boss hallway.",
-          collect: ["forest-temple-basement-chest", "forest-temple-gs-basement"] },
+          collect: ["forest-temple-basement-chest", "forest-temple-gs-basement"],
+          remake: "Reported: the colored floor switches are gone on Switch 2. Push a handle on the outer wall to rotate the room. One stop clockwise shows the chest of arrows; another shows a floor switch that lights a torch. Turn the room until the torch lines up with an iced eye switch behind it. Shoot an arrow through the flame to melt the ice, then another at the eye to open the way to the boss. The Gold Skulltula is on the wall of the south room. Reported: another list says the room that holds it has green pots." },
         { id: "c07-s08-02", text: "Defeat Phantom Ganon (see the boss card), take the **Heart Container**, then step into the blue light. Saria gives you the **Forest Medallion** in the Chamber of Sages.",
           collect: ["phantom-ganon", "forest-temple-phantom-ganon-heart"],
           tip: "Take the Heart Container before the blue warp." }
@@ -162,7 +172,7 @@ OOT.walkthrough.push({
         { id: "c07-s09-01", text: "Enter the **Temple of Time** with the Forest Medallion, where Sheik teaches you the **Prelude of Light**, the warp back here. Ride Epona into **Hyrule Field** with the **Fairy Bow** and 3 empty Bottles and catch the Big Poes near the sign at the start of the Market bridge, in the bushes by the stream in the northwest corner (on the map) and at the lone tree on the field's western edge: shoot each twice and bottle the soul it leaves. Sell them at the Poe shop in the old guard house by the Market entrance.",
           collect: ["sheik-at-temple", "big-poe-hf-02", "big-poe-hf-01", "big-poe-hf-04"],
           tip: "Big Poes appear when you ride through fixed spots and cannot be targeted. The Poe Collector pays 50 Rupees and 100 points for each. If you cannot reach a soul from the saddle, get down and bottle it on foot.",
-          remake: "Nintendo has announced a Hall of Fallen Foes, reached as the adventure progresses, where you can fight defeated bosses again as time attacks; where it is has not been announced. No 3DS-style Boss Challenge through Link's bed has been announced. The 10 Big Poe spawn points come from the original field. Previews confirm the field's ground has been reshaped between landmarks, so each point needs checking after launch." },
+          remake: "The Hall of Fallen Foes opens now that the Forest Temple is done (confirmed). Beds glowing green lead there, including in Link's House and at Kakariko's Grand Lodge: sleep, and you wake in the Hall. Talk to Kaepora Gaebora to leave. You can fight bosses again and chain several together. Reported: items you use there come back afterward, and the rewards are poor. The 10 Big Poe spots here come from the original field, and its ground has been reshaped (confirmed). Reported: purple glowing lanterns now mark the spots, so ride toward those." },
         { id: "c07-s09-02", text: "Catch 3 more around **Lon Lon Ranch**: at the tree by the ranch's north entrance (on the map), along the stone wall on the ranch's east side, and at the lone rock at the fork between the ranch and Kakariko. Sell them.",
           collect: ["big-poe-hf-05", "big-poe-hf-06", "big-poe-hf-08"] },
         { id: "c07-s09-03", text: "Catch 3 in the south of the field (on the map): at the road fork in the southwest, at the rock ringed by trees in the south, and in the grass by the lone tree in the southeast. Sell them.",
@@ -216,14 +226,14 @@ OOT.walkthrough.push({
           collect: ["lw-trade-cojiro"],
           warn: "Do not play a warp song or use Farore's Wind while the timer runs: the mushroom spoils at once and turns back into Cojiro. Running out of time does the same.",
           tip: "The bean plant in the clearing by the Lost Woods bridge lifts you to the Hyrule Field exit. From there ride Epona to Kakariko.",
-          remake: "The 3-minute limit is from the original. The remake's dash (confirmed) may change how tight it is, and the timer may have been retuned." },
+          remake: "The 3-minute limit is from the original. The remake's dash (confirmed) may change how tight it is. Whether the timer changed has not been reported yet." },
         { id: "c08-s02-03", text: "In Kakariko, go through the **Potion Shop** (the last building on the right toward Death Mountain), out its back door, drop down and walk up the ramp to the old woman's shop. Hand over the mushroom for the **Odd Potion**.",
           collect: ["kak-granny-trade-odd-mushroom"],
           tip: "The Potion Shop is open by day. From now on she sells Blue Potions for 100 Rupees, as many as you like. Each needs an empty Bottle and refills hearts and magic." },
         { id: "c08-s02-04", text: "Return to the same spot in the Lost Woods, where the Kokiri girl Fado now sits. Give her the Odd Potion for the **Poacher's Saw**.",
           collect: ["lw-trade-odd-potion"],
           warn: "N64 and GameCube: if you never took the Deku Nut upgrade from the Deku Theater with the Mask of Truth (chapter 6), go back as a child and get it first. Receiving the Poacher's Saw makes that upgrade impossible in those versions.",
-          remake: "Unknown whether the remake keeps this Deku Nut upgrade bug; the 3DS version does not have it." }
+          remake: "Whether the remake keeps this Deku Nut upgrade bug has not been reported yet; the 3DS version does not have it." }
       ]
     },
     {
@@ -232,17 +242,17 @@ OOT.walkthrough.push({
         { id: "c08-s03-01", text: "Ride to **Lake Hylia**. Talk to Bonooru, the scarecrow between the laboratory and the **Fishing Pond**, and play the same 8-note tune you taught him as a child. He registers it as the **Scarecrow's Song**: play it where Navi turns green and Pierre appears as a Hookshot target.",
           collect: ["pierre"],
           tip: "The game does not list this song on the pause screen. Write your tune down. If you have forgotten it, go back as a child and teach Bonooru a new one.",
-          remake: "The Switch 2 button layout for ocarina notes has not been announced; songs can also be hummed into the microphone (confirmed)." },
+          remake: "The button layout for ocarina notes has not been reported by a first-hand source yet; songs can also be hummed into the microphone (confirmed)." },
         { id: "c08-s03-02", text: "Ride the bean plant you planted beside the laboratory up onto its roof and climb the ladder to a **Piece of Heart**.",
           collect: ["lh-freestanding-poh"],
           tip: "Without the plant, play the Scarecrow's Song near the laboratory and Hookshot to Pierre instead." },
         { id: "c08-s03-03", text: "Ride the bean plant on toward the Fishing Pond island (or Hookshot over with Pierre) while the lake is dry. Pay 20 Rupees and catch a fish of 14 pounds or more to win the **Golden Scale**.",
           collect: ["lh-adult-fishing"],
           tip: "A fish shown as 13 pounds can fall just short of the cut-off, so keep fishing until one shows 14. Bites come more often early in the morning, at dusk and in rain.",
-          remake: "Fishing weights and their display are version-sensitive. The remake's thresholds are unconfirmed; check after launch." },
+          remake: "Fishing weights and their display are version-sensitive. The remake's thresholds have not been confirmed by a first-hand source yet." },
         { id: "c08-s03-04", text: "Inside the **Lakeside Laboratory**, dive to the bottom of the tank with the Golden Scale, then surface and talk to the scientist for a **Piece of Heart**.",
           collect: ["lh-lab-dive"],
-          remake: "Link now swims faster and can dive when he spots something below (confirmed). Whether the scales still limit diving depth is unknown." }
+          remake: "Link now swims faster and can dive when he spots something below (confirmed). Whether the scales still limit diving depth has not been reported yet." }
       ]
     },
     {
@@ -251,12 +261,12 @@ OOT.walkthrough.push({
         { id: "c08-s04-01", text: "In **Hyrule Field**, find the lone tree northwest of Lon Lon Ranch (on the map), between the castle and Gerudo Valley. Blow a hole open beside it with a Bomb, drop in and dive to the bottom of the grotto's pool for a **Piece of Heart**.",
           collect: ["hf-tektite-grotto-freestanding-poh"],
           tip: "The Stone of Agony reacts near the tree, but you do not need it to open the grotto.",
-          remake: "Whether the Golden Scale still sets the diving depth in the remake is unknown; Rumble support for the Stone of Agony is also unannounced." },
+          remake: "On Switch 2, 2 post-launch lists of Pieces of Heart leave out this pool and add a chest instead (confirmed). It stands in a shaded spot in the west of Hyrule Field, next to the desert road. To an adult the chest looks already open. Read the Fairy Note beside it as an adult, then come back as a child and open it. The app keeps this row for that piece. The Echo Gem replaces the Stone of Agony (confirmed)." },
         { id: "c08-s04-02", text: "Ride Epona into **Gerudo Valley** and jump the broken bridge on horseback. Give the **Poacher's Saw** to the head carpenter by the tent for the **Broken Goron's Sword**.",
           collect: ["gv-trade-poachers-saw"] },
         { id: "c08-s04-03", text: "At night, Hookshot the Gold Skulltula on the back wall behind the carpenters' tent. Then look up the sides of the stone archway on your left after the bridge for a second one.",
           collect: ["gv-gs-behind-tent", "gv-gs-pillar"], time: "night",
-          remake: "Night-only Gold Skulltulas are unconfirmed for the remake; check both after launch." }
+          remake: "Both are still night-only on Switch 2 (confirmed). Time keeps running, so night can end while you are here; play the Sun's Song to bring it back." }
       ]
     },
     {
@@ -277,7 +287,7 @@ OOT.walkthrough.push({
         { id: "c08-s06-01", text: "In **Goron City**, stop the Goron rolling around the middle floor with a Bomb. He is Darunia's son, Link; listen to him to receive the **Goron Tunic**, and he reopens the shop and Darunia's room.",
           collect: ["gc-rolling-goron-as-adult", "gc-shop-item-5"],
           tip: "The reopened shop sells a Goron Tunic for 200 Rupees, for use if a Like Like ever eats yours.",
-          remake: "Unknown whether tunics move to a quick-select slot in the remake. Equip the Goron Tunic before you enter the crater either way." },
+          remake: "Whether tunics have a quick-select slot has not been reported yet. Equip the Goron Tunic before you enter the crater either way." },
         { id: "c08-s06-02", text: "Cross the rope walkways to the central platform on the top floor and take the Gold Skulltula on its far side.",
           collect: ["gc-gs-center-platform"] },
         { id: "c08-s06-03", text: "Find Medigoron in the room behind the bombable walls on the middle floor and buy the **Giant's Knife** for 200 Rupees.",
@@ -292,7 +302,8 @@ OOT.walkthrough.push({
       steps: [
         { id: "c08-s07-01", text: "Climb down the ladder to the **Fire Temple**. Go up the stairs and through the left door, where Darunia heads in alone; jump along the platforms on the left to the floor switch, free the Goron behind the bars and take the **Small Key** from his cell.",
           collect: ["fire-temple-near-boss-chest"],
-          tip: "Wear the Goron Tunic for the whole temple." },
+          tip: "Wear the Goron Tunic for the whole temple.",
+          remake: "No first-hand report lists room changes in the Fire Temple on Switch 2 yet. These steps follow the original; the remake's behaviour in each room has not been reported." },
         { id: "c08-s07-02", text: "Unlock the door opposite. In the big lava room, take the ledge door on the left past the Song of Time block, free the Goron there and open his chest for a **Small Key**.",
           collect: ["fire-temple-big-lava-room-lower-open-door-chest"] },
         { id: "c08-s07-03", text: "From the lower platform, turn around and play the **Song of Time** to move the block, then climb to the door. Raise your shield against the flying floor tiles, defeat the Like Like from a distance and take the Gold Skulltula on the back wall.",
@@ -365,7 +376,7 @@ OOT.walkthrough.push({
           collect: ["gc-maze-left-chest"] },
         { id: "c08-s11-03", text: "At night on **Death Mountain Trail**, hammer the red boulder nearest the summit on the upper path where rocks used to fall. A Gold Skulltula hides behind it.",
           collect: ["dmt-gs-falling-rocks-path"], time: "night",
-          remake: "Night-only Gold Skulltulas are unconfirmed for the remake; check this one after launch." },
+          remake: "Reported: 2 post-launch lists show this token with no night condition, though the original needed night. Try by day first. If it is not there, come back at night." },
         { id: "c08-s11-04", text: "Still at night, hammer the red boulder on the ledge above **Dodongo's Cavern**, by the path to Goron City, for another Gold Skulltula.",
           collect: ["dmt-gs-above-dodongos-cavern"], time: "night" }
       ]
@@ -395,13 +406,13 @@ OOT.walkthrough.push({
       steps: [
         { id: "c09-s01-01", text: "At night on **Zora's River**, reach the plateau in the middle of the river (ride the bean plant, or swim the narrow stream back from near Zora's Domain and climb the ladder). Hookshot the Gold Skulltula high on its south wall (on the map).",
           collect: ["zr-gs-near-raised-grottos"], time: "night",
-          remake: "Night-only Gold Skulltulas are unconfirmed for the remake; check after launch." },
+          remake: "On Switch 2, 2 post-launch lists reach this token by riding the bean flower from the soft soil near the Bean Salesman as an adult, so plant that bean as a child (confirmed). Reported: it is still night-only, and you still need the Hookshot." },
         { id: "c09-s01-02", text: "Still at night, cross the small bridge toward Zora's Domain, stand on the fence and Hookshot the Gold Skulltula high on the wall.",
           collect: ["zr-gs-above-bridge"], time: "night" },
         { id: "c09-s01-03", text: "Play **Zelda's Lullaby** at the waterfall to enter the frozen **Zora's Domain**. At night, go through King Zora's chamber, turn left to the top of the frozen waterfall, walk to the edge and look left for a Gold Skulltula.",
           collect: ["zd-gs-frozen-waterfall"], time: "night",
           tip: "The Hookshot or the Fairy Bow brings it down.",
-          remake: "Zora's Domain was frozen in time in the original. Time now passes everywhere (confirmed), so night can end while you are inside." },
+          remake: "Zora's Domain was frozen in time in the original; time now passes everywhere (confirmed). Reported: 2 post-launch lists show this token with no night condition, though the original needed night. Try by day first. If it is not there, come back at night." },
         { id: "c09-s01-04", text: "Pass the red ice around King Zora and continue to **Zora's Fountain**. Drop from Jabu-Jabu's old altar onto the ice floes and hop across to the floe off to the right that holds a **Piece of Heart**.",
           collect: ["zf-iceberg-freestanding-poh"],
           tip: "To reach the cavern afterward, cross the 3 spinning floes the other way, then the still one, and jump to the ledge at the cave mouth.",
@@ -419,14 +430,15 @@ OOT.walkthrough.push({
           tip: "One Bottle of Blue Fire is enough to go on; more saves trips. Blue Fire melts any red ice." },
         { id: "c09-s02-03", text: "Back in the blade room, melt the red ice over the left exit. In the cavern beyond, open the frozen chest on the right for the **Compass**, melt the red ice on the left for a **Piece of Heart**, and Hookshot the Gold Skulltula on the high pillar.",
           collect: ["ice-cavern-compass-chest", "ice-cavern-freestanding-poh", "ice-cavern-gs-heart-piece-room"],
-          tip: "Icicles regrow here; keep moving. You can refill Blue Fire inside this cavern." },
+          tip: "Icicles regrow here; keep moving. You can refill Blue Fire inside this cavern.",
+          remake: "On Switch 2 there is no Piece of Heart in this room (confirmed). It moved to a Business Scrub in Death Mountain Crater, who sells it to child Link for 100 Rupees. Stun him with your shield and talk to him. If you have not bought it yet, go back as a child, and tick this row when you have it." },
         { id: "c09-s02-04", text: "Melt the red ice on the blade room's other exit and follow the hall to the block room. Hookshot the Gold Skulltula on the high wall, then push the ice block across the slippery floor to reach the 5 Silver Rupees, using Blue Fire on the alcove's red ice and the **Song of Time** where Navi turns green.",
           collect: ["ice-cavern-gs-push-block-room"],
           tip: "Pushing the block into a pit resets it to the start." },
         { id: "c09-s02-05", text: "Push the block under the new hallway, climb in, beat 2 Freezards and melt the red ice wall. Defeat the White Wolfos for the **Iron Boots**, and Sheik teaches you the **Serenade of Water**.",
           collect: ["ice-cavern-iron-boots-chest", "sheik-in-ice-cavern"],
           tip: "Leave with at least 1 Bottle of Blue Fire. The Iron Boots let you sink and walk underwater.",
-          remake: "In the original the boots are worn from the Equipment screen. Reports based on footage suggest the remake puts them on a quick-select button; unconfirmed." }
+          remake: "On Switch 2 the Iron Boots sit on a D-pad shortcut, so you can swap them without the menu (confirmed)." }
       ]
     },
     {
@@ -434,7 +446,7 @@ OOT.walkthrough.push({
       steps: [
         { id: "c09-s03-01", text: "Return to **Zora's Domain** and pour **Blue Fire** on King Zora's red ice. Stand on the platform below him and talk to him for the **Zora Tunic**.",
           collect: ["zd-king-zora-thawed"],
-          remake: "Unknown whether tunics move to a quick-select slot in the remake." },
+          remake: "Whether tunics have a quick-select slot has not been reported yet." },
         { id: "c09-s03-02", text: "Melt the red ice on the **Zora Shop** with Blue Fire to open it again. It sells the Zora Tunic for 300 Rupees, for use if a Like Like ever eats yours.",
           collect: ["zd-shop-item-1"] },
         { id: "c09-s03-03", text: "Go back to **Zora's Fountain**, put on the Zora Tunic and the **Iron Boots** and sink to the floor of the lake for a **Piece of Heart**.",
@@ -448,7 +460,7 @@ OOT.walkthrough.push({
         { id: "c09-s04-01", text: "Show the **Prescription** to King Zora. He gives you the **Eyeball Frog**, and a 3-minute timer starts.",
           collect: ["zd-trade-prescription"],
           warn: "Warp songs and Farore's Wind spoil a timed trade item at once. A spoiled frog turns back into the Prescription and sends you back to Zora's Domain.",
-          remake: "The trade timers come from the original. The remake's dash and faster swimming (confirmed) may change how tight they are, and the values may have changed." },
+          remake: "The trade timers come from the original. The remake's dash and faster swimming (confirmed) may change how tight they are. Whether the values changed has not been reported yet." },
         { id: "c09-s04-02", text: "Jump into the water below the Domain and swim down the river along the left side, then ride Epona to **Lake Hylia**. Give the frog to the scientist in the laboratory for the **World's Finest Eye Drops**; a 4-minute timer starts.",
           collect: ["lh-trade-eyeball-frog"] },
         { id: "c09-s04-03", text: "Ride Epona to Kakariko and climb **Death Mountain Trail** to Biggoron. Hand over the Eye Drops before the timer ends to get the **Claim Check**.",
@@ -458,7 +470,7 @@ OOT.walkthrough.push({
         { id: "c09-s04-04", text: "Wait until 3 dawns have passed on the mountain, playing the **Sun's Song** to speed the clock, then show Biggoron the Claim Check for **Biggoron's Sword**.",
           collect: ["dmt-biggoron"],
           tip: "Biggoron's Sword never breaks and hits about twice as hard as the Master Sword, but it takes both hands, so you cannot raise a shield while it is equipped.",
-          remake: "Time now passes everywhere (confirmed), so you can also leave and come back after 3 days. The 3-dawn wait is unconfirmed for the remake." }
+          remake: "Time now passes everywhere (confirmed), so you can also leave and come back after 3 days. Whether the 3-dawn wait changed has not been reported yet." }
       ]
     }
   ],
@@ -477,7 +489,7 @@ OOT.walkthrough.push({
       steps: [
         { id: "c10-s01-01", text: "Warp to **Lake Hylia** with the **Serenade of Water**. In the laboratory, wear the **Iron Boots** to sink to the bottom of the pool, roll into the crate and Hookshot the Gold Skulltula that appears.",
           collect: ["lh-gs-lab-crate"],
-          remake: "Boot handling may change in the remake (unconfirmed footage reports point to a quick-select button)." }
+          remake: "On Switch 2 the Iron Boots sit on a D-pad shortcut, so you can swap them without the menu (confirmed)." }
       ]
     },
     {
@@ -486,7 +498,7 @@ OOT.walkthrough.push({
         { id: "c10-s02-01", text: "Follow the ruins of the dry lakebed to the lowest point, sink with the Iron Boots and **Zora Tunic**, and Hookshot the crystal above the gate to open the **Water Temple**. In the main room, sink, clear the Spikes with the Hookshot and enter the low passage between 2 torches (east on the map). Take off the boots to float up the shaft after Ruto, go through the door at the top and defeat the 4 Spikes in the small room beyond for the **Dungeon Map**.",
           collect: ["water-temple-map-chest"],
           tip: "Deku Nuts stun all 4 Spikes at once.",
-          remake: "The 3DS version added coloured guide lines to the water-level spots. Nintendo has not announced them for the remake; this guide follows the original layout." },
+          remake: "Confirmed: some Water Temple walls are now lattice, so you can see the rooms beyond, and swapping items is much easier. Reported: colored guide lines mark the water-level spots, and the temple has fewer Small Keys, so key counts in this chapter may not match. No first-hand report gives a room-by-room list yet, so this chapter follows the original." },
         { id: "c10-s02-02", text: "Go back out to the shaft where Ruto disappeared and play **Zelda's Lullaby** at the Triforce symbol on its wall to drain the temple to its lowest level. On the bottom floor, shoot an arrow through the lit torch to light the other 2 (or use Din's Fire), then beat the Shell Blades in the room behind for a **Small Key**.",
           collect: ["water-temple-torches-chest"],
           tip: "Shell Blades are only open to attack while their shells are open." },
@@ -541,7 +553,8 @@ OOT.walkthrough.push({
       steps: [
         { id: "c10-s05-01", text: "Raise the water to the top level, Longshot the target on the north dragon statue (on the map) and run straight up the spike-trap ramp without stopping. Defeat Morpha (see the boss card), take the **Heart Container**, and Ruto gives you the **Water Medallion**.",
           collect: ["morpha", "water-temple-morpha-heart"],
-          tip: "Take the Heart Container before the blue warp. Pots near the boss approach hold fairies." }
+          tip: "Take the Heart Container before the blue warp. Pots near the boss approach hold fairies.",
+          remake: "No first-hand report covers Morpha or Dark Link on Switch 2 yet. These steps follow the original; the remake's behaviour here has not been reported." }
       ]
     },
     {
@@ -552,7 +565,7 @@ OOT.walkthrough.push({
           tip: "If you miss the sunrise, play the Sun's Song until the next morning comes." },
         { id: "c10-s06-02", text: "At night, Longshot onto the branch of the tree on the island above the Water Temple entrance and take the Gold Skulltula on top.",
           collect: ["lh-gs-tree"], time: "night",
-          remake: "Night-only Gold Skulltulas are unconfirmed for the remake; check after launch." }
+          remake: "Still night-only on Switch 2 (confirmed). Time keeps running, so night can end while you are here; play the Sun's Song to bring it back." }
       ]
     }
   ],
@@ -593,7 +606,7 @@ OOT.walkthrough.push({
         { id: "c11-s02-03", text: "With all 6 songs played to them, the frogs start a game: each time one jumps up after a fly, play the note it sits on. Finish the 14-note run without a mistake for a **Piece of Heart**; the first run is always {notes:A ← → ↓ ← → ↓ A ↓ A ↓ → ← A}.",
           collect: ["zr-frogs-ocarina-game"],
           tip: "A mistake restarts the game. Later runs use random notes.",
-          remake: "The Switch 2 button layout for ocarina notes has not been announced, and the 3DS version already changed this prompt. Expect the on-screen notes to differ." },
+          remake: "The button layout for ocarina notes has not been reported by a first-hand source yet, and the 3DS version already changed this prompt. Expect the on-screen notes to differ." },
         { id: "c11-s02-04", text: "Catch **Bugs** in a Bottle. In Kakariko, climb **Death Mountain Trail** and plant a **Magic Bean** in the soft soil outside **Dodongo's Cavern**. Then warp to **Death Mountain Crater** with the **Bolero of Fire**. Release the Bugs on the soft soil beside the warp pad, defeat the **Gold Skulltula** that crawls out, and plant a Magic Bean in the same soil. A child can't leave the warp pad on foot, so play the **Nocturne of Shadow** to warp to the Graveyard next to Kakariko.",
           collect: ["dmc-gs-bean-patch", "bean-death-mountain-crater", "bean-death-mountain-trail"],
           tip: "Bugs hide under small rocks. A heat timer runs while a child is in the crater, so warp out before it ends." }
@@ -610,7 +623,7 @@ OOT.walkthrough.push({
         { id: "c11-s03-03", text: "Crawl through past the dry pit, defeat the hanging Skulltula and climb the vines to the door. Let one of Dead Hand's hands grab you, break free, and slash Dead Hand's head when it leans in to bite; the big chest holds the **Lens of Truth**. Look through the Lens in the same room to find an invisible chest with 200 Rupees.",
           collect: ["bottom-of-the-well-lens-of-truth-chest", "bottom-of-the-well-invisible-chest"],
           tip: "Dead Hand burrows and resurfaces after each hit. The Kokiri Sword is the reliable weapon here.",
-          remake: "The Lens of Truth may move to a quick-select button in the remake (unconfirmed footage reports)." },
+          remake: "Reported: the Lens of Truth is now a pair of goggles that can sit on a D-pad shortcut." },
         { id: "c11-s03-04", text: "Back in the main room, use the Lens on the walls in the 2 corners near the entrance. Each hides an alcove with a chest holding a **Small Key**.",
           collect: ["bottom-of-the-well-front-left-fake-wall-chest", "bottom-of-the-well-right-bottom-fake-wall-chest"] },
         { id: "c11-s03-05", text: "From the grated pit on the west side (on the map), climb the wall and go through the door to the coffin room. Freeze the Gibdo with the **Sun's Song** and defeat it. Light the coffin torches with a burning Deku Stick to open the coffins; the one in the southwest corner holds a **Small Key**.",
@@ -642,7 +655,7 @@ OOT.walkthrough.push({
         { id: "c11-s05-01", text: "Make it night (play the **Sun's Song** in Hyrule Field), then warp to the **Temple of Time** with the **Prelude of Light** and walk down into the **Market**, since the drawbridge is up at night. Pay 10 Rupees at the **Treasure Chest Game**, look at each pair of chests through the **Lens of Truth** and open the one holding the key; the chest in the last room holds a **Piece of Heart**.",
           collect: ["market-treasure-chest-game-reward"], time: "night",
           tip: "Without the Lens each room is a coin toss; the Lens shows what each chest holds.",
-          remake: "Time now passes in the Market (confirmed), so night can end while you play, and the Market has been rebuilt as a free-camera 3D town. Directions inside it need a post-launch check." }
+          remake: "Time now passes in the Market (confirmed), so night can end while you play. Whether the drawbridge still rises at night has not been settled by a first-hand report; this route through the Temple of Time works either way. The Market has been rebuilt as a free-camera 3D town (confirmed), so landmarks may sit differently. Reported: the Treasure Chest Game is still open only at night." }
       ]
     }
   ],
@@ -668,16 +681,16 @@ OOT.walkthrough.push({
       steps: [
         { id: "c12-s02-01", text: "Warp with the **Nocturne of Shadow** and go down to the ring of torches. Stand in the center and cast **Din's Fire** to light them all and open the **Shadow Temple**; inside, Longshot over the first pit and walk through the fake wall the **Lens of Truth** shows.",
           collect: [],
-          remake: "The Lens of Truth may sit on a quick-select button in the remake (unconfirmed footage reports)." },
+          remake: "No first-hand report covers the Shadow Temple's rooms on Switch 2 yet. These steps follow the original; the remake's behaviour here has not been reported. Reported: the Lens of Truth is now a pair of goggles that can sit on a D-pad shortcut." },
         { id: "c12-s02-02", text: "Turn left and use the Lens to find the passage behind the skull marking, then follow the right wall through the rooms of taunting voices. In the room beyond, freeze the ReDead with the **Sun's Song**, defeat it and the 2 Keese, and open the chest for the **Dungeon Map**.",
           collect: ["shadow-temple-map-chest"] },
         { id: "c12-s02-03", text: "Keep following the right wall to a hidden passage between 2 pots, past the floating pots. Beat Dead Hand and open the chest for the **Hover Boots**.",
           collect: ["shadow-temple-hover-boots-chest"],
           tip: "The Lens shows where Dead Hand moves underground.",
-          remake: "In the original the boots are worn from the Equipment screen; footage reports suggest a quick-select button in the remake (unconfirmed)." },
+          remake: "On Switch 2 the Iron Boots sit on a D-pad shortcut (confirmed). Reported: the Hover Boots share it." },
         { id: "c12-s02-04", text: "Back near the entrance, turn the bird statue to face the one real skull torch (check them with the Lens) to open the gate, and cross the pit with the Hover Boots. At the Beamos crossroads, go right through the fake wall, freeze the 2 Gibdos with the Sun's Song and take the **Compass**.",
           collect: ["shadow-temple-compass-chest"],
-          remake: "Jumping is manual in the remake (confirmed). Whether gaps built for Hover Boots play the same is unknown." },
+          remake: "Jumping is manual in the remake (confirmed). Whether gaps built for Hover Boots play the same has not been reported yet." },
         { id: "c12-s02-05", text: "Through the other fake wall at the crossroads, gather the 5 Silver Rupees in the scythe room (2 in the middle, 2 in the side alcoves, 1 on a log stack you reach with the Longshot). The cell opens on a chest with a **Small Key**.",
           collect: ["shadow-temple-early-silver-rupee-chest"] }
       ]
@@ -727,7 +740,8 @@ OOT.walkthrough.push({
       steps: [
         { id: "c12-s05-01", text: "Back where the boat sank, shoot an arrow at the Bomb Flowers by the big pillar across the pit so it falls into a bridge. Unlock the last door and cross the invisible pillars over the pit with the Lens and the Hover Boots to the boss door.",
           collect: [],
-          tip: "Take a running start on the Hover Boots. The Song of Time at the broken pillar base gives Recovery Hearts." },
+          tip: "Take a running start on the Hover Boots. The Song of Time at the broken pillar base gives Recovery Hearts.",
+          remake: "No first-hand report covers Bongo Bongo on Switch 2 yet. These steps follow the original; the remake's behaviour here has not been reported." },
         { id: "c12-s05-02", text: "Drop onto the drum and defeat Bongo Bongo (see the boss card). Take the **Heart Container**, and Impa gives you the **Shadow Medallion** after the blue warp.",
           collect: ["bongo-bongo", "shadow-temple-bongo-bongo-heart"],
           tip: "Bring fairies. Take the Heart Container before the blue warp." }
@@ -761,7 +775,7 @@ OOT.walkthrough.push({
         { id: "c13-s01-02", text: "At **Gerudo's Fortress**, stun or slip past the nearest guard and take the door on the left. Talk to the carpenter in the cell, beat the Gerudo Thief who jumps in, and use her **Small Key** to open his cell.",
           collect: ["hideout-1-torch-jail-gerudo-key"],
           tip: "Any guard who spots you throws you into a cell (you keep your items); escape by Hookshotting or Longshotting the wooden beam above the cell window. An arrow or the Hookshot stuns a guard. Block the thief's slashes with your shield and back off when she crouches to spin; her jumping spin cannot be blocked.",
-          remake: "The remake's dash (confirmed) may change how sneaking past the guards plays. Nintendo has shown the fortress with adult Link climbing between tiers." },
+          remake: "The remake's dash (confirmed) may change how sneaking past the guards plays. How the guards behave has not been reported yet." },
         { id: "c13-s01-03", text: "Go out the next door to the hall beyond, shoot the guard and climb the ledge to the door. Beat the thief and free the second carpenter.",
           collect: ["hideout-2-torches-jail-gerudo-key"] },
         { id: "c13-s01-04", text: "Back outside, climb down the vines and take the only door on that level. Beat the thief there and free the third carpenter.",
@@ -778,7 +792,7 @@ OOT.walkthrough.push({
           tip: "The Scarecrow's Song with the Hookshot also crosses the gap." },
         { id: "c13-s02-02", text: "Play the **Sun's Song** to bring night, then walk to the far end of the same highest roof and look over the edge for the Gold Skulltula on the wall below.",
           collect: ["gf-gs-top-floor"], time: "night",
-          remake: "Night-only Gold Skulltulas are unconfirmed for the remake; check after launch." },
+          remake: "Still night-only on Switch 2 (confirmed). Time keeps running, so night can end while you are here; play the Sun's Song to bring it back." },
         { id: "c13-s02-03", text: "Still at night, go to the horseback archery range and Hookshot the Gold Skulltula on the lone target at its far end.",
           collect: ["gf-gs-archery-range"], time: "night",
           tip: "The Longshot gives a safer margin if the Hookshot falls short." },
@@ -793,7 +807,8 @@ OOT.walkthrough.push({
       steps: [
         { id: "c13-s03-01", text: "Climb up to the guard in white northwest of the fortress (on the map) so she opens the gate into the **Haunted Wasteland**. Jump onto the box, Longshot over the river of sand, and follow the flags.",
           collect: [],
-          tip: "Straying from the line of flags sends you back to the start of the desert. The flags are easier to see by day. At the sign pointing to a dock, a carpet merchant across the sand (Hover Boots) sells 10 Bombchus for 200 Rupees, as often as you like; that is more than the starting wallet holds." },
+          tip: "Straying from the line of flags sends you back to the start of the desert. The flags are easier to see by day. At the sign pointing to a dock, a carpet merchant across the sand (Hover Boots) sells 10 Bombchus for 200 Rupees, as often as you like; that is more than the starting wallet holds.",
+          remake: "Switch 2 calls this area the Mirage Desert (confirmed)." },
         { id: "c13-s03-02", text: "At the stone building halfway across, drop inside and Hookshot the Gold Skulltula between the 2 torches. Light both torches with Din's Fire or Fire Arrows for a chest with 50 Rupees.",
           collect: ["wasteland-gs", "wasteland-chest"] },
         { id: "c13-s03-03", text: "From the top of the building, look through the **Lens of Truth** to see a Poe guide and follow it through the poles to the **Desert Colossus**. Outside the **Spirit Temple**, Sheik teaches you the **Requiem of Spirit**.",
@@ -804,14 +819,15 @@ OOT.walkthrough.push({
           tip: "Playing the Song of Storms on the rock in the dry oasis fills it and releases fairies." },
         { id: "c13-s03-05", text: "At night, Hookshot the Gold Skulltula near the top of a palm tree by the oasis in the south (on the map). Then Longshot the second Gold Skulltula on top of the big rock hill in the north-center of the desert.",
           collect: ["colossus-gs-tree", "colossus-gs-hill"], time: "night",
-          remake: "Night-only Gold Skulltulas are unconfirmed for the remake; check after launch." }
+          remake: "Reported: a post-launch guide still places one of these on a wall at night, and reaches the other by riding the bean flower from the soft soil outside the Spirit Temple, with no night condition named. Try that one by day first." }
       ]
     },
     {
       id: "c13-s04", title: "Spirit Temple: The Child's Path", era: "child", kind: "dungeon",
       steps: [
         { id: "c13-s04-01", text: "Warp to the **Temple of Time** with the Prelude of Light, become a child and warp back with the **Requiem of Spirit**. Catch **Bugs** under the small rock between 2 boulders in the middle of the desert, release them on the soft soil by the temple entrance for a Gold Skulltula, and plant a **Magic Bean** there.",
-          collect: ["colossus-gs-bean-patch", "bean-desert-colossus"] },
+          collect: ["colossus-gs-bean-patch", "bean-desert-colossus"],
+          remake: "No first-hand report covers the Spirit Temple's rooms on Switch 2 yet. These steps follow the original; the remake's behaviour here has not been reported." },
         { id: "c13-s04-02", text: "Talk to Nabooru at the crawl hole and crawl through. In the first room, deal with the Armos (bomb it) to open both doors and take the left one; past the Stalfos and the big Green Bubble, curve the **Boomerang** to the left to hit the crystal switch across the gap, and open the chest by the lowered bridge for a **Deku Shield**.",
           collect: ["spirit-temple-child-bridge-chest"],
           warn: "Fire Keese here burn a Deku Shield. Carry the Hylian Shield." },
@@ -892,7 +908,8 @@ OOT.walkthrough.push({
       id: "c13-s10", title: "Gerudo Training Ground: First Rooms", era: "adult", kind: "dungeon",
       steps: [
         { id: "c13-s10-01", text: "Warp to the **Temple of Time** with the **Prelude of Light** and ride Epona through **Hyrule Field** and **Gerudo Valley** back to **Gerudo's Fortress**. Pay the guard in white near the front of the fortress 10 Rupees to enter the **Gerudo Training Ground**. In the lobby, shoot the eye switch above the entrance for 2 chests (5 Rupees and arrows).",
-          collect: ["gerudo-training-ground-lobby-left-chest", "gerudo-training-ground-lobby-right-chest"] },
+          collect: ["gerudo-training-ground-lobby-left-chest", "gerudo-training-ground-lobby-right-chest"],
+          remake: "No first-hand report covers the Gerudo Training Ground's rooms on Switch 2 yet. These steps follow the original; the remake's behaviour here has not been reported." },
         { id: "c13-s10-02", text: "Take the left door. Defeat the 2 Stalfos in the sandy room within the 1-minute limit for a chest with a **Small Key**.",
           collect: ["gerudo-training-ground-stalfos-chest"],
           tip: "Finish them close together." },
@@ -973,7 +990,7 @@ OOT.walkthrough.push({
         { id: "c14-s01-01", text: "In **Zora's Fountain**, go to the far corner near the Great Fairy's fountain, lift the silver boulder with the **Silver Gauntlets**, bomb the rock beneath it and drop in. Cross the passage, climb at the end and defeat the Skulltula. If it is day, play the **Sun's Song** to bring night, then Hookshot the last Gold Skulltula on the left wall.",
           collect: ["zf-gs-hidden-cave"], time: "night",
           tip: "The Lens of Truth shows invisible Skulltulas hanging from the passage ceiling.",
-          remake: "Zora's Fountain was frozen in time in the original; the remake keeps time running everywhere (confirmed). Night-only spawns need a post-launch check." },
+          remake: "Zora's Fountain was frozen in time in the original; the remake keeps time running everywhere (confirmed). Whether this Gold Skulltula still needs night has not been settled. If it is not there by day, come back at night." },
         { id: "c14-s01-02", text: "Bring 100 tokens to the **House of Skulltula** in Kakariko. The last cursed son is cured and gives you a **Huge Rupee** (200 Rupees), and he gives you another every time you talk to him.",
           collect: ["kak-100-gold-skulltula-reward"] }
       ]
@@ -1040,7 +1057,8 @@ OOT.walkthrough.push({
       id: "c14-s06", title: "Ganondorf and Ganon", era: "adult", kind: "boss",
       steps: [
         { id: "c14-s06-01", text: "Defeat Ganondorf at the top of the tower (see the boss card).",
-          collect: [] },
+          collect: [],
+          remake: "No first-hand report covers Ganon's Castle or the final fights on Switch 2 yet. These steps follow the original; the remake's behaviour here has not been reported." },
         { id: "c14-s06-02", text: "Follow Zelda down the collapsing tower, staying close and watching for falling rocks. When fire rings her, defeat the 2 Stalfos together; she leaves Recovery Hearts. Get past the ReDead on the bridge and out of the castle.",
           collect: [] },
         { id: "c14-s06-03", text: "In the ruins, Ganon knocks the Master Sword out of the ring of fire. Fight him with the Megaton Hammer or Biggoron's Sword, take the sword back when the fire drops, and finish him with the Master Sword while Zelda holds him.",

@@ -85,8 +85,9 @@ thumb zone:
   - **Hint:** teal panel with a sparkle.
   - **Caution:** rust panel with a solid left rule and a diamond "!". This is for
     missables and one-way doors.
-  - **Remake check · unconfirmed:** violet, dashed border, hourglass. The dashed line
-    signals "not settled yet".
+  - **Switch 2:** violet, solid border, circling arrows. The label makes no claim about
+    certainty, because one panel can mix confirmed and reported facts. The wording in
+    the panel says how sure each fact is.
   - **Night only / Day only:** a badge, plus a coloured left edge on the step card.
 - **Section kinds change the setting:**
   - Overworld steps sit on open ground.
@@ -124,7 +125,7 @@ thumb zone:
    the next unchecked step. **Next step** does the same with one thumb.
 2. **One tap does two jobs.** Checking a step records its collectibles too, everywhere. A
    wiki makes you keep a separate checklist.
-3. **Glanceable state.** Night-only, missable, one-way and unconfirmed-for-the-remake each
+3. **Glanceable state.** Night-only, missable, one-way and changed-in-the-remake each
    look different, so you can see them without reading the paragraph.
 4. **"What can I get right now?"** Filter Skulltulas to Missing + Child + Night +
    Kokiri Forest and you get exactly the list for where you are standing.

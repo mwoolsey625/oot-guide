@@ -509,7 +509,7 @@ main {
 .note.tip .ico, .note.tip b { color: var(--tip); }
 .note.warn { background: var(--warn-bg); color: var(--ink); border-left: 3px solid var(--warn); }
 .note.warn .ico, .note.warn b { color: var(--warn); }
-.note.remake { background: var(--remake-bg); border: 1.5px dashed color-mix(in srgb, var(--remake) 55%, transparent); color: var(--ink); }
+.note.remake { background: var(--remake-bg); border: 1.5px solid color-mix(in srgb, var(--remake) 55%, transparent); color: var(--ink); }
 .note.remake .ico, .note.remake b { color: var(--remake); }
 
 /* dungeon sections: steps sit inside a dim stone chamber */

@@ -67,6 +67,10 @@
   function readJSON(k) { try { var s = Store.get(k); return s ? JSON.parse(s) : null; } catch (e) { return null; } }
 
   var KEY_P = 'oot-guide.progress.v1', KEY_S = 'oot-guide.prefs.v1';
+  /* sync: when each tick last changed, this device's GitHub token, and the id of the progress Gist */
+  var KEY_M = 'oot-guide.sync.v1', KEY_T = 'oot-guide.sync.token.v1', KEY_G = 'oot-guide.sync.gist.v1';
+  /* the FFVI tracker is on the same origin, so a token saved there can be reused with one tap */
+  var KEY_FFVI_TOKEN = 'ff6pr-gist-token';
   /* progress format: saves and exports carry `version`; anything without one is version 1 */
   var PROGRESS_VERSION = 3;
   /* version 2: cows stopped being collectibles (in the original game they only refill a Bottle; they were
@@ -75,6 +79,13 @@
   var V2_STEPS = { 'c02-s03': [1, 2, 3, 4, 6], 'c04-s06': [2, 3, 4], 'c07-s04': [1, 3, 4, 5, 6] };
   var storedProgress = readJSON(KEY_P);
   var progress = normalizeProgress(storedProgress);
+  /* stamps[id] is when that tick last changed, on or off. Ticks made before sync existed have no stamp and count as 0.
+     syncSeen is the state at the last save, so saveProgress can stamp whatever changed without every caller doing it. */
+  var syncMeta = (function () {
+    var m = readJSON(KEY_M) || {};
+    return { stamps: m.stamps && typeof m.stamps === 'object' ? m.stamps : {}, lastAt: Number(m.lastAt) || 0 };
+  })();
+  var syncSeen = JSON.parse(JSON.stringify(progress.done)), syncSeenLast = JSON.stringify(progress.last || null);
   /* write a migrated save back at once, so it is never migrated twice */
   if (storedProgress && storedProgress.version !== PROGRESS_VERSION) saveProgress();
   var prefs = readJSON(KEY_S) || {};
@@ -123,7 +134,23 @@
       }
     });
   }
-  function saveProgress() { Store.set(KEY_P, JSON.stringify(progress)); }
+  function saveProgress() {
+    var changed = stampChanges();
+    Store.set(KEY_P, JSON.stringify(progress));
+    if (changed) { Store.set(KEY_M, JSON.stringify(syncMeta)); scheduleSync(); }
+  }
+  function stampChanges() {
+    var now = Date.now(), changed = false;
+    Object.keys(progress.done).forEach(function (id) {
+      if (!syncSeen[id]) { syncMeta.stamps[id] = now; syncSeen[id] = 1; changed = true; }
+    });
+    Object.keys(syncSeen).forEach(function (id) {
+      if (!progress.done[id]) { syncMeta.stamps[id] = now; delete syncSeen[id]; changed = true; }
+    });
+    var last = JSON.stringify(progress.last || null);
+    if (last !== syncSeenLast) { syncSeenLast = last; syncMeta.lastAt = now; changed = true; }
+    return changed;
+  }
   function savePrefs() { Store.set(KEY_S, JSON.stringify(prefs)); }
   function isDone(id) { return !!progress.done[id]; }
 
@@ -957,14 +984,219 @@
     }).join('') + '</ul>';
   }
 
+  /* ------------------------------------------------------------------ sync between devices (secret GitHub Gist)
+     Every sync reads the Gist, merges it tick by tick (the newest change to each tick wins), then writes it back
+     if the merge changed anything. Two devices can both tick things between syncs and neither loses its work. */
+  var GIST_API = 'https://api.github.com/gists', GIST_FILE = 'oot-guide-progress.json';
+  var sync = { timer: null, busy: false, again: false, force: false, manual: false, status: 'idle', msg: '', at: 0, pulled: 0 };
+
+  function syncToken() { return Store.get(KEY_T) || ''; }
+  function gistHeaders(write) {
+    var h = { Authorization: 'token ' + syncToken(), Accept: 'application/vnd.github+json' };
+    if (write) h['Content-Type'] = 'application/json';
+    return h;
+  }
+  function gistFetch(url, method, body) {
+    var opts = { method: method || 'GET', headers: gistHeaders(!!body), cache: 'no-store' };
+    if (body) opts.body = body;
+    return window.fetch(url, opts).then(function (r) {
+      if (!r.ok) { var e = new Error('HTTP ' + r.status); e.status = r.status; throw e; }
+      return r.json();
+    });
+  }
+  function syncPayload() {
+    var out = { app: 'oot-guide', version: PROGRESS_VERSION, done: {}, off: {}, last: progress.last || null, lastAt: syncMeta.lastAt };
+    Object.keys(progress.done).sort().forEach(function (id) { out.done[id] = syncMeta.stamps[id] || 0; });
+    Object.keys(syncMeta.stamps).sort().forEach(function (id) { if (!progress.done[id]) out.off[id] = syncMeta.stamps[id]; });
+    return out;
+  }
+  function gistFiles() {
+    var files = {};
+    files[GIST_FILE] = { content: JSON.stringify(syncPayload()) };
+    return files;
+  }
+  /* same contents, whatever order the keys arrived in */
+  function syncCanon(p) {
+    var sorted = function (o) { var s = {}; Object.keys(o).sort().forEach(function (k) { s[k] = o[k]; }); return s; };
+    return JSON.stringify([sorted(p.done), sorted(p.off), p.last || null, p.lastAt || 0]);
+  }
+  function readRemote(gist) {
+    var f = gist.files && gist.files[GIST_FILE];
+    if (!f || typeof f.content !== 'string') throw new Error('The saved progress file is missing from the Gist.');
+    var r;
+    try { r = JSON.parse(f.content); } catch (e) { throw new Error('The saved progress file could not be read.'); }
+    if (!r || typeof r.done !== 'object' || !r.done || Array.isArray(r.done)) throw new Error('The saved progress file could not be read.');
+    if (r.version > PROGRESS_VERSION) throw new Error('Progress was saved by a newer version of this guide. Reload the page.');
+    /* older saves go through the same migrations as local ones */
+    var norm = normalizeProgress({ version: r.version, done: Object.keys(r.done), last: r.last });
+    var done = {};
+    Object.keys(norm.done).forEach(function (id) { done[id] = Number(r.done[id]) || 0; });
+    return { done: done, off: r.off && typeof r.off === 'object' ? r.off : {}, last: norm.last, lastAt: Number(r.lastAt) || 0 };
+  }
+  /* merges remote into progress; returns true if the Gist now needs writing */
+  function applyRemote(remote) {
+    var ids = {}, changed = [];
+    [progress.done, syncMeta.stamps, remote.done, remote.off].forEach(function (o) { Object.keys(o).forEach(function (id) { ids[id] = 1; }); });
+    Object.keys(ids).forEach(function (id) {
+      var lOn = !!progress.done[id], rOn = Object.prototype.hasOwnProperty.call(remote.done, id);
+      var l = syncMeta.stamps[id] || 0, r = rOn ? remote.done[id] : Number(remote.off[id]) || 0;
+      var next = r > l ? rOn : (r === l ? lOn || rOn : lOn);
+      if (r > l) syncMeta.stamps[id] = r;
+      if (next !== lOn) {
+        if (next) { progress.done[id] = 1; syncSeen[id] = 1; }
+        else { delete progress.done[id]; delete syncSeen[id]; }
+        changed.push(id);
+      }
+    });
+    var lastMoved = false;
+    if (remote.last && (remote.lastAt > syncMeta.lastAt || !progress.last)) {
+      progress.last = remote.last;
+      syncMeta.lastAt = Math.max(remote.lastAt, syncMeta.lastAt);
+      syncSeenLast = JSON.stringify(progress.last);
+      lastMoved = true;
+    }
+    if (changed.length || lastMoved) {
+      Store.set(KEY_P, JSON.stringify(progress));
+      syncChecks(changed);
+      refreshCounts();
+      if (current.view === 'journey') route(false);
+      var count = $('#setDoneCount');
+      if (count) count.textContent = Object.keys(progress.done).length;
+    }
+    Store.set(KEY_M, JSON.stringify(syncMeta));
+    if (changed.length) toast('Synced ' + changed.length + ' check' + (changed.length === 1 ? '' : 's') + ' from another device');
+    return syncCanon(syncPayload()) !== syncCanon(remote);
+  }
+  /* finds the Gist by file name, so a new device needs only the token. The first device creates it. */
+  function openGist() {
+    var id = Store.get(KEY_G);
+    if (id) {
+      return gistFetch(GIST_API + '/' + id).then(function (gist) { return { id: id, gist: gist }; }, function (e) {
+        if (e.status === 404) Store.set(KEY_G, '');
+        throw e;
+      });
+    }
+    return gistFetch(GIST_API + '?per_page=100').then(function (list) {
+      var hit = (Array.isArray(list) ? list : []).filter(function (g) { return g.files && g.files[GIST_FILE]; })[0];
+      if (hit) {
+        Store.set(KEY_G, hit.id);
+        return gistFetch(GIST_API + '/' + hit.id).then(function (gist) { return { id: hit.id, gist: gist }; });
+      }
+      return gistFetch(GIST_API, 'POST', JSON.stringify({ description: "Hero's Almanac: Ocarina of Time guide progress", public: false, files: gistFiles() }))
+        .then(function (made) { Store.set(KEY_G, made.id); return { id: made.id, gist: null }; });
+    });
+  }
+  function syncErrorText(e) {
+    if (e.status === 401) return 'GitHub rejected the token. Disconnect and paste a new one.';
+    if (e.status === 404) return 'GitHub could not find the Gist. Check that the token has the gist scope.';
+    if (e.status) return 'GitHub refused the request (HTTP ' + e.status + '). It will try again later.';
+    if (e instanceof TypeError) return 'Could not reach GitHub. Your checks are safe here and will sync later.';
+    return e.message;
+  }
+  function syncNow(manual, force) {
+    if (!syncToken() || !window.fetch) return;
+    if (sync.busy) { sync.again = true; sync.force = sync.force || !!force; sync.manual = sync.manual || !!manual; return; }
+    if (sync.timer) { clearTimeout(sync.timer); sync.timer = null; }
+    sync.busy = true; sync.status = 'working'; showSyncStatus();
+    var finish = function () {
+      sync.busy = false;
+      showSyncStatus();
+      if (sync.again) {
+        var m = sync.manual, f = sync.force;
+        sync.again = false; sync.manual = false; sync.force = false;
+        syncNow(m, f);
+      }
+    };
+    openGist().then(function (g) {
+      sync.pulled = Date.now();
+      if (!g.gist) return null; /* just created, already holds this device's progress */
+      var needsWrite = applyRemote(readRemote(g.gist));
+      if (needsWrite || force) return gistFetch(GIST_API + '/' + g.id, 'PATCH', JSON.stringify({ files: gistFiles() }));
+      return null;
+    }).then(function () {
+      sync.status = 'ok'; sync.msg = ''; sync.at = Date.now();
+      if (manual) toast('Synced');
+      finish();
+    }, function (e) {
+      sync.status = 'error'; sync.msg = syncErrorText(e);
+      if (manual || e.status === 401) toast(sync.msg);
+      finish();
+    });
+  }
+  function scheduleSync() {
+    if (!syncToken()) return;
+    if (sync.timer) clearTimeout(sync.timer);
+    sync.timer = setTimeout(function () { sync.timer = null; syncNow(); }, 2500);
+  }
+  /* the page is going away with a change still waiting. There is no time to read first, so this writes directly,
+     and only if this session has already merged the Gist. Otherwise the next open merges and writes it. */
+  function flushSync() {
+    if (!sync.timer) return;
+    clearTimeout(sync.timer); sync.timer = null;
+    var id = Store.get(KEY_G);
+    if (!id || !sync.pulled || !syncToken() || !window.fetch) return;
+    var send = function (keepalive) {
+      return window.fetch(GIST_API + '/' + id, { method: 'PATCH', keepalive: keepalive, headers: gistHeaders(true), body: JSON.stringify({ files: gistFiles() }) });
+    };
+    send(true).catch(function () { return send(false); }).catch(function () {});
+  }
+  function syncStatusText() {
+    if (sync.status === 'working') return 'Syncing…';
+    if (sync.status === 'error') return 'Not synced. ' + sync.msg;
+    if (sync.status === 'ok') return 'Synced at ' + new Date(sync.at).toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' }) + '.';
+    return 'Connected.';
+  }
+  function showSyncStatus() { var s = $('#syncStatus'); if (s) s.textContent = syncStatusText(); }
+  function syncCard() {
+    var h = '<section class="card set-group"><h2>Sync between devices</h2>';
+    if (syncToken()) {
+      h += '<p>Your checks and resume point sync through a secret Gist in your GitHub account. Theme, text size and open sections stay per device.</p>' +
+        '<p id="syncStatus" role="status">' + esc(syncStatusText()) + '</p><div class="set-row">' +
+        '<button type="button" class="btn" data-act="sync-now">Sync now</button>' +
+        '<button type="button" class="btn" data-act="sync-disconnect">Disconnect</button></div>';
+    } else {
+      h += '<p>Connect once on each device to keep your checks the same everywhere. On an iPhone, Safari and the Home Screen icon count as separate devices. Existing checks are merged, never replaced.</p>';
+      if (Store.get(KEY_FFVI_TOKEN)) h += '<div class="set-row"><button type="button" class="btn" data-act="sync-ffvi">Use my FFVI tracker token</button></div>';
+      h += '<label class="dlg-label" for="syncTokenInput">GitHub token</label>' +
+        '<input class="input" id="syncTokenInput" type="password" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="ghp_...">' +
+        '<p class="muted" style="font-size:.9rem">Use a <a href="https://github.com/settings/tokens" target="_blank" rel="noopener">classic token</a> with only the gist scope. It stays on this device and goes only to GitHub.</p>' +
+        '<div class="set-row"><button type="button" class="btn" data-act="sync-connect">Connect</button></div>';
+    }
+    return h + '</section>';
+  }
+  function connectSync(token) {
+    Store.set(KEY_T, token);
+    sync.status = 'idle'; sync.msg = '';
+    renderSettings();
+    /* force a write, because only a write proves the token has the gist scope */
+    syncNow(true, true);
+  }
+  function disconnectDialog() {
+    openDialog({
+      title: 'Stop syncing on this device?',
+      html: '<p>Your checks stay on this device and in the Gist. This device just stops sending and receiving changes until you connect again.</p>',
+      actions: [
+        { label: 'Disconnect', cls: 'danger', run: function () {
+          if (sync.timer) { clearTimeout(sync.timer); sync.timer = null; }
+          Store.set(KEY_T, ''); Store.set(KEY_G, '');
+          sync.status = 'idle'; sync.msg = ''; sync.pulled = 0;
+          renderSettings(); toast('Sync is off on this device');
+        } },
+        { label: 'Cancel' }
+      ],
+      focus: '[data-dlg="a1"]'
+    });
+  }
+
   /* ------------------------------------------------------------------ settings */
   function renderSettings() {
     current.view = 'settings'; current.ch = null;
     var doneCount = Object.keys(progress.done).length;
     var h = '<div class="page-head"><p class="eyebrow">More</p><h1>Settings & progress</h1></div>';
     h += Store.ok()
-      ? '<div class="notice ok">Progress saves on this device automatically. Export a copy to move it to another browser.</div>'
+      ? '<div class="notice ok">Progress saves on this device automatically. ' + (syncToken() ? 'Sync keeps it on your other devices too.' : 'Connect sync below to carry it to your other devices.') + '</div>'
       : '<div class="notice"><b>Storage is blocked in this browser.</b> Your checks last until you close this tab. Use Export to keep them.</div>';
+    h += syncCard();
     h += '<section class="card set-group"><h2>Game version</h2><p>Pick the version you are playing. Original (N64) hides the Remake check notes and shows ocarina notes as N64 buttons. Switch 2 shows the notes; its controls are confirmed after launch, so ocarina notes stay neutral until then.</p>' +
       seg2('version', prefs.version, [['n64', 'Original (N64)'], ['switch2', 'Switch 2']]) + '</section>';
     h += '<section class="card set-group"><h2>Theme</h2><p>Day is sunlit vellum; Night is a dark sky for a dim room. System follows your phone.</p>' +
@@ -973,7 +1205,7 @@
       seg2('scale', String(prefs.scale), [['0.92', 'Small'], ['1', 'Normal'], ['1.12', 'Large'], ['1.25', 'Huge']]) + '</section>';
     h += '<section class="card set-group"><label class="switch-row"><span><b>Hide finished steps</b><br><span class="muted" style="font-size:.9rem">Checked steps are tucked away when a chapter opens. Each section notes how many are hidden, with a Show button.</span></span>' +
       '<button type="button" class="switch" role="switch" data-act="hide-done" aria-checked="' + (!!prefs.hideDone) + '" aria-label="Hide finished steps"></button></label></section>';
-    h += '<section class="card set-group"><h2>Your progress</h2><p>' + doneCount + ' checks saved. Export gives you a file or text to copy; Import takes either.</p><div class="set-row">' +
+    h += '<section class="card set-group"><h2>Your progress</h2><p><span id="setDoneCount">' + doneCount + '</span> checks saved. Export gives you a file or text to copy; Import takes either.</p><div class="set-row">' +
       '<button type="button" class="btn" data-act="export">' + ico('i-export') + 'Export</button>' +
       '<button type="button" class="btn" data-act="import">' + ico('i-import') + 'Import</button>' +
       '<button type="button" class="btn danger" data-act="reset">Reset all</button></div></section>';
@@ -1072,7 +1304,7 @@
     var n = Object.keys(progress.done).length;
     openDialog({
       title: 'Reset all progress?',
-      html: '<p>This clears all <b>' + n + '</b> check' + (n === 1 ? '' : 's') + ' and folds every section again. It cannot be undone unless you exported a copy first.</p>',
+      html: '<p>This clears all <b>' + n + '</b> check' + (n === 1 ? '' : 's') + ' and folds every section again' + (syncToken() ? ', and the clear reaches your other synced devices' : '') + '. It cannot be undone unless you exported a copy first.</p>',
       actions: [
         { label: 'Reset all', cls: 'danger', run: function () {
           progress = normalizeProgress(null); prefs.open = {};
@@ -1293,6 +1525,14 @@
     else if (kind === 'import') { dlgNextOpener = act; importDialog(); }
     else if (kind === 'import-file') $('#importFile').click();
     else if (kind === 'reset') { dlgNextOpener = act; resetDialog(); }
+    else if (kind === 'sync-connect') {
+      var tokenText = (($('#syncTokenInput') || {}).value || '').trim();
+      if (!tokenText) toast('Paste a token first');
+      else connectSync(tokenText);
+    }
+    else if (kind === 'sync-ffvi') connectSync(Store.get(KEY_FFVI_TOKEN) || '');
+    else if (kind === 'sync-now') syncNow(true);
+    else if (kind === 'sync-disconnect') { dlgNextOpener = act; disconnectDialog(); }
     else if (kind === 'hint') { var q = $('#q'); if (q) { q.value = val; q.dispatchEvent(new Event('input')); } }
   });
   document.addEventListener('change', function (e) {
@@ -1315,11 +1555,18 @@
   $('#topTitle').addEventListener('click', function () { if (window.matchMedia('(min-width: 1024px)').matches) return; openSheet(); });
   $('#themeBtn').addEventListener('click', function () { prefs.theme = isDark() ? 'light' : 'dark'; savePrefs(); applyTheme(); if (current.view === 'settings') renderSettings(); });
   fab.addEventListener('click', onFab);
-  window.addEventListener('pagehide', function () { saveProgress(); });
+  window.addEventListener('pagehide', function () { saveProgress(); flushSync(); });
+  /* a Home Screen app stays alive in the background, so page load alone would miss changes from other devices */
+  document.addEventListener('visibilitychange', function () {
+    if (document.visibilityState === 'hidden') flushSync();
+    else if (Date.now() - sync.pulled > 15000) syncNow();
+  });
+  window.addEventListener('pageshow', function (e) { if (e.persisted) syncNow(); });
 
   /* ------------------------------------------------------------------ boot */
   applyTheme();
   renderRail();
   route(true);
   if (!Store.ok()) warnStorage();
+  syncNow();
 })();

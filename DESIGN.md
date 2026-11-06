@@ -149,6 +149,15 @@ thumb zone:
   This was tested by forcing `localStorage` to throw.
 - Export writes `oot-guide-progress-YYYY-MM-DD.json` (`{app, version, done[], last}`).
   Import validates the file and asks before replacing.
+- Sync between devices uses a secret GitHub Gist (`oot-guide-progress.json`) in the owner's account.
+  There is no server. Settings takes a classic token with only the gist scope, kept per device under
+  `oot-guide.sync.token.v1`. The first device creates the Gist and later devices find it by file name,
+  so its id is not in this public repo. `oot-guide.sync.v1` stores when each tick last changed. Each
+  sync reads the Gist, merges tick by tick with the newest change winning (a tie keeps the tick), and
+  writes back only if the merge changed something. An untick is kept as a dated entry in `off`, so it
+  spreads instead of being undone by another device. The checks and the resume point sync; prefs do
+  not. Syncs run on load, on return to the page, and 2.5 seconds after a change. Leaving the page
+  with a change waiting writes directly, only if this session has already merged.
 - Saved progress and exports carry a format `version` (now 3). Ticks are keyed by step id and
   collect id, so when steps or collect ids are removed or renumbered, bump `PROGRESS_VERSION` in
   app.js and add a migration that `normalizeProgress` runs on older saves and imports. A migrated

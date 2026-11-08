@@ -290,7 +290,7 @@ OOT.walkthrough.push({
           text: "Enter the House of Skulltula and talk to the child freed from the curse: 10 tokens earn the **Adult's Wallet**, which holds 200 Rupees. You should have 13 tokens now.",
           collect: ["kak-10-gold-skulltula-reward"],
           tip: "Every 10 tokens frees another family member with a new reward.",
-          remake: "Reported: on Switch 2 you start with a wallet that holds 200 Rupees, and this Adult's Wallet holds 500." }
+          remake: "Wallets are bigger on Switch 2 (confirmed): the wallet you start with holds 200 Rupees, and this Adult's Wallet holds 500." }
       ]
     },
     {
@@ -473,17 +473,17 @@ OOT.walkthrough.push({
           text: "Where the trail forks above the cavern, take the highest path, bombing the boulders that block it, and climb to the summit. Bomb the cracked wall near the owl and play Zelda's Lullaby on the Triforce mark inside. The Great Fairy grants you the **Magic Meter**.",
           collect: ["dmt-great-fairy-reward"],
           tip: "Rocks rain down from the volcano on the upper trail; hold up the Hylian Shield and move between falls, and shoot the Skullwalltulas before you climb the wall to the summit. Get this upgrade first: every other Great Fairy vanishes if you have no Magic Meter.",
-          remake: "Reported: Great Fairies now ask for Rupees before their gift, so bring some. The amount at each fountain has not been settled." },
+          remake: "On Switch 2 this Great Fairy asks for 25 Rupees, then gives you Din's Fire along with the Magic Meter (confirmed). Bring the Rupees. Din's Fire no longer comes from the Hyrule Castle fairy in chapter 5." },
         { id: "c04-s06-02",
           text: "Enter **Death Mountain Crater** through the opening at the summit; a heat timer starts at once. Roll into the crate by the entrance for a Gold Skulltula, then bomb the boulder inside the ring of rocks near the entrance and drop into the grotto for a chest with 20 Bombs.",
           collect: ["dmc-gs-crate", "dmc-upper-grotto-chest"],
           tip: "Leaving the crater resets the heat timer. If it reaches zero, the heat knocks Link out as if his health ran out, so step back out when it gets low.",
-          remake: "The remake's confirmed dash may make the heat easier to beat. Whether the heat timer changed has not been reported by a first-hand source yet." },
+          remake: "There is no heat timer on Switch 2 (confirmed). Ignore the tip about stepping out when the timer runs low. A couple of seconds after you enter, child Link catches fire and keeps losing health while he stays in the crater. So the limit is your hearts, not a clock. Come in with full hearts, and a fairy or potion in a Bottle if you have one. Go straight to the crate, then the grotto, and step back out to the summit to recover before the next trip." },
         { id: "c04-s06-03",
           text: "Re-enter for a full timer and walk off the ledge toward the platform below; Link catches hold of the climbable wall. Climb down to the alcove holding the **Piece of Heart**, then head back out of the crater.",
           collect: ["dmc-wall-freestanding-poh"],
           tip: "The fastest way back up is to step into the lava: you lose some health and reappear at the entrance.",
-          remake: "With the remake's jump button (confirmed), walking off this ledge may not drop you onto the wall the same way; this has not been reported yet. Your child visit here also matters on Switch 2: a Business Scrub in the crater now sells the Piece of Heart that left the Ice Cavern, for 100 Rupees (confirmed). Stun him with your shield and talk to him. His exact spot has not been pinned down." }
+          remake: "No timer to refill on Switch 2: Link burns and loses health from a couple of seconds after he enters (confirmed). Come back in with full hearts, because the burn keeps eating health on the climb down. The lava shortcut costs health on top of the burn, so take it only with hearts to spare; otherwise climb back up. With the remake's jump button (confirmed), walking off this ledge may not drop you onto the wall the same way; this has not been reported yet. Your child visit here also matters on Switch 2: a Business Scrub in the crater now sells the Piece of Heart that left the Ice Cavern, for 100 Rupees (confirmed). Stun him with your shield and talk to him. His exact spot has not been pinned down." }
       ]
     },
     {
@@ -496,7 +496,8 @@ OOT.walkthrough.push({
         { id: "c04-s07-02",
           text: "In the middle of the village, between the large tree by the entrance and the well, bomb the ground to open a hidden grotto. Inside, defeat the 2 ReDeads (the Sun's Song freezes them) and open the chest for a **Huge Rupee** worth 200 Rupees.",
           collect: ["kak-redead-grotto-chest"],
-          tip: "Spend some Rupees first if you can: the Adult's Wallet holds exactly 200." },
+          tip: "Spend some Rupees first if you can: the Adult's Wallet holds exactly 200.",
+          remake: "On Switch 2 the Adult's Wallet holds 500 Rupees (confirmed), so the Huge Rupee fits unless you already carry more than 300." },
         { id: "c04-s07-03",
           text: "In the House of Skulltula, claim the 20-token reward, the **Stone of Agony**; you should have 24 tokens. It signals when a hidden grotto is nearby, though every grotto opens without it.",
           collect: ["kak-20-gold-skulltula-reward"],
@@ -530,7 +531,7 @@ OOT.walkthrough.push({
         { id: "c05-s01-01",
           text: "At **Hyrule Castle**, climb the central vine on the wall as you did to reach Talon, drop down on the far side of the guard's gate and go straight ahead to a sign that reads \"Dead End\". Bomb the boulder behind it, crawl into the passage and play Zelda's Lullaby on the Triforce mark; the Great Fairy gives you **Din's Fire**.",
           collect: ["hc-great-fairy-reward"],
-          remake: "Songs can be played with buttons or by humming into the microphone (confirmed); the note-to-button layout has not been reported by a first-hand source yet. Reported: Great Fairies now ask for Rupees before their gift, so bring some." },
+          remake: "Songs can be played with buttons or by humming into the microphone (confirmed); the note-to-button layout has not been reported by a first-hand source yet. On Switch 2 you already have Din's Fire from the summit fairy (confirmed). One walkthrough says this fairy now teaches a sword technique, likely the Spin Attack; no second source yet. Great Fairies ask for Rupees before their gift, so bring some." },
         { id: "c05-s01-02",
           text: "In the Market, the **Bombchu Bowling Alley** is now open. Each game costs 30 Rupees and gives you 10 Bombchus to send through 3 targets; the prize changes from game to game, so keep playing until you have won both the **Bomb Bag** upgrade and the **Piece of Heart**.",
           collect: ["market-bombchu-bowling-first-prize", "market-bombchu-bowling-second-prize"],
@@ -749,7 +750,7 @@ OOT.walkthrough.push({
           text: "Sell the Keaton Mask to the guard at the Death Mountain gate for 15 Rupees. Then, with 35 tokens, claim the 30-token reward in the House of Skulltula, the **Giant's Wallet**, which holds 500 Rupees.",
           collect: ["kak-30-gold-skulltula-reward"],
           tip: "Get this wallet before the Bunny Hood sale later in this chapter; that buyer pays enough to fill whatever wallet you carry.",
-          remake: "Reported: this Giant's Wallet holds 1000 Rupees on Switch 2." },
+          remake: "On Switch 2 the Giant's Wallet holds 1000 Rupees (confirmed)." },
         { id: "c06-s01-06",
           text: "Back at the Happy Mask Shop, pay 10 Rupees for the Keaton Mask and borrow the **Skull Mask**.",
           collect: ["mask-skull"],

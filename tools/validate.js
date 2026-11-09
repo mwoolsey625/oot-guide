@@ -128,8 +128,10 @@ W.forEach((ch, ci) => {
     sectionIds.add(sec.id);
     sec.steps.forEach((st, ti) => {
       const twhere = st && st.id ? st.id : `${swhere}.steps[${ti}]`;
-      if (!checkShape('schema', twhere, st, { id: 'string', text: 'string', collect: 'string[]', tip: 'string?', warn: 'string?', time: ['', 'night', 'day', undefined], remake: 'string?' })) return;
+      if (!checkShape('schema', twhere, st, { id: 'string', text: 'string', collect: 'string[]', tip: 'string?', warn: 'string?', time: ['', 'night', 'day', undefined], check: 'string?', remake: 'string?' })) return;
       if (!st.text.trim()) err('schema', `${twhere}: empty text`);
+      if (st.check !== undefined && !st.check.trim()) err('schema', `${twhere}: empty check (leave the field out instead)`);
+      if (st.remake !== undefined) err('schema', `${twhere}: leftover "remake" field (retired; fold it into text/tip or check)`);
       if (!/^c\d\d-s\d\d-\d\d$/.test(st.id)) err('ids', `step id "${st.id}" is not cNN-sNN-NN`);
       else if (st.id.slice(0, 7) !== sec.id) err('ids', `step id "${st.id}" does not belong to section ${sec.id}`);
       else if (st.id !== `${sec.id}-${String(ti + 1).padStart(2, '0')}`) warn('ids', `step id "${st.id}" is out of sequence (position ${ti + 1} in ${sec.id})`);
@@ -156,7 +158,9 @@ CATS.forEach((cat, ci) => {
   const local = new Set();
   cat.items.forEach((it, ii) => {
     const iw = it && it.id ? `${where}/${it.id}` : `${where}.items[${ii}]`;
-    if (!checkShape('schema', iw, it, { id: 'string', name: 'string', area: 'string', age: ['child', 'adult', 'either'], time: ['night', 'day', 'any'], requires: 'string[]', how: 'string', chapter: 'string', step: 'string', missable: 'boolean', remake: 'string' })) return;
+    if (!checkShape('schema', iw, it, { id: 'string', name: 'string', area: 'string', age: ['child', 'adult', 'either'], time: ['night', 'day', 'any'], requires: 'string[]', how: 'string', chapter: 'string', step: 'string', missable: 'boolean', check: 'string?', remake: 'string?' })) return;
+    if (it.check !== undefined && !it.check.trim()) err('schema', `${iw}: empty check (leave the field out instead)`);
+    if (it.remake !== undefined) err('schema', `${iw}: leftover "remake" field (retired; fold it into how or check)`);
     if (!SLUG.test(it.id)) err('ids', `${iw}: id is not a lowercase-dash slug`);
     if (local.has(it.id)) err('ids', `${iw}: listed twice in the same category`);
     local.add(it.id);
@@ -298,14 +302,14 @@ for (const ch of W) {
   if (ch.boss) { add(`${ch.id}.boss.name`, ch.boss.name); add(`${ch.id}.boss.weakness`, ch.boss.weakness); (ch.boss.strategy || []).forEach((s, i) => add(`${ch.id}.boss.strategy[${i}]`, s)); }
   for (const sec of ch.sections || []) {
     add(`${sec.id}.title`, sec.title);
-    for (const st of sec.steps || []) { add(`${st.id}.text`, st.text); add(`${st.id}.tip`, st.tip); add(`${st.id}.warn`, st.warn); add(`${st.id}.remake`, st.remake, true); }
+    for (const st of sec.steps || []) { add(`${st.id}.text`, st.text); add(`${st.id}.tip`, st.tip); add(`${st.id}.warn`, st.warn); add(`${st.id}.check`, st.check); }
   }
 }
 for (const cat of CATS) {
   add(`collectibles.${cat.id}.name`, cat.name); add(`collectibles.${cat.id}.note`, cat.note);
   for (const it of cat.items || []) {
     const w = `collectibles.${cat.id}/${it.id}`;
-    add(`${w}.name`, it.name); add(`${w}.area`, it.area); add(`${w}.how`, it.how); add(`${w}.remake`, it.remake, true);
+    add(`${w}.name`, it.name); add(`${w}.area`, it.area); add(`${w}.how`, it.how); add(`${w}.check`, it.check);
     (it.requires || []).forEach((s, i) => add(`${w}.requires[${i}]`, s));
   }
 }
@@ -370,7 +374,7 @@ for (const { where, s, remake } of texts) {
 // first-mention rule: the same term bolded twice in one step text
 for (const st of Object.values(stepById).map((x) => x.step)) {
   const seen = {};
-  for (const fld of ['text', 'tip', 'warn']) for (const m of String(st[fld] || '').matchAll(/\*\*([^*]+)\*\*/g)) {
+  for (const fld of ['text', 'tip', 'warn', 'check']) for (const m of String(st[fld] || '').matchAll(/\*\*([^*]+)\*\*/g)) {
     if (seen[m[1]]) warn('style', `${st.id}: "${m[1]}" is bolded more than once in the step (bold the first mention only)`);
     seen[m[1]] = true;
   }
@@ -421,14 +425,16 @@ for (const v of Object.values(NAMEMAP)) if (!isStr(v)) err('names', 'name-map.js
 const nmKeys = Object.keys(nmMissing);
 if (nmKeys.length) err('names', `${nmKeys.length} names missing from research/name-map.json: ${nmKeys.map((k) => `"${k}" (${[...new Set(nmMissing[k])].join('/')})`).join(', ')}`);
 
-// rule C: non-N64 spellings and known variants that must not appear anywhere
+// rule C: older names the Switch 2 version renamed, and known misspellings, that must not appear
 const VARIANTS = [
   [/\bKokiri Emerald\b/g, "Kokiri's Emerald"], [/\bGoron Ruby\b/g, "Goron's Ruby"], [/\bZora Sapphire\b/g, "Zora's Sapphire"],
-  [/\bGerudo Fortress\b/g, "Gerudo's Fortress"], [/\bDampe\b/g, 'Dampé'], [/\bOdd (?:Poultice|Medicine)\b/g, 'Odd Potion'],
+  [/\bGerudo Fortress\b/g, "Gerudo's Fortress"], [/\bDampe\b/g, 'Dampé'], [/\bOdd (?:Potion|Medicine)\b/g, 'Odd Poultice'],
+  [/\bClaim Check\b/g, 'Biggoron Receipt'], [/\bMembership Card\b/g, 'Gerudo Pass'], [/\bGanon's Castle\b/g, "Ganondorf's Castle"],
+  [/\bLens of Truth\b/g, 'Lenses of Truth'], [/\bStone of Agony\b/g, 'Echo Gem'], [/\bHaunted Wasteland\b/g, 'Mirage Desert'],
   [/\bDinalfos\b/g, 'Dinolfos'], [/\bGoron Bracelet\b/g, "Goron's Bracelet"], [/\bBiggoron Sword\b/g, "Biggoron's Sword"],
   [/\bHero's Bow\b/g, 'Fairy Bow'], [/\bGolden Skulltula\b/g, 'Gold Skulltula'], [/\bHeart Pieces?\b/g, 'Piece(s) of Heart'],
-  [/\bGerudo Training Grounds\b/g, 'Gerudo Training Ground'], [/\bRe-?dead\b/g, 'ReDead'], [/\bLike-Like\b/g, 'Like Like'],
-  [/\bSkulltula House\b/g, 'House of Skulltula'], [/\bScarecrow Song\b/g, "Scarecrow's Song"], [/\bShard of Agony\b/g, 'Stone of Agony'],
+  [/\bGerudo Training Grounds?\b/g, 'Gerudo Proving Grounds'], [/\bRe-?dead\b/g, 'ReDead'], [/\bLike-Like\b/g, 'Like Like'],
+  [/\bSkulltula House\b/g, 'House of Skulltula'], [/\bScarecrow Song\b/g, "Scarecrow's Song"], [/\bShard of Agony\b/g, 'Echo Gem'],
   [/\bGold Scale\b/g, 'Golden Scale'], [/\bmagic meter\b/g, 'Magic Meter'], [/\bFreezzard\b/g, 'Freezard'], [/\bZora River\b/g, "Zora's River"],
   [/\bZoras? Fountain\b/g, "Zora's Fountain"], [/\bJabu Jabu\b/g, 'Jabu-Jabu'], [/\bFishing Hole\b/g, 'Fishing Pond'], [/\bLon Lon milk\b/g, 'Lon Lon Milk'],
   [/\b[Ss]pin attacks?\b/g, 'Spin Attack'],

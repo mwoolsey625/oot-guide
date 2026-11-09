@@ -73,7 +73,7 @@
   var KEY_FFVI_TOKEN = 'ff6pr-gist-token';
   /* progress format: saves and exports carry `version`; anything without one is version 1 */
   var PROGRESS_VERSION = 3;
-  /* version 2: cows stopped being collectibles (in the original game they only refill a Bottle; they were
+  /* version 2: cows stopped being collectibles (they only refill a Bottle; they were
      checks only in the randomizer's location list), and the steps that existed only for a cow went with them.
      Each list gives the old step numbers that survive, in their new order. */
   var V2_STEPS = { 'c02-s03': [1, 2, 3, 4, 6], 'c04-s06': [2, 3, 4], 'c07-s04': [1, 3, 4, 5, 6] };
@@ -97,8 +97,8 @@
   if (!prefs.open || typeof prefs.open !== 'object' || Array.isArray(prefs.open)) prefs.open = {};
   delete prefs.collapsed;
   prefs.hideDone = !!prefs.hideDone;
-  /* which game the reader plays: 'n64' hides remake notes and draws ocarina notes as N64 buttons */
-  if (prefs.version !== 'n64') prefs.version = 'switch2';
+  /* the guide always describes the Switch 2 version; the old reader "version" pref is dropped */
+  delete prefs.version;
 
   function normalizeProgress(p) {
     var out = { version: PROGRESS_VERSION, done: {}, last: null };
@@ -112,7 +112,7 @@
     return out;
   }
   /* version 2 -> 3: the Hylian Loach, Granny's Blue Potion and the Wasteland Bombchus stopped being collectibles
-     for the same reason as the cows (they repeat and record nothing in the original game); no step changed */
+     for the same reason as the cows (they repeat and record nothing); no step changed */
   function migrateV2(out) {
     ['lh-loach-fishing', 'kak-granny-buy-blue-potion', 'wasteland-bombchu-salesman'].forEach(function (id) { delete out.done[id]; });
   }
@@ -162,7 +162,7 @@
       return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
     });
   }
-  /* {notes:A ↓ → ↓} in guide text is an ocarina note sequence, drawn for the chosen version */
+  /* {notes:A ↓ → ↓} in guide text is an ocarina note sequence, drawn with the Switch 2 buttons */
   var NOTES_TOKEN = /\{notes:([^}]*)\}/g;
   function md(s) {
     return esc(s).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
@@ -390,8 +390,8 @@
       '</button>';
   }
   function note(kind, text) {
-    if (!text || (kind === 'remake' && prefs.version === 'n64')) return '';
-    var map = { tip: ['i-spark', 'Hint'], warn: ['i-caution', 'Caution'], remake: ['i-remake', 'Switch 2'] };
+    if (!text) return '';
+    var map = { tip: ['i-spark', 'Hint'], warn: ['i-caution', 'Caution'], check: ['i-check', 'Check here'] };
     return '<div class="note ' + kind + '">' + ico(map[kind][0]) + '<div><b>' + map[kind][1] + '</b>' + md(text) + '</div></div>';
   }
   function emblem(n) { return '<span class="emblem"><svg aria-hidden="true"><use href="#emblem"/></svg><b>' + esc(n) + '</b></span>'; }
@@ -481,7 +481,7 @@
       '<header class="sec-head"><h2 class="sec-h"><button type="button" class="sec-toggle" data-act="sec" data-sec="' + esc(sec.id) + '" aria-expanded="' + (closed ? 'false' : 'true') + '" aria-controls="' + esc(bodyId) + '">' +
       '<span class="sec-ico">' + ico('k-' + kind, 'ico-kind') + ico('i-tick', 'ico-clear') + '</span>' +
       '<span class="sec-tt"><span class="sec-title">' + esc(sec.title) + '</span>' +
-      '<span class="sec-meta"><span class="sec-kind">' + esc(KINDS[kind]) + '</span>' + (era !== ch.era ? eraBadge(era) : '') +
+      '<span class="sec-meta"><span class="sec-kind">' + esc(KINDS[kind]) + '</span>' + (era !== ch.era ? eraBadge(era) : '') + checkBadge(steps) +
       '<span class="sec-cleared">' + ico('i-tick') + 'Cleared</span><span class="sec-next">Up next</span></span></span>' +
       '<span class="sec-count">' + countSpan('sec:' + sec.id) + '<span class="visually-hidden"> steps done</span></span>' +
       ico('i-chev', 'sec-chev') + '</button></h2></header>' +
@@ -499,16 +499,21 @@
     h += '</div></div></section>';
     return h;
   }
+  /* small "N to check" badge in a section header when any of its steps carries a `check` */
+  function checkBadge(steps) {
+    var n = steps.filter(function (s) { return s && s.check; }).length;
+    return n ? '<span class="sec-check" title="Steps with a Check here note">' + ico('i-check') + n + ' to check</span>' : '';
+  }
   function renderStep(st, n, hide) {
     var collect = st.collect || [];
     var t = st.time === 'night' || st.time === 'day' ? st.time : '';
-    return '<li class="step' + (t ? ' t-' + t : '') + (isDone(st.id) ? ' is-done' : '') + (hide ? ' is-hidden' : '') + '" id="s-' + esc(st.id) + '" data-row="' + esc(st.id) + '">' +
+    return '<li class="step' + (t ? ' t-' + t : '') + (st.check ? ' has-check' : '') + (isDone(st.id) ? ' is-done' : '') + (hide ? ' is-hidden' : '') + '" id="s-' + esc(st.id) + '" data-row="' + esc(st.id) + '">' +
       '<div class="step-rail">' + chk(st.id, 'Step ' + n + ' done', collect) + '<span class="step-n">' + n + '</span></div>' +
       '<div class="step-body">' +
       (t ? '<div class="step-badges">' + timeBadge(t, true) + '</div>' : '') +
       '<p class="step-text">' + md(st.text) + '</p>' +
       (collect.length ? '<div class="chips">' + collect.map(chip).join('') + '</div>' : '') +
-      note('warn', st.warn) + note('tip', st.tip) + note('remake', st.remake) +
+      note('warn', st.warn) + note('tip', st.tip) + note('check', st.check) +
       '</div></li>';
   }
   function bossCard(b, ch, withLink) {
@@ -726,7 +731,7 @@
     return '<li class="item' + (isDone(it.id) ? ' is-done' : '') + '" id="s-' + esc(it.id) + '" data-row="' + esc(it.id) + '">' + chk(it.id, 'Collected: ' + it.name) +
       '<div class="item-body"><div class="item-name">' + esc(it.name) + (it.missable ? '<span class="badge miss">' + ico('i-caution') + 'Missable</span>' : '') + '</div>' +
       '<div class="item-meta">' + eraBadge(it.age || 'either') + timeBadge(it.time) + req + '</div>' +
-      (it.how ? '<p class="item-how">' + md(it.how) + '</p>' : '') + note('remake', it.remake) + link + '</div></li>';
+      (it.how ? '<p class="item-how">' + md(it.how) + '</p>' : '') + note('check', it.check) + link + '</div></li>';
   }
   function vizInner(cat) {
     var total = typeof cat.total === 'number' ? cat.total : (cat.items || []).length;
@@ -760,7 +765,7 @@
   /* ------------------------------------------------------------------ lore */
   var LORE = [
     ['songs', 'Songs', 'g-songs'], ['bosses', 'Bosses', 'k-boss'], ['bestiary', 'Bestiary', 'g-masks'],
-    ['minigames', 'Minigames', 'g-skulltula-rewards'], ['sidequests', 'Side quests', 'k-sidequest'], ['remake', 'Remake notes', 'i-remake']
+    ['minigames', 'Minigames', 'g-skulltula-rewards'], ['sidequests', 'Side quests', 'k-sidequest'], ['remake', "What's new on Switch 2", 'i-remake']
   ];
   function loreCount(key) {
     if (key === 'remake') { var r = REF.remake || {}; return ((r.confirmed || []).length + (r.unconfirmed || []).length) + ' notes'; }
@@ -768,7 +773,7 @@
   }
   function renderLoreHub() {
     current.view = 'lore'; current.ch = null;
-    var h = '<div class="page-head"><p class="eyebrow">Lore</p><h1>Reference</h1><p>Songs, foes, games and what the remake changes.</p></div><div class="lore-grid">';
+    var h = '<div class="page-head"><p class="eyebrow">Lore</p><h1>Reference</h1><p>Songs, foes, games and what\'s new on Switch 2.</p></div><div class="lore-grid">';
     LORE.forEach(function (l) { h += '<a class="card lore-card" href="#/lore/' + l[0] + '">' + ico(l[2]) + '<span><b>' + l[1] + '</b><small>' + loreCount(l[0]) + '</small></span></a>'; });
     mainEl.innerHTML = h + '</div>';
     setTop('Lore', 'Reference');
@@ -837,12 +842,11 @@
       return acc;
     }, []).filter(Boolean);
   }
-  /* N64 draws the real A / C buttons. The Switch 2 note-to-button layout is not confirmed yet, so
-     its notes use the same layout in neutral ink; set the remake's glyphs here once confirmed. */
+  /* Switch 2 ocarina buttons. Note tokens in the data use arrow symbols; the guide draws them as
+     X = top (up), Y = left, A = right, R = bottom (down), and L for the fifth note. */
+  var SW2_BTN = { '↑': 'X', '←': 'Y', '→': 'A', '↓': 'R', 'A': 'L' };
   function noteButton(t) {
-    var n64 = prefs.version === 'n64';
-    if (t === 'A') return '<span class="nb ' + (n64 ? 'a' : 'n') + '" aria-hidden="true">A</span>';
-    if (ARROW_ROT.hasOwnProperty(t)) return '<span class="nb ' + (n64 ? 'c' : 'n') + '" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 15 12 8.5l6 6.5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="rotate(' + ARROW_ROT[t] + ' 12 12)"/></svg></span>';
+    if (SW2_BTN.hasOwnProperty(t)) return '<span class="nb n" aria-hidden="true">' + SW2_BTN[t] + '</span>';
     return '<span class="nb x" aria-hidden="true">' + esc(t) + '</span>';
   }
   function staff(tokens) {
@@ -851,13 +855,12 @@
     for (var l = 0; l < 5; l++) { var y = base - l * 2 * gap; h += '<line class="ln" x1="4" x2="' + (w - 4) + '" y1="' + y + '" y2="' + y + '"/>'; }
     tokens.forEach(function (t, i) {
       var p = PITCH.hasOwnProperty(t) ? PITCH[t] : 2, cx = x0 + i * dx, cy = base - p * gap;
-      if (t === 'A') h += '<circle class="ha" cx="' + cx + '" cy="' + cy + '" r="9.5"/><text class="ga" x="' + cx + '" y="' + (cy + 4) + '" text-anchor="middle">A</text>';
-      else h += '<circle class="hc" cx="' + cx + '" cy="' + cy + '" r="9.5"/>' + (ARROW_ROT.hasOwnProperty(t) ? '<path class="gc" d="M' + (cx - 4) + ' ' + (cy + 2) + ' L' + cx + ' ' + (cy - 2.5) + ' L' + (cx + 4) + ' ' + (cy + 2) + '" transform="rotate(' + ARROW_ROT[t] + ' ' + cx + ' ' + cy + ')"/>' : '');
+      h += '<circle class="ha" cx="' + cx + '" cy="' + cy + '" r="9.5"/>' + (SW2_BTN.hasOwnProperty(t) ? '<text class="ga" x="' + cx + '" y="' + (cy + 4) + '" text-anchor="middle">' + SW2_BTN[t] + '</text>' : '');
     });
     return h + '</svg>';
   }
   function spokenNotes(toks) {
-    return toks.map(function (t) { return t === 'A' ? 'A' : ({ '↑': 'up', '↓': 'down', '←': 'left', '→': 'right' })[t] || t; }).join(', ');
+    return toks.map(function (t) { return SW2_BTN[t] || t; }).join(', ');
   }
   function inlineNotes(seq) {
     var toks = noteTokens(seq);
@@ -873,14 +876,14 @@
   }
   function remakePage() {
     var r = REF.remake || {};
-    var h = '<div class="notice" style="border-left-color:var(--remake);background:var(--remake-bg)">The walkthrough follows the original game. Panels marked <b>Switch 2</b> say what plays differently in the remake. The wording in each panel says how sure a fact is: confirmed, reported, or not settled yet.</div>';
+    var h = '<div class="notice">The walkthrough describes the Switch 2 version. This page lists what the remake changed. Anything still unverified in a step is marked <b>Check here</b> in the walkthrough.</div>';
     h += '<article class="card entry"><h2>Confirmed</h2><ul class="remake-list">' + (r.confirmed || []).map(function (c) { return '<li>' + md(c.fact) + '<span class="src">' + esc(c.source) + '</span></li>'; }).join('') + '</ul></article>';
-    h += '<article class="card entry"><h2>Reported, not confirmed</h2><ul class="remake-list">' + (r.unconfirmed || []).map(function (c) { return '<li>' + md(c.claim) + '<span class="src">' + esc(c.source) + '</span></li>'; }).join('') + '</ul></article>';
+    h += '<article class="card entry"><h2>Still being checked</h2><ul class="remake-list">' + (r.unconfirmed || []).map(function (c) { return '<li>' + md(c.claim) + '<span class="src">' + esc(c.source) + '</span></li>'; }).join('') + '</ul></article>';
     h += '<article class="card entry"><h2>What it could change in this guide</h2><dl>' + (r.guideImpacts || []).map(function (g) { return '<dt>' + esc(g.area) + '</dt><dd>' + md(g.impact) + '</dd>'; }).join('') + '</dl></article>';
     var flagged = [];
-    Object.keys(stepById).forEach(function (id) { var s = stepById[id]; if (s.step.remake) flagged.push(s); });
-    h += '<article class="card entry"><h2>Steps with a Switch 2 panel · ' + flagged.length + '</h2><ul class="flag-list">' + flagged.map(function (s) {
-      return '<li><a href="#/ch/' + esc(s.ch.id) + '/' + esc(s.step.id) + '">' + esc(chapterLabel(s.ch.id, true) + ' · ' + s.sec.title + ', step ' + s.n) + '</a><div class="muted">' + md(s.step.remake) + '</div></li>';
+    Object.keys(stepById).forEach(function (id) { var s = stepById[id]; if (s.step.check) flagged.push(s); });
+    h += '<article class="card entry"><h2>Steps to check · ' + flagged.length + '</h2><ul class="flag-list">' + flagged.map(function (s) {
+      return '<li><a href="#/ch/' + esc(s.ch.id) + '/' + esc(s.step.id) + '">' + esc(chapterLabel(s.ch.id, true) + ' · ' + s.sec.title + ', step ' + s.n) + '</a><div class="muted">' + md(s.step.check) + '</div></li>';
     }).join('') + '</ul></article>';
     return h;
   }
@@ -895,14 +898,14 @@
       (ch.sections || []).forEach(function (sec) {
         (sec.steps || []).forEach(function (st, i) {
           add({ type: 'Ch ' + chNum(ch) + ' · ' + sec.title + ' · step ' + (i + 1), glyph: 'k-' + (KINDS[sec.kind] ? sec.kind : 'overworld'),
-            title: plain(st.text), text: [st.tip, st.warn, prefs.version === 'n64' ? '' : st.remake].filter(Boolean).join(' '), extra: st.time ? st.time + ' only' : '', route: 'ch/' + ch.id + '/' + st.id, check: st.id, also: st.collect || [], step: true });
+            title: plain(st.text), text: [st.tip, st.warn, st.check].filter(Boolean).join(' '), extra: st.time ? st.time + ' only' : '', route: 'ch/' + ch.id + '/' + st.id, check: st.id, also: st.collect || [], step: true });
         });
       });
     });
     CATS.forEach(function (cat) {
       (cat.items || []).forEach(function (it) {
         add({ type: cat.name + (it.area ? ' · ' + it.area : ''), glyph: glyphId(cat.id), title: it.name,
-          text: [it.how, (it.requires || []).length ? 'Needs ' + it.requires.join(', ') : ''].filter(Boolean).join(' · '), extra: [it.time === 'night' ? 'night only' : '', it.time === 'day' ? 'day only' : '', it.missable ? 'missable' : ''].join(' '),
+          text: [it.how, it.check, (it.requires || []).length ? 'Needs ' + it.requires.join(', ') : ''].filter(Boolean).join(' · '), extra: [it.time === 'night' ? 'night only' : '', it.time === 'day' ? 'day only' : '', it.missable ? 'missable' : ''].join(' '),
           route: 'collect/' + cat.id + '/' + it.id, check: it.id });
       });
     });
@@ -1197,8 +1200,6 @@
       ? '<div class="notice ok">Progress saves on this device automatically. ' + (syncToken() ? 'Sync keeps it on your other devices too.' : 'Connect sync below to carry it to your other devices.') + '</div>'
       : '<div class="notice"><b>Storage is blocked in this browser.</b> Your checks last until you close this tab. Use Export to keep them.</div>';
     h += syncCard();
-    h += '<section class="card set-group"><h2>Game version</h2><p>Pick the version you are playing. Original (N64) hides the Switch 2 panels and draws ocarina notes as N64 buttons. Switch 2 shows the panels. Its ocarina notes stay neutral until the button layout is confirmed.</p>' +
-      seg2('version', prefs.version, [['n64', 'Original (N64)'], ['switch2', 'Switch 2']]) + '</section>';
     h += '<section class="card set-group"><h2>Theme</h2><p>Day is sunlit vellum; Night is a dark sky for a dim room. System follows your phone.</p>' +
       seg2('theme', prefs.theme, [['system', 'System'], ['light', 'Day'], ['dark', 'Night']]) + '</section>';
     h += '<section class="card set-group"><h2>Text size</h2><p>Larger text helps at arm\'s length or across a desk.</p>' +
@@ -1512,7 +1513,6 @@
     }
     else if (kind === 'theme') { prefs.theme = val; savePrefs(); applyTheme(); renderSettings(); }
     else if (kind === 'theme-toggle') { prefs.theme = isDark() ? 'light' : 'dark'; savePrefs(); applyTheme(); if (current.view === 'settings') renderSettings(); }
-    else if (kind === 'version') { prefs.version = val === 'n64' ? 'n64' : 'switch2'; savePrefs(); searchIndex = null; renderSettings(); }
     else if (kind === 'scale') { prefs.scale = parseFloat(val) || 1; savePrefs(); applyTheme(); renderSettings(); }
     else if (kind === 'hide-done') { prefs.hideDone = !prefs.hideDone; savePrefs(); applyTheme(); act.setAttribute('aria-checked', String(!!prefs.hideDone)); }
     else if (kind === 'sec') {

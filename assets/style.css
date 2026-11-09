@@ -22,6 +22,9 @@
   --warn-bg: rgba(200, 70, 20, .10);
   --remake: #5641b0;
   --remake-bg: rgba(86, 65, 176, .07);
+  --check: #7a5200;
+  --check-edge: #d29a06;
+  --check-bg: rgba(240, 180, 20, .20);
   --night: #33479e;
   --night-bg: rgba(51, 71, 158, .10);
   --day: #8d5300;
@@ -63,6 +66,9 @@
     --warn-bg: rgba(255, 120, 80, .11);
     --remake: #b9a8ff;
     --remake-bg: rgba(170, 150, 255, .08);
+    --check: #ffd24a;
+    --check-edge: #d9a21c;
+    --check-bg: rgba(255, 205, 60, .13);
     --night: #a9bcff;
     --night-bg: rgba(140, 165, 255, .13);
     --day: #ffd27a;
@@ -102,6 +108,9 @@
   --warn-bg: rgba(255, 120, 80, .11);
   --remake: #b9a8ff;
   --remake-bg: rgba(170, 150, 255, .08);
+  --check: #ffd24a;
+  --check-edge: #d9a21c;
+  --check-bg: rgba(255, 205, 60, .13);
   --night: #a9bcff;
   --night-bg: rgba(140, 165, 255, .13);
   --day: #ffd27a;
@@ -509,8 +518,12 @@ main {
 .note.tip .ico, .note.tip b { color: var(--tip); }
 .note.warn { background: var(--warn-bg); color: var(--ink); border-left: 3px solid var(--warn); }
 .note.warn .ico, .note.warn b { color: var(--warn); }
-.note.remake { background: var(--remake-bg); border: 1.5px solid color-mix(in srgb, var(--remake) 55%, transparent); color: var(--ink); }
-.note.remake .ico, .note.remake b { color: var(--remake); }
+.note.check { background: var(--check-bg); border: 1.5px dashed var(--check-edge); color: var(--ink); }
+.note.check .ico, .note.check b { color: var(--check); }
+.sec-check { display: inline-flex; align-items: center; gap: 4px; padding: 1px 8px; border-radius: 999px; background: var(--check-bg); border: 1px solid var(--check-edge); color: var(--check); font-weight: 700; }
+.sec-check .ico { width: 14px; height: 14px; }
+.step.has-check .step-n { color: var(--check); font-weight: 800; }
+.step.has-check .step-n::after { content: ""; display: block; width: 7px; height: 7px; margin: 3px auto 0; border-radius: 50%; background: var(--check-edge); }
 
 /* dungeon sections: steps sit inside a dim stone chamber */
 .section.k-dungeon .steps, .section.k-boss .steps {
@@ -699,10 +712,8 @@ main {
   font-weight: 700; font-size: .9rem; line-height: 1;
 }
 .nb svg { width: 18px; height: 18px; }
-.nb.c { background: color-mix(in srgb, var(--btn-c) 22%, transparent); color: var(--btn-c); border: 2px solid var(--btn-c); }
-.nb.a { background: color-mix(in srgb, var(--btn-a) 22%, transparent); color: var(--btn-a); border: 2px solid var(--btn-a); font-family: var(--font-display); }
 .nb.x { background: var(--bg-sunk); color: var(--ink-2); border: 2px solid var(--line-2); }
-/* Switch 2 notes: same layout, neutral ink until the remake's controls are confirmed */
+/* Switch 2 note buttons: X, Y, A, R, L letters in neutral ink */
 .nb.n { background: var(--bg-sunk); color: var(--ink); border: 2px solid var(--ink-3); font-family: var(--font-display); }
 /* note sequences inside step text */
 .notes-inline { display: inline-flex; gap: 3px; vertical-align: middle; margin: 0 2px; }
@@ -710,10 +721,8 @@ main {
 .notes-inline .nb svg { width: 13px; height: 13px; }
 .staff { width: 100%; max-width: 440px; height: auto; margin-top: 12px; display: block; color: var(--ink-3); }
 .staff .ln { stroke: currentColor; stroke-width: 1; opacity: .55; }
-.staff .hc { fill: color-mix(in srgb, var(--btn-c) 25%, var(--bg-2)); stroke: var(--btn-c); stroke-width: 2; }
-.staff .ha { fill: color-mix(in srgb, var(--btn-a) 25%, var(--bg-2)); stroke: var(--btn-a); stroke-width: 2; }
-.staff .gc { stroke: var(--btn-c); fill: none; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
-.staff .ga { fill: var(--btn-a); font: 700 11px var(--font-display); }
+.staff .ha { fill: var(--bg-sunk); stroke: var(--ink-3); stroke-width: 2; }
+.staff .ga { fill: var(--ink); font: 700 11px var(--font-display); }
 .remake-list li { margin: 8px 0; }
 .remake-list .src { display: block; color: var(--ink-3); font-size: .82rem; }
 .flag-list { list-style: none; padding: 0; margin: 8px 0 0; }

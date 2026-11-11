@@ -314,16 +314,16 @@ OOT.walkthrough.push({
           collect: ["fire-temple-big-lava-room-blocked-door-chest"] },
         { id: "c08-s07-05", text: "Unlock the door on the right of the bridge and climb to the boulder maze: push the block over the fire pit and ride it up, clear the Torch Slugs and use the blocks to climb, then drop a Bomb onto the crystal switch and climb the fenced wall while the fire is off.",
           collect: [] },
-        { id: "c08-s07-06", text: "In the lower boulder maze, follow the outer wall to the right. Press the floor switch and free the Goron for a **Small Key**, bomb the hollow wall of the triangular alcove further on for a Gold Skulltula, then take the door 2 turns along for a third Goron and Small Key.",
-          collect: ["fire-temple-boulder-maze-lower-chest", "fire-temple-gs-boulder-maze", "fire-temple-boulder-maze-side-room-chest"],
+        { id: "c08-s07-06", text: "In the lower boulder maze, follow the outer wall to the right. Press the floor switch and free the Goron for a **Small Key**, bomb the hollow wall of the triangular alcove further on for a Gold Skulltula, then take the door 2 turns along for a third Goron and Small Key. Before you leave the maze, open the chest in its south alcove for the **Dungeon Map**.",
+          collect: ["fire-temple-boulder-maze-lower-chest", "fire-temple-gs-boulder-maze", "fire-temple-boulder-maze-side-room-chest", "fire-temple-map-chest"],
           tip: "Stay close to the wall to keep away from the rolling boulders." }
       ]
     },
     {
       id: "c08-s08", title: "Fire Temple: The Upper Floors", era: "adult", kind: "dungeon",
       steps: [
-        { id: "c08-s08-01", text: "Unlock the door at the end of the maze. In the narrow bridge room, shoot the silver eye switch above you and take the right door to the big chest with the **Compass**. The **Dungeon Map** is in a chest in the south alcove of the boulder maze you just crossed, so if you walked past that alcove, go back for it.",
-          collect: ["fire-temple-map-chest"],
+        { id: "c08-s08-01", text: "Unlock the door at the end of the maze. In the narrow bridge room, shoot the silver eye switch above you and take the right door to the big chest with the **Compass**.",
+          collect: [],
           tip: "A fall from the narrow bridge drops you back into the big lava room." },
         { id: "c08-s08-02", text: "Through the next locked door, run along the hanging grate ahead of the wall of fire and climb up at the end. In the upper maze, bomb the cracked floor and drop down to free a Goron for a **Small Key**, then cross the narrow platforms to a floor switch, stun the Torch Slug with the Hookshot and free the Goron in the high cage for another.",
           collect: ["fire-temple-boulder-maze-shortcut-chest", "fire-temple-boulder-maze-upper-chest"],

@@ -35,11 +35,13 @@ OOT.walkthrough.push({
         { id: "c07-s02-01", text: "In the **Kakariko Graveyard**, ride the bean plant you planted as a child on the left side up to the high ledge. Roll into the crate there for a **Piece of Heart**.",
           collect: ["graveyard-freestanding-poh"],
           tip: "No plant here? The Longshot from the Water Temple (chapter 10) reaches the ledge instead." },
-        { id: "c07-s02-02", text: "Pull back the grave with flowers in front of it, next to the bean plant, and drop into **Dampé's Grave**. Chase his ghost through the tunnels to the chest at the far end for the **Hookshot**.",
+        { id: "c07-s02-02", text: "Pull back the first grave of the north row (stand behind it and pull), then drop into **Dampé's Grave**. Chase his ghost through the tunnels to the chest at the far end for the **Hookshot**.",
           collect: ["graveyard-dampe-race-hookshot-chest"],
+          check: "IGN says only \"the first gravestone of the north row\". If you are not sure which grave that is, try the first one of each back row.",
           tip: "Keep to the left wall at first. Past the first door, follow the right wall into the big room and leave by its right exit. The flames he drops knock you down, so do not trail him too closely. Link can dash here, which makes the chase easier. Follow his lantern and stay close at forks; he sends you back if he loses you for too long." },
-        { id: "c07-s02-03", text: "Past the chest, play the **Song of Time** to clear the blue block and climb the stairs into the **Windmill**. Talk to the man turning the music box to learn the **Song of Storms**.",
-          collect: ["song-from-windmill"] },
+        { id: "c07-s02-03", text: "Past the chest, play the **Song of Time** to clear the blue block and climb the stairs into the **Windmill**. Talk to the man turning the music box to learn the **Song of Storms**. Then jump across the windmill's turning parts to the high ledge for a **Piece of Heart**.",
+          collect: ["song-from-windmill", "kak-windmill-freestanding-poh"],
+          tip: "In the original game a child could pull this piece down with the Boomerang. That no longer works, so it waits until now." },
         { id: "c07-s02-04", text: "Go back to Dampé's grave and race him a second time. Reach the end in 60 seconds or less and a **Piece of Heart** appears at the finish.",
           collect: ["graveyard-dampe-race-freestanding-poh"],
           tip: "Link's dash helps on this run." }
@@ -64,9 +66,10 @@ OOT.walkthrough.push({
     {
       id: "c07-s04", title: "Back to the Forest", era: "adult", kind: "overworld",
       steps: [
-        { id: "c07-s04-01", text: "In **Kokiri Forest**, go to the Gossip Stone by the entrance to the **Lost Woods**, behind Mido's House. Play the **Song of Storms** in front of it, drop into the grotto that opens and take the 20 Rupees from its chest.",
+        { id: "c07-s04-01", text: "In **Kokiri Forest**, go to the Gossip Stone by the entrance to the **Lost Woods**, behind Mido's House. Play the **Song of Storms** in front of it and drop into the grotto that opens. 3 Business Scrubs stand inside: beat them in the order 2, 3, 1 to earn a Green Rupee.",
           collect: ["kf-storms-grotto-chest"],
-          tip: "If you won Malon's obstacle course, her cow now stands in Link's House. Play Epona's Song next to it and it fills an empty Bottle with milk for free, as often as you like." },
+          check: "IGN does not say how the 3 Scrubs are numbered, and mentions no chest of 20 Rupees (the old reward). If the order puzzle is unclear, listen to what each Scrub says. Take whatever reward you get and tick this step.",
+          tip: "One Scrub's hint is about Stalchildren. If you won Malon's obstacle course, her cow now stands in Link's House. Play Epona's Song next to it and it fills an empty Bottle with milk for free, as often as you like." },
         { id: "c07-s04-02", text: "Wait for night, or play the **Sun's Song** to bring it. Look up at the wall above the **House of Twins** and Hookshot the Gold Skulltula, then its token.",
           collect: ["kf-gs-house-of-twins"], time: "night",
           tip: "Time passes in Kokiri Forest, so night can arrive or end while you are here." },
@@ -78,7 +81,11 @@ OOT.walkthrough.push({
           tip: "Wait in the alcoves until a patrolling Moblin turns away. For the club-swinging Moblin at the steps, weave toward it and slash at its feet; it drops Rupees." },
         { id: "c07-s04-05", text: "Climb the ladder at the end of the maze, go left and Hookshot the Gold Skulltula on the wall.",
           collect: ["sfm-gs"], time: "night",
-          check: "3 walkthroughs list this token with no time condition, and 1 says night only. Try by day first; if it is not there, wait for night or play the Sun's Song. Time keeps running, so night can end while you are here." }
+          check: "3 walkthroughs list this token with no time condition, and 1 says night only. Try by day first; if it is not there, wait for night or play the Sun's Song. Time keeps running, so night can end while you are here." },
+        { id: "c07-s04-06", text: "Head back to the front of the meadow, just ahead of the entrance and to the right of the maze entrance. Play the **Song of Storms** there and drop into the grotto that opens. Defeat the 2 Wolfos inside and open the chest, which holds a Purple Rupee (50 Rupees).",
+          collect: ["sfm-wolfos-grotto-chest"],
+          tip: "Wolfos guard their front. Wait for one to lunge, then hit its back or tail.",
+          check: "IGN does not say which age this grotto needs. If the song does nothing or the Wolfos are too tough as an adult, try it again as a child during the Song of Storms sweep in chapter 11." }
       ]
     },
     {
@@ -253,7 +260,7 @@ OOT.walkthrough.push({
       steps: [
         { id: "c08-s04-01", text: "In **Hyrule Field**, go to the shaded spot in the west of the field, next to the desert road and near the lone tree northwest of Lon Lon Ranch (on the map). A chest stands there that looks already open to an adult. Read the Fairy Note beside it as an adult, then come back as a child to open it for the **Piece of Heart**.",
           collect: ["hf-tektite-grotto-freestanding-poh"],
-          tip: "The Echo Gem reacts near the spot, but you do not need it.",
+          tip: "The Echo Gem reacts near the spot, but you do not need it. The Song of Storms grotto west of the Castle Town entrance (north side of the moat) holds a deep pool with a Blue Tektite. With the Iron Boots from the Ice Cavern, the Rupee boxes at the bottom are yours too.",
           check: "2 post-launch lists drop the old pool and add this chest in its place. The chest should hold the Piece of Heart this row counts, but its contents are not confirmed." },
         { id: "c08-s04-02", text: "Ride Epona into **Gerudo Valley** and jump the broken bridge on horseback. Give the **Poacher's Saw** to the head carpenter by the tent for the **Broken Goron's Sword**.",
           collect: ["gv-trade-poachers-saw"] },
@@ -268,7 +275,7 @@ OOT.walkthrough.push({
       steps: [
         { id: "c08-s05-01", text: "Enter **Dodongo's Cavern** and take the right-hand door of the main room into the Baby Dodongo corridor. Where Navi turns green below a high alcove, play the **Scarecrow's Song** and Hookshot to Pierre to reach the Gold Skulltula.",
           collect: ["dodongos-cavern-gs-scarecrow"] },
-        { id: "c08-s05-02", text: "Climb the trail toward **Goron City**. Just before its entrance, play the **Song of Storms** in the raised ring of stones, drop into the grotto and open the chest for 200 Rupees.",
+        { id: "c08-s05-02", text: "Climb the trail toward **Goron City**. On the cliff near its entrance, play the **Song of Storms**, then drop into the grotto. Fog fills the room and Baby Dodongos roam it; the Rupees inside include a Red Rupee (20 Rupees).",
           collect: ["dmt-storms-grotto-chest"],
           tip: "Rocks still fall on the upper trail until the Fire Temple is cleared. Watch for their shadows." },
         { id: "c08-s05-03", text: "Continue to the summit and give the **Broken Goron's Sword** to Biggoron, the giant Goron at the peak. He sends you off with the **Prescription**.",
@@ -293,10 +300,10 @@ OOT.walkthrough.push({
           collect: ["sheik-in-crater"],
           tip: "There is no heat timer. Without the tunic, Link catches fire a couple of seconds after he enters and loses health over time.",
           check: "One guide says Sheik plays the Bolero's opening notes for you to copy." },
-        { id: "c08-s06-05", text: "Before the Fire Temple, sweep the crater's top entrance with the **Goron Tunic** on. Go left: 2 wooden crates stand beside a pot, and a Gold Skulltula is in the farther one, so roll into it. Next, bomb the boulder inside the ring of rocks near the entrance and drop into the grotto for its chest. Then look for netting set into the ground at the crater wall near the entrance, climb down it to the alcove just below for a **Piece of Heart**, and climb straight back up. Last, find the Business Scrub on a low platform to the north-west, beside a broken bridge that a big grey rock blocks, and buy a Piece of Heart for 100 Rupees: stun him with a Deku Nut or bounce his shot back with your shield, then talk to him.",
+        { id: "c08-s06-05", text: "Before the Fire Temple, sweep the crater's top entrance with the **Goron Tunic** on. Go left: 2 wooden crates stand beside a pot, and a Gold Skulltula is in the farther one, so roll into it. Next, from the summit near the Great Fairy's Fountain, go straight down and left to the grotto on the left (the fire burns you the whole time, so keep the tunic on) and open its chest, which holds a Business Scrub Seed. Then look for netting set into the ground at the crater wall near the entrance, climb down it to the alcove just below for a **Piece of Heart**, and climb straight back up. Last, find the Business Scrub on a low platform to the north-west, beside a broken bridge that a big grey rock blocks, and buy a Piece of Heart for 100 Rupees: stun him with a Deku Nut or bounce his shot back with your shield, then talk to him.",
           collect: ["dmc-gs-crate", "dmc-upper-grotto-chest", "dmc-wall-freestanding-poh", "ice-cavern-freestanding-poh"],
           tip: "The tunic protects you from the heat, so you can take your time. Without it, Link burns and loses health within seconds.",
-          check: "Walkthroughs describe the crate token and the scrub for child Link. If either is missing as an adult, it is child-only and needs a child trip from the summit with full hearts. Guides disagree on the net's side: IGN says right of the crates, 3 others say the left cliffs, 1 says the south end, so check all sides. One guide says the grotto chest holds a Business Scrub Seed, not Bombs: take what is there." }
+          check: "Walkthroughs describe the crate token and the scrub for child Link. If either is missing as an adult, it is child-only and needs a child trip from the summit with full hearts. Guides disagree on the net's side: IGN says right of the crates, 3 others say the left cliffs, 1 says the south end, so check all sides. IGN confirms the grotto chest holds a Business Scrub Seed, not Bombs." }
       ]
     },
     {
@@ -603,7 +610,7 @@ OOT.walkthrough.push({
     {
       id: "c11-s02", title: "Back to Childhood: Song of Storms Checks", era: "child", kind: "sweep",
       steps: [
-        { id: "c11-s02-01", text: "Warp to the **Temple of Time** with the **Prelude of Light** and put the Master Sword back to become a child. At **Hyrule Castle**, slip past the guards to the small tree in the corner near the castle gate, play the **Song of Storms**, drop into the hole, bomb the wall on your left and catch the Gold Skulltula with the **Boomerang**.",
+        { id: "c11-s02-01", text: "Warp to the **Temple of Time** with the **Prelude of Light** and put the Master Sword back to become a child. At **Hyrule Castle**, slip past the guards to the secret entrance where you found Talon, and stand under the tree nearby. Play the **Song of Storms**, drop into the hole, bomb the wall on your left and catch the Gold Skulltula with the **Boomerang**.",
           collect: ["hc-gs-storms-grotto"] },
         { id: "c11-s02-02", text: "At **Zora's River**, buy the rest of the **Magic Beans** from the salesman by the entrance. Stand on the log jutting into the river and play the **Song of Storms** to the frogs for a **Piece of Heart**, then the **Song of Time** for 50 Rupees.",
           collect: ["zr-frogs-in-the-rain", "zr-frogs-song-of-time"],
@@ -615,7 +622,10 @@ OOT.walkthrough.push({
         { id: "c11-s02-04", text: "Catch **Bugs** in a Bottle. In Kakariko, climb **Death Mountain Trail** and plant a **Magic Bean** in the soft soil outside **Dodongo's Cavern**. Then warp to **Death Mountain Crater** with the **Bolero of Fire**. Release the Bugs on the soft soil beside the warp pad, defeat the **Gold Skulltula** that crawls out, and plant a Magic Bean in the same soil. A child can't leave the warp pad on foot, so play the **Nocturne of Shadow** to warp to the Graveyard next to Kakariko.",
           collect: ["dmc-gs-bean-patch", "bean-death-mountain-crater", "bean-death-mountain-trail"],
           tip: "Bugs hide under small rocks. Start with full hearts. If you skip this crater trip, you also skip the Gold Skulltula here and the bean ride for a Piece of Heart in chapter 12.",
-          warn: "The crater has no heat timer. Without the Goron Tunic, Link catches fire a couple of seconds after he enters and keeps losing health until he leaves. Do the errand fast." }
+          warn: "The crater has no heat timer. Without the Goron Tunic, Link catches fire a couple of seconds after he enters and keeps losing health until he leaves. Do the errand fast." },
+        { id: "c11-s02-05", text: "Walk out of Kakariko and down the stairs into **Hyrule Field**. In the plot of farmland next to the Kakariko entrance, play the **Song of Storms** to open a grotto. Inside it is pitch black: play the **Sun's Song** to freeze the 2 ReDeads, defeat them before they break free, and open the chest for a Purple Rupee (50 Rupees).",
+          collect: ["kak-redead-grotto-chest"],
+          tip: "In the original game this grotto was in the middle of Kakariko and opened with a Bomb. There is no grotto there in this version, so don't bomb the village square." }
       ]
     },
     {

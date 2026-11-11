@@ -487,7 +487,7 @@ window.OOT.reference = {
         { kind: "heart", label: "Piece of Heart for the third round", item: "lw-ocarina-memory-game" },
         { kind: "game", label: "Slingshot target: 3 center hits in a row", item: "lw-target-in-woods" }] },
       { id: "lw4", x: 3, y: 4, name: "Goron City tunnel", turns: "R L", steps: ["c03-s04-02", "c03-s06-04", "c06-s02-03"], marks: [
-        { kind: "grotto", label: "Grotto under the boulder by the tunnel: a chest with 5 Rupees" }] },
+        { kind: "grotto", label: "Bomb the boulder by the tunnel: a grotto with plants that hide Bugs" }] },
       { id: "lw5", x: 2, y: 4, name: "Pool", turns: "R L R", steps: [], marks: [],
         note: "Dive into the pool with the Silver Scale for a shortcut to Zora's River. As an adult, Mido stands here and lets you pass only after you play Saria's Song." },
       { id: "lw6", x: 2, y: 3, name: "Fork", turns: "R L R L", steps: [], marks: [] },
@@ -505,8 +505,8 @@ window.OOT.reference = {
         { kind: "scrub", label: "Business Scrub in the grotto: Deku Nut capacity for 40 Rupees", item: "lw-deku-scrub-grotto-front" }] },
       { id: "lw10", x: 2, y: 2, name: "Meadow gate", turns: "R L R L S L R", steps: ["c03-s05-05"], marks: [],
         note: "A Wolfos guards the barred gate. The bars lift when it falls." },
-      { id: "sfm", x: 2, y: 1, wide: true, name: "Sacred Forest Meadow", turns: "", steps: ["c06-s02-05"], marks: [
-        { kind: "grotto", label: "Bomb the ground in front of the maze: a Wolfos grotto with 50 Rupees" },
+      { id: "sfm", x: 2, y: 1, wide: true, name: "Sacred Forest Meadow", turns: "", steps: ["c07-s04-06"], marks: [
+        { kind: "grotto", label: "Song of Storms in front of the maze: a Wolfos grotto with a Purple Rupee chest" },
         { kind: "item", label: "Saria's Song from Saria at the top of the steps", item: "song-from-saria" },
         { kind: "item", label: "Adult: the Minuet of Forest from Sheik", item: "sheik-in-forest" },
         { kind: "token", label: "Adult: Gold Skulltula on the wall of the upper meadow", item: "sfm-gs" }] }

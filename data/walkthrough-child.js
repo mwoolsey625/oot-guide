@@ -615,9 +615,8 @@ OOT.walkthrough.push({
           tip: "Don't run along the shore near the fish or they scatter. Expect to pay again if you leave the pond.",
           check: "Guides disagree on the size needed: IGN says over 40 cm, RPG Site 55, TheGamer 58 or more, and Game Rant still quotes 10 pounds. Catch the biggest fish you can find and hand it over. The Hylian Loach's reward has not been reported." },
         { id: "c05-s04-05",
-          text: "Swim to the southern tip of the lake, climb the smallest ledge and crawl through the short tunnel to reach a Gold Skulltula.",
-          collect: ["lh-gs-small-island"],
-          check: "TheGamer says a Blue Tektite guards the hole, and one older list puts it at the southwest instead. No guide says this token needs night, so try it by day and come back at night if nothing shows." }
+          text: "At night, swim to the southern tip of the lake. A Blue Tektite waits in the water in front of a small ledge with a tunnel: beat it, climb the ledge and crawl through the tunnel to the Gold Skulltula at the back.",
+          collect: ["lh-gs-small-island"], time: "night" }
       ]
     },
     {

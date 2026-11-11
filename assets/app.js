@@ -1559,8 +1559,29 @@
   /* a Home Screen app stays alive in the background, so page load alone would miss changes from other devices */
   document.addEventListener('visibilitychange', function () {
     if (document.visibilityState === 'hidden') flushSync();
-    else if (Date.now() - sync.pulled > 15000) syncNow();
+    else { checkBuild(); if (Date.now() - sync.pulled > 15000) syncNow(); }
   });
+
+  /* A page restored from the browser's cache (after a reboot, or a Home Screen app waking up)
+     keeps running the files it was opened with. tools/stamp.js writes the build id into
+     <meta name="build"> and version.json; when the live version.json differs, reload once.
+     The fresh index.html links every file with ?v=<hash>, so the reload gets new files. */
+  var BUILD = (document.querySelector('meta[name="build"]') || {}).content || '';
+  function checkBuild() {
+    if (!BUILD || !/^https?:$/.test(location.protocol) || !window.fetch) return;
+    fetch('version.json?t=' + Date.now(), { cache: 'no-store' })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (v) {
+        if (!v || !v.build || v.build === BUILD) return;
+        var tried = '';
+        try { tried = sessionStorage.getItem('oot-build-reload') || ''; } catch (e) { /* storage blocked */ }
+        if (tried === v.build) return; /* already reloaded once for this build; never loop */
+        try { sessionStorage.setItem('oot-build-reload', v.build); } catch (e) { return; }
+        saveProgress();
+        location.reload();
+      })
+      .catch(function () { /* offline: keep the page as it is */ });
+  }
   window.addEventListener('pageshow', function (e) { if (e.persisted) syncNow(); });
 
   /* ------------------------------------------------------------------ boot */
@@ -1569,4 +1590,5 @@
   route(true);
   if (!Store.ok()) warnStorage();
   syncNow();
+  checkBuild();
 })();

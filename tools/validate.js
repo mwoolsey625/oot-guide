@@ -444,6 +444,18 @@ for (const { where, s, remake } of texts) {
   for (const [re, good] of VARIANTS) { const h = s.match(re); if (h) err('names', `${where}: "${h[0]}" should be "${good}" (rule C)`); }
 }
 
+// file version stamps: index.html links and version.json must match the current files
+{
+  const stamp = require('./stamp.js');
+  const indexHtml = fs.readFileSync(path.join(stamp.ROOT, 'index.html'), 'utf8');
+  const { html, build } = stamp.compute(indexHtml);
+  let vj = '';
+  try { vj = fs.readFileSync(path.join(stamp.ROOT, 'version.json'), 'utf8'); } catch (e) { /* missing */ }
+  if (html !== indexHtml || vj.replace(/\r\n/g, '\n') !== stamp.versionJson(build)) {
+    err('stamp', 'index.html file versions or version.json are out of date: run node tools/stamp.js');
+  }
+}
+
 finish();
 
 /* ------------------------------------------------------------------ report */

@@ -9,7 +9,7 @@ OOT.walkthrough = OOT.walkthrough || [];
 OOT.walkthrough.push({
   id: "c07-forest-temple", num: 7, title: "Seven Years Later & the Forest Temple", era: "adult",
   summary: "Wake as an adult, win Epona and the Hookshot, learn the Song of Storms and the Minuet of Forest, and clear the Forest Temple for the Forest Medallion. The chapter closes with the Prelude of Light and the Big Poe hunt, which pays a fourth Bottle at 500 points and a Gold Rupee at 1,000.",
-  needs: ["Master Sword", "Epona's Song", "Saria's Song", "Sun's Song", "Song of Time", "Magic Beans planted in the Graveyard and by the Deku Theater (chapter 6)", "3 Bottles"],
+  needs: ["Master Sword", "Epona's Song", "Saria's Song", "Sun's Song", "Song of Time", "Magic Beans planted in the Graveyard and by the Forest Stage (chapter 6)", "3 Bottles"],
   gains: ["Light Medallion", "Epona", "Hookshot", "Song of Storms", "Pocket Egg", "Minuet of Forest", "Fairy Bow", "Forest Medallion", "Prelude of Light", "Bottle (Poe Collector)", "Gold Rupee (Poe Collector)", "Bombchus (40-token reward)", "Heart Container", "3 Pieces of Heart", "10 Gold Skulltula Tokens"],
   sections: [
     {
@@ -194,7 +194,7 @@ OOT.walkthrough.push({
 OOT.walkthrough.push({
   id: "c08-fire-temple", num: 8, title: "Death Mountain Crater & the Fire Temple", era: "adult",
   summary: "Start the trade for Biggoron's Sword, register the Scarecrow's Song and collect the adult Lake Hylia prizes, then earn the Goron Tunic and the Bolero of Fire, sweep the crater entrance, and clear the Fire Temple for the Megaton Hammer and the Fire Medallion.",
-  needs: ["Hookshot", "Fairy Bow", "Epona", "Song of Storms", "Song of Time", "Pocket Egg", "Bombs", "Scarecrow tune taught to Bonooru as a child (chapter 5)", "Magic Bean planted at Lake Hylia (chapter 5)", "Deku Nut upgrade from the Deku Theater already taken (chapter 6)"],
+  needs: ["Hookshot", "Fairy Bow", "Epona", "Song of Storms", "Song of Time", "Pocket Egg", "Bombs", "Scarecrow tune taught to Bonooru as a child (chapter 5)", "Magic Bean planted at Lake Hylia (chapter 5)", "Deku Nut upgrade from the Forest Stage already taken (chapter 6)"],
   gains: ["Scarecrow's Song", "Golden Scale", "Quiver (40)", "Goron Tunic", "Giant's Knife", "Bolero of Fire", "Megaton Hammer", "Fire Medallion", "Double Magic", "Prescription (trade item)", "Heart Container", "6 Pieces of Heart", "12 Gold Skulltula Tokens"],
   sections: [
     {
@@ -225,7 +225,7 @@ OOT.walkthrough.push({
           tip: "The Potion Shop is open by day. From now on she sells Blue Potions for 100 Rupees, as many as you like. Each needs an empty Bottle and refills hearts and magic." },
         { id: "c08-s02-04", text: "Return to the same spot in the Lost Woods, where the Kokiri girl Fado now sits. Give her the Odd Poultice for the **Poacher's Saw**.",
           collect: ["lw-trade-odd-potion"],
-          warn: "Make sure you already took the Deku Nut upgrade from the Deku Theater with the Mask of Truth (chapter 6) before you take the Saw.",
+          warn: "Make sure you already took the Deku Nut upgrade from the Forest Stage with the Mask of Truth (chapter 6) before you take the Saw.",
           check: "Not yet reported whether this version locks that upgrade after the Saw, as older versions did. Get it first to be safe." }
       ]
     },

@@ -349,7 +349,7 @@ window.OOT.reference = {
     { id: "minigame-lab-dive", name: "Laboratory diving test", location: "Lake Hylia (Lakeside Laboratory)", age: "either",
       cost: "Free", rewards: ["Piece of Heart for touching the bottom of the pool (needs the Golden Scale)"] },
     { id: "minigame-zora-diving", name: "Zora diving game", location: "Zora's Domain", age: "child",
-      cost: "20 Rupees", rewards: ["Silver Scale for collecting all 5 thrown Rupees within 50 seconds", "Later games: keep the Rupees you catch"] },
+      cost: "Free", rewards: ["Silver Scale for collecting all 5 thrown Rupees within 40 seconds", "Later games: keep the Rupees you catch"] },
     { id: "minigame-gravedigging-tour", name: "Dampé's gravedigging tour", location: "Kakariko Graveyard (18:00 to 21:00)", age: "child",
       cost: "10 Rupees per dig", rewards: ["Piece of Heart the first time the top prize comes up (1 in 10 per dig, certain within 15 digs in a single visit)", "Green, blue and red Rupees"] },
     { id: "minigame-dampe-race", name: "Dampé's race", location: "Kakariko Graveyard (Dampé's Grave)", age: "adult",
@@ -357,10 +357,10 @@ window.OOT.reference = {
     { id: "minigame-frogs", name: "Frogs of Zora's River", location: "Zora's River", age: "child",
       cost: "Free", rewards: ["50 Rupees each, the first time, for Zelda's Lullaby, Epona's Song, Saria's Song, the Sun's Song and the Song of Time", "Piece of Heart for the Song of Storms", "Piece of Heart for the 14-note game, which opens after all 6 songs"] },
     { id: "minigame-memory-game", name: "Skull Kids' ocarina game", location: "Lost Woods", age: "child",
-      cost: "Free", rewards: ["Green Rupee for round 1 (5 notes)", "Blue Rupee for round 2 (6 notes)", "Piece of Heart for round 3 (8 notes)", "Red Rupee on replays"] },
+      cost: "Free", rewards: ["5 Rupees for round 1", "20 Rupees for round 2", "Piece of Heart for round 3"] },
     { id: "minigame-lw-target", name: "Lost Woods target", location: "Lost Woods", age: "child",
       cost: "Free", rewards: ["Deku Seed Bullet Bag upgrade for 3 center hits in a row"] },
-    { id: "minigame-deku-theater", name: "Deku Theater", location: "Lost Woods", age: "child",
+    { id: "minigame-deku-theater", name: "Forest Stage", location: "Lost Woods", age: "child",
       cost: "Free", rewards: ["Deku Stick capacity upgrade for wearing the Skull Mask", "Deku Nut capacity upgrade for wearing the Mask of Truth"] },
     { id: "minigame-horseback-archery", name: "Horseback archery", location: "Gerudo's Fortress (day)", age: "adult",
       cost: "20 Rupees", rewards: ["Piece of Heart for 1,000 points (always the first prize)", "Quiver upgrade for 1,500 points on a later run"] },
@@ -384,10 +384,10 @@ window.OOT.reference = {
     { id: "sidequest-mask-shop", name: "The Happy Mask Shop", summary: "Borrow masks, sell them to the people who want them, and pay the shop back to unlock the next mask.",
       steps: [
         "Keaton Mask: sell it to the Kakariko gate guard for 15 Rupees; pay back 10.",
-        "Skull Mask: wear it at the Deku Theater, then sell it to the Skull Kid in the Lost Woods for 10 Rupees; pay back 20.",
+        "Skull Mask: wear it at the Forest Stage, then sell it to the Skull Kid in the Lost Woods for 10 Rupees; pay back 20.",
         "Spooky Mask: sell it to the boy in the Kakariko Graveyard by day for 30 Rupees; pay back 30.",
         "Bunny Hood (after all 3 Spiritual Stones): sell it to the Running Man in Hyrule Field, who fills your wallet; pay back 50.",
-        "Borrow the Mask of Truth and wear it at the Deku Theater and to the Gossip Stones. The Goron, Zora and Gerudo Masks are now free to borrow too."
+        "Borrow the Mask of Truth and wear it at the Forest Stage and to the Gossip Stones. The Goron, Zora and Gerudo Masks are now free to borrow too."
       ],
       rewards: ["Deku Stick capacity upgrade", "Deku Nut capacity upgrade", "Mask of Truth", "A full wallet from the Running Man"] },
     { id: "sidequest-adult-trade", name: "Biggoron's Sword", summary: "Trade a Pocket Egg up through 11 items to get the strongest sword in the game.",
@@ -466,6 +466,68 @@ window.OOT.reference = {
       ],
       rewards: ["Hints", "Fairies"] }
   ],
+
+  /* Lost Woods map (research/15-lost-woods.md). The layout shows which clearing joins which, not
+     real distances. x and y are grid cells (x 0-3 left to right, y 1-5 top to bottom). turns are
+     letters from the Kokiri Forest entrance: L left, R right, S straight. A mark's kind picks its
+     map icon; item is a collectible id, and the app adds that item's step to the room's steps. */
+  lostWoods: {
+    rooms: [
+      { id: "lw0", x: 2, y: 5, name: "Entrance", turns: "", steps: ["c03-s05-01"], marks: [] },
+      { id: "lw1", x: 1, y: 5, name: "Skull Kid's stump", turns: "L", steps: ["c06-s02-02"], marks: [
+        { kind: "heart", label: "Piece of Heart: play Saria's Song for the Skull Kid", item: "lw-skull-kid" },
+        { kind: "item", label: "Adult trade: take Cojiro to the man by the tree for the Odd Mushroom", item: "lw-trade-cojiro" },
+        { kind: "item", label: "Adult trade: Fado takes the Odd Poultice", item: "lw-trade-odd-potion" }] },
+      { id: "lw2", x: 0, y: 5, name: "Bridge clearing", turns: "L L", steps: [], marks: [
+        { kind: "scrub", label: "Business Scrub: Deku Stick capacity for 40 Rupees", item: "lw-deku-scrub-near-bridge" },
+        { kind: "token", label: "Gold Skulltula in the soft soil (release Bugs)", item: "lw-gs-bean-patch-near-bridge" },
+        { kind: "soil", label: "Bean spot: the adult plant rides up to the bridge", item: "bean-lost-woods-bridge" }] },
+      { id: "lw3", x: 3, y: 5, name: "Skull Kids' clearing", turns: "R", steps: [], marks: [
+        { kind: "game", label: "Skull Kids' ocarina game, 3 rounds", item: "lw-ocarina-memory-game" },
+        { kind: "heart", label: "Piece of Heart for the third round", item: "lw-ocarina-memory-game" },
+        { kind: "game", label: "Slingshot target: 3 center hits in a row", item: "lw-target-in-woods" }] },
+      { id: "lw4", x: 3, y: 4, name: "Goron City tunnel", turns: "R L", steps: ["c03-s04-02", "c03-s06-04", "c06-s02-03"], marks: [
+        { kind: "grotto", label: "Grotto under the boulder by the tunnel: a chest with 5 Rupees" }] },
+      { id: "lw5", x: 2, y: 4, name: "Pool", turns: "R L R", steps: [], marks: [],
+        note: "Dive into the pool with the Silver Scale for a shortcut to Zora's River. As an adult, Mido stands here and lets you pass only after you play Saria's Song." },
+      { id: "lw6", x: 2, y: 3, name: "Fork", turns: "R L R L", steps: [], marks: [] },
+      { id: "lw7", x: 1, y: 3, name: "Forest Stage clearing", turns: "R L R L L", steps: [], marks: [
+        { kind: "scrub", label: "2 Business Scrubs that shoot at you" },
+        { kind: "token", label: "Gold Skulltula in the soft soil (release Bugs)", item: "lw-gs-bean-patch-near-theater" },
+        { kind: "soil", label: "Bean spot: the adult plant rides up to the high ledge", item: "bean-lost-woods-theater" },
+        { kind: "token", label: "Adult: Gold Skulltula on the high ledge", item: "lw-gs-above-theater" },
+        { kind: "game", label: "Forest Stage: wear the Skull Mask", item: "deku-theater-skull-mask" },
+        { kind: "game", label: "Forest Stage: wear the Mask of Truth", item: "deku-theater-mask-of-truth" }],
+        note: "The hole down to the Forest Stage hides in the grass under the butterflies at the back of the clearing." },
+      { id: "lw8", x: 3, y: 3, name: "Boulder room", turns: "R L R L S", steps: [], marks: [] },
+      { id: "lw9", x: 3, y: 2, name: "Last clearing", turns: "R L R L S L", steps: [], marks: [
+        { kind: "grotto", label: "Bomb the boulder to open a grotto" },
+        { kind: "scrub", label: "Business Scrub in the grotto: Deku Nut capacity for 40 Rupees", item: "lw-deku-scrub-grotto-front" }] },
+      { id: "lw10", x: 2, y: 2, name: "Meadow gate", turns: "R L R L S L R", steps: ["c03-s05-05"], marks: [],
+        note: "A Wolfos guards the barred gate. The bars lift when it falls." },
+      { id: "sfm", x: 2, y: 1, wide: true, name: "Sacred Forest Meadow", turns: "", steps: ["c06-s02-05"], marks: [
+        { kind: "grotto", label: "Bomb the ground in front of the maze: a Wolfos grotto with 50 Rupees" },
+        { kind: "item", label: "Saria's Song from Saria at the top of the steps", item: "song-from-saria" },
+        { kind: "item", label: "Adult: the Minuet of Forest from Sheik", item: "sheik-in-forest" },
+        { kind: "token", label: "Adult: Gold Skulltula on the wall of the upper meadow", item: "sfm-gs" }] }
+    ],
+    /* route: true marks the way to Sacred Forest Meadow */
+    links: [
+      { from: "lw0", to: "lw1", turn: "L" }, { from: "lw1", to: "lw2", turn: "L" },
+      { from: "lw0", to: "lw3", turn: "R", route: true }, { from: "lw3", to: "lw4", turn: "L", route: true },
+      { from: "lw4", to: "lw5", turn: "R", route: true }, { from: "lw5", to: "lw6", turn: "L", route: true },
+      { from: "lw6", to: "lw7", turn: "L" }, { from: "lw6", to: "lw8", turn: "S", route: true },
+      { from: "lw8", to: "lw9", turn: "L", route: true }, { from: "lw9", to: "lw10", turn: "R", route: true },
+      { from: "lw10", to: "sfm", turn: "", route: true }
+    ],
+    /* exits out of the woods; side is the edge of the room the exit leaves from */
+    exits: [
+      { from: "lw0", side: "down", label: "Kokiri Forest" },
+      { from: "lw4", side: "right", label: "Goron City" },
+      { from: "lw5", side: "left", label: "Zora's River (dive)" },
+      { from: "lw2", side: "up", label: "Bridge (adult, by bean plant)" }
+    ]
+  },
 
   remake: {
     confirmed: [

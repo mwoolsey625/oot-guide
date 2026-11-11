@@ -886,6 +886,29 @@ main {
 .mini-sec .c { margin-left: auto; color: var(--ink-3); font-size: .8rem; font-variant-numeric: tabular-nums; }
 .mini-sec a.is-done .t { color: var(--ink-3); text-decoration: line-through; text-decoration-color: var(--line-2); }
 
+/* Lost Woods map: the drawing keeps its parchment colors in both themes; it scrolls sideways on narrow screens */
+.lw-card { padding: 12px; }
+.lw-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: 14px; }
+.lw-svg { display: block; width: 100%; min-width: 560px; height: auto; }
+.lw-room { cursor: pointer; outline: none; }
+.lw-room:hover .shape { stroke-width: 3; }
+.lw-room.sel .shape { stroke: #c2410c; stroke-width: 4; }
+.lw-room:focus-visible .shape { stroke: #2f5fc4; stroke-width: 4; }
+.lw-legend { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: 10px; font-size: .85rem; color: var(--ink-2); }
+.lw-legend span, .lw-marks li { display: inline-flex; align-items: center; gap: 6px; }
+.lw-dot { flex: none; display: inline-block; width: 18px; height: 18px; border-radius: 50%; color: #fff; font: 700 11px/18px system-ui, sans-serif; font-style: normal; text-align: center; }
+.lw-dot.lw-route { width: 22px; height: 5px; border-radius: 3px; background: #c2410c; }
+.lw-panel { margin-top: 12px; padding: 12px 14px; border-radius: 12px; background: var(--bg-3); border: 1px solid var(--line); scroll-margin-bottom: 90px; }
+.lw-panel h2 { font-size: 1.1rem; margin: 0; }
+.lw-panel h3 { font-size: .9rem; margin: 14px 0 4px; color: var(--ink-2); }
+.lw-panel p { margin: 6px 0 0; }
+.lw-where { color: var(--gold); font-weight: 600; font-size: .9rem; }
+.lw-marks { list-style: none; padding: 0; margin: 10px 0 0; display: grid; gap: 6px; }
+.lw-marks li { display: flex; align-items: flex-start; }
+.lw-marks .lw-dot { margin-top: 2px; }
+.lw-steps { margin: 0; padding-left: 1.1em; }
+.lw-steps li { margin: 4px 0; }
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }

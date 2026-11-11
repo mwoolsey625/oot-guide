@@ -765,10 +765,12 @@
   /* ------------------------------------------------------------------ lore */
   var LORE = [
     ['songs', 'Songs', 'g-songs'], ['bosses', 'Bosses', 'k-boss'], ['bestiary', 'Bestiary', 'g-masks'],
-    ['minigames', 'Minigames', 'g-skulltula-rewards'], ['sidequests', 'Side quests', 'k-sidequest'], ['remake', "What's new on Switch 2", 'i-remake']
+    ['minigames', 'Minigames', 'g-skulltula-rewards'], ['sidequests', 'Side quests', 'k-sidequest'], ['lostwoods', 'Lost Woods map', 'i-pin'],
+    ['remake', "What's new on Switch 2", 'i-remake']
   ];
   function loreCount(key) {
     if (key === 'remake') { var r = REF.remake || {}; return ((r.confirmed || []).length + (r.unconfirmed || []).length) + ' notes'; }
+    if (key === 'lostwoods') return ((REF.lostWoods || {}).rooms || []).length + ' places';
     return (Array.isArray(REF[key]) ? REF[key].length : 0) + ' entries';
   }
   function renderLoreHub() {
@@ -808,10 +810,12 @@
         ((q.rewards || []).length ? '<dl><dt>Rewards</dt><dd class="tags">' + q.rewards.map(function (r) { return '<span class="badge req">' + esc(r) + '</span>'; }).join('') + '</dd></dl>' : '') + '</article>';
     }).join('') + '</div>';
     else if (key === 'remake') h += remakePage();
-    if (key !== 'remake' && !list.length) h += '<p class="empty-state">No entries in this build of the data.</p>';
+    else if (key === 'lostwoods') h += lostWoodsPage();
+    if (key !== 'remake' && key !== 'lostwoods' && !list.length) h += '<p class="empty-state">No entries in this build of the data.</p>';
     mainEl.innerHTML = h;
     setTop('Lore', meta[1]);
     renderAside(''); fab.hidden = true;
+    if (key === 'lostwoods') { wireLostWoods(focus); if (!focus) restoreScroll(); return; }
     var bf = $('#beastFilter');
     if (bf) bf.addEventListener('input', function () {
       var q = bf.value.trim().toLowerCase();
@@ -888,6 +892,153 @@
     return h;
   }
 
+  /* ------------------------------------------------------------------ Lost Woods map */
+  /* An original parchment-style drawing built from REF.lostWoods. It shows which clearing joins which,
+     not real distances. Tapping a clearing lists what is there, its collectibles and its guide steps. */
+  var LW_ICONS = {
+    heart: { c: '#c0263b', t: '♥', n: 'Piece of Heart' },
+    token: { c: '#8a5c00', t: 'S', n: 'Gold Skulltula' },
+    scrub: { c: '#2c7a3c', t: '$', n: 'Business Scrub' },
+    game: { c: '#5641b0', t: '♪', n: 'Minigame' },
+    grotto: { c: '#3b3b3b', t: 'G', n: 'Grotto' },
+    soil: { c: '#7a4a1c', t: 'B', n: 'Bean spot' },
+    item: { c: '#2f5fc4', t: '★', n: 'Item or song' }
+  };
+  var LW_ROUTE = '#c2410c', LW_CW = 150, LW_CH = 112, LW_RW = 132, LW_RH = 72;
+  function lwRoom(id) { var rs = (REF.lostWoods || {}).rooms || []; for (var i = 0; i < rs.length; i++) if (rs[i].id === id) return rs[i]; return null; }
+  function lwX(r) { return r.x * LW_CW + LW_CW / 2; }
+  function lwY(r) { return (r.y - 1) * LW_CH + LW_CH / 2 + 10; }
+  function lwKinds(r) { var seen = {}, out = []; (r.marks || []).forEach(function (m) { if (!seen[m.kind]) { seen[m.kind] = 1; out.push(m.kind); } }); return out; }
+  function lwTurnWords(t) {
+    var w = { L: 'left', R: 'right', S: 'straight' };
+    var s = String(t || '').split(' ').filter(Boolean).map(function (x) { return w[x] || x; }).join(', ');
+    return s.charAt(0).toUpperCase() + s.slice(1);
+  }
+  /* split a long name over two lines at the space nearest the middle */
+  function lwLines(name) {
+    if (name.length <= 14) return [name];
+    var mid = name.length / 2, best = -1;
+    for (var i = 0; i < name.length; i++) if (name[i] === ' ' && (best < 0 || Math.abs(i - mid) < Math.abs(best - mid))) best = i;
+    return best < 0 ? [name] : [name.slice(0, best), name.slice(best + 1)];
+  }
+  function lwTree(x, y) {
+    return '<path d="M' + x + ' ' + (y - 12) + 'l7 12h-14z"/><path d="M' + x + ' ' + (y - 6) + 'l8 12h-16z"/>';
+  }
+  function lostWoodsSvg() {
+    var LW = REF.lostWoods, W = 4 * LW_CW + 100, H = 5 * LW_CH + 70, s = [], i;
+    s.push('<svg class="lw-svg" viewBox="0 0 ' + W + ' ' + H + '" role="group" aria-label="Map of the Lost Woods">');
+    s.push('<defs><filter id="lwm-rough"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="7"/><feDisplacementMap in="SourceGraphic" scale="7"/></filter>' +
+      '<filter id="lwm-paper"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" seed="3"/><feColorMatrix values="0 0 0 0 0.45  0 0 0 0 0.32  0 0 0 0 0.12  0 0 0 0.18 0"/></filter>' +
+      '<radialGradient id="lwm-vig" cx="50%" cy="50%" r="70%"><stop offset="60%" stop-color="#f3e3b8"/><stop offset="100%" stop-color="#d9b97a"/></radialGradient></defs>');
+    s.push('<rect width="' + W + '" height="' + H + '" rx="14" fill="url(#lwm-vig)"/><rect width="' + W + '" height="' + H + '" rx="14" filter="url(#lwm-paper)"/>');
+    s.push('<g fill="#5f7a35" stroke="#33461a" stroke-width="1" aria-hidden="true">');
+    for (i = 0; i < 26; i++) s.push(lwTree((i * 97) % W + 8, (i % 2) ? 20 + (i * 13) % 14 : H - 10 - (i * 7) % 14));
+    for (i = 0; i < 12; i++) { s.push(lwTree(10 + (i * 11) % 12, 52 + i * 50)); s.push(lwTree(W - 12 - (i * 7) % 10, 44 + i * 52)); }
+    s.push('</g>');
+    LW.links.forEach(function (l) {
+      var a = lwRoom(l.from), b = lwRoom(l.to), col = l.route ? LW_ROUTE : '#7a5a2e';
+      s.push('<line x1="' + lwX(a) + '" y1="' + lwY(a) + '" x2="' + lwX(b) + '" y2="' + lwY(b) + '" stroke="' + col + '" stroke-width="' + (l.route ? 5 : 3) +
+        '" stroke-linecap="round" stroke-dasharray="' + (l.route ? '10 6' : '4 6') + '"/>');
+      if (l.turn) {
+        var mx = (lwX(a) + lwX(b)) / 2, my = (lwY(a) + lwY(b)) / 2;
+        s.push('<circle cx="' + mx + '" cy="' + my + '" r="12" fill="#f3e3b8" stroke="' + col + '" stroke-width="2"/>' +
+          '<text x="' + mx + '" y="' + (my + 5) + '" text-anchor="middle" font-size="14" font-weight="700" fill="' + col + '">' + esc(l.turn) + '</text>');
+      }
+    });
+    LW.exits.forEach(function (e) {
+      var r = lwRoom(e.from), w = r.wide ? LW_RW * 2 : LW_RW, x1 = lwX(r), y1 = lwY(r);
+      var dx = e.side === 'right' ? 1 : e.side === 'left' ? -1 : 0, dy = e.side === 'down' ? 1 : e.side === 'up' ? -1 : 0;
+      var x2 = x1 + dx * (w / 2 + 22), y2 = y1 + dy * (LW_RH / 2 + 22), anchor = 'middle', lx = x2, ly = y2;
+      if (dx > 0) { anchor = 'start'; lx = x2 + 4; ly = y2 - 8; }
+      else if (dx < 0) { anchor = 'end'; lx = x2 - 4; ly = y2 - 8; if (lx < 120) { anchor = 'start'; lx = 6; ly = y2 - 14; } }
+      else { anchor = 'start'; lx = x2 + 8; ly = dy > 0 ? y2 + 2 : y2 + 10; } /* beside the stub, so it never runs off the edge */
+      s.push('<line x1="' + x1 + '" y1="' + y1 + '" x2="' + x2 + '" y2="' + y2 + '" stroke="#5b4320" stroke-width="3" stroke-dasharray="2 5" stroke-linecap="round"/>' +
+        '<text x="' + lx + '" y="' + ly + '" text-anchor="' + anchor + '" font-size="13" font-style="italic" fill="#4a3517">' + esc(e.label) + '</text>');
+    });
+    LW.rooms.forEach(function (r) {
+      var w = r.wide ? LW_RW * 2 : LW_RW, x = lwX(r) - w / 2, y = lwY(r) - LW_RH / 2, lines = lwLines(r.name), kinds = lwKinds(r);
+      var label = r.name + (r.turns ? ', ' + lwTurnWords(r.turns).toLowerCase() + ' from the entrance' : '') + (kinds.length ? ': ' + kinds.map(function (k) { return LW_ICONS[k].n; }).join(', ') : '');
+      s.push('<g class="lw-room" data-room="' + esc(r.id) + '" tabindex="0" role="button" aria-label="' + esc(label) + '">');
+      s.push('<rect class="shape" x="' + x + '" y="' + y + '" width="' + w + '" height="' + LW_RH + '" rx="28" fill="#cfe0a6" stroke="#4d6b2a" stroke-width="2" filter="url(#lwm-rough)"/>');
+      lines.forEach(function (ln, k) {
+        s.push('<text x="' + lwX(r) + '" y="' + (y + (lines.length > 1 ? 21 + k * 16 : 27)) + '" text-anchor="middle" font-family="Georgia, \'Times New Roman\', serif" font-style="italic" font-size="15" fill="#2f3d17">' + esc(ln) + '</text>');
+      });
+      var start = lwX(r) - (kinds.length - 1) * 11;
+      kinds.forEach(function (k, j) {
+        var ic = LW_ICONS[k], ix = start + j * 22, iy = y + LW_RH - 15;
+        s.push('<circle cx="' + ix + '" cy="' + iy + '" r="9.5" fill="' + ic.c + '" stroke="#3a2a10" stroke-width="1"/>' +
+          '<text x="' + ix + '" y="' + (iy + 4) + '" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">' + ic.t + '</text>');
+      });
+      s.push('</g>');
+    });
+    var px = 60, py = 92;
+    s.push('<g aria-hidden="true" stroke="#5b4320" fill="#5b4320"><circle cx="' + px + '" cy="' + py + '" r="20" fill="none" stroke-width="1.5"/>' +
+      '<path d="M' + px + ' ' + (py - 26) + 'L' + (px + 5) + ' ' + py + 'L' + px + ' ' + (py + 26) + 'L' + (px - 5) + ' ' + py + 'Z"/></g>' +
+      '<text aria-hidden="true" x="' + px + '" y="' + (py - 31) + '" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="#5b4320">to the meadow</text>');
+    s.push('</svg>');
+    return s.join('');
+  }
+  function lostWoodsPage() {
+    if (!REF.lostWoods) return '<p class="empty-state">No map in this build of the data.</p>';
+    var lg = Object.keys(LW_ICONS).map(function (k) {
+      return '<span><i class="lw-dot" style="background:' + LW_ICONS[k].c + '" aria-hidden="true">' + LW_ICONS[k].t + '</i>' + LW_ICONS[k].n + '</span>';
+    }).join('') + '<span><i class="lw-dot lw-route" aria-hidden="true"></i>Way to Sacred Forest Meadow</span>';
+    return '<div class="notice">Every turn counts from the Kokiri Forest entrance, as you face into each clearing. The orange trail leads to Sacred Forest Meadow. ' +
+      'Any exit not drawn sends you back to the entrance. On Switch 2, green notes drift through the right tunnels. The map shows how the clearings join, not their real size.</div>' +
+      '<article class="card entry lw-card"><div class="lw-scroll">' + lostWoodsSvg() + '</div><div class="lw-legend">' + lg + '</div>' +
+      '<div class="lw-panel" id="lwPanel" aria-live="polite"><p class="muted">Tap a clearing to see what is there and which steps cover it.</p></div></article>';
+  }
+  var lwStepOrder = null;
+  function lwOrder(id) {
+    if (!lwStepOrder) {
+      lwStepOrder = {}; var n = 0;
+      CHAPTERS.forEach(function (ch) { chapterSteps(ch).forEach(function (st) { lwStepOrder[st.id] = n++; }); });
+    }
+    return lwStepOrder.hasOwnProperty(id) ? lwStepOrder[id] : 1e9;
+  }
+  function lostWoodsPanel(r) {
+    var steps = (r.steps || []).slice(), items = [];
+    (r.marks || []).forEach(function (m) {
+      if (!m.item) return;
+      if (items.indexOf(m.item) < 0) items.push(m.item);
+      var hit = itemById[m.item], st = hit ? (hit.item.step || stepOfItem[m.item]) : null;
+      if (st && steps.indexOf(st) < 0) steps.push(st);
+    });
+    steps = steps.filter(function (id) { return stepById[id]; }).sort(function (a, b) { return lwOrder(a) - lwOrder(b); });
+    var where = r.id === 'lw0' ? 'Start here: the log from Kokiri Forest.' : r.turns ? 'From the entrance: ' + lwTurnWords(r.turns) + '.' : 'Through the gate at the end of the route.';
+    var h = '<h2>' + esc(r.name) + '</h2><p class="lw-where">' + esc(where) + '</p>' + (r.note ? '<p>' + md(r.note) + '</p>' : '');
+    if ((r.marks || []).length) h += '<ul class="lw-marks">' + r.marks.map(function (m) {
+      var ic = LW_ICONS[m.kind];
+      return '<li><i class="lw-dot" style="background:' + ic.c + '" aria-hidden="true">' + ic.t + '</i>' + md(m.label) + '</li>';
+    }).join('') + '</ul>';
+    else if (!r.note) h += '<p class="muted">Nothing to collect here.</p>';
+    if (items.length) h += '<div class="chips">' + items.map(chip).join('') + '</div>';
+    if (steps.length) h += '<h3>Guide steps</h3><ul class="lw-steps">' + steps.map(function (id) {
+      var s = stepById[id];
+      return '<li><a href="#/ch/' + esc(s.ch.id) + '/' + esc(id) + '">' + esc(chapterLabel(s.ch.id, true) + ' · ' + s.sec.title + ', step ' + s.n) + '</a></li>';
+    }).join('') + '</ul>';
+    return h;
+  }
+  function wireLostWoods(focus) {
+    var box = $('.lw-scroll'), panel = $('#lwPanel');
+    if (!box || !panel) return;
+    function pick(g, scroll) {
+      var r = lwRoom(g.getAttribute('data-room'));
+      if (!r) return;
+      $$('.lw-room.sel', box).forEach(function (x) { x.classList.remove('sel'); });
+      g.classList.add('sel');
+      panel.innerHTML = lostWoodsPanel(r);
+      if (scroll) panel.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    }
+    box.addEventListener('click', function (e) { var g = e.target.closest('.lw-room'); if (g) pick(g, true); });
+    box.addEventListener('keydown', function (e) {
+      var g = e.target.closest('.lw-room');
+      if (g && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); pick(g, true); }
+    });
+    var start = focus && box.querySelector('.lw-room[data-room="' + sel(focus) + '"]');
+    if (start) { pick(start, false); requestAnimationFrame(function () { start.scrollIntoView({ block: 'center' }); }); }
+  }
+
   /* ------------------------------------------------------------------ search */
   var searchIndex = null, searchTimer = 0;
   function buildIndex() {
@@ -914,6 +1065,9 @@
     (REF.bestiary || []).forEach(function (b) { add({ type: 'Bestiary', glyph: 'g-masks', title: b.name, text: [b.weakness, (b.locations || []).join(', '), b.notes].join(' · '), route: 'lore/bestiary/' + b.id }); });
     (REF.minigames || []).forEach(function (m) { add({ type: 'Minigame', glyph: 'g-skulltula-rewards', title: m.name, text: [m.location, m.cost, (m.rewards || []).join(', ')].join(' · '), route: 'lore/minigames/' + m.id }); });
     (REF.sidequests || []).forEach(function (q) { add({ type: 'Side quest', glyph: 'k-sidequest', title: q.name, text: [q.summary, (q.rewards || []).join(', ')].join(' · '), route: 'lore/sidequests/' + q.id }); });
+    ((REF.lostWoods || {}).rooms || []).forEach(function (r) {
+      add({ type: 'Lost Woods map', glyph: 'i-pin', title: r.name, text: [r.turns ? lwTurnWords(r.turns) : '', r.note || ''].concat((r.marks || []).map(function (m) { return m.label; })).join(' · '), route: 'lore/lostwoods/' + r.id });
+    });
     return idx;
   }
   function runSearch(q) {

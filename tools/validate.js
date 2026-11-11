@@ -253,7 +253,7 @@ for (const [id, at] of Object.entries(collectAt)) {
 note(`${minor.length} collect IDs are ledger checks outside the collectible categories (chests, keys, frog songs...); the site labels them Chest, Key or Prize.`);
 
 /* ------------------------------------------------------------------ reference */
-if (!checkShape('schema', 'reference', REF, { songs: 'array', bosses: 'array', bestiary: 'array', minigames: 'array', sidequests: 'array', remake: 'object' })) finish();
+if (!checkShape('schema', 'reference', REF, { songs: 'array', bosses: 'array', bestiary: 'array', minigames: 'array', sidequests: 'array', remake: 'object', lostWoods: 'object?' })) finish();
 const refSpec = {
   songs: { id: 'string', name: 'string', notes: 'string', effect: 'string', learnedFrom: 'string', chapter: 'string' },
   bosses: { id: 'string', name: 'string', location: 'string', weakness: 'string', strategy: 'string[]' },
@@ -276,6 +276,27 @@ checkShape('schema', 'reference.remake', REF.remake, { confirmed: 'array', uncon
 (REF.remake.confirmed || []).forEach((e, i) => checkShape('schema', `reference.remake.confirmed[${i}]`, e, { fact: 'string', source: 'string' }));
 (REF.remake.unconfirmed || []).forEach((e, i) => checkShape('schema', `reference.remake.unconfirmed[${i}]`, e, { claim: 'string', source: 'string' }));
 (REF.remake.guideImpacts || []).forEach((e, i) => checkShape('schema', `reference.remake.guideImpacts[${i}]`, e, { area: 'string', impact: 'string' }));
+// Lost Woods map: rooms, links and exits must point at real rooms, steps and collectibles
+if (REF.lostWoods && checkShape('schema', 'reference.lostWoods', REF.lostWoods, { rooms: 'array', links: 'array', exits: 'array' })) {
+  const LW = REF.lostWoods, rooms = new Set(), KINDS = ['heart', 'token', 'scrub', 'game', 'grotto', 'soil', 'item'];
+  LW.rooms.forEach((r, i) => {
+    const where = `reference.lostWoods.rooms/${r && r.id ? r.id : i}`;
+    checkShape('schema', where, r, { id: 'string', x: 'number', y: 'number', name: 'string', turns: 'string', steps: 'string[]', marks: 'array', note: 'string?', wide: 'boolean?' });
+    if (rooms.has(r.id)) err('ids', `${where}: duplicate id`);
+    rooms.add(r.id);
+    if (!/^([LRS]( [LRS])*)?$/.test(r.turns || '')) err('reference', `${where}: turns must be L, R or S letters separated by spaces`);
+    (r.steps || []).forEach((s) => { if (!stepById[s]) err('reference', `${where}: unknown step ${s}`); });
+    (r.marks || []).forEach((m, j) => {
+      checkShape('schema', `${where}.marks[${j}]`, m, { kind: KINDS, label: 'string', item: 'string?' });
+      if (m.item !== undefined && !itemsById[m.item]) err('reference', `${where}.marks[${j}]: unknown collectible ${m.item}`);
+    });
+  });
+  LW.links.forEach((l, i) => { if (!rooms.has(l.from) || !rooms.has(l.to)) err('reference', `reference.lostWoods.links[${i}]: unknown room`); });
+  LW.exits.forEach((e, i) => {
+    if (!rooms.has(e.from)) err('reference', `reference.lostWoods.exits[${i}]: unknown room`);
+    if (!['up', 'down', 'left', 'right'].includes(e.side)) err('reference', `reference.lostWoods.exits[${i}]: side must be up, down, left or right`);
+  });
+}
 // songs: same set and chapters as the songs category
 const songCat = CATS.find((c) => c.id === 'songs');
 if (songCat) {
@@ -318,6 +339,11 @@ for (const b of REF.bosses || []) { add(`reference.bosses/${b.id}.name`, b.name)
 for (const b of REF.bestiary || []) { add(`reference.bestiary/${b.id}.name`, b.name); add(`reference.bestiary/${b.id}.weakness`, b.weakness); add(`reference.bestiary/${b.id}.notes`, b.notes); (b.locations || []).forEach((s, i) => add(`reference.bestiary/${b.id}.locations[${i}]`, s)); }
 for (const m of REF.minigames || []) { add(`reference.minigames/${m.id}.name`, m.name); add(`reference.minigames/${m.id}.location`, m.location); add(`reference.minigames/${m.id}.cost`, m.cost); (m.rewards || []).forEach((s, i) => add(`reference.minigames/${m.id}.rewards[${i}]`, s)); }
 for (const q of REF.sidequests || []) { add(`reference.sidequests/${q.id}.name`, q.name); add(`reference.sidequests/${q.id}.summary`, q.summary); (q.steps || []).forEach((s, i) => add(`reference.sidequests/${q.id}.steps[${i}]`, s)); (q.rewards || []).forEach((s, i) => add(`reference.sidequests/${q.id}.rewards[${i}]`, s)); }
+for (const r of (REF.lostWoods || {}).rooms || []) {
+  add(`reference.lostWoods.rooms/${r.id}.name`, r.name); add(`reference.lostWoods.rooms/${r.id}.note`, r.note);
+  (r.marks || []).forEach((m, i) => add(`reference.lostWoods.rooms/${r.id}.marks[${i}]`, m.label));
+}
+for (const [i, e] of ((REF.lostWoods || {}).exits || []).entries()) add(`reference.lostWoods.exits[${i}].label`, e.label);
 const R = REF.remake || {};
 (R.confirmed || []).forEach((e, i) => add(`reference.remake.confirmed[${i}].fact`, e.fact, true));
 (R.unconfirmed || []).forEach((e, i) => add(`reference.remake.unconfirmed[${i}].claim`, e.claim, true));
@@ -437,7 +463,7 @@ const VARIANTS = [
   [/\bSkulltula House\b/g, 'House of Skulltula'], [/\bScarecrow Song\b/g, "Scarecrow's Song"], [/\bShard of Agony\b/g, 'Echo Gem'],
   [/\bGold Scale\b/g, 'Golden Scale'], [/\bmagic meter\b/g, 'Magic Meter'], [/\bFreezzard\b/g, 'Freezard'], [/\bZora River\b/g, "Zora's River"],
   [/\bZoras? Fountain\b/g, "Zora's Fountain"], [/\bJabu Jabu\b/g, 'Jabu-Jabu'], [/\bFishing Hole\b/g, 'Fishing Pond'], [/\bLon Lon milk\b/g, 'Lon Lon Milk'],
-  [/\b[Ss]pin attacks?\b/g, 'Spin Attack'],
+  [/\b[Ss]pin attacks?\b/g, 'Spin Attack'], [/\bDeku Theater\b/g, 'Forest Stage'],
 ];
 for (const { where, s, remake } of texts) {
   if (remake) continue;

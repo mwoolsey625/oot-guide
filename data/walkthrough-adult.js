@@ -32,7 +32,7 @@ OOT.walkthrough.push({
     {
       id: "c07-s02", title: "Kakariko Graveyard", era: "adult", kind: "overworld",
       steps: [
-        { id: "c07-s02-01", text: "In the **Kakariko Graveyard**, ride the bean plant you planted as a child on the left side up to the high ledge. Roll into the crate there for a **Piece of Heart**.",
+        { id: "c07-s02-01", text: "In the **Kakariko Graveyard**, ride the bean plant you planted as a child by the dead tree on the north side up to the high ledge by the raised ruins, and take the **Piece of Heart**.",
           collect: ["graveyard-freestanding-poh"],
           tip: "No plant here? The Longshot from the Water Temple (chapter 10) reaches the ledge instead." },
         { id: "c07-s02-02", text: "Pull back the first grave of the north row (stand behind it and pull), then drop into **Dampé's Grave**. Chase his ghost through the tunnels to the chest at the far end for the **Hookshot**.",
@@ -50,17 +50,17 @@ OOT.walkthrough.push({
     {
       id: "c07-s03", title: "Kakariko Village", era: "adult", kind: "sweep",
       steps: [
-        { id: "c07-s03-01", text: "Leave the **Windmill** by its village door and stand on the fence straight ahead. Hookshot up to the roof on your right and talk to the man sitting there for a **Piece of Heart**.",
-          collect: ["kak-man-on-roof"] },
+        { id: "c07-s03-01", text: "The man on the roof by the **Windmill** gave you his **Piece of Heart** as a child in chapter 3. If you missed him, leave the windmill by its village door, stand on the fence straight ahead and Hookshot up to the roof on your right.",
+          collect: [] },
         { id: "c07-s03-02", text: "By day, talk to Anju, the Cucco Lady, for the **Pocket Egg**. Keep it: it hatches at the next dawn and opens the trade for **Biggoron's Sword** in the next chapter.",
           collect: ["kak-anju-as-adult", "kak-bazaar-item-1"], time: "day",
           tip: "The adult Bazaar sells a Hylian Shield for 80 Rupees by day. You only need it if a Like Like ever eats yours. Time passes inside Kakariko, so Anju and the Bazaar can close while you are in town." },
         { id: "c07-s03-03", text: "Enter the **House of Skulltula** with at least 40 tokens (you should hold 45) and take the 40-token reward, a pack of 20 **Bombchus**.",
           collect: ["kak-40-gold-skulltula-reward"] },
-        { id: "c07-s03-04", text: "Wait for night in town, or play the **Sun's Song** to bring it. Hookshot from the street onto the roof of the House of Skulltula, then across to the roof of **Impa's House**, where the Gold Skulltula waits.",
+        { id: "c07-s03-04", text: "Wait for night in town, or play the **Sun's Song** to bring it. Climb the vines on the left side of **Impa's House** to a high ledge, Hookshot up to it and reach the cow stable behind the house, where the Gold Skulltula waits.",
           collect: ["kak-gs-above-impas-house"], time: "night",
           tip: "Time passes in Kakariko, so night can end while you hunt. Only the Hookshot is needed here, not the Longshot.",
-          check: "One walkthrough lists this token as night-only; another gives no time condition. Go at night to be safe." }
+          check: "This follows IGN. The older roof route (Hookshot to the House of Skulltula roof, then across to Impa's roof) may still work." }
       ]
     },
     {
@@ -172,7 +172,7 @@ OOT.walkthrough.push({
     {
       id: "c07-s09", title: "The Prelude of Light and the Big Poes", era: "adult", kind: "sidequest",
       steps: [
-        { id: "c07-s09-01", text: "Enter the **Temple of Time** with the Forest Medallion, where Sheik teaches you the **Prelude of Light**, the warp back here. Ride Epona into **Hyrule Field** with the **Fairy Bow** and 3 empty Bottles and catch the Big Poes near the sign at the start of the Market bridge, in the bushes by the stream in the northwest corner (on the map) and at the lone tree on the field's western edge: shoot each twice and bottle the soul it leaves. Sell them at the Poe shop in the old guard house by the Market entrance.",
+        { id: "c07-s09-01", text: "Enter the **Temple of Time** with the Forest Medallion, where Sheik teaches you the **Prelude of Light**, the warp back here. Ride Epona into **Hyrule Field** with the **Fairy Bow** and 4 empty Bottles and catch the Big Poes near the sign at the start of the Market bridge, in the bushes by the stream in the northwest corner (on the map) and at the lone tree on the field's western edge: shoot each twice and bottle the soul it leaves. Sell them at the Poe shop in the old guard house by the Market entrance.",
           collect: ["sheik-at-temple", "big-poe-hf-02", "big-poe-hf-01", "big-poe-hf-04"],
           tip: "Big Poes appear when you ride through fixed spots and cannot be targeted. Each one is worth 100 points. The Poe Collector gives you a Bottle at 500 points (after 5 Poes) and a Gold Rupee worth 200 Rupees at 1,000 points (10 Poes), so catch 5 for the Bottle and 5 more for the Rupees. Rupees and points are counted separately, so a full wallet still adds points. If you cannot reach a soul from the saddle, get down and bottle it on foot. The field's ground has been reshaped, so the 10 spots may sit in different places than older guides show. The Hall of Fallen Foes is open now: sleep in a bed that glows green, such as the one in Link's House or the Grand Lodge in Kakariko, and you wake in the Hall. Talk to Kaepora Gaebora to leave.",
           check: "Poe payout: 2 walkthroughs say 30 Rupees each, 1 page says 20, so expect 20 to 30. Reported: purple glowing lanterns, logs or other objects mark the Big Poe spots (ride Epona over one), and a Big Poe vanishes after about 30 seconds; jump the same marker again to bring it back." },
@@ -180,7 +180,7 @@ OOT.walkthrough.push({
           collect: ["big-poe-hf-05", "big-poe-hf-06", "big-poe-hf-08"] },
         { id: "c07-s09-03", text: "Catch 3 in the south of the field (on the map): at the road fork in the southwest, at the rock ringed by trees in the south, and in the grass by the lone tree in the southeast. Sell them.",
           collect: ["big-poe-hf-07", "big-poe-hf-10", "big-poe-hf-09"] },
-        { id: "c07-s09-04", text: "Catch the last Big Poe under the fenced cliff in the northeast of the field (on the map), near the Kakariko entrance. Selling it brings your total to 1,000 points, and the Poe Collector gives you a Gold Rupee worth 200 Rupees. Your fourth **Bottle** already came at 500 points, after the 5th Big Poe.",
+        { id: "c07-s09-04", text: "Catch the last Big Poe under the fenced cliff in the northeast of the field (on the map), near the Kakariko entrance. Selling it brings your total to 1,000 points, and the Poe Collector gives you a Gold Rupee worth 200 Rupees. Your fifth **Bottle** already came at 500 points, after the 5th Big Poe.",
           collect: ["big-poe-hf-03", "market-10-big-poes"] }
       ]
     }
@@ -267,7 +267,11 @@ OOT.walkthrough.push({
         { id: "c08-s04-03", text: "At night, Hookshot the Gold Skulltula on the back wall behind the carpenters' tent. Then look up the sides of the stone archway on your left after the bridge for a second one.",
           collect: ["gv-gs-behind-tent", "gv-gs-pillar"], time: "night",
           tip: "Time keeps running, so night can end while you are here; play the Sun's Song to bring it back.",
-          check: "Most lists put both tokens at night with the Hookshot, but 1 lists the Longshot for both and no night condition for the one on the rocks south of the house. If the Hookshot does not reach, or the token is there by day, come back with the Longshot after the Water Temple." }
+          check: "Most lists put both tokens at night with the Hookshot, but 1 lists the Longshot for both and no night condition for the one on the rocks south of the house. If the Hookshot does not reach, or the token is there by day, come back with the Longshot after the Water Temple." },
+        { id: "c08-s04-04",
+          text: "Go back to the grotto you bombed open in the marshy southeast of **Hyrule Field**. A Gold Skulltula now sits in a shaking crate. Roll into the crate to knock out the token.",
+          collect: ["hf-gs-cow-grotto"],
+          tip: "As a child you only had to defeat the plain Skullwalltula here. The Gold Skulltula shows up for adult Link." }
       ]
     },
     {
@@ -289,9 +293,9 @@ OOT.walkthrough.push({
           collect: ["gc-rolling-goron-as-adult", "gc-shop-item-5"],
           tip: "Put it on before you go in. The Goron Tunic protects Link from the heat of the crater. The reopened shop sells spare tunics, in case a Like Like ever eats yours.",
           check: "Shop price is unconfirmed: the old price was 200 Rupees, but 1 guide says tunics cost 500. Check before you count on a spare. No major guide says whether the tunic has a quick-swap slot; if it does not, use the equipment screen." },
-        { id: "c08-s06-02", text: "Cross the rope walkways to the central platform on the top floor and take the Gold Skulltula on its far side.",
+        { id: "c08-s06-02", text: "Wait for night, or play the **Sun's Song**. Drop from the highest ring of Goron City down 1 level, go behind the central platform and Hookshot the Gold Skulltula on the underside of the jutting rock.",
           collect: ["gc-gs-center-platform"],
-          check: "Walkthroughs disagree on what takes the token down: one says the Hookshot, another says the Fairy Bow from a mesh walkway. If your sword does not reach it, try the Hookshot, then the Bow." },
+          time: "night" },
         { id: "c08-s06-03", text: "Find Medigoron in the room behind the bombable walls on the middle floor and buy the **Giant's Knife** for 200 Rupees.",
           collect: ["gc-medigoron"],
           tip: "The knife hits hard with both hands but breaks after a few swings. Biggoron's Sword (chapter 9) replaces it for good.",
@@ -300,10 +304,10 @@ OOT.walkthrough.push({
           collect: ["sheik-in-crater"],
           tip: "There is no heat timer. Without the tunic, Link catches fire a couple of seconds after he enters and loses health over time.",
           check: "One guide says Sheik plays the Bolero's opening notes for you to copy." },
-        { id: "c08-s06-05", text: "Before the Fire Temple, sweep the crater's top entrance with the **Goron Tunic** on. Go left: 2 wooden crates stand beside a pot, and a Gold Skulltula is in the farther one, so roll into it. Next, from the summit near the Great Fairy's Fountain, go straight down and left to the grotto on the left (the fire burns you the whole time, so keep the tunic on) and open its chest, which holds a Business Scrub Seed. Then look for netting set into the ground at the crater wall near the entrance, climb down it to the alcove just below for a **Piece of Heart**, and climb straight back up. Last, find the Business Scrub on a low platform to the north-west, beside a broken bridge that a big grey rock blocks, and buy a Piece of Heart for 100 Rupees: stun him with a Deku Nut or bounce his shot back with your shield, then talk to him.",
-          collect: ["dmc-gs-crate", "dmc-upper-grotto-chest", "dmc-wall-freestanding-poh", "ice-cavern-freestanding-poh"],
-          tip: "The tunic protects you from the heat, so you can take your time. Without it, Link burns and loses health within seconds.",
-          check: "Walkthroughs describe the crate token and the scrub for child Link. If either is missing as an adult, it is child-only and needs a child trip from the summit with full hearts. Guides disagree on the net's side: IGN says right of the crates, 3 others say the left cliffs, 1 says the south end, so check all sides. IGN confirms the grotto chest holds a Business Scrub Seed, not Bombs." }
+        { id: "c08-s06-05", text: "Before the Fire Temple, sweep the crater's top entrance with the **Goron Tunic** on. From the summit near the Great Fairy's Fountain, go straight down and left to the grotto on the left (the fire burns you the whole time, so keep the tunic on) and open its chest, which holds a Business Scrub Seed.",
+          collect: ["dmc-upper-grotto-chest"],
+          tip: "The tunic protects you from the heat, so you can take your time. The crate token, the wall Piece of Heart and the Business Scrub's Piece of Heart were taken as a child in chapter 4.",
+          check: "IGN confirms the grotto chest holds a Business Scrub Seed, not Bombs." }
       ]
     },
     {
@@ -383,12 +387,12 @@ OOT.walkthrough.push({
           tip: "Arrive with at least 200 Rupees." },
         { id: "c08-s11-02", text: "In **Goron City**, go back into the boulder maze to the left of the top-floor entrance and hammer the silver boulders that blocked the third chest when you were a child; the chest behind them holds 200 Rupees.",
           collect: ["gc-maze-left-chest"] },
-        { id: "c08-s11-03", text: "On **Death Mountain Trail**, hammer the red boulder nearest the summit on the upper path where rocks used to fall. A Gold Skulltula hides behind it.",
+        { id: "c08-s11-03", text: "At night, on **Death Mountain Trail**, hammer the large grey rock on the path down from the summit, near the Great Fairy. A Gold Skulltula hides behind it.",
           collect: ["dmt-gs-falling-rocks-path"], time: "night",
-          check: "Several lists show this token with no night condition. Try by day first; if it is not there, come back at night." },
-        { id: "c08-s11-04", text: "Hammer the red boulder on the ledge above **Dodongo's Cavern**, by the path to Goron City, for another Gold Skulltula.",
+          check: "The older guide called this a red boulder. IGN calls it a large grey rock." },
+        { id: "c08-s11-04", text: "At night, hammer the grey rock where the lone Bomb Flower used to be, outside **Goron City**, for another Gold Skulltula.",
           collect: ["dmt-gs-above-dodongos-cavern"], time: "night",
-          check: "One walkthrough says night only; another lists no time. Try by day first. If it is not there, wait for night, and play the Sun's Song if night ends." }
+          check: "The older guide called this a red boulder on the ledge above Dodongo's Cavern. IGN puts it at the old Bomb Flower spot outside Goron City." }
       ]
     }
   ],
@@ -419,10 +423,10 @@ OOT.walkthrough.push({
           check: "The post-launch lists only describe the bean route. If the swim and ladder route does not get you up, plant a bean as a child and come back." },
         { id: "c09-s01-02", text: "Still at night, cross the small bridge toward Zora's Domain, stand on the fence and Hookshot the Gold Skulltula high on the wall.",
           collect: ["zr-gs-above-bridge"], time: "night" },
-        { id: "c09-s01-03", text: "Play **Zelda's Lullaby** at the waterfall to enter the frozen **Zora's Domain**. Go through King Zora's chamber, turn left toward the diving game and look high on the wall for a Gold Skulltula.",
+        { id: "c09-s01-03", text: "Play **Zelda's Lullaby** at the waterfall to enter the frozen **Zora's Domain**. Left of the stairs up to King Zora's chamber, climb to the top of the frozen waterfall and look left from the ledge for a Gold Skulltula.",
           collect: ["zd-gs-frozen-waterfall"], time: "night",
           tip: "The Hookshot brings it down. Time passes in Zora's Domain, so night can come and go.",
-          check: "3 walkthroughs show this token with no night condition, and 1 says night only. Try by day first; if it is not there, come back at night and play the Sun's Song if night ends. If it is not by the diving game, look from the top of the frozen waterfall." },
+          check: "IGN does not mark this night-only; confirm in game. The older guide put it high on the wall by the diving game; look there if the waterfall top is empty." },
         { id: "c09-s01-04", text: "Pass the red ice around King Zora and continue to **Zora's Fountain**. Drop from Jabu-Jabu's old altar onto the ice floes and hop across to the floe off to the right that holds a **Piece of Heart**.",
           collect: ["zf-iceberg-freestanding-poh"],
           tip: "To reach the cavern afterward, cross the 3 spinning floes the other way, then the still one, and jump to the ledge at the cave mouth. Jumps are manual in this version, so time each hop yourself." }
@@ -496,7 +500,7 @@ OOT.walkthrough.push({
     {
       id: "c10-s01", title: "Lake Hylia (Drained)", era: "adult", kind: "sweep",
       steps: [
-        { id: "c10-s01-01", text: "Warp to **Lake Hylia** with the **Serenade of Water**. In the laboratory, wear the **Iron Boots** to sink to the bottom of the pool, roll into the crate and Hookshot the Gold Skulltula that appears.",
+        { id: "c10-s01-01", text: "Warp to **Lake Hylia** with the **Serenade of Water**. In the laboratory, wear the **Iron Boots** and the **Zora Tunic** to sink to the bottom of the pool and stay there, roll into the crate and Hookshot the Gold Skulltula that appears.",
           collect: ["lh-gs-lab-crate"],
           tip: "The Iron Boots have a quick-swap shortcut, so you can put them on or take them off without the menu." }
       ]
@@ -510,9 +514,9 @@ OOT.walkthrough.push({
         { id: "c10-s02-02", text: "Go back out to the shaft where Ruto disappeared and play **Zelda's Lullaby** at the Triforce symbol on its wall to drain the temple to its lowest level. On the bottom floor, shoot an arrow through the lit torch to light the other 2 (or use Din's Fire), then beat the Shell Blades in the room behind for a **Small Key**.",
           collect: ["water-temple-torches-chest"],
           tip: "Shell Blades are only open to attack while their shells are open." },
-        { id: "c10-s02-03", text: "In the south passage (on the map), bomb the cracked floor and sink through. Press the floor switch, Hookshot the target on the statue it reveals, and hit the crystal switch to open the gate to a Gold Skulltula.",
+        { id: "c10-s02-03", text: "With the water at 2F, return to the bottom floor of the central pillar room. A floating block has opened a way to B1. Hookshot the green switch there to open a hatch, and climb up to a Gold Skulltula.",
           collect: ["water-temple-gs-behind-gate"],
-          check: "Switch 2 walkthroughs describe this token as under the central tower: sink to the bottom with the Iron Boots, Hookshot the switch, and take it from the wall of the chamber beyond the gate. It is probably this same token." },
+          check: "This follows IGN. The older south-passage route (bomb the cracked floor) is dropped. If you cannot find the B1 opening, check that the water really is at 2F." },
         { id: "c10-s02-04", text: "In the west passage (on the map), push the block into the hole and swim on. Ride the water pillar in the next room, then in the spinning-water dragon room land on the dragon's body with the Iron Boots, Hookshot the crystal in its mouth and slip through the timed door for a **Small Key**.",
           collect: ["water-temple-dragon-chest"],
           tip: "Take the boots off to float past the 2 Shell Blades behind the door. Hit the crystal inside to get back out." },
@@ -690,7 +694,11 @@ OOT.walkthrough.push({
         { id: "c12-s01-01", text: "Climb the steps from the Market to the **Temple of Time** and draw the **Master Sword** to become an adult again. Then warp to **Death Mountain Crater** with the **Bolero of Fire**, wearing the Goron Tunic, and ride the bean plant you planted as a child up to the top of a smoking spire for a **Piece of Heart**.",
           collect: ["dmc-volcano-freestanding-poh"],
           warn: "The crater has no heat timer. Without the Goron Tunic, you catch fire a couple of seconds after you enter and keep losing health. Put the tunic on before you warp in.",
-          check: "One source says Pieces of Heart, Heart Containers and Fairies are now picked up with the action button. If the piece does not collect when you touch it, walk up and press the action button." }
+          check: "One source says Pieces of Heart, Heart Containers and Fairies are now picked up with the action button. If the piece does not collect when you touch it, walk up and press the action button." },
+        { id: "c12-s01-02",
+          text: "Walk down to **Death Mountain Trail** by way of Goron City. Ride the bean plant you planted outside Dodongo's Cavern up to the ledge above the entrance for a **Piece of Heart**.",
+          collect: ["dmt-freestanding-poh"],
+          tip: "No plant here? You skipped the bean errand in chapter 11, so you need a child trip to plant it first." }
       ]
     },
     {
@@ -815,16 +823,16 @@ OOT.walkthrough.push({
         { id: "c13-s02-01", text: "Climb to the top of the fortress: through the guard room, along the ledge, onto the roof on your right and up the vines to the highest roof. Longshot across the gap to the chest for a **Piece of Heart**.",
           collect: ["gf-chest"],
           tip: "The Scarecrow's Song with the Hookshot also crosses the gap." },
-        { id: "c13-s02-02", text: "Play the **Sun's Song** to bring night, then walk to the far end of the same highest roof and look over the edge for the Gold Skulltula on the wall below.",
+        { id: "c13-s02-02", text: "Play the **Sun's Song** to bring night, then go to the fortress entrance high in the north-east with the red fabric and Longshot the Gold Skulltula on the high wall to the right of the doorway.",
           collect: ["gf-gs-top-floor"], time: "night",
-          tip: "Time keeps running, so night can end while you are here; play the Sun's Song to bring it back." },
-        { id: "c13-s02-03", text: "Still at night, go to the horseback archery range and Hookshot the Gold Skulltula on the lone target at its far end.",
-          collect: ["gf-gs-archery-range"], time: "night",
-          check: "2 guides list this token as a Longshot spot. If the Hookshot falls short, use the Longshot." },
-        { id: "c13-s02-04", text: "Play the **Sun's Song** again to bring day, then ride Epona to the range, talk to the woman in white while mounted and pay for a run. Score 1,000 points for a **Piece of Heart**, then play again and score 1,400 for the biggest **Quiver**.",
+          tip: "Time keeps running, so night can end while you are here; play the Sun's Song to bring it back.",
+          check: "This follows IGN. The older guide put it on the wall below the end of the highest roof. If the north-east wall is empty, try that roof, and confirm in game." },
+        { id: "c13-s02-03", text: "Still at night, ride Epona along the archery range course to the top north-east corner and Longshot the Gold Skulltula on the back of the large high target.",
+          collect: ["gf-gs-archery-range"], time: "night"},
+        { id: "c13-s02-04", text: "Play the **Sun's Song** again to bring day, then ride Epona to the range, talk to the woman in white while mounted and pay for a run. Score over 750 points for a **Piece of Heart**, then play again and score 1,400 for the biggest **Quiver**.",
           collect: ["gf-hba-1000-points", "gf-hba-1500-points"], time: "day",
           tip: "Pots are worth 100 points each; the large targets give 100 for the center and 60 nearer the edge. The first prize is always the Piece of Heart, even on a 1,400-point run. The range is open by day only, and time keeps running, so day can end mid-session.",
-          check: "No walkthrough gives the price per run. Expect about 20 Rupees and bring extra." }
+          check: "No walkthrough gives the price per run. Expect about 20 Rupees and bring extra. IGN says over 750 points for the piece; older guides said 1,000, so aim high on your first run." }
       ]
     },
     {
@@ -834,9 +842,10 @@ OOT.walkthrough.push({
           collect: [],
           tip: "Straying from the line of flags sends you back to the start of the desert. The flags are easier to see by day. Enemies attack on the way.",
           check: "No walkthrough mentions the carpet merchant at the sign pointing to a dock, who sold 10 Bombchus for 200 Rupees. Look for him; if he is gone, skip him." },
-        { id: "c13-s03-02", text: "At the stone building halfway across, drop inside and Hookshot the Gold Skulltula between the 2 torches. Light both torches with Din's Fire or Fire Arrows for a chest.",
+        { id: "c13-s03-02", text: "Play the **Sun's Song** to bring night. Follow the markers to the stone building halfway across, take the ladder down and Longshot the Gold Skulltula between the 2 torches. Light both torches with Din's Fire or Fire Arrows for a chest.",
           collect: ["wasteland-gs", "wasteland-chest"],
-          check: "One walkthrough says the chest holds a Business Scrub Seed, an item that calls a wandering Business Scrub who sells things. No other source names the contents. If you find 50 Rupees instead, take them." },
+          check: "One walkthrough says the chest holds a Business Scrub Seed, an item that calls a wandering Business Scrub who sells things. No other source names the contents. If you find 50 Rupees instead, take them.",
+          time: "night" },
         { id: "c13-s03-03", text: "At the stone sign inside the building, look through the **Lenses of Truth** to see the Phantom Guide, a Poe, and follow it through the poles to the **Desert Colossus**. Outside the **Spirit Temple**, Sheik teaches you the **Requiem of Spirit**.",
           collect: ["sheik-at-colossus"],
           tip: "Inside, the temple's way on for an adult is blocked by a huge silver block; the child-sized hole on the left is where the next sections go. The Lenses can sit on a quick-swap shortcut, so you can switch them on without the menu." },
@@ -891,9 +900,9 @@ OOT.walkthrough.push({
         { id: "c13-s06-03", text: "Unlock the Beamos room's locked door and climb the grooved wall. Beat the invisible Floormaster with the Lenses, then push the mirror to shine light on the sun faces; the first 2 drop chests and the third opens the door.",
           collect: ["spirit-temple-first-mirror-left-chest", "spirit-temple-first-mirror-right-chest"],
           tip: "One of the 2 chests is a freezing trap (an Ice Trap), and lighting a fourth sun face drops a Wallmaster." },
-        { id: "c13-s06-04", text: "In the statue room, float on the Hover Boots to the statue's near hand and play **Zelda's Lullaby** on its Triforce; Longshot to the other hand for a chest with a **Small Key**. Then reach the platform Navi points to at the top of the west side (on the map) for a Gold Skulltula.",
+        { id: "c13-s06-04", text: "In the statue room, float on the Hover Boots to the statue's near hand and play **Zelda's Lullaby** on its Triforce; Longshot to the other hand for a chest with a **Small Key**. Then go to the upper west corner of the 3F statue room, play the **Scarecrow's Song** to call Pierre, and Longshot to him for a Gold Skulltula.",
           collect: ["spirit-temple-statue-room-hand-chest", "spirit-temple-gs-lobby"],
-          tip: "The Hookshot or the Hover Boots reach the Gold Skulltula's platform. If not, play the Scarecrow's Song there and Longshot to Pierre." },
+          tip: "Hover Boots may reach the Gold Skulltula's platform too, but IGN only names the Scarecrow's Song and the Longshot." },
         { id: "c13-s06-05", text: "On the floor of the statue room, light the 2 torches with Din's Fire or Fire Arrows for the **Dungeon Map**. Longshot across to the other Lullaby chest at the top of the southeast corner (on the map, 5 Rupees) and hammer the rusted switch to open the barred middle door.",
           collect: ["spirit-temple-map-chest", "spirit-temple-statue-room-northeast-chest"],
           tip: "The rusted switch in the shortcut room raises an elevator back to the entrance." }
@@ -930,10 +939,11 @@ OOT.walkthrough.push({
     {
       id: "c13-s09", title: "Adult Colossus Bean Ride", era: "adult", kind: "sweep",
       steps: [
-        { id: "c13-s09-01", text: "Ride the bean plant you planted as a child by the temple on its full loop over the **Desert Colossus**. As it climbs after passing under the stone arch near the temple, jump onto the arch for a **Piece of Heart**. A second Gold Skulltula sits on a rock along the ride; take it too.",
+        { id: "c13-s09-01", text: "Play the **Sun's Song** if it is day, then ride the bean plant you planted as a child by the temple on its full loop over the **Desert Colossus**. As it climbs after passing under the stone arch near the temple, jump onto the arch for a **Piece of Heart**. A Gold Skulltula is hidden on a raised plateau in the north-east along the ride; take it too.",
           collect: ["colossus-freestanding-poh", "colossus-gs-hill"],
           tip: "Jumping is manual, so time the leap onto the arch yourself.",
-          check: "One walkthrough describes the Piece of Heart on a ledge past a red ridge, reached with a bow; every other source drops you onto a structure after the ride. TheGamer says the rock token needs night and others give no time, so ride at night to be safe." }
+          check: "One walkthrough describes the Piece of Heart on a ledge past a red ridge, reached with a bow; every other source drops you onto a structure after the ride.",
+          time: "night" }
       ]
     },
     {
@@ -1020,10 +1030,10 @@ OOT.walkthrough.push({
     {
       id: "c14-s01", title: "Before the Castle", era: "adult", kind: "overworld",
       steps: [
-        { id: "c14-s01-01", text: "In **Zora's Fountain**, go to the far corner near the Great Fairy's fountain, lift the silver boulder with the **Silver Gauntlets**, bomb the rock beneath it and drop in. Cross the passage, climb at the end and defeat the Skulltula. If it is day, play the **Sun's Song** to bring night, then Hookshot the last Gold Skulltula on the left wall.",
-          collect: ["zf-gs-hidden-cave"], time: "night",
-          tip: "The Lenses of Truth show invisible Skulltulas hanging from the passage ceiling. Time keeps running, so night can end while you are inside.",
-          check: "Only some walkthroughs list this token as night-only; go at night to be safe. One source describes a different route over the frozen lake. If you cannot find the boulder at the back of the fountain, use the Lenses and look for it." },
+        { id: "c14-s01-01", text: "In **Zora's Fountain**, go to the far corner near the Great Fairy's fountain, lift the dark rocks with the **Silver Gauntlets** and go in. Use the Lenses of Truth to see the invisible Skulltulas in the tunnel, climb to the top, turn around and take the Gold Skulltula.",
+          collect: ["zf-gs-hidden-cave"],
+          tip: "If a rock still blocks the way, try a Bomb.",
+          check: "IGN names no Bombs, no Hookshot and no night for this token. If the top of the tunnel is empty, come back at night and play the Sun's Song." },
         { id: "c14-s01-02", text: "Bring 100 tokens to the **House of Skulltula** in Kakariko. The last cursed son is cured and gives you a **Huge Rupee** (200 Rupees), and he gives you another every time you talk to him.",
           collect: ["kak-100-gold-skulltula-reward"] }
       ]

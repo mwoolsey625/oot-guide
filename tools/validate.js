@@ -170,7 +170,7 @@ CATS.forEach((cat, ci) => {
 
 // required categories and totals (BRIEF "Required categories")
 const REQUIRED = { 'gold-skulltulas': 100, 'heart-pieces': 36, 'heart-containers': 8, songs: 13, 'spiritual-stones': 3, medallions: 6,
-  'inventory-items': null, equipment: null, upgrades: null, bottles: 4, 'great-fairies': 6, 'big-poes': 10, 'magic-beans': 10,
+  'inventory-items': null, equipment: null, upgrades: null, bottles: 5, 'great-fairies': 6, 'big-poes': 10, 'magic-beans': 10,
   masks: 8, 'adult-trade': null, 'skulltula-rewards': 6 };
 for (const [id, n] of Object.entries(REQUIRED)) {
   const cat = CATS.find((c) => c.id === id);

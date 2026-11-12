@@ -709,8 +709,8 @@ OOT.walkthrough.push({
 // ---------------------------------------------------------------- c06
 OOT.walkthrough.push({
   id: "c06-temple-of-time", num: 6, title: "The Door of Time", era: "child",
-  summary: "Receive the Ocarina of Time and the Song of Time, finish the child-era sweep with the Boomerang, Bombs and Din's Fire while running the Happy Mask Shop trades, then open the Door of Time and draw the Master Sword.",
-  needs: ["Kokiri's Emerald", "Goron's Ruby", "Zora's Sapphire", "Boomerang", "Bombs", "Din's Fire", "Magic Beans", "Epona's Song", "Sun's Song"],
+  summary: "Receive the Ocarina of Time and the Song of Time, finish the child-era sweep with the Boomerang and Bombs while running the Happy Mask Shop trades, then open the Door of Time and draw the Master Sword.",
+  needs: ["Kokiri's Emerald", "Goron's Ruby", "Zora's Sapphire", "Boomerang", "Bombs", "Magic Beans", "Epona's Song", "Sun's Song"],
   gains: ["Ocarina of Time", "Song of Time", "Giant's Wallet", "Deku Stick capacity upgrade", "2 Deku Nut capacity upgrades", "Mask of Truth", "3 Pieces of Heart", "10 Gold Skulltula Tokens", "Master Sword"],
   sections: [
     {
@@ -786,10 +786,6 @@ OOT.walkthrough.push({
           collect: ["bean-graveyard"],
           time: "day",
           tip: "This bean matters: an adult rides it to a Piece of Heart in chapter 7. The boy only appears in daylight." },
-        { id: "c06-s04-02",
-          text: "Enter the **Royal Family's Tomb** again and light the torches by the door in the first room with **Din's Fire**. A chest appears holding 5 Bombs.",
-          collect: ["graveyard-royal-familys-tomb-chest"],
-          tip: "Keese flutter in the front room, so keep your shield handy. The ReDead room beyond has poison patches on the floor." },
         { id: "c06-s04-03",
           text: "Play the Sun's Song to bring night, then throw the Boomerang at the Gold Skulltula on the wall behind Dampé's house, in the Graveyard's southeast corner, and again to pull in its token.",
           collect: ["graveyard-gs-wall"],

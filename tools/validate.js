@@ -216,13 +216,16 @@ for (const row of LEDGER) ledgerById[row.id] = row;
    plain purchases (decomp z_en_ds.c / z_en_js.c set no flag). */
 const REPEATABLE = new Set(['lh-loach-fishing', 'kak-granny-buy-blue-potion', 'wasteland-bombchu-salesman']);
 const isRepeatable = row => row.type === 'cow' || REPEATABLE.has(row.id);
-const outOfLogic = [], repeatable = [];
+const outOfLogic = [], repeatable = [], notInRemake = [];
 for (const row of LEDGER) {
   if (itemsById[row.id] || collectAt[row.id]) continue;
   if ((row.tags || []).includes('out-of-logic')) { outOfLogic.push(row.id); continue; }
+  // original-game checks the Switch 2 remake dropped, confirmed in play and against a remake walkthrough
+  if ((row.tags || []).includes('not-in-remake')) { notInRemake.push(row.id); continue; }
   if (isRepeatable(row)) { repeatable.push(row.id); continue; }
   err('ledger', `${row.id} (${row.type}, ${row.vanillaItem}) is not covered by any collectible or step`);
 }
+if (notInRemake.length) note(`Ledger rows tagged not-in-remake (the remake has no such check): ${notInRemake.join(', ')}`);
 if (outOfLogic.length) note(`Ledger rows tagged out-of-logic and left out on purpose (rule B, see research/compile-notes-integration.md): ${outOfLogic.join(', ')}`);
 if (repeatable.length) note(`${repeatable.length} ledger rows left out on purpose: randomizer checks only; in the original game they repeat and record nothing (9 cows, the Hylian Loach, Granny's Blue Potion, the Wasteland Bombchus).`);
 for (const row of LEDGER) if (isRepeatable(row) && (itemsById[row.id] || collectAt[row.id])) err('ledger', `${row.id}: repeats in the original game and records nothing, so it is not a collectible; remove it from the guide`);

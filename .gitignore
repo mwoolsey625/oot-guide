@@ -6,6 +6,8 @@ research/sources/
 # drafted from outside walkthroughs and haven't been checked for copied text.
 research/*.md
 research/ledger.json
+# Per-chapter verification notes and inputs (tools/split-chapters.js).
+research/verify/
 # ...except the route plan, which is our own work.
 !research/route-plan.md
 

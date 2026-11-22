@@ -243,8 +243,8 @@ OOT.walkthrough.push({
     {
       id: "c08-s04", title: "Hyrule Field and Gerudo Valley", era: "adult", kind: "sweep",
       steps: [
-        { id: "c08-s04-01", text: "In **Hyrule Field**, go to the large rock outcropping just north and east of the **Gerudo Valley** entrance. A small chest sits under it and looks already taken to an adult. Read the Fairy Note beside it as an adult, then come back as a child (after the Forest Temple) to open it for the **Piece of Heart**.",
-          collect: ["hf-tektite-grotto-freestanding-poh"],
+        { id: "c08-s04-01", text: "In **Hyrule Field**, go to the large rock outcropping just north and east of the **Gerudo Valley** entrance. A small chest sits under it and looks already taken to an adult. Read the Fairy Thought beside it now. The chest opens only for a child, so you come back for its **Piece of Heart** in chapter 11.",
+          collect: [],
           tip: "The Song of Storms grotto west of the Castle Town entrance (north side of the moat) holds a deep pool with a Blue Tektite. With the Iron Boots from the Ice Cavern, the Rupee boxes at the bottom are yours too." },
         { id: "c08-s04-02", text: "Ride **Epona** into **Gerudo Valley** and, with a running start, jump the broken bridge. Give the **Poacher's Saw** to the **Master Craftsman** outside the carpenters' tent for the **Broken Goron's Sword**.",
           collect: ["gv-trade-poachers-saw"],
@@ -589,7 +589,10 @@ OOT.walkthrough.push({
           warn: "Without the **Goron Tunic**, Link's tunic catches fire about 4 seconds after he arrives, and he then loses a quarter heart every second until he leaves. A Recovery Heart restarts the 4-second count. Do the errand fast.",
           check: "Sources disagree on the trail soil. If there is no soft soil beside the Dodongo's Cavern entrance, look on the red canyon path before the rope bridge." },
         { id: "c11-s02-05", text: "Walk out of Kakariko and down the stairs into **Hyrule Field**. In the plot of farmland next to the Kakariko entrance, play the **Song of Storms** to open a grotto. Inside it is pitch black: play the **Sun's Song** to freeze the 2 ReDeads, defeat them before they break free, and open the chest for a Purple Rupee (50 Rupees).",
-          collect: ["kak-redead-grotto-chest"] }
+          collect: ["kak-redead-grotto-chest"] },
+        { id: "c11-s02-06", text: "Still a child, cross **Hyrule Field** to the large rock outcropping just north and east of the **Gerudo Valley** entrance. Open the small chest under it, the one whose Fairy Thought you read as an adult in chapter 8, for a **Piece of Heart**.",
+          collect: ["hf-tektite-grotto-freestanding-poh"],
+          warn: "This chest opens only for a child who has read the Fairy Thought as an adult. If it still looks already taken, go back as an adult and read the Fairy Thought first." }
       ]
     },
     {

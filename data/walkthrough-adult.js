@@ -985,8 +985,7 @@ OOT.walkthrough.push({
           collect: ["zf-gs-hidden-cave"],
           check: "Zelda Central's token table lists this cave token as any time of day, but its walkthrough plays the Sun's Song first. If the wall is empty, make it night with the **Sun's Song** and look again." },
         { id: "c14-s01-02", text: "Bring 100 tokens to the **House of Skulltula** in Kakariko. The **Cursed Rich Man** and his sons turn back into people, and he gives you a **Gold Rupee** worth 200 Rupees. Talk to him again whenever your wallet runs low: he hands out another Gold Rupee each time.",
-          collect: ["kak-100-gold-skulltula-reward"],
-          check: "IGN's reward table lists unlimited Gold Rupees at 100 tokens. If he gives only one, nothing is missed." }
+          collect: ["kak-100-gold-skulltula-reward"] }
       ]
     },
     {

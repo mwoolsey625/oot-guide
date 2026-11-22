@@ -1048,7 +1048,7 @@ window.OOT.collectibles = [
         requires: ["50 Gold Skulltula Tokens"], how: "Enter the House of Skulltula with 50 or more tokens and talk to the family member who has turned back into a person. The reward is one of the 36 Pieces of Heart.",
         chapter: "c08-fire-temple", step: "c08-s01-01", missable: false },
       { id: "kak-100-gold-skulltula-reward", name: "100 tokens: Gold Rupee", area: "Kakariko Village", age: "either", time: "any",
-        requires: ["100 Gold Skulltula Tokens"], how: "Talk to the Cursed Rich Man with 100 tokens. He gives a Gold Rupee worth 200 Rupees, and another each time you talk to him again (IGN lists unlimited Gold Rupees).",
+        requires: ["100 Gold Skulltula Tokens"], how: "Talk to the Cursed Rich Man with 100 tokens. He gives a Gold Rupee worth 200 Rupees, and another each time you talk to him again, with no limit.",
         chapter: "c14-ganons-castle", step: "c14-s01-02", missable: false }
     ]
   },

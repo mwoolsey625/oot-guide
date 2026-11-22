@@ -764,7 +764,7 @@ OOT.walkthrough.push({
           collect: ["bean-zoras-river"],
           tip: "Time passes wherever you are now, so night comes by itself." },
         { id: "c06-s05-02",
-          text: "In the marshy southeast of **Hyrule Field**, near the large Peahats, bomb the cracked ground to open a grotto. Read the Fairy Thought inside and defeat the plain Skullwalltula there. The token itself comes later, when adult Link returns (chapter 8).",
+          text: "In the marshy southeast of **Hyrule Field**, near the large Peahats, bomb the cracked ground to open a grotto. Read the Fairy Thought inside (a fairy is too scared of the thing on the wall to catch a golden bug) and defeat the plain Skullwalltula on the wall. Make sure it dies before you leave. The token itself comes later, when adult Link returns (chapter 8).",
           collect: [],
           tip: "The grotto north of the Gerudo Valley entrance (bombed open) holds a cow, a Gossip Stone and jars, with giant webs across the way. Din's Fire burns the webs away."},
         { id: "c06-s05-03",

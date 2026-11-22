@@ -49,7 +49,7 @@ window.OOT.collectibles = [
         requires: ["Bombs","Boomerang"], how: "The Hyrule Field tokens have moved, and no grotto by the lone tree on the Kakariko path holds one. Go to the wooded area south of Lon Lon Ranch, near the large Peahat, and bomb the cracked ground. Inside, defeat the large Skulltula, then use the Boomerang on the Gold Skulltula on the wall and on its token. This is not the token in the thin tree west of the Kokiri Forest exit; that one is a separate token from chapter 2.",
         chapter: "c06-temple-of-time", step: "c06-s01-03", missable: false },
       { id: "hf-gs-cow-grotto", name: "Cracked ground in the southeast of Hyrule Field", area: "Hyrule Field", age: "adult", time: "any",
-        requires: ["Bombs"], how: "In the marshy southeast of Hyrule Field, near the large Peahats, bomb the cracked ground to open a grotto. As a child, read the Fairy Note inside and defeat the plain Skullwalltula. Return as an adult: a Gold Skulltula now sits in a shaking crate. Roll into the crate to knock out the token.",
+        requires: ["Bombs"], how: "In the marshy southeast of Hyrule Field, near the large Peahats, bomb the cracked ground to open a grotto. As a child, read the Fairy Thought inside and defeat the plain Skullwalltula. Return as an adult: a Gold Skulltula now sits in a shaking crate. Roll into the crate to knock out the token. If the plain Skullwalltula is back instead and the Fairy Thought still asks for help, the child-era kill has not registered; defeat it again as a child.",
         chapter: "c08-fire-temple", step: "c08-s04-04", missable: false},
 
       { id: "market-gs-guard-house", name: "Crate in the Guard House", area: "Market", age: "child", time: "any",
@@ -1048,7 +1048,7 @@ window.OOT.collectibles = [
         requires: ["50 Gold Skulltula Tokens"], how: "Enter the House of Skulltula with 50 or more tokens and talk to the family member who has turned back into a person. The reward is one of the 36 Pieces of Heart.",
         chapter: "c08-fire-temple", step: "c08-s01-01", missable: false },
       { id: "kak-100-gold-skulltula-reward", name: "100 tokens: Gold Rupee", area: "Kakariko Village", age: "either", time: "any",
-        requires: ["100 Gold Skulltula Tokens"], how: "Talk to the Cursed Rich Man with 100 tokens. He gives a Gold Rupee worth 200 Rupees, once. Make room in your wallet first.",
+        requires: ["100 Gold Skulltula Tokens"], how: "Talk to the Cursed Rich Man with 100 tokens. He gives a Gold Rupee worth 200 Rupees, and another each time you talk to him again (IGN lists unlimited Gold Rupees).",
         chapter: "c14-ganons-castle", step: "c14-s01-02", missable: false }
     ]
   },

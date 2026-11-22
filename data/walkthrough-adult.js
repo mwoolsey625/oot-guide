@@ -256,7 +256,8 @@ OOT.walkthrough.push({
         { id: "c08-s04-04",
           text: "Go back to the grotto you bombed open in the marshy southeast of **Hyrule Field**. A Gold Skulltula now sits in a shaking crate. Roll into the crate to knock out the token.",
           collect: ["hf-gs-cow-grotto"],
-          tip: "As a child you only had to defeat the plain Skullwalltula here. The Gold Skulltula shows up for adult Link." }
+          warn: "Do not mix this up with the grotto in the small wooded area south of Lon Lon Ranch, in the southwest. That one has its Gold Skulltula high on the wall (chapter 6). This one is in the open marsh in the southeast, and it has a Fairy Thought on the wall.",
+          tip: "The crate only appears if child Link defeated the plain Skullwalltula here first. Read the Fairy Thought on the wall to see where you stand: if it thanks whoever got rid of the thing on the wall, the crate is here. If it still asks for someone to get rid of it, go back as a child, defeat the Skullwalltula, then return as an adult." }
       ]
     },
     {
@@ -983,8 +984,9 @@ OOT.walkthrough.push({
         { id: "c14-s01-01", text: "In **Zora's Fountain**, cross the frozen lake. Past it, beside a cave mouth, move the black pillar with the **Silver Gauntlets** and go in. Climb the vine wall to a snowfield, defeat the big spider at the cave mouth, and walk on to the second cave. The Gold Skulltula hangs high on a dark wall there; take it with the **Longshot**. The **Lenses of Truth** help you see invisible enemies in the first cave.",
           collect: ["zf-gs-hidden-cave"],
           check: "Zelda Central's token table lists this cave token as any time of day, but its walkthrough plays the Sun's Song first. If the wall is empty, make it night with the **Sun's Song** and look again." },
-        { id: "c14-s01-02", text: "Bring 100 tokens to the **House of Skulltula** in Kakariko. The **Cursed Rich Man** and his sons turn back into people, and he gives you a **Gold Rupee** worth 200 Rupees. It is a one-time reward, so spend some Rupees first if your wallet is nearly full.",
-          collect: ["kak-100-gold-skulltula-reward"] }
+        { id: "c14-s01-02", text: "Bring 100 tokens to the **House of Skulltula** in Kakariko. The **Cursed Rich Man** and his sons turn back into people, and he gives you a **Gold Rupee** worth 200 Rupees. Talk to him again whenever your wallet runs low: he hands out another Gold Rupee each time.",
+          collect: ["kak-100-gold-skulltula-reward"],
+          check: "IGN's reward table lists unlimited Gold Rupees at 100 tokens. If he gives only one, nothing is missed." }
       ]
     },
     {
